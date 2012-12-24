@@ -51,13 +51,20 @@ global.endTurn=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playerBlueId = instance_create(512,160,obj_blue);
+            <string>playerBlueId = instance_create(512,256,obj_blue);
 totalPlayers += 1;
 allPlayers[0,0] = playerBlueId;
+allPlayers[0,1] = "Blue Player";
 
-playerRedId = instance_create(64,128,obj_red2);
+playerRed1Id = instance_create(64,256,obj_red2);
 totalPlayers += 1;
-allPlayers[1,0] = playerRedId;
+allPlayers[1,0] = playerRed1Id;
+allPlayers[1,1] = "Red Player 1";
+
+playerRed2Id = instance_create(64,160,obj_red2);
+totalPlayers += 1;
+allPlayers[2,0] = playerRed2Id;
+allPlayers[2,1] = "Red Player 2";
 </string>
           </argument>
         </arguments>
