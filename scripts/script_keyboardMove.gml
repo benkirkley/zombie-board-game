@@ -97,23 +97,20 @@ if (isMoving == false)
 */
 if (isMoving == true)
 {
-   //show_message("x: " + string(x) + "#y: " + string(y) + "#speedX: "+string(speedX) + "#speedY" + string(speedY) );
-   x += speedX;
-   y += speedY
-    //show_message("x: " + string(x) + "#y: " + string(y));
-   
+    x += speedX;
+    y += speedY
    
     var colobject;
-    //colobject = collision_point(x,y,obj_red2,1,1)
     colobject = collision_rectangle(x,y,x+sprite_width-1,y+sprite_height-1,obj_red2,true,true)
     if (colobject) 
     {
 
-        show_message("x: " + string(x) + "#y: " + string(y));
         isMoving = false;
         x -= speedX;
         y -= speedY
         // show_message("x: " + string(x) + "#y: " + string(y));
+        
+        
     
     }   
    

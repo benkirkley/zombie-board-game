@@ -10,6 +10,7 @@
     <sprite>sprites\spr_red</sprite>
     <sprite>sprites\spr_grey</sprite>
     <sprite>sprites\spr_bigGrey</sprite>
+    <sprite>sprites\sprite5</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
