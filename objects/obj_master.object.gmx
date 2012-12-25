@@ -51,7 +51,7 @@ global.endTurn=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playerBlueId = instance_create(512,256,obj_blue);
+            <string>playerBlueId = instance_create(128,256,obj_blue);
 totalPlayers += 1;
 allPlayers[0,0] = playerBlueId;
 allPlayers[0,1] = "Blue Player";

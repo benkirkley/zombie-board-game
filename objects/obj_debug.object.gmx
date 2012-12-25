@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>draw_set_font(font0)
 draw_set_color(c_yellow); 
-draw_text(self.x,self.y,string(obj_master.allPlayers[global.currentPlayer,1])+
-                        "  --  AP: " + string(obj_master.allPlayers[global.currentPlayer,0].actionPoints)+
-                        "/" + string(obj_master.allPlayers[global.currentPlayer,0].totalActionPoints)
+draw_text(self.x,self.y,"playerID: " + string(obj_master.allPlayers[global.currentPlayer,0]) +
+                        "#currentPlayer: " + string(global.currentPlayer) +
+                        "#x: " + string((global.currentPlayer).x)
 );
 </string>
           </argument>
