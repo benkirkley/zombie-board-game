@@ -97,25 +97,35 @@ if (isMoving == false)
 */
 if (isMoving == true)
 {
+    if (moveTimer == gridSize) {
+        if (speedX != 0 ){
+            finalX = x + ( (gridSize/moveSpeed) * speedX );
+        } else {
+            finalX = x;
+        }
+        
+        if (speedY != 0 ){
+            finalY = y + ( (gridSize/moveSpeed) * speedY );
+        } else {
+            finalY = y;
+        }
+        
+        var colobject;
+        colobject = collision_point(finalX,finalY,obj_red2,true,true)
+        if (colobject) 
+        {
+            isMoving = false;
+            moveTimer=0;
+            show_message("TO DO: Combat");
+            return false;
+        
+        }   
+    }
+
     x += speedX;
     y += speedY
-   
-    var colobject;
-    colobject = collision_rectangle(x,y,x+sprite_width-1,y+sprite_height-1,obj_red2,true,true)
-    if (colobject) 
-    {
-
-        isMoving = false;
-        x -= speedX;
-        y -= speedY
-        // show_message("x: " + string(x) + "#y: " + string(y));
-        
-        
-    
-    }   
-   
-   moveTimer -= moveSpeed;
-   if (moveTimer == 0) isMoving = false;
+    moveTimer -= moveSpeed;
+    if (moveTimer == 0) isMoving = false;
    
     
 }
