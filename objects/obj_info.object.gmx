@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>draw_set_font(font0)
-draw_set_color(c_yellow); 
+draw_set_color(c_lime);
+draw_set_alpha(1);
 draw_text(self.x,self.y,string(obj_master.allPlayers[global.currentPlayer,1])+
                         "  --  AP: " + string(obj_master.allPlayers[global.currentPlayer,0].actionPoints)+
                         "/" + string(obj_master.allPlayers[global.currentPlayer,0].totalActionPoints)
