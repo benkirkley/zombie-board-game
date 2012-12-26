@@ -115,7 +115,15 @@ if (isMoving == true)
         {
             isMoving = false;
             moveTimer=0;
-            script_combatTrigger();
+            script_combatTrigger(obj_red);
+            return false;
+        
+        }
+        if (collision_point(finalX,finalY,obj_blue,true,true)) 
+        {
+            isMoving = false;
+            moveTimer=0;
+            script_combatTrigger(obj_blue);
             return false;
         
         }

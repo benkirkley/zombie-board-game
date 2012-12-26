@@ -59,7 +59,7 @@ for(i = 0; i < mainObjectDicePool; i += 1){
     }
 }
 displayResults += "##Number of Hits: " + string(numberOfHits);
-var totalDamager = 0;
+var totalDamage = 0;
 if ( numberOfHits > 0 )
 {
     totalDamage = mainObjectDamage
