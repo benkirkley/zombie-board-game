@@ -3,7 +3,7 @@
   <spriteName>spr_blue</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -35,6 +35,7 @@ moveTimer = 0;  // Counts down from grid size each step
 moveSpeed = 4;     // Do not set higher than grid size!
 speedX = 0;
 speedY = 0;
+//draw_set_alpha(1);
 
 //mouse_meet = 0;
 </string>
@@ -63,8 +64,8 @@ strength=10;
 defense=8;
 attack=2;
 hitPoints=3;
-actionPoints=4;
-totalActionPoints=4;
+actionPoints=100;
+totalActionPoints=100;
 </string>
           </argument>
         </arguments>

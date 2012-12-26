@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,13 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(font0)
-draw_set_color(c_lime);
-//draw_set_alpha(1);
-draw_text(self.x,self.y,string(obj_master.allPlayers[global.currentPlayer,1])+
-                        "  --  AP: " + string(obj_master.allPlayers[global.currentPlayer,0].actionPoints)+
-                        "/" + string(obj_master.allPlayers[global.currentPlayer,0].totalActionPoints)
-);
+            <string>draw_set_color(c_navy);
+draw_set_alpha(0.6);
+draw_rectangle(x,y,x+224,y+70,false);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

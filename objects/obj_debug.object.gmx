@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -29,11 +29,11 @@
 
 draw_set_color(c_navy);
 draw_set_alpha(0.6);
-draw_rectangle(x-6,y-6,x+100,y+70,false);
+draw_rectangle(x-6,y-6,x+128,y+70,false);
+draw_set_alpha(1);
 
 draw_set_font(font0)
 draw_set_color(c_lime); 
-draw_set_alpha(1);
 draw_text(self.x,self.y,"playerID: " + string(playerId) +
                         "#currentPlayer: " + string(global.currentPlayer) +
                         "#x: " + string((playerId).x) +

@@ -10,8 +10,8 @@ if (isMoving == false)
         if ( keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6) )
         {
             destroyStatsWindow = true;
-            actionPoints -=1 ;
             isMoving = true;
+            actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = moveSpeed;
             speedY = 0;
@@ -20,8 +20,8 @@ if (isMoving == false)
         if ( keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_numpad8) )
         {
             destroyStatsWindow = true;
-            actionPoints -=1 ;
             isMoving = true;
+            actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = 0;
             speedY = -moveSpeed;
@@ -30,8 +30,8 @@ if (isMoving == false)
         if ((keyboard_check_pressed(vk_left) || keyboard_check_pressed(vk_numpad4)) )
         {
             destroyStatsWindow = true;
-            actionPoints -=1 ;
             isMoving = true;
+            actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = -moveSpeed;
             speedY = 0;
@@ -40,8 +40,8 @@ if (isMoving == false)
         if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(vk_numpad2) )
         {
             destroyStatsWindow = true;
-            actionPoints -=1 ;
             isMoving = true;
+            actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = 0;
             speedY = moveSpeed;
@@ -51,8 +51,8 @@ if (isMoving == false)
         if ( keyboard_check_pressed(vk_numpad1) )
         {
             destroyStatsWindow = true;
-            actionPoints -=1 ;
             isMoving = true;
+            actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = -moveSpeed;
             speedY = moveSpeed;
@@ -61,8 +61,8 @@ if (isMoving == false)
         if ( keyboard_check_pressed(vk_numpad3) )
         {
             destroyStatsWindow = true;
-            actionPoints -=1 ;
             isMoving = true;
+            actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = moveSpeed;
             speedY = moveSpeed;
@@ -71,8 +71,8 @@ if (isMoving == false)
         if ( keyboard_check_pressed(vk_numpad7) )
         {
             destroyStatsWindow = true;
-            actionPoints -=1 ;
             isMoving = true;
+            actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = -moveSpeed;
             speedY = -moveSpeed;
@@ -81,8 +81,8 @@ if (isMoving == false)
         if ( keyboard_check_pressed(vk_numpad9) )
         {
             destroyStatsWindow = true;
-            actionPoints -=1 ;
             isMoving = true;
+            actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = moveSpeed;
             speedY = -moveSpeed;
@@ -111,15 +111,24 @@ if (isMoving == true)
         }
         
         var colobject;
-        colobject = collision_point(finalX,finalY,obj_red,true,true)
-        if (colobject) 
+        //colobject = collision_point(finalX,finalY,obj_red,true,true);
+        if (collision_point(finalX,finalY,obj_red,true,true)) 
         {
             isMoving = false;
             moveTimer=0;
+            
             show_message("TO DO: Combat");
             return false;
         
-        }   
+        }
+        else if (collision_point(finalX,finalY,obj_wall,true,true))
+        {
+            isMoving = false;
+            moveTimer=0;
+            actionPoints +=1 ;
+            return false;
+        }
+         
     }
 
     x += speedX;
