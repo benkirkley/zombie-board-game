@@ -263,7 +263,7 @@ totalActionPoints=2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = obj_bigGrey.depth+10;
+            <string>//depth = obj_bigGrey.depth+10;
 global.statsWindowPlayerID = self.object_index;
 </string>
           </argument>

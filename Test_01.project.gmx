@@ -26,14 +26,14 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_blue</object>
-    <object>objects\obj_red</object>
-    <object>objects\obj_grey</object>
-    <object>objects\obj_bigGrey</object>
-    <object>objects\obj_stats</object>
-    <object>objects\obj_master</object>
-    <object>objects\obj_info</object>
-    <object>objects\obj_red2</object>
     <object>objects\obj_debug</object>
+    <object>objects\obj_grey</object>
+    <object>objects\obj_info</object>
+    <object>objects\obj_master</object>
+    <object>objects\obj_red</object>
+    <object>objects\obj_stats</object>
+    <object>objects\obj_statsWindow</object>
+    <object>objects\OLD_obj_red</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

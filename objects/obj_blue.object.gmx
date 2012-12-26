@@ -63,8 +63,8 @@ strength=10;
 defense=8;
 attack=2;
 hitPoints=3;
-actionPoints=100;
-totalActionPoints=100;
+actionPoints=4;
+totalActionPoints=4;
 </string>
           </argument>
         </arguments>
@@ -81,7 +81,7 @@ totalActionPoints=100;
         <exetype>1</exetype>
         <functionname>action_move_to</functionname>
         <codestring></codestring>
-        <whoName>obj_bigGrey</whoName>
+        <whoName>obj_statsWindow</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -233,7 +233,7 @@ totalActionPoints=100;
         <exetype>1</exetype>
         <functionname>action_kill_object</functionname>
         <codestring></codestring>
-        <whoName>obj_bigGrey</whoName>
+        <whoName>obj_statsWindow</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
@@ -255,7 +255,7 @@ totalActionPoints=100;
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>obj_bigGrey</object>
+            <object>obj_statsWindow</object>
           </argument>
           <argument>
             <kind>0</kind>
@@ -283,7 +283,7 @@ totalActionPoints=100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = obj_bigGrey.depth+10;
+            <string>//depth = obj_bigGrey.depth+10;
 global.statsWindowPlayerID = self.object_index;
 </string>
           </argument>

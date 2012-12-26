@@ -111,7 +111,7 @@ if (isMoving == true)
         }
         
         var colobject;
-        colobject = collision_point(finalX,finalY,obj_red2,true,true)
+        colobject = collision_point(finalX,finalY,obj_red,true,true)
         if (colobject) 
         {
             isMoving = false;
