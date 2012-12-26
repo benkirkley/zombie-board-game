@@ -64,12 +64,11 @@ if ( numberOfHits > 0 )
 {
     totalDamage = mainObjectDamage
 }
-//totalDamage = mainObjectDamage * numberOfHits;
+
 displayResults += "#Total Damage: " + string(totalDamage);
+
 triggeredObjectId.hitPoints -= totalDamage;
 displayResults += "#HP Left: " + string(triggeredObjectId.hitPoints); 
-
-
 show_message(displayResults);
 
 
