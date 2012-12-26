@@ -15,6 +15,7 @@
     <sprite>sprites\spr_wall_barrier</sprite>
     <sprite>sprites\sprite7</sprite>
     <sprite>sprites\spr_button_endTurn_down</sprite>
+    <sprite>sprites\spr_hidden_32</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -40,6 +41,7 @@
     <object>objects\obj_wall</object>
     <object>objects\OLD_obj_red</object>
     <object>objects\obj_infoBg</object>
+    <object>objects\obj_wall_hidden</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

@@ -116,12 +116,18 @@ if (isMoving == true)
         {
             isMoving = false;
             moveTimer=0;
-            
             show_message("TO DO: Combat");
             return false;
         
         }
         else if (collision_point(finalX,finalY,obj_wall,true,true))
+        {
+            isMoving = false;
+            moveTimer=0;
+            actionPoints +=1 ;
+            return false;
+        }
+        else if (collision_point(finalX,finalY,obj_wall_hidden,true,true))
         {
             isMoving = false;
             moveTimer=0;
