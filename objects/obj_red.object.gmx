@@ -61,9 +61,10 @@ resolveCombat = false;
 characterBonus = - 1;
 
 
-randomize();
-strength = floor(random(6)) + characterBonus ;
-if (strength &lt; 1) strength = 1;
+//randomize();
+//dicePool = floor(random(6)) + characterBonus ;
+//if (dicePool &lt; 1) dicePool = 1;
+dicePool = 1;
 
 randomize();
 defense = floor(random(6)) + characterBonus ;
@@ -77,12 +78,13 @@ randomize();
 hitPoints = floor(random(4)) + characterBonus ;
 if (hitPoints &lt; 1) hitPoints = 1;
 
+totalHitPoints = hitPoints;
+
 randomize();
 actionPoints = 2;
+totalActionPoints = actionPoints;
 
-randomize();
-totalActionPoints = 2;
-
+damage = 1;
 </string>
           </argument>
         </arguments>
@@ -237,7 +239,7 @@ totalActionPoints = 2;
             <kind>1</kind>
             <string>if (resolveCombat == true ) {
     resolveCombat = false;
-    script_combatPerform(strength,defense,attack,hitPoints);
+    script_combatPerform(id,dicePool,defense,attack,hitPoints,damage);
     
 }
 </string>

@@ -53,10 +53,10 @@
             <kind>1</kind>
             <string>draw_set_font(font0)
 draw_text(self.x-32,self.y-46,
-"STR: "+string(global.statsWindowPlayerID.strength)+
+"Dice: "+string(global.statsWindowPlayerID.dicePool)+
 "#DEF: "+string(global.statsWindowPlayerID.defense)+
 "#ATT: "+string(global.statsWindowPlayerID.attack)+
-"#HP : "+string(global.statsWindowPlayerID.hitPoints)+
+"#HP : "+string(global.statsWindowPlayerID.hitPoints)+"/"+string(global.statsWindowPlayerID.totalHitPoints)+
 "#AP : "+string(global.statsWindowPlayerID.actionPoints)+"/"+string(global.statsWindowPlayerID.totalActionPoints)
 );
 </string>

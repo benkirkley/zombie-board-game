@@ -60,12 +60,15 @@ speedY = 0;
             <kind>1</kind>
             <string>/* Initalise stats */
 
-strength=10;
+dicePool=2;
 defense=8;
 attack=2;
-hitPoints=3;
-actionPoints=100;
-totalActionPoints=100;
+totalHitPoints=3;
+hitPoints=totalHitPoints;
+totalActionPoints=99;
+actionPoints=totalActionPoints;
+
+damage = 2;
 </string>
           </argument>
         </arguments>
