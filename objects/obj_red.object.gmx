@@ -58,13 +58,31 @@ speedY = 0;
           <argument>
             <kind>1</kind>
             <string>/* Initalise stats */
+characterBonus = - 1;
 
-strength=5;
-defense=4;
-attack=1;
-hitPoints=1;
-actionPoints=2;
-totalActionPoints=2;
+
+randomize();
+strength = floor(random(6)) + characterBonus ;
+if (strength &lt; 1) strength = 1;
+
+randomize();
+defense = floor(random(6)) + characterBonus ;
+if (defense &lt; 1) defense = 1;
+
+randomize();
+attack = floor(random(6)) + characterBonus ;
+if (attack &lt; 1) attack = 1;
+
+randomize();
+hitPoints = floor(random(4)) + characterBonus ;
+if (hitPoints &lt; 1) hitPoints = 1;
+
+randomize();
+actionPoints = 2;
+
+randomize();
+totalActionPoints = 2;
+
 </string>
           </argument>
         </arguments>
@@ -264,7 +282,7 @@ totalActionPoints=2;
           <argument>
             <kind>1</kind>
             <string>//depth = obj_bigGrey.depth+10;
-global.statsWindowPlayerID = self.object_index;
+global.statsWindowPlayerID = self.id;
 </string>
           </argument>
         </arguments>
