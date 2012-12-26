@@ -111,12 +111,11 @@ if (isMoving == true)
         }
         
         var colobject;
-        //colobject = collision_point(finalX,finalY,obj_red,true,true);
         if (collision_point(finalX,finalY,obj_red,true,true)) 
         {
             isMoving = false;
             moveTimer=0;
-            show_message("TO DO: Combat");
+            script_combatTrigger();
             return false;
         
         }
