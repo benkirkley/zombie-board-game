@@ -56,29 +56,30 @@ for(i = 0; i < mainObjectDicePool; i += 1){
     if (result > (attackDice) ) result = attackDice;
     attackResults[i] = result;
     displayResults += "##Dice Roll " + string(i+1);
-    displayResults += "#    Enemy defense: " + string(triggeredObjectDefense) + "#    Your Roll: " + string(result);
+    displayResults += "#    " + string(triggeredObjectName) + " defense: " + string(triggeredObjectDefense) + "#    " + string(mainObjectName) + " Rolls: " + string(result);
     
     if ( result >= triggeredObjectDefense )
     {
-        displayResults += "#---> HIT";
+        displayResults += "#---> SUCCESS";
         numberOfHits += 1;
     }
     else
     {
-        displayResults += "#---> MISS";
+        displayResults += "#---> FAIL";
     }
 }
-displayResults += "##Number of Hits: " + string(numberOfHits);
+displayResults += "##Number of Successes: " + string(numberOfHits);
 var totalDamage = 0;
 if ( numberOfHits > 0 )
 {
     totalDamage = mainObjectDamage
 }
 
-displayResults += "#Total Damage: " + string(totalDamage);
+displayResults += "##" + string(mainObjectName) + "'s DAM stat: " + string(mainObjectDamage);
+displayResults += "#Damage Inflicted: " + string(totalDamage);
 
 triggeredObjectId.hitPoints -= totalDamage;
-displayResults += "#HP Left: " + string(triggeredObjectId.hitPoints); 
+displayResults += "##" + string(triggeredObjectName) + " HP: " + string(triggeredObjectId.hitPoints) + "/" + string(triggeredObjectId.totalHitPoints); 
 show_message(displayResults);
 
 

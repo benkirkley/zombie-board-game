@@ -114,7 +114,9 @@ if (isMoving == true)
         }
         
         var colobject;
-        if (collision_point(finalX,finalY,obj_red,true,true)) 
+        var thisObject = object_get_name(self.object_index); 
+        
+        if ( (collision_point(finalX,finalY,obj_red,true,true)) && thisObject != "obj_red" ) 
         {
             isMoving = false;
             moveTimer=0;
