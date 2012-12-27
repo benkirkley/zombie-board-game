@@ -29,6 +29,8 @@
     <script>scripts\script_combatTrigger.gml</script>
     <script>scripts\script_combatPerform.gml</script>
     <script>scripts\script_player_states.gml</script>
+    <script>scripts\script_collision_perform.gml</script>
+    <script>scripts\script_collision_wall.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>

@@ -100,7 +100,8 @@ if (isMoving == false)
 */
 if (isMoving == true)
 {
-    if (moveTimer == gridSize) {
+    if (moveTimer == gridSize)
+    {
         if (speedX != 0 ){
             finalX = x + ( (gridSize/moveSpeed) * speedX );
         } else {
@@ -113,9 +114,46 @@ if (isMoving == true)
             finalY = y;
         }
         
-        var colobject;
         var thisObject = object_get_name(self.object_index); 
+        var collidableObjects;
+        collidableObjects[0]=obj_blue;
+        collidableObjects[1]=obj_red;
+        collidableObjects[2]=obj_wall;
+        collidableObjects[3]=obj_wall_hidden;
         
+        for (i=0; i < 4; i += 1) {
+            collide = script_collision_perform(collidableObjects[i],self.object_index);
+            if ( collide )
+            {
+                //show_message("collision");
+                script_collision_wall();
+                return false;
+            }
+        }
+       
+        
+        /*
+        if ( (collision_point(finalX,finalY,obj_red,true,true)) && (thisObject != "obj_red") ) 
+        {
+            show_message("Trigger combat");
+            //isMoving = false;
+            //moveTimer=0;
+            //script_combatTrigger(obj_red);
+            return false;
+        
+        }
+        else if ( (collision_point(finalX,finalY,obj_red,true,true)) && (thisObject == "obj_red") )
+        {
+            show_message("Friendly, treat like a wall");
+            isMoving = false;
+            moveTimer=0;
+            actionPoints +=1 ;
+            return false;
+        }
+        */
+        
+        
+        /*
         if ( (collision_point(finalX,finalY,obj_red,true,true)) && thisObject != "obj_red" ) 
         {
             isMoving = false;
@@ -124,7 +162,7 @@ if (isMoving == true)
             return false;
         
         }
-        if (collision_point(finalX,finalY,obj_blue,true,true)) 
+        else if (collision_point(finalX,finalY,obj_blue,true,true) && thisObject != "obj_blue") 
         {
             isMoving = false;
             moveTimer=0;
@@ -146,15 +184,16 @@ if (isMoving == true)
             actionPoints +=1 ;
             return false;
         }
-         
+        */
     }
-
-    x += speedX;
-    y += speedY
-    obj_master.playerYellowBorderId.x = x;
-    obj_master.playerYellowBorderId.y = y;
-    moveTimer -= moveSpeed;
-    if (moveTimer == 0) isMoving = false;
-   
+    
+    if (!collide) {
+        x += speedX;
+        y += speedY
+        obj_master.playerYellowBorderId.x = x;
+        obj_master.playerYellowBorderId.y = y;
+        moveTimer -= moveSpeed;
+        if (moveTimer == 0) isMoving = false;
+    }
     
 }
