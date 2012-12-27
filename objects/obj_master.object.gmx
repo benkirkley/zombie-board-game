@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>totalPlayers = 0;
 global.currentPlayer = 0;
+global.currentTeam = 0;
 global.endTurn=false;
 
 
@@ -52,20 +53,68 @@ global.endTurn=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playerBlueId = instance_create(192,256,obj_blue);
-totalPlayers += 1;
-allPlayers[0,0] = playerBlueId;
-allPlayers[0,1] = "Blue Player";
+            <string>global.numberOfTeams=2;
 
-playerRed1Id = instance_create(64,256,obj_red);
-totalPlayers += 1;
-allPlayers[1,0] = playerRed1Id;
-allPlayers[1,1] = "Red Player 1";
+numberOfBluePlayers = 1;
+numberOfRedPlayers = 2;
 
-playerRed2Id = instance_create(64,160,obj_red);
-totalPlayers += 1;
-allPlayers[2,0] = playerRed2Id;
-allPlayers[2,1] = "Red Player 2";
+startingPositonBlueX = 192;
+startingPositonBlueY = 256;
+
+startingPositonRedX = 64;
+startingPositonRedY = 256;
+
+//Grid: |table_id|group_name|player_count|
+playerGroupsGrid = ds_grid_create(3, 2);
+ds_grid_set(playerGroupsGrid, 0, 0, 0);
+ds_grid_set(playerGroupsGrid, 1, 0, "Blue Team");
+ds_grid_set(playerGroupsGrid, 2, 0, numberOfBluePlayers);
+ds_grid_set(playerGroupsGrid, 0, 1, 1);
+ds_grid_set(playerGroupsGrid, 1, 1, "Red Team");
+ds_grid_set(playerGroupsGrid, 2, 1, numberOfRedPlayers);
+//show_message( ds_grid_get(playerGroupsGrid, 1, 2) );
+
+
+
+//Grid: |instance_id|player_name|
+playerBlueGrid = ds_grid_create(2,numberOfBluePlayers);
+
+for(i = 0; i &lt; numberOfBluePlayers; i += 1)
+{
+    startingPositonBlueY -= (64 * i);
+    var playerBlueId = instance_create(startingPositonBlueX,startingPositonBlueY,obj_blue);
+    
+    totalPlayers += 1;
+    allPlayers[i,0] = playerBlueId;
+    allPlayers[i,1] = "Blue Player";
+    
+    ds_grid_set(playerBlueGrid, 0, i, playerBlueId);
+    ds_grid_set(playerBlueGrid, 1, i, "Blue Player");
+}
+//show_message("height: " + string(ds_grid_height(playerBlueGrid)));
+
+//Grid: |instance_id|player_name|
+playerRedGrid = ds_grid_create(2,numberOfRedPlayers);
+for(j=0; j &lt; numberOfRedPlayers; j += 1)
+{
+    startingPositonRedY -= (64 * i);
+    var playerRedId = instance_create(startingPositonRedX,startingPositonRedY,obj_red);
+    
+    totalPlayers += 1;
+    allPlayers[i+j,0] = playerRedId;
+    allPlayers[i+j,1] = "Red Player " + string(j+1);
+    
+    ds_grid_set(playerRedGrid, 0, j, playerRedId);
+    ds_grid_set(playerRedGrid, 1, j, "Red Player " + string(j+1));
+    //show_message( ds_grid_get(playerRedGrid, j, 1) );
+
+}
+
+teamGrids = ds_grid_create(2,global.numberOfTeams);
+ds_grid_set(teamGrids, 0, 0, 0);
+ds_grid_set(teamGrids, 1, 0, playerBlueGrid);
+ds_grid_set(teamGrids, 0, 1, 0);
+ds_grid_set(teamGrids, 1, 1, playerRedGrid);
 </string>
           </argument>
         </arguments>
@@ -89,10 +138,32 @@ allPlayers[2,1] = "Red Player 2";
           <argument>
             <kind>1</kind>
             <string>if (global.endTurn == true ){
+
     global.endTurn=false;
     global.currentPlayer += 1;
-    if (global.currentPlayer &gt;= totalPlayers) { global.currentPlayer=0 }
+    //if (global.currentPlayer &gt;= totalPlayers) { global.currentPlayer=0 }
     allPlayers[global.currentPlayer,0].actionPoints = allPlayers[global.currentPlayer,0].totalActionPoints;
+    
+    gridCurrentTeam = ds_grid_get(teamGrids, 1, global.currentTeam);
+    //show_message("gridCurrentTeam: "+ string(global.currentTeam));
+    
+    var gridHeight = ds_grid_height(gridCurrentTeam);
+    show_message("currentPlayer: "+ string(global.currentPlayer));
+    show_message("gridHeight: "+ string(gridHeight) );
+    
+    if ( global.currentPlayer &lt; ds_grid_height(gridCurrentTeam) )
+    {
+        gridCurrentPlayer = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+        //show_message("gridCurrentPlayer: "+ string(gridCurrentPlayer));
+    }
+    else
+    {
+        show_message("No more players on team");
+        global.currentTeam += 1;
+        global.currentPlayer = 0;
+        if ( global.currentTeam &gt; global.numberOfTeams-1 ) global.currentTeam = 0;
+    }
+    
 }
 </string>
           </argument>
