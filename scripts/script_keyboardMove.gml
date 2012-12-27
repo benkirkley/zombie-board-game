@@ -126,68 +126,13 @@ if (isMoving == true)
             if ( collide )
             {
                 //show_message("collision");
-                if ( script_collision_wall(collidableObjects[i]) )
-                {
-                    show_message("Blocked");   
-                }
+                //if ( script_collision_wall(collidableObjects[i]) )
+                //{
+                    //show_message("Blocked");   
+                //}
                 return false;
             }
         }
-       
-        
-        /*
-        if ( (collision_point(finalX,finalY,obj_red,true,true)) && (thisObject != "obj_red") ) 
-        {
-            show_message("Trigger combat");
-            //isMoving = false;
-            //moveTimer=0;
-            //script_combatTrigger(obj_red);
-            return false;
-        
-        }
-        else if ( (collision_point(finalX,finalY,obj_red,true,true)) && (thisObject == "obj_red") )
-        {
-            show_message("Friendly, treat like a wall");
-            isMoving = false;
-            moveTimer=0;
-            actionPoints +=1 ;
-            return false;
-        }
-        */
-        
-        
-        /*
-        if ( (collision_point(finalX,finalY,obj_red,true,true)) && thisObject != "obj_red" ) 
-        {
-            isMoving = false;
-            moveTimer=0;
-            script_combatTrigger(obj_red);
-            return false;
-        
-        }
-        else if (collision_point(finalX,finalY,obj_blue,true,true) && thisObject != "obj_blue") 
-        {
-            isMoving = false;
-            moveTimer=0;
-            script_combatTrigger(obj_blue);
-            return false;
-        
-        }
-        else if (collision_point(finalX,finalY,obj_wall,true,true))
-        {
-            isMoving = false;
-            moveTimer=0;
-            actionPoints +=1 ;
-            return false;
-        }
-        else if (collision_point(finalX,finalY,obj_wall_hidden,true,true))
-        {
-            isMoving = false;
-            moveTimer=0;
-            actionPoints +=1 ;
-            return false;
-        }
-        */
     }
     
     if (!collide) {

@@ -58,11 +58,11 @@ global.endTurn=false;
 numberOfBluePlayers = 1;
 numberOfRedPlayers = 2;
 
-startingPositonBlueX = 192;
-startingPositonBlueY = 256;
+startingPositonBlueX = 320;
+startingPositonBlueY = 0;
 
-startingPositonRedX = 64;
-startingPositonRedY = 256;
+startingPositonRedX = 0;
+startingPositonRedY = 128;
 
 //Grid: |table_id|group_name|player_count|
 playerGroupsGrid = ds_grid_create(3, 2);
@@ -102,7 +102,7 @@ playerRedGrid = ds_grid_create(3,numberOfRedPlayers);
 for(j=0; j &lt; numberOfRedPlayers; j += 1)
 {
     totalPlayers += 1;
-    startingPositonRedY -= (64 * i);
+    startingPositonRedY += (384 * j);
     
     //CREATE the instance and assign some initial variables
     var playerRedId = instance_create(startingPositonRedX,startingPositonRedY,obj_red);

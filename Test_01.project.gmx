@@ -8,17 +8,23 @@
   <sprites name="sprites">
     <sprite>sprites\spr_bigGrey</sprite>
     <sprite>sprites\spr_blue</sprite>
+    <sprite>sprites\spr_blue_64</sprite>
     <sprite>sprites\spr_button_endTurn_down</sprite>
     <sprite>sprites\spr_button_endTurn_up</sprite>
     <sprite>sprites\spr_hidden_32</sprite>
+    <sprite>sprites\spr_wall_hidden_64</sprite>
     <sprite>sprites\spr_red</sprite>
+    <sprite>sprites\spr_red_64</sprite>
     <sprite>sprites\spr_wall_barrier</sprite>
     <sprite>sprites\spr_wall_brick</sprite>
     <sprite>sprites\sprite5</sprite>
     <sprite>sprites\spr_yellow_border</sprite>
+    <sprite>sprites\spr_yellow_border_64</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\bg_room1</background>
+    <background>background\bg_room1_64</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -36,21 +42,24 @@
     <font>fonts\font0</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_blue_32</object>
     <object>objects\obj_blue</object>
     <object>objects\obj_button_endTurn</object>
     <object>objects\obj_debug</object>
     <object>objects\obj_info</object>
     <object>objects\obj_infoBg</object>
     <object>objects\obj_master</object>
+    <object>objects\obj_red_32</object>
     <object>objects\obj_red</object>
     <object>objects\obj_stats</object>
     <object>objects\obj_statsWindow</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_wall_hidden_32</object>
     <object>objects\obj_wall_hidden</object>
-    <object>objects\OLD_obj_red</object>
     <object>objects\obj_yellow_border</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room2</room>
     <room>rooms\room0</room>
   </rooms>
   <help>

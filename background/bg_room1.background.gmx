@@ -7,9 +7,9 @@
   <tileyoff>0</tileyoff>
   <tilehsep>0</tilehsep>
   <tilevsep>0</tilevsep>
-  <HTile>-1</HTile>
-  <VTile>-1</VTile>
+  <HTile>0</HTile>
+  <VTile>0</VTile>
   <TextureGroup>0</TextureGroup>
   <For3D>0</For3D>
-  <data>images\background0.png</data>
+  <data>images\bg_room1.png</data>
 </background>
