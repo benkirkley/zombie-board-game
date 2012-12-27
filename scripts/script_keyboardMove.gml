@@ -4,7 +4,10 @@
 */
 if (isMoving == false)
 {
-    if (actionPoints > 0 && obj_master.allPlayers[global.currentPlayer,0] == self.id)
+    gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
+    currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+    
+    if (actionPoints > 0 && currentPlayerId == self.id)
     {
         //Arrow Keys and Numpad Keys
         if ( keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6) )

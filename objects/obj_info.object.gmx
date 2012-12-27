@@ -27,11 +27,17 @@
             <kind>1</kind>
             <string>draw_set_font(font0)
 draw_set_color(c_lime);
-//draw_set_alpha(1);
-draw_text(self.x,self.y,string(obj_master.allPlayers[global.currentPlayer,1])+
-                        "  --  AP: " + string(obj_master.allPlayers[global.currentPlayer,0].actionPoints)+
-                        "/" + string(obj_master.allPlayers[global.currentPlayer,0].totalActionPoints)
+
+gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
+currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+currentPlayerName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
+
+
+draw_text(self.x,self.y,string(currentPlayerName)+
+                        "  --  AP: " + string(currentPlayerId.actionPoints)+
+                        "/" + string(currentPlayerId.totalActionPoints)
 );
+
 </string>
           </argument>
         </arguments>
