@@ -25,18 +25,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(font0)
-draw_set_color(c_lime);
-
-gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
+            <string>gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
 currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
-currentPlayerName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
+isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
 
+if (isCurrentPlayerAlive)
+{
 
-draw_text(self.x,self.y,string(currentPlayerName)+
-                        "  --  AP: " + string(currentPlayerId.actionPoints)+
-                        "/" + string(currentPlayerId.totalActionPoints)
-);
+    draw_set_font(font0)
+    draw_set_color(c_lime);
+    
+    gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
+    currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+    currentPlayerName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
+    
+    
+    draw_text(self.x,self.y,string(currentPlayerName)+
+                            "  --  AP: " + string(currentPlayerId.actionPoints)+
+                            "/" + string(currentPlayerId.totalActionPoints)
+    );
+}
 
 </string>
           </argument>

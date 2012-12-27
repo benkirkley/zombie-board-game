@@ -37,6 +37,8 @@ speedX = 0;
 speedY = 0;
 
 resolveCombat = false;
+thisPlayerId = 0;
+thisTeamId = 0;
 </string>
           </argument>
         </arguments>

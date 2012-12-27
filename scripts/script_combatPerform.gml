@@ -7,7 +7,9 @@ var triggeredObjectHitPoints = argument4;
 var triggeredObjectDamage = argument5;
 
 // Stats for the object attacking
-var mainObjectId = obj_master.allPlayers[global.currentPlayer,0] ;
+//var mainObjectId = obj_master.allPlayers[global.currentPlayer,0] ;
+gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
+var mainObjectId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
 var mainObjectDicePool = mainObjectId.dicePool;
 var mainObjectDefense = mainObjectId.defense;
 var mainObjectAttack = mainObjectId.attack;
@@ -22,9 +24,9 @@ show_message("Triggered Object" +
             "#Att: " + string(triggeredObjectAttack) +
             "#Hit: " + string(triggeredObjectHitPoints)
 );
-*/
 
-/*
+
+
 show_message("Main Object" + 
             "#Dice: " + string(mainObjectDicePool) + 
             "#Def: " + string(mainObjectDefense) +

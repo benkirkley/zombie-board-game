@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var playerId = string( obj_master.allPlayers[global.currentPlayer,0] ) ;
+            <string>//var playerId = string( obj_master.allPlayers[global.currentPlayer,0] ) ;
+
+gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
+currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
 
 draw_set_color(c_navy);
 draw_set_alpha(0.6);
@@ -34,10 +37,10 @@ draw_set_alpha(1);
 
 draw_set_font(font0)
 draw_set_color(c_lime); 
-draw_text(self.x,self.y,"playerID: " + string(playerId) +
+draw_text(self.x,self.y,"playerID: " + string(currentPlayerId) +
                         "#currentPlayer: " + string(global.currentPlayer) +
-                        "#x: " + string((playerId).x) +
-                        "#y: " + string((playerId).y)
+                        "#x: " + string((currentPlayerId).x) +
+                        "#y: " + string((currentPlayerId).y)
 );
 </string>
           </argument>
