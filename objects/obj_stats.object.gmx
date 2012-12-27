@@ -55,7 +55,7 @@
 draw_text(self.x-32,self.y-46,
 "Dice: "+string(global.statsWindowPlayerID.dicePool)+
 "#DEF: "+string(global.statsWindowPlayerID.defense)+
-"#ATT: "+string(global.statsWindowPlayerID.attack)+
+"#DAM: "+string(global.statsWindowPlayerID.damage)+
 "#HP : "+string(global.statsWindowPlayerID.hitPoints)+"/"+string(global.statsWindowPlayerID.totalHitPoints)+
 "#AP : "+string(global.statsWindowPlayerID.actionPoints)+"/"+string(global.statsWindowPlayerID.totalActionPoints)
 );
