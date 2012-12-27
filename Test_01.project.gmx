@@ -15,6 +15,7 @@
     <sprite>sprites\spr_wall_barrier</sprite>
     <sprite>sprites\spr_wall_brick</sprite>
     <sprite>sprites\sprite5</sprite>
+    <sprite>sprites\spr_yellow_border</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -45,6 +46,7 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_hidden</object>
     <object>objects\OLD_obj_red</object>
+    <object>objects\obj_yellow_border</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

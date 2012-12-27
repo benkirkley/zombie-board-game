@@ -124,6 +124,8 @@ ds_grid_set(teamGrids, 0, 0, 0);
 ds_grid_set(teamGrids, 1, 0, playerBlueGrid);
 ds_grid_set(teamGrids, 0, 1, 0);
 ds_grid_set(teamGrids, 1, 1, playerRedGrid);
+
+playerYellowBorderId = instance_create(startingPositonBlueX,startingPositonBlueY,obj_yellow_border);
 </string>
           </argument>
         </arguments>
@@ -210,6 +212,10 @@ ds_grid_set(teamGrids, 1, 1, playerRedGrid);
     
 }
 
+var gridCurrentTeamYellowBorder = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
+var gridPlayerIdYellowBorder  = ds_grid_get(gridCurrentTeamYellowBorder, 0, global.currentPlayer);
+playerYellowBorderId.x = gridPlayerIdYellowBorder.x;
+playerYellowBorderId.y = gridPlayerIdYellowBorder.y;
 </string>
           </argument>
         </arguments>

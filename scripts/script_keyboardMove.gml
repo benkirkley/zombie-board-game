@@ -149,6 +149,8 @@ if (isMoving == true)
 
     x += speedX;
     y += speedY
+    obj_master.playerYellowBorderId.x = x;
+    obj_master.playerYellowBorderId.y = y;
     moveTimer -= moveSpeed;
     if (moveTimer == 0) isMoving = false;
    
