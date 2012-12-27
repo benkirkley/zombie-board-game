@@ -1,15 +1,17 @@
 // Stats for the object being attacked
-var triggeredObjectId = argument0
+var triggeredObjectId = argument0;
 var triggeredObjectDicePool = argument1;
 var triggeredObjectDefense = argument2;
 var triggeredObjectAttack = argument3;
 var triggeredObjectHitPoints = argument4;
 var triggeredObjectDamage = argument5;
+var triggeredObjectName = argument6;
 
 // Stats for the object attacking
 //var mainObjectId = obj_master.allPlayers[global.currentPlayer,0] ;
 gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
 var mainObjectId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+var mainObjectName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
 var mainObjectDicePool = mainObjectId.dicePool;
 var mainObjectDefense = mainObjectId.defense;
 var mainObjectAttack = mainObjectId.attack;
@@ -38,7 +40,13 @@ show_message("Main Object" +
 // Do comabat rolls
 var attackDice = 10;
 var attackResults;
-var displayResults = "Combat Rolls";
+
+var displayResultsPreamble = string(mainObjectName) + " attacks " + string(triggeredObjectName) +
+                            "##" + string(mainObjectName) + " has " + string(mainObjectDicePool) + " chance(s) to " +
+                            "roll a " + string(triggeredObjectDefense) + " on a D" + string(attackDice);     
+show_message(displayResultsPreamble);
+
+var displayResults = "RESULT"
 var numberOfHits = 0;
 
 for(i = 0; i < mainObjectDicePool; i += 1){
@@ -47,7 +55,7 @@ for(i = 0; i < mainObjectDicePool; i += 1){
     if (result < 1) result = 1;
     if (result > (attackDice) ) result = attackDice;
     attackResults[i] = result;
-    displayResults += "##Dice Number " + string(i+1);
+    displayResults += "##Dice Roll " + string(i+1);
     displayResults += "#    Enemy defense: " + string(triggeredObjectDefense) + "#    Your Roll: " + string(result);
     
     if ( result >= triggeredObjectDefense )

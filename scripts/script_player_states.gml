@@ -1,7 +1,7 @@
 if (resolveCombat == true )
 {
     resolveCombat = false;
-    script_combatPerform(id,dicePool,defense,attack,hitPoints,damage);
+    script_combatPerform(id,dicePool,defense,attack,hitPoints,damage,name);
 }
 
 if ( hitPoints <= 0 )
