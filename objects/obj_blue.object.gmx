@@ -62,7 +62,7 @@ thisTeamId = 0;
             <string>/* Initalise stats */
 
 dicePool=2;
-defense=8;
+defense=1;
 attack=2;
 totalHitPoints=3;
 hitPoints=totalHitPoints;

@@ -193,7 +193,6 @@ ds_grid_set(teamGrids, 1, 1, playerRedGrid);
             isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
             if ( global.currentPlayer == ds_grid_height(gridCurrentTeam) )
             {
-                //show_message("Skip");
                 global.currentPlayer = 0;
                 global.currentTeam += 1;
                 if ( global.currentTeam &gt;= global.numberOfTeams ) global.currentTeam = 0 ;
@@ -210,6 +209,7 @@ ds_grid_set(teamGrids, 1, 1, playerRedGrid);
     }
     
 }
+
 </string>
           </argument>
         </arguments>
