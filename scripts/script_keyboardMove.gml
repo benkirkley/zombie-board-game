@@ -126,7 +126,10 @@ if (isMoving == true)
             if ( collide )
             {
                 //show_message("collision");
-                script_collision_wall();
+                if ( script_collision_wall(collidableObjects[i]) )
+                {
+                    show_message("Blocked");   
+                }
                 return false;
             }
         }

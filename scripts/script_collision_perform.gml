@@ -7,7 +7,7 @@ if ( (collision_point(finalX,finalY,objectToCheckWith,true,true)) && (objectToCh
     show_message("Trigger combat");
     //isMoving = false;
     //moveTimer=0;
-    //script_combatTrigger(obj_red);
+    script_combatTrigger(obj_red);
     return true;
 
 }
