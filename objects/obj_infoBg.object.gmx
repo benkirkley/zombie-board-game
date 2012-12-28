@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>draw_set_color(c_navy);
 draw_set_alpha(0.6);
-draw_rectangle(x,y,x+224,y+70,false);
+draw_rectangle(x,y,x+256,y+70,false);
 draw_set_alpha(1);
 </string>
           </argument>

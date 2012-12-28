@@ -58,7 +58,7 @@ global.endTurn=false;
 numberOfBluePlayers = 1;
 numberOfRedPlayers = 2;
 
-startingPositonBlueX = 320;
+startingPositonBlueX = 384;
 startingPositonBlueY = 0;
 
 startingPositonRedX = 0;

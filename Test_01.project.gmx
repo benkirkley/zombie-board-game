@@ -16,6 +16,7 @@
     <sprite>sprites\spr_red</sprite>
     <sprite>sprites\spr_red_64</sprite>
     <sprite>sprites\spr_wall_barrier</sprite>
+    <sprite>sprites\spr_wall_barrier_64</sprite>
     <sprite>sprites\spr_wall_brick</sprite>
     <sprite>sprites\sprite5</sprite>
     <sprite>sprites\spr_yellow_border</sprite>
@@ -59,7 +60,7 @@
     <object>objects\obj_yellow_border</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room2</room>
+    <room>rooms\room_dining</room>
     <room>rooms\room0</room>
   </rooms>
   <help>
