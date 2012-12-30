@@ -9,7 +9,7 @@ if (resolveCombat == true )
 if ( hitPoints <= 0 )
 {
     
-    gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, thisTeamId);
+    gridCurrentTeam = ds_grid_get(global.teamGrids, 1, thisTeamId);
     ds_grid_set(gridCurrentTeam, 2, thisPlayerId, false);
     
     var teamStillHasPlayers = false;
@@ -27,7 +27,7 @@ if ( hitPoints <= 0 )
     
     with (id) instance_destroy();
     if (!teamStillHasPlayers) {
-        teamName = ds_grid_get(obj_master.playerGroupsGrid, 1, global.currentTeam);
+        teamName = ds_grid_get( global.teamGrids, 2, global.currentTeam );
         show_message(string(teamName) + " wins! Restarting game");
         game_restart()
     }

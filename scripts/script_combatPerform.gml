@@ -10,7 +10,7 @@ var triggeredObjectTotalNumberOfAttacks = argument7;
 
 // Stats for the object attacking
 //var mainObjectId = obj_master.allPlayers[global.currentPlayer,0] ;
-gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
+gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
 var mainObjectId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
 var mainObjectName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
 var mainObjectDicePool = mainObjectId.dicePool;

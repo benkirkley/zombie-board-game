@@ -10,7 +10,7 @@ blueSpawnPoint1x = 384;
 blueSpawnPoint1y = 64;
 
 redSpawnPoint1x = 128;
-redSpawnPoint1y = 64;
+redSpawnPoint1y = 128;
 
 /*
 //Which teams and how many players on each team
@@ -40,8 +40,8 @@ ds_grid_set(global.teamGrids, 1, 1, playerRedGrid);
 ds_grid_set(global.teamGrids, 2, 1, "Red");
 ds_grid_set(global.teamGrids, 3, 1, numberOfRedPlayers);
 ds_grid_set(global.teamGrids, 4, 1, obj_red);
-ds_grid_set(global.teamGrids, 5, 0, redSpawnPoint1x);
-ds_grid_set(global.teamGrids, 6, 0, redSpawnPoint1y);
+ds_grid_set(global.teamGrids, 5, 1, redSpawnPoint1x);
+ds_grid_set(global.teamGrids, 6, 1, redSpawnPoint1y);
 
 /*
 //Create players for each team;
@@ -64,7 +64,7 @@ for (i=0; i < global.numberOfTeams; i +=1 )
     objectForThisInstance = ds_grid_get(global.teamGrids, 4, i);
     spawnPointX = ds_grid_get(global.teamGrids, 5, i);
     spawnPointY = ds_grid_get(global.teamGrids, 6, i);
-    
+     
     for (j=0; j < numberOfPlayersOnThisTeam; j += 1)
     {
         script_create_new_player(i, spawnPointX, spawnPointY, objectForThisInstance, nameOfTeam, playersTeamsGrid, j);
