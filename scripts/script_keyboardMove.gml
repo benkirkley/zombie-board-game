@@ -2,10 +2,12 @@
    When not moving, check to see if a direction key is held.
    If so, assign x/y speed and change status to moving.
 */
-if (isMoving == false)
+if (isMoving == false && amICurrentPlayer == true)
 {
+    /*
     gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
     currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+    */
     
     if (actionPoints > 0 && currentPlayerId == self.id)
     {
@@ -138,8 +140,6 @@ if (isMoving == true)
     if (!collide) {
         x += speedX;
         y += speedY
-        obj_master.playerYellowBorderId.x = x;
-        obj_master.playerYellowBorderId.y = y;
         moveTimer -= moveSpeed;
         if (moveTimer == 0) isMoving = false;
     }

@@ -132,66 +132,41 @@ playerYellowBorderId = instance_create(startingPositonBlueX,startingPositonBlueY
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>if (global.endTurn == true )
-{
-    show_message("End Turn button pressed");
-    global.endTurn=false;
-       
-    gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
-    currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
-    
-    currentPlayerId.actionPoints = currentPlayerId.totalActionPoints;
-    
-    var gridHeight = ds_grid_height(gridCurrentTeam);
-    
-    /*
-    show_message("currentTeam: "+ string(global.currentTeam)+
-                 "#currentPlayer: "+ string(global.currentPlayer)+
-                 "#Number of Players in Team: " + string(gridHeight)
-    );
-    */
-    
-    
-    if ( global.currentPlayer &lt; ds_grid_height(gridCurrentTeam)-1 )
-    {
-        show_message("Go to next player on this team");
-        //gridCurrentPlayer = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
-        global.currentPlayer += 1;
-        isNextPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
-        //show_message("Is next player on team alive?: " + string(isNextPlayerAlive));
-        if (!isNextPlayerAlive) {
-            show_message("Next player is dead, skip him.");
-            global.currentPlayer += 1;
-            if ( global.currentPlayer = ds_grid_height(gridCurrentTeam) ) script_turn_next_team();
-        }
-        
-    }
-    else
-    {
-        script_turn_next_team();
-    }
-    
-}
-
-var gridCurrentTeamYellowBorder = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
-var gridPlayerIdYellowBorder  = ds_grid_get(gridCurrentTeamYellowBorder, 0, global.currentPlayer);
-playerYellowBorderId.x = gridPlayerIdYellowBorder.x;
-playerYellowBorderId.y = gridPlayerIdYellowBorder.y;
-</string>
+            <kind>9</kind>
+            <script>script_turn_end_turn</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
