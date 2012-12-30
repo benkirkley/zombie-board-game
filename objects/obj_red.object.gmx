@@ -11,37 +11,41 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>/*
-   Initialize required variables
-*/
-gridSize = 64;     // Should be power of 2 (...8,16,32...)
-isMoving = false;  // Keeps track of when player is moving
-destroyStatsWindow = false;
-moveTimer = 0;  // Counts down from grid size each step
-moveSpeed = 8;     // Do not set higher than grid size!
-speedX = 0;
-speedY = 0;
-
-resolveCombat = false;
-thisPlayerId = 0;
-thisTeamId = 0;
-amICurrentPlayer = false;
-name = 0;
-</string>
+            <kind>9</kind>
+            <script>script_create_player_common_local_vars</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -63,28 +67,27 @@ name = 0;
             <kind>1</kind>
             <string>/* Initalise stats */
 characterBonus = - 1;
-
-
-//randomize();
-//dicePool = floor(random(6)) + characterBonus ;
-//if (dicePool &lt; 1) dicePool = 1;
 dicePool = 1;
 
 randomize();
+
+//Defense
 defense = floor(random(6)) + characterBonus ;
 if (defense &lt; 1) defense = 1;
 
-randomize();
+//Hit Points
 hitPoints = floor(random(4)) + characterBonus ;
 if (hitPoints &lt; 1) hitPoints = 1;
-
 totalHitPoints = hitPoints;
 
-randomize();
+//Action Points
 actionPoints = 2;
 totalActionPoints = actionPoints;
 
+//Damage
 damage = 1;
+
+//Number of Attacks
 totalNumberOfAttacks = 1;
 numberOfAttacks = totalNumberOfAttacks;
 </string>

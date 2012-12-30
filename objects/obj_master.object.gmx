@@ -11,120 +11,81 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>totalPlayers = 0;
-global.currentPlayer = 0;
-global.currentTeam = 0;
-global.endTurn=false;
-
-
-
-
-</string>
+            <kind>9</kind>
+            <script>script_global_vars</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>global.numberOfTeams=2;
-
-numberOfBluePlayers = 1;
-numberOfRedPlayers = 2;
-
-startingPositonBlueX = 384;
-startingPositonBlueY = 0;
-
-startingPositonRedX = 0;
-startingPositonRedY = 128;
-
-//Grid: |table_id|group_name|player_count|
-playerGroupsGrid = ds_grid_create(3, 2);
-ds_grid_set(playerGroupsGrid, 0, 0, 0);
-ds_grid_set(playerGroupsGrid, 1, 0, "Blue Team");
-ds_grid_set(playerGroupsGrid, 2, 0, numberOfBluePlayers);
-ds_grid_set(playerGroupsGrid, 0, 1, 1);
-ds_grid_set(playerGroupsGrid, 1, 1, "Red Team");
-ds_grid_set(playerGroupsGrid, 2, 1, numberOfRedPlayers);
-//show_message( ds_grid_get(playerGroupsGrid, 1, 2) );
-
-
-
-
-playerBlueGrid = ds_grid_create(3,numberOfBluePlayers);
-
-for(i = 0; i &lt; numberOfBluePlayers; i += 1)
-{
-    totalPlayers += 1;
-    startingPositonBlueY -= (64 * i);
-    
-    //CREATE the instance and assign some initial variables
-    var playerBlueId = instance_create(startingPositonBlueX,startingPositonBlueY,obj_blue);
-    playerBlueId.thisPlayerId = i;
-    playerBlueId.thisTeamId = 0;
-    playerBlueId.name = "Blue Player " + string(i+1);
-
-    //NEW GRID: |instance_id|player_name|alive|
-    ds_grid_set(playerBlueGrid, 0, i, playerBlueId);
-    ds_grid_set(playerBlueGrid, 1, i, playerBlueId.name);
-    ds_grid_set(playerBlueGrid, 2, i, true);
-}
-//show_message("Alive: " + string( ds_grid_get(playerBlueGrid, 2, 0) ) );
-
-//Grid: |instance_id|player_name|
-playerRedGrid = ds_grid_create(3,numberOfRedPlayers);
-for(j=0; j &lt; numberOfRedPlayers; j += 1)
-{
-    totalPlayers += 1;
-    startingPositonRedY += (384 * j);
-    
-    //CREATE the instance and assign some initial variables
-    var playerRedId = instance_create(startingPositonRedX,startingPositonRedY,obj_red);
-    playerRedId.thisPlayerId = j;
-    playerRedId.thisTeamId = 1;
-    playerRedId.name = "Red Player " + string(j+1)
-
-    //NEW GRID: |instance_id|player_name|alive|
-    ds_grid_set(playerRedGrid, 0, j, playerRedId);
-    ds_grid_set(playerRedGrid, 1, j, playerRedId.name);
-    ds_grid_set(playerRedGrid, 2, j, true);
-
-}
-
-teamGrids = ds_grid_create(2,global.numberOfTeams);
-ds_grid_set(teamGrids, 0, 0, 0);
-ds_grid_set(teamGrids, 1, 0, playerBlueGrid);
-ds_grid_set(teamGrids, 0, 1, 0);
-ds_grid_set(teamGrids, 1, 1, playerRedGrid);
-
-playerYellowBorderId = instance_create(startingPositonBlueX,startingPositonBlueY,obj_yellow_border);
-</string>
+            <kind>9</kind>
+            <script>script_create_all_teams_and_players</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>

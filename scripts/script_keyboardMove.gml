@@ -120,7 +120,7 @@ if (isMoving == true)
         var collidableObjects;
         collidableObjects[0]=obj_blue;
         collidableObjects[1]=obj_red;
-        collidableObjects[2]=obj_wall;
+        //collidableObjects[2]=obj_wall;
         collidableObjects[3]=obj_wall_hidden;
         
         for (i=0; i < 4; i += 1) {

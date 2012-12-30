@@ -41,24 +41,24 @@
     <script>scripts\script_turn_next_team.gml</script>
     <script>scripts\script_turn_end_turn.gml</script>
     <script>scripts\script_turn_am_i_current_player.gml</script>
+    <script>scripts\script_create_player_common_local_vars.gml</script>
+    <script>scripts\script_create_all_teams_and_players.gml</script>
+    <script>scripts\script_global_vars.gml</script>
+    <script>scripts\script_create_new_player.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_blue_32</object>
+    <object>objects\obj_master</object>
     <object>objects\obj_blue</object>
     <object>objects\obj_button_endTurn</object>
     <object>objects\obj_debug</object>
     <object>objects\obj_info</object>
     <object>objects\obj_infoBg</object>
-    <object>objects\obj_master</object>
-    <object>objects\obj_red_32</object>
     <object>objects\obj_red</object>
     <object>objects\obj_stats</object>
     <object>objects\obj_statsWindow</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_wall_hidden_32</object>
     <object>objects\obj_wall_hidden</object>
     <object>objects\obj_yellow_border</object>
   </objects>
