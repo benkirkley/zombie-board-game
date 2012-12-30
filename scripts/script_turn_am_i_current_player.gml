@@ -1,6 +1,6 @@
 /* Every turn, check if I am the active player */
 
-gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
+gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
 currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
 
 if ( currentPlayerId = self.id )
