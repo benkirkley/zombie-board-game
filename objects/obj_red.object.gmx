@@ -74,10 +74,6 @@ defense = floor(random(6)) + characterBonus ;
 if (defense &lt; 1) defense = 1;
 
 randomize();
-attack = floor(random(6)) + characterBonus ;
-if (attack &lt; 1) attack = 1;
-
-randomize();
 hitPoints = floor(random(4)) + characterBonus ;
 if (hitPoints &lt; 1) hitPoints = 1;
 
@@ -88,6 +84,8 @@ actionPoints = 2;
 totalActionPoints = actionPoints;
 
 damage = 1;
+totalNumberOfAttacks = 1;
+numberOfAttacks = totalNumberOfAttacks;
 </string>
           </argument>
         </arguments>

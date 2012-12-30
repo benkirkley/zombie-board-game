@@ -1,7 +1,7 @@
 if (resolveCombat == true )
 {
     resolveCombat = false;
-    script_combatPerform(id,dicePool,defense,attack,hitPoints,damage,name);
+    script_combatPerform(id,dicePool,defense,numberOfAttacks,hitPoints,damage,name,totalNumberOfAttacks);
 }
 
 if ( hitPoints <= 0 )
@@ -14,10 +14,13 @@ if ( hitPoints <= 0 )
     loopLimit = ds_grid_height(gridCurrentTeam) ;
     for (i=0; i < loopLimit; i +=1 )
     {
-        //show_message( ds_grid_get(gridCurrentTeam, 2, i) );
+        show_message( "Checking for players left alive on Team " + string(gridCurrentTeam) + ": " + string(ds_grid_get(gridCurrentTeam, 2, i)) );
+        //show_message( "Team: " + string(gridCurrentTeam) + ", this player alive: " + string(ds_grid_get(gridCurrentTeam, 2, i)) );
         if ( ds_grid_get(gridCurrentTeam, 2, i) == true )
         {
             var teamStillHasPlayers = true;
+            i = loopLimit; //break loop
+            
         }
     }
     

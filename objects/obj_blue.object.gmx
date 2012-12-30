@@ -63,13 +63,14 @@ thisTeamId = 0;
 
 dicePool=2;
 defense=5;
-attack=2;
 totalHitPoints=3;
 hitPoints=totalHitPoints;
 totalActionPoints=4;
 actionPoints=totalActionPoints;
 
 damage = 2;
+totalNumberOfAttacks = 1;
+numberOfAttacks = totalNumberOfAttacks;
 </string>
           </argument>
         </arguments>

@@ -2,10 +2,11 @@
 var triggeredObjectId = argument0;
 var triggeredObjectDicePool = argument1;
 var triggeredObjectDefense = argument2;
-var triggeredObjectAttack = argument3;
+var triggeredObjectNumberOfAttacks = argument3;
 var triggeredObjectHitPoints = argument4;
 var triggeredObjectDamage = argument5;
 var triggeredObjectName = argument6;
+var triggeredObjectTotalNumberOfAttacks = argument7;
 
 // Stats for the object attacking
 //var mainObjectId = obj_master.allPlayers[global.currentPlayer,0] ;
@@ -14,7 +15,8 @@ var mainObjectId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
 var mainObjectName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
 var mainObjectDicePool = mainObjectId.dicePool;
 var mainObjectDefense = mainObjectId.defense;
-var mainObjectAttack = mainObjectId.attack;
+var mainObjectNumberOfAttacks = mainObjectId.numberOfAttacks;
+var mainObjectTotalNumberOfAttacks = mainObjectId.totalNumberOfAttacks
 var mainObjectHitPoints = mainObjectId.hitPoints;
 var mainObjectDamage = mainObjectId.damage;
 

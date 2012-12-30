@@ -38,6 +38,7 @@
     <script>scripts\script_player_states.gml</script>
     <script>scripts\script_collision_perform.gml</script>
     <script>scripts\script_collision_wall.gml</script>
+    <script>scripts\script_turn_next_team.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
