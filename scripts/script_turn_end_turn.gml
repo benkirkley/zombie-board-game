@@ -23,12 +23,17 @@ if (global.endTurn == true )
         isNextPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
         nextPlayerName = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
         
-        if (!isNextPlayerAlive) {
+        while (!isNextPlayerAlive) {
             //show_message("Next player is dead, skip him.");
             global.currentPlayer += 1;
             if ( global.currentPlayer == ds_grid_height(gridCurrentTeam) )
             {
+                isNextPlayerAlive = 1;
                 script_turn_next_team();
+            }
+            else
+            {
+                isNextPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
             }
         }
         
