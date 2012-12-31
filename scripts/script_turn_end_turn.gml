@@ -11,6 +11,7 @@ if (global.endTurn == true )
     currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
     currentPlayerId.amICurrentPlayer = false;
     currentPlayerId.actionPoints = currentPlayerId.totalActionPoints;
+    currentPlayerId.numberOfAttacks = currentPlayerId.totalNumberOfAttacks;
        
     //Check if there are any other players on this team
     var gridHeight = ds_grid_height(gridCurrentTeam);   

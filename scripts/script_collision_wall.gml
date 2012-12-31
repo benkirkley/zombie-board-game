@@ -5,7 +5,7 @@ blockableObjects[1] = self.object_index;
 
 isMoving = false;
 moveTimer=0;
-actionPoints +=1 ;
+//actionPoints +=1 ;
 
 for (i=0; i < 2; i+= 1)
 {

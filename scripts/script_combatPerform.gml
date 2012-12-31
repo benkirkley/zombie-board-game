@@ -43,14 +43,18 @@ show_message("Main Object" +
 var attackDice = 10;
 var attackResults;
 
+
+//Show a summary of the attack about to take place
 var displayResultsPreamble = string(mainObjectName) + " attacks " + string(triggeredObjectName) +
                             "##" + string(mainObjectName) + " has " + string(mainObjectDicePool) + " chance(s) to " +
                             "roll a " + string(triggeredObjectDefense) + " on a D" + string(attackDice);     
 show_message(displayResultsPreamble);
 
+//Perform the attack
 var displayResults = "RESULT"
 var numberOfHits = 0;
 
+////Main attack loop
 for(i = 0; i < mainObjectDicePool; i += 1){
     randomize();
     var result = floor(random(attackDice)) + 1;

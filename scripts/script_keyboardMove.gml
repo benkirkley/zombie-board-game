@@ -4,14 +4,14 @@
 */
 if (isMoving == false && amICurrentPlayer == true)
 {   
-    if (actionPoints > 0 && currentPlayerId == self.id)
+    if (currentPlayerId == self.id && numberOfAttacks > 0 )
     {
         //Arrow Keys and Numpad Keys
         if ( keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6) )
         {
             destroyStatsWindow = true;
             isMoving = true;
-            actionPoints -=1 ;
+            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = moveSpeed;
             speedY = 0;
@@ -21,7 +21,7 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            actionPoints -=1 ;
+            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = 0;
             speedY = -moveSpeed;
@@ -31,7 +31,7 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            actionPoints -=1 ;
+            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = -moveSpeed;
             speedY = 0;
@@ -41,7 +41,7 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            actionPoints -=1 ;
+            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = 0;
             speedY = moveSpeed;
@@ -52,7 +52,7 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            actionPoints -=1 ;
+            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = -moveSpeed;
             speedY = moveSpeed;
@@ -62,7 +62,7 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            actionPoints -=1 ;
+            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = moveSpeed;
             speedY = moveSpeed;
@@ -72,7 +72,7 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            actionPoints -=1 ;
+            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = -moveSpeed;
             speedY = -moveSpeed;
@@ -82,7 +82,7 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            actionPoints -=1 ;
+            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = moveSpeed;
             speedY = -moveSpeed;
@@ -128,11 +128,16 @@ if (isMoving == true)
         }
     }
     
-    if (!collide) {
+    if ( !collide && actionPoints > 0 ) {
         x += speedX;
         y += speedY
         moveTimer -= moveSpeed;
-        if (moveTimer == 0) isMoving = false;
+        if (moveTimer == 0)
+        {
+            isMoving = false;
+            actionPoints -=1 ;
+            collide = 1;
+        }
     }
     
 }
