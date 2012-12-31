@@ -4,11 +4,12 @@ if (global.endTurn == true )
 {
     //show_message("End Turn button pressed");
     global.endTurn = false;
-    amICurrentPlayer = false;
     
     //Get the current player's id and Action Points   
     gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
     currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+    //Reset variables on turn end
+    currentPlayerId.isMoving = false
     currentPlayerId.amICurrentPlayer = false;
     currentPlayerId.actionPoints = currentPlayerId.totalActionPoints;
     currentPlayerId.numberOfAttacks = currentPlayerId.totalNumberOfAttacks;

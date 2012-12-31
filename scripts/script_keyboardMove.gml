@@ -11,7 +11,6 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = moveSpeed;
             speedY = 0;
@@ -21,7 +20,6 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = 0;
             speedY = -moveSpeed;
@@ -31,7 +29,6 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = -moveSpeed;
             speedY = 0;
@@ -41,7 +38,6 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = 0;
             speedY = moveSpeed;
@@ -52,7 +48,6 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = -moveSpeed;
             speedY = moveSpeed;
@@ -62,7 +57,6 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = moveSpeed;
             speedY = moveSpeed;
@@ -72,7 +66,6 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = -moveSpeed;
             speedY = -moveSpeed;
@@ -82,7 +75,6 @@ if (isMoving == false && amICurrentPlayer == true)
         {
             destroyStatsWindow = true;
             isMoving = true;
-            //actionPoints -=1 ;
             moveTimer = gridSize;
             speedX = moveSpeed;
             speedY = -moveSpeed;
@@ -97,6 +89,7 @@ if (isMoving == false && amICurrentPlayer == true)
 */
 if (isMoving == true)
 {
+    //Check if final resting position is occupied
     if (moveTimer == gridSize)
     {
         if (speedX != 0 ){
@@ -115,10 +108,9 @@ if (isMoving == true)
         var collidableObjects;
         collidableObjects[0]=obj_blue;
         collidableObjects[1]=obj_red;
-        //collidableObjects[2]=obj_wall;
-        collidableObjects[3]=obj_wall_hidden;
+        collidableObjects[2]=obj_wall_hidden;
         
-        for (i=0; i < 4; i += 1) {
+        for (i=0; i < 3; i += 1) {
             collide = script_collision_perform(collidableObjects[i],self.object_index);
             if ( collide )
             {
@@ -128,6 +120,7 @@ if (isMoving == true)
         }
     }
     
+    //Move if no collision and player has moves
     if ( !collide && actionPoints > 0 ) {
         x += speedX;
         y += speedY
