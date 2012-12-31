@@ -8,10 +8,9 @@ if (resolveCombat == true )
 // I died. Is any one else alive on my team?
 if ( hitPoints <= 0 )
 {
+    //show_message(string(thisPlayerId) + " Died");
     gridCurrentTeam = ds_grid_get(global.teamGrids, 1, thisTeamId);
-    
     setPlayerToDead = ds_grid_set(gridCurrentTeam, 2, thisPlayerId, false);
-    //show_message("Died"));
     
     var teamStillHasPlayers = false;
     loopLimit = ds_grid_height(gridCurrentTeam) ;

@@ -21,7 +21,7 @@ while (!isCurrentPlayerAlive)
     global.currentPlayer += 1;
     //gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
     isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
-    show_message("global.currentPlayer: " + string(global.currentPlayer) + " -- Alive: " + string(isCurrentPlayerAlive) );
+    //show_message("global.currentPlayer: " + string(global.currentPlayer) + " -- Alive: " + string(isCurrentPlayerAlive) );
     
     if ( global.currentPlayer == ds_grid_height(gridCurrentTeam) )
     {

@@ -3,8 +3,12 @@ global.numberOfTeams = 2;
 
 numberOfBluePlayers = 1;
 playerBlueGrid = ds_grid_create(3,numberOfBluePlayers);
+
 numberOfRedPlayers = 4;
 playerRedGrid = ds_grid_create(3,numberOfRedPlayers);
+
+numberOfTestPlayers = 2;
+playerTestGrid = ds_grid_create(3,numberOfTestPlayers);
 
 blueSpawnPoint1x = 384;
 blueSpawnPoint1y = 64;
