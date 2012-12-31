@@ -27,7 +27,7 @@ var playerId = instance_create(startingPositionX,startingPositionY,thisObject);
 
 playerId.thisTeamId = teamId;
 //playerId.name = chr(34) + string(teamName) + " Player " + chr(34) + string(i+1);
-playerId.name = string(teamName) + " Player " + string(i+1);
+playerId.name = string(teamName) + " Player " + string(counter+1);
 
 //UPDATE GRID: |instance_id|player_name|alive|
 ds_grid_set(thisTeamsGrid, 0, counter, playerId);

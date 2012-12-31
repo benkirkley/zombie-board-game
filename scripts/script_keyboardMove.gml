@@ -3,12 +3,7 @@
    If so, assign x/y speed and change status to moving.
 */
 if (isMoving == false && amICurrentPlayer == true)
-{
-    /*
-    gridCurrentTeam = ds_grid_get(obj_master.teamGrids, 1, global.currentTeam);
-    currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
-    */
-    
+{   
     if (actionPoints > 0 && currentPlayerId == self.id)
     {
         //Arrow Keys and Numpad Keys
@@ -127,11 +122,7 @@ if (isMoving == true)
             collide = script_collision_perform(collidableObjects[i],self.object_index);
             if ( collide )
             {
-                //show_message("collision");
-                //if ( script_collision_wall(collidableObjects[i]) )
-                //{
-                    //show_message("Blocked");   
-                //}
+                //show_message("Collision");
                 return false;
             }
         }

@@ -29,14 +29,14 @@
 currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
 isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
 
+//show_message( "isCurrentPlayerAlive: " + string(isCurrentPlayerAlive));
+
 if (isCurrentPlayerAlive)
 {
 
     draw_set_font(font0)
     draw_set_color(c_lime);
     
-    gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
-    currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
     currentPlayerName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
     
     
@@ -44,6 +44,7 @@ if (isCurrentPlayerAlive)
                             "  --  AP: " + string(currentPlayerId.actionPoints)+
                             "/" + string(currentPlayerId.totalActionPoints)
     );
+    
 }
 
 </string>
