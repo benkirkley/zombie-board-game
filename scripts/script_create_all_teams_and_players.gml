@@ -5,7 +5,7 @@ global.numberOfTeams = 2;
 numberOfBluePlayers = 1;
 playerBlueGrid = ds_grid_create(3,numberOfBluePlayers);
 
-numberOfRedPlayers = 4;
+numberOfRedPlayers = 6;
 playerRedGrid = ds_grid_create(3,numberOfRedPlayers);
 
 //SCRIPT: create the spawn points where players will appear
@@ -31,13 +31,49 @@ ds_grid_set(global.teamGrids, 5, 1, redSpawnPoints);
 for (i=0; i < global.numberOfTeams; i +=1 )
 {
     numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
+    spawnPointsGrid = ds_grid_get(global.teamGrids, 5, i);
+    //spawnPointX = ds_grid_get(spawnPointsGrid, 1, 0);
+    //spawnPointY = ds_grid_get(spawnPointsGrid, 2, 0);
+    
+    
+    /****
+    var collidableObjects;
+    collidableObjects[0]=obj_player_blue;
+    collidableObjects[1]=obj_player_red;
+    collidableObjects[2]=obj_wall_hidden;
+    ***/
+    
+    numberOfSpawnPoints = ds_grid_height(spawnPointsGrid);
     for (j=0; j < numberOfPlayersOnThisTeam; j += 1)
     {
-        script_create_new_player(i, j);
+        for (k=0; k < numberOfSpawnPoints; k +=1)
+        {
+            spawnPointX = ds_grid_get(spawnPointsGrid, 1, k);
+            spawnPointY = ds_grid_get(spawnPointsGrid, 2, k);
+            
+            if ( instance_position(spawnPointX,spawnPointY,all) )
+            {
+                /*
+                show_message("spawnPointX: " + string(spawnPointX)
+                            +"#spawnPointY: " + string(spawnPointY)
+                            +"#Team: " + string(i) + " - Player: " + string(j)
+                
+                );
+                */
+                if (k == numberOfSpawnPoints-1) show_message("No spawn points left!");
+            }
+            else
+            {
+                script_create_new_player(i, j);
+                k = numberOfSpawnPoints; //break loop
+            }
+        }
+    
+        
+    
+        //script_create_new_player(i, j);
     }
 }
-
-
 
 //Highlight the starting player
 gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
