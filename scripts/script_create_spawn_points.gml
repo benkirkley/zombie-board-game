@@ -1,3 +1,4 @@
+
 //blueSpawnPoint1x = 384;
 //blueSpawnPoint1y = 64;
 //GRID: |spawn_point_id|x|y|
