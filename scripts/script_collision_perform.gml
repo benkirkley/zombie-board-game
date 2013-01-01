@@ -13,7 +13,7 @@ if ( (collision_point(finalX,finalY,objectToCheckWith,true,true)) && (objectToCh
         //show_message("Attack");
         if (thisObject.numberOfAttacks) > 0 {
             thisObject.numberOfAttacks -= 1;
-            script_combatTrigger(objectToCheckWith);
+            script_combat_trigger(objectToCheckWith);
         }
     }
     
@@ -22,9 +22,8 @@ if ( (collision_point(finalX,finalY,objectToCheckWith,true,true)) && (objectToCh
 }
 else if ( (collision_point(finalX,finalY,objectToCheckWith,true,true)) && (objectToCheckWith == thisObject) )
 {
-    show_message("Friendly, treat like a wall");
+    //show_message("Friendly, treat like a wall");
     script_collision_wall(objectToCheckWith)
-    //actionPoints +=1 ;
     return true;
 }
 

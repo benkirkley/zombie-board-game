@@ -29,12 +29,12 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script_destroyStatsWindow.gml</script>
-    <script>scripts\script_mouseEnterLeave.gml</script>
-    <script>scripts\script_keyboardMove.gml</script>
+    <script>scripts\script_destroy_stats_window.gml</script>
+    <script>scripts\script_mouse_enter_leave.gml</script>
+    <script>scripts\script_keyboard_move.gml</script>
     <script>scripts\script_debug.gml</script>
-    <script>scripts\script_combatTrigger.gml</script>
-    <script>scripts\script_combatPerform.gml</script>
+    <script>scripts\script_combat_trigger.gml</script>
+    <script>scripts\script_combat_perform.gml</script>
     <script>scripts\script_player_states.gml</script>
     <script>scripts\script_collision_perform.gml</script>
     <script>scripts\script_collision_wall.gml</script>

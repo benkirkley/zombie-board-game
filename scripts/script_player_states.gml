@@ -2,7 +2,7 @@
 if (resolveCombat == true )
 {
     resolveCombat = false;
-    script_combatPerform(id,dicePool,defense,numberOfAttacks,hitPoints,damage,name,totalNumberOfAttacks);
+    script_combat_perform(id,dicePool,defense,numberOfAttacks,hitPoints,damage,name,totalNumberOfAttacks);
 }
 
 // I died. Is any one else alive on my team?
