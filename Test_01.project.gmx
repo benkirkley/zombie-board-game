@@ -36,6 +36,7 @@
     <script>scripts\script_create_all_teams_and_players.gml</script>
     <script>scripts\script_create_new_player.gml</script>
     <script>scripts\script_create_player_common_local_vars.gml</script>
+    <script>scripts\script_create_spawn_points.gml</script>
     <script>scripts\script_destroy_stats_window.gml</script>
     <script>scripts\script_global_vars.gml</script>
     <script>scripts\script_keyboard_move.gml</script>
@@ -44,7 +45,6 @@
     <script>scripts\script_turn_am_i_current_player.gml</script>
     <script>scripts\script_turn_end_turn.gml</script>
     <script>scripts\script_turn_next_team.gml</script>
-    <script>scripts\script_create_spawn_points.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>

@@ -7,7 +7,7 @@ playerBlueGrid = ds_grid_create(3,numberOfBluePlayers);
 
 numberOfRedPlayers = 4;
 playerRedGrid = ds_grid_create(3,numberOfRedPlayers);
-
+/*
 blueSpawnPoint1x = 384;
 blueSpawnPoint1y = 64;
 //GRID: |spawn_point_id|x|y|
@@ -44,6 +44,8 @@ ds_grid_set(redSpawnPoints,2,4,448);
 ds_grid_set(redSpawnPoints,0,5,1);
 ds_grid_set(redSpawnPoints,1,5,128);
 ds_grid_set(redSpawnPoints,2,5,512);
+*/
+script_create_spawn_points();
 
 //Put all player grids into container grid
 //GRID: |table_id|teams_grid|team_name|team_player_count|
@@ -60,7 +62,6 @@ ds_grid_set(global.teamGrids, 2, 1, "Red");
 ds_grid_set(global.teamGrids, 3, 1, numberOfRedPlayers);
 ds_grid_set(global.teamGrids, 4, 1, obj_player_red);
 ds_grid_set(global.teamGrids, 5, 1, redSpawnPoints);
-
 
 //Create players on each team
 for (i=0; i < global.numberOfTeams; i +=1 )
@@ -82,4 +83,7 @@ for (i=0; i < global.numberOfTeams; i +=1 )
 
 
 //Highlight the starting player
-playerHighlightId = instance_create(blueSpawnPoint1x,blueSpawnPoint1y,obj_player_highlight);
+
+gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
+currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+playerHighlightId = instance_create(currentPlayerId.x,currentPlayerId.y,obj_player_highlight);
