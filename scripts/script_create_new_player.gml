@@ -1,38 +1,39 @@
 /* This script is called to create a new player based on the given parameters */
 
 var teamId = argument0;
-var startingPositionX = argument1;
-var startingPositionY = argument2;
-var thisObject = argument3;
-var teamName = argument4;
-var thisTeamsGrid = argument5;
-var counter = argument6;
+var counter = argument1;
+
+playersTeamsGrid = ds_grid_get(global.teamGrids, 1, teamId);
+nameOfTeam = ds_grid_get(global.teamGrids, 2, teamId);
+numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
+objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
+spawnPointX = ds_grid_get(global.teamGrids, 5, teamId);
+spawnPointY = ds_grid_get(global.teamGrids, 6, teamId);
 
 /*
-show_message("startingPositonX: " + string(startingPositionX)
-            +"#startingPositonY: " + string(startingPositionY)
-            +"#thisObject: " + string(thisObject)
-            +"#teamName: " + string(teamName)
-            +"#thisTeamsGrid: " + string(thisTeamsGrid)
+show_message("startingPositonX: " + string(spawnPointX)
+            +"#startingPositonY: " + string(spawnPointY)
+            +"#objectForThisInstance: " + string(objectForThisInstance)
+            +"#nameOfTeam: " + string(nameOfTeam)
+            +"#playersTeamsGrid: " + string(playersTeamsGrid)
             +"#teamId: " + string(teamId)
             +"#counter: " + string(counter)
             );
 */
 
 global.totalPlayers += 1;
-startingPositionY += (128 * counter);
+spawnPointY += (128 * counter);
 
 //CREATE the instance and assign some initial variables
-var playerId = instance_create(startingPositionX,startingPositionY,thisObject);
+var playerId = instance_create(spawnPointX,spawnPointY,objectForThisInstance);
 
 playerId.thisTeamId = teamId;
 playerId.thisPlayerId = counter;
-//playerId.name = chr(34) + string(teamName) + " Player " + chr(34) + string(i+1);
-playerId.name = string(teamName) + " Player " + string(counter+1);
+playerId.name = string(nameOfTeam) + " Player " + string(counter+1);
 
 //UPDATE GRID: |instance_id|player_name|alive|
-ds_grid_set(thisTeamsGrid, 0, counter, playerId);
-ds_grid_set(thisTeamsGrid, 1, counter, playerId.name);
-ds_grid_set(thisTeamsGrid, 2, counter, true);
+ds_grid_set(playersTeamsGrid, 0, counter, playerId);
+ds_grid_set(playersTeamsGrid, 1, counter, playerId.name);
+ds_grid_set(playersTeamsGrid, 2, counter, true);
 
 

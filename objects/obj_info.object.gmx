@@ -40,9 +40,9 @@ if (isCurrentPlayerAlive)
     currentPlayerName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
     
     
-    draw_text(self.x,self.y,string(currentPlayerName)+
-                            "  --  AP: " + string(currentPlayerId.actionPoints)+
-                            "/" + string(currentPlayerId.totalActionPoints)
+    draw_text(self.x,self.y,string(currentPlayerName)
+                            +"#Moves: " + string(currentPlayerId.actionPoints)+ "/" + string(currentPlayerId.totalActionPoints)
+                            +"#Attacks: " + string(currentPlayerId.numberOfAttacks)+ "/" + string(currentPlayerId.totalNumberOfAttacks)
     );
     
 }

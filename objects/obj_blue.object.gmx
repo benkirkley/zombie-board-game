@@ -75,7 +75,7 @@ totalActionPoints=4;
 actionPoints=totalActionPoints;
 
 damage = 2;
-totalNumberOfAttacks = 2;
+totalNumberOfAttacks = 1;
 numberOfAttacks = totalNumberOfAttacks;
 </string>
           </argument>
