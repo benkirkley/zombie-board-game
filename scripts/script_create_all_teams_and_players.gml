@@ -24,14 +24,14 @@ ds_grid_set(global.teamGrids, 0, 0, 0);
 ds_grid_set(global.teamGrids, 1, 0, playerBlueGrid);
 ds_grid_set(global.teamGrids, 2, 0, "Blue");
 ds_grid_set(global.teamGrids, 3, 0, numberOfBluePlayers);
-ds_grid_set(global.teamGrids, 4, 0, obj_blue);
+ds_grid_set(global.teamGrids, 4, 0, obj_player_blue);
 ds_grid_set(global.teamGrids, 5, 0, blueSpawnPoint1x);
 ds_grid_set(global.teamGrids, 6, 0, blueSpawnPoint1y);
 ds_grid_set(global.teamGrids, 0, 1, 1);
 ds_grid_set(global.teamGrids, 1, 1, playerRedGrid);
 ds_grid_set(global.teamGrids, 2, 1, "Red");
 ds_grid_set(global.teamGrids, 3, 1, numberOfRedPlayers);
-ds_grid_set(global.teamGrids, 4, 1, obj_red);
+ds_grid_set(global.teamGrids, 4, 1, obj_player_red);
 ds_grid_set(global.teamGrids, 5, 1, redSpawnPoint1x);
 ds_grid_set(global.teamGrids, 6, 1, redSpawnPoint1y);
 
@@ -55,4 +55,4 @@ for (i=0; i < global.numberOfTeams; i +=1 )
 
 
 //Highlight the starting player
-playerYellowBorderId = instance_create(blueSpawnPoint1x,blueSpawnPoint1y,obj_yellow_border);
+playerHighlightId = instance_create(blueSpawnPoint1x,blueSpawnPoint1y,obj_player_highlight);

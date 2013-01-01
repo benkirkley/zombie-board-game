@@ -106,8 +106,8 @@ if (isMoving == true)
         
         var thisObject = object_get_name(self.object_index); 
         var collidableObjects;
-        collidableObjects[0]=obj_blue;
-        collidableObjects[1]=obj_red;
+        collidableObjects[0]=obj_player_blue;
+        collidableObjects[1]=obj_player_red;
         collidableObjects[2]=obj_wall_hidden;
         
         for (i=0; i < 3; i += 1) {

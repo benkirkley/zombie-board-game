@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>obj_statsWindow.x</string>
+            <string>obj_stats_window.x</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>obj_statsWindow.y</string>
+            <string>obj_stats_window.y</string>
           </argument>
         </arguments>
       </action>
