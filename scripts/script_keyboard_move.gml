@@ -14,8 +14,7 @@ if (isMoving == false && amICurrentPlayer == true)
         //Arrow Keys and Numpad Keys
         if ( keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6) )
         {
-            direction = 270;
-            image_angle = 270;
+            angle = 270;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -25,8 +24,7 @@ if (isMoving == false && amICurrentPlayer == true)
     
         if ( keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_numpad8) )
         {
-            direction = 0;
-            image_angle = 0;
+            angle = 0;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -36,8 +34,7 @@ if (isMoving == false && amICurrentPlayer == true)
     
         if ((keyboard_check_pressed(vk_left) || keyboard_check_pressed(vk_numpad4)) )
         {
-            direction = 90;
-            image_angle = 90;
+            angle = 90;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -47,8 +44,7 @@ if (isMoving == false && amICurrentPlayer == true)
     
         if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(vk_numpad2) )
         {
-            direction = 180;
-            image_angle = 180;
+            angle = 180;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -59,8 +55,7 @@ if (isMoving == false && amICurrentPlayer == true)
         //Diagonal Numpad Keys
         if ( keyboard_check_pressed(vk_numpad1) )
         {
-            direction = 135;
-            image_angle = 135;
+            angle = 135;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -70,8 +65,7 @@ if (isMoving == false && amICurrentPlayer == true)
         
         if ( keyboard_check_pressed(vk_numpad3) )
         {
-            direction = 225;
-            image_angle = 225;
+            angle = 225;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -81,8 +75,7 @@ if (isMoving == false && amICurrentPlayer == true)
         
         if ( keyboard_check_pressed(vk_numpad7) )
         {
-            direction = 45;
-            image_angle = 45;
+            angle = 45;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -92,8 +85,7 @@ if (isMoving == false && amICurrentPlayer == true)
         
         if ( keyboard_check_pressed(vk_numpad9) )
         {
-            direction = 315;
-            image_angle = 315;
+            angle = 315;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -143,6 +135,8 @@ if (isMoving == true)
     
     //Move if no collision and player has moves
     if ( !collide && actionPoints > 0 ) {
+        direction = angle;
+        image_angle = angle;
         x += speedX;
         y += speedY
         moveTimer -= moveSpeed;

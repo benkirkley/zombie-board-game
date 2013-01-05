@@ -93,7 +93,7 @@ numberOfAttacks = totalNumberOfAttacks;
         <exetype>1</exetype>
         <functionname>action_move_to</functionname>
         <codestring></codestring>
-        <whoName>obj_button_end_turn</whoName>
+        <whoName>obj_stats_window</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -305,7 +305,7 @@ numberOfAttacks = totalNumberOfAttacks;
         <exetype>1</exetype>
         <functionname>action_kill_object</functionname>
         <codestring></codestring>
-        <whoName>obj_button_end_turn</whoName>
+        <whoName>obj_stats_window</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
