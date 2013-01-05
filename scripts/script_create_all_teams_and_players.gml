@@ -32,8 +32,6 @@ for (i=0; i < global.numberOfTeams; i +=1 )
 {
     numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
     spawnPointsGrid = ds_grid_get(global.teamGrids, 5, i);
-    //spawnPointX = ds_grid_get(spawnPointsGrid, 1, 0);
-    //spawnPointY = ds_grid_get(spawnPointsGrid, 2, 0);
     
     
     /****

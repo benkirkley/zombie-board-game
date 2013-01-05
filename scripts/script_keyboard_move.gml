@@ -9,7 +9,7 @@ if (isMoving == false && amICurrentPlayer == true)
     {
         //show_message("Enter debug here");
     }
-    if (currentPlayerId == self.id && numberOfAttacks > 0 )
+    if (currentPlayerId == self.id && ( actionPoints > 0 || numberOfAttacks > 0) )
     {
         //Arrow Keys and Numpad Keys
         if ( keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6) )
