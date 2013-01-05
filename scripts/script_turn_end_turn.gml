@@ -22,6 +22,7 @@ if (global.endTurn == true )
         global.currentPlayer += 1;
         isNextPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
         nextPlayerName = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+        //show_message(nextPlayerName.totalNumberOfAttacks);
         
         while (!isNextPlayerAlive) {
             //show_message("Next player is dead, skip him.");

@@ -4,6 +4,10 @@
 */
 if (isMoving == false && amICurrentPlayer == true)
 {   
+        if ( keyboard_check_pressed(vk_numpad5) )
+        {
+            show_message(numberOfAttacks);
+        }
     if (currentPlayerId == self.id && numberOfAttacks > 0 )
     {
         //Arrow Keys and Numpad Keys

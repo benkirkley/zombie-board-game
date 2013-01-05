@@ -10,9 +10,9 @@ if ( (collision_point(finalX,finalY,objectToCheckWith,true,true)) && (objectToCh
     }
     else
     {
-        //show_message("Attack");
-        if (thisObject.numberOfAttacks) > 0 {
-            thisObject.numberOfAttacks -= 1;
+        var thisInstance = self.id
+        if (thisInstance.numberOfAttacks) > 0 {
+            thisInstance.numberOfAttacks -= 1;
             script_combat_trigger(objectToCheckWith);
         }
     }
