@@ -48,6 +48,7 @@ for (i=0; i < global.numberOfTeams; i +=1 )
     {
         for (k=0; k < numberOfSpawnPoints; k +=1)
         {
+            spawnDirection = ds_grid_get(spawnPointsGrid, 0, k);
             spawnPointX = ds_grid_get(spawnPointsGrid, 1, k);
             spawnPointY = ds_grid_get(spawnPointsGrid, 2, k);
             

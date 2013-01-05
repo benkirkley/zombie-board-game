@@ -4,15 +4,18 @@
 */
 if (isMoving == false && amICurrentPlayer == true)
 {   
-        if ( keyboard_check_pressed(vk_numpad5) )
-        {
-            show_message(numberOfAttacks);
-        }
+    //DEBUG:  use numpad 5 to being up a debug dialog
+    if ( keyboard_check_pressed(vk_numpad5) )
+    {
+        //show_message("Enter debug here");
+    }
     if (currentPlayerId == self.id && numberOfAttacks > 0 )
     {
         //Arrow Keys and Numpad Keys
         if ( keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6) )
         {
+            direction = 270;
+            image_angle = 270;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -22,6 +25,8 @@ if (isMoving == false && amICurrentPlayer == true)
     
         if ( keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_numpad8) )
         {
+            direction = 0;
+            image_angle = 0;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -31,6 +36,8 @@ if (isMoving == false && amICurrentPlayer == true)
     
         if ((keyboard_check_pressed(vk_left) || keyboard_check_pressed(vk_numpad4)) )
         {
+            direction = 90;
+            image_angle = 90;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -40,6 +47,8 @@ if (isMoving == false && amICurrentPlayer == true)
     
         if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(vk_numpad2) )
         {
+            direction = 180;
+            image_angle = 180;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -50,6 +59,8 @@ if (isMoving == false && amICurrentPlayer == true)
         //Diagonal Numpad Keys
         if ( keyboard_check_pressed(vk_numpad1) )
         {
+            direction = 135;
+            image_angle = 135;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -59,6 +70,8 @@ if (isMoving == false && amICurrentPlayer == true)
         
         if ( keyboard_check_pressed(vk_numpad3) )
         {
+            direction = 225;
+            image_angle = 225;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -68,6 +81,8 @@ if (isMoving == false && amICurrentPlayer == true)
         
         if ( keyboard_check_pressed(vk_numpad7) )
         {
+            direction = 45;
+            image_angle = 45;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
@@ -77,6 +92,8 @@ if (isMoving == false && amICurrentPlayer == true)
         
         if ( keyboard_check_pressed(vk_numpad9) )
         {
+            direction = 315;
+            image_angle = 315;
             destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;

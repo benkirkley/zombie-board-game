@@ -9,8 +9,6 @@ numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
 objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
 
 thisTeamsSpawnGrid =  ds_grid_get(global.teamGrids, 5, teamId);
-//spawnPointX = ds_grid_get(thisTeamsSpawnGrid, 1, 0);
-//spawnPointY = ds_grid_get(thisTeamsSpawnGrid, 2, 0);
 
 /*
 show_message("startingPositonX: " + string(spawnPointX)
@@ -24,7 +22,6 @@ show_message("startingPositonX: " + string(spawnPointX)
 */
 
 global.totalPlayers += 1;
-//spawnPointY += (128 * counter);
 
 //CREATE the instance and assign some initial variables
 var playerId = instance_create(spawnPointX,spawnPointY,objectForThisInstance);
@@ -32,6 +29,8 @@ var playerId = instance_create(spawnPointX,spawnPointY,objectForThisInstance);
 playerId.thisTeamId = teamId;
 playerId.thisPlayerId = counter;
 playerId.name = string(nameOfTeam) + " Player " + string(counter+1);
+playerId.direction = spawnDirection;
+playerId.image_angle = spawnDirection;
 
 //UPDATE GRID: |instance_id|player_name|alive|
 ds_grid_set(playersTeamsGrid, 0, counter, playerId);
