@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,27 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
-currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
-isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
+            <string>/*
+draw_set_color(c_navy);
+draw_set_alpha(0.6);
+draw_rectangle(x-6,y-6,x+128,y+70,false);
+draw_set_alpha(1);
+*/
 
-//show_message( "isCurrentPlayerAlive: " + string(isCurrentPlayerAlive));
+draw_set_font(font1)
+draw_set_color(c_white);
+testString = "How To Play"
+            +"##1) Move with arrow keys or numpad. Numpad gives you diagonal movement"
+            +"##2) Mouse over a unit to see its vital stats"
+            +"##3) You can move and attack separately"
+            +"##4) Press Enter or use End Turn button when a player has finished his go"
+            ;
+draw_text_ext(x,y, testString, -1, 224);
 
-if (isCurrentPlayerAlive)
-{
-
-    draw_set_font(font1)
-    draw_set_color(c_lime);
-    
-    currentPlayerName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
-    
-    
-    draw_text(self.x,self.y,string(currentPlayerName)
-                            +"#Moves: " + string(currentPlayerId.actionPoints)+ "/" + string(currentPlayerId.totalActionPoints)
-                            +"#Attacks: " + string(currentPlayerId.numberOfAttacks)+ "/" + string(currentPlayerId.totalNumberOfAttacks)
-    );
-    
-}
 
 </string>
           </argument>
