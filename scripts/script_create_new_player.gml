@@ -31,6 +31,7 @@ playerId.thisPlayerId = counter;
 playerId.name = string(nameOfTeam) + " Player " + string(counter+1);
 playerId.direction = spawnDirection;
 playerId.image_angle = spawnDirection;
+playerId.image_speed=0;
 
 //UPDATE GRID: |instance_id|player_name|alive|
 ds_grid_set(playersTeamsGrid, 0, counter, playerId);

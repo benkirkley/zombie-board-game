@@ -23,6 +23,7 @@
     <sprite>sprites\spr_yellow_border_64</sprite>
     <sprite>sprites\spr_player_blue_64</sprite>
     <sprite>sprites\spr_player_red_64</sprite>
+    <sprite>sprites\spr_player_blue_64_anim</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>

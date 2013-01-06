@@ -8,6 +8,7 @@ if (isMoving == false && amICurrentPlayer == true)
     if ( keyboard_check_pressed(vk_numpad5) )
     {
         //show_message("Enter debug here");
+        show_message(image_index);
     }
     if (currentPlayerId == self.id && ( actionPoints > 0 || numberOfAttacks > 0) )
     {
@@ -138,10 +139,14 @@ if (isMoving == true)
         direction = angle;
         image_angle = angle;
         x += speedX;
-        y += speedY
+        y += speedY;
         moveTimer -= moveSpeed;
+        image_speed=1;
+                
         if (moveTimer == 0)
         {
+            image_speed=0;
+            image_index += 1;
             isMoving = false;
             actionPoints -=1 ;
             collide = 1;
