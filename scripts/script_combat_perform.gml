@@ -48,7 +48,7 @@ var attackResults;
 var displayResultsPreamble = string(mainObjectName) + " attacks " + string(triggeredObjectName) +
                             "##" + string(mainObjectName) + " has " + string(mainObjectDicePool) + " chance(s) to " +
                             "roll a " + string(triggeredObjectDefense) + " on a D" + string(attackDice);     
-show_message(displayResultsPreamble);
+//show_message(displayResultsPreamble);
 
 //Perform the attack
 var displayResults = "RESULT"
@@ -86,8 +86,10 @@ displayResults += "#Damage Inflicted: " + string(totalDamage);
 
 triggeredObjectId.hitPoints -= totalDamage;
 displayResults += "##" + string(triggeredObjectName) + " HP: " + string(triggeredObjectId.hitPoints) + "/" + string(triggeredObjectId.totalHitPoints); 
-show_message(displayResults);
 
+//show_message(displayResults);
+
+script_show_message_box(displayResults);
 
 
 
