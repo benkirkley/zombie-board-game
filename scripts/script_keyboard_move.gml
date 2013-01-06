@@ -16,7 +16,6 @@ if (isMoving == false && amICurrentPlayer == true)
         if ( keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6) )
         {
             angle = 270;
-            destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
             speedX = moveSpeed;
@@ -26,7 +25,6 @@ if (isMoving == false && amICurrentPlayer == true)
         if ( keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_numpad8) )
         {
             angle = 0;
-            destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
             speedX = 0;
@@ -36,7 +34,6 @@ if (isMoving == false && amICurrentPlayer == true)
         if ((keyboard_check_pressed(vk_left) || keyboard_check_pressed(vk_numpad4)) )
         {
             angle = 90;
-            destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
             speedX = -moveSpeed;
@@ -46,7 +43,6 @@ if (isMoving == false && amICurrentPlayer == true)
         if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(vk_numpad2) )
         {
             angle = 180;
-            destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
             speedX = 0;
@@ -57,7 +53,6 @@ if (isMoving == false && amICurrentPlayer == true)
         if ( keyboard_check_pressed(vk_numpad1) )
         {
             angle = 135;
-            destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
             speedX = -moveSpeed;
@@ -67,7 +62,6 @@ if (isMoving == false && amICurrentPlayer == true)
         if ( keyboard_check_pressed(vk_numpad3) )
         {
             angle = 225;
-            destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
             speedX = moveSpeed;
@@ -77,7 +71,6 @@ if (isMoving == false && amICurrentPlayer == true)
         if ( keyboard_check_pressed(vk_numpad7) )
         {
             angle = 45;
-            destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
             speedX = -moveSpeed;
@@ -87,7 +80,6 @@ if (isMoving == false && amICurrentPlayer == true)
         if ( keyboard_check_pressed(vk_numpad9) )
         {
             angle = 315;
-            destroyStatsWindow = true;
             isMoving = true;
             moveTimer = gridSize;
             speedX = moveSpeed;
@@ -142,6 +134,7 @@ if (isMoving == true)
         y += speedY;
         moveTimer -= moveSpeed;
         image_speed=1;
+        script_stats_window_destroy();
                 
         if (moveTimer == 0)
         {

@@ -48,10 +48,9 @@
     <script>scripts\script_turn_am_i_current_player.gml</script>
     <script>scripts\script_turn_end_turn.gml</script>
     <script>scripts\script_turn_next_team.gml</script>
-    <script>scripts\script_stats_window_follow_mouse.gml</script>
-    <script>scripts\script_stats_window_create.gml</script>
-    <script>scripts\script_stats_window_destroy.gml</script>
+    <script>scripts\script_stats_window.gml</script>
     <script>scripts\script_stats_window_text.gml</script>
+    <script>scripts\script_stats_window_destroy.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>

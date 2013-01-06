@@ -41,8 +41,9 @@ if (isCurrentPlayerAlive)
     
     
     draw_text(self.x,self.y,string(currentPlayerName)
-                            +"#Moves: " + string(currentPlayerId.actionPoints)+ "/" + string(currentPlayerId.totalActionPoints)
+                            +"#Moves: " + string(currentPlayerId.actionPoints)+ "/" + string(currentPlayerId.totalActionPoints) 
                             +"#Attacks: " + string(currentPlayerId.numberOfAttacks)+ "/" + string(currentPlayerId.totalNumberOfAttacks)
+                            +"     HP: " + string(currentPlayerId.hitPoints)+ "/" + string(currentPlayerId.totalHitPoints)
     );
     
 }

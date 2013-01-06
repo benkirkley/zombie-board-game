@@ -36,9 +36,10 @@ draw_set_font(font1)
 draw_set_color(c_white);
 testString = "How To Play"
             +"##1) Move with arrow keys or numpad. Numpad gives you diagonal movement"
-            +"##2) Mouse over a unit to see its vital stats"
-            +"##3) You can move and attack separately"
-            +"##4) Press Enter or use End Turn button when a player has finished his go"
+            +"##2) You can move and attack separately"
+            +"##3) Attack by "+chr(34)+"walking"+chr(34)+" into enemy. Only melee combat for now - ranged coming"
+            +"##4) Mouse over a unit to see its vital stats"
+            +"##5) Press Enter or use End Turn button when a player has finished his go"
             ;
 draw_text_ext(x,y, testString, -1, 224);
 

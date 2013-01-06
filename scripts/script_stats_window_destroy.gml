@@ -1,2 +1,5 @@
-with (statsWindowId) 
-    {instance_destroy();}
+    if (statsWindowsId)
+    {   
+        with (statsWindowsId) {instance_destroy();}
+        statsWindowsId = 0;
+    }
