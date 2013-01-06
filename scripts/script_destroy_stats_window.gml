@@ -2,8 +2,8 @@
 
 
 if (destroyStatsWindow == true){
-    if instance_exists(obj_stats_window){ 
-        del_a1 = obj_stats_window.object_index;
+    if instance_exists(statsWindowsId){ 
+        del_a1 = statsWindowsId;
         with (del_a1)
             {instance_destroy();}
     }
