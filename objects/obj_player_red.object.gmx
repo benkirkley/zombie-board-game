@@ -318,7 +318,7 @@ numberOfAttacks = totalNumberOfAttacks;
         <exetype>1</exetype>
         <functionname>action_kill_object</functionname>
         <codestring></codestring>
-        <whoName>obj_stats_window</whoName>
+        <whoName>obj_stats</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
@@ -340,15 +340,15 @@ numberOfAttacks = totalNumberOfAttacks;
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>obj_stats_window</object>
+            <object>obj_stats</object>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>mouse_x + 32</string>
+            <string>mouse_x + 20</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>mouse_y - 46</string>
+            <string>mouse_y + 6</string>
           </argument>
         </arguments>
       </action>
