@@ -6,7 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_bigGrey</sprite>
     <sprite>sprites\spr_blue</sprite>
     <sprite>sprites\spr_blue_64</sprite>
     <sprite>sprites\spr_button_endTurn_down</sprite>
@@ -49,6 +48,10 @@
     <script>scripts\script_turn_am_i_current_player.gml</script>
     <script>scripts\script_turn_end_turn.gml</script>
     <script>scripts\script_turn_next_team.gml</script>
+    <script>scripts\script_stats_window_follow_mouse.gml</script>
+    <script>scripts\script_stats_window_create.gml</script>
+    <script>scripts\script_stats_window_destroy.gml</script>
+    <script>scripts\script_stats_window_text.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -62,7 +65,6 @@
     <object>objects\obj_player_highlight</object>
     <object>objects\obj_player_red</object>
     <object>objects\obj_stats</object>
-    <object>objects\obj_stats_window</object>
     <object>objects\obj_text_debug</object>
     <object>objects\obj_text_info</object>
     <object>objects\obj_wall_hidden</object>

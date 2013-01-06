@@ -14,3 +14,4 @@ thisPlayerId = 0;
 thisTeamId = 0;
 amICurrentPlayer = false;
 name = 0;
+statsWindowsId = 0;
