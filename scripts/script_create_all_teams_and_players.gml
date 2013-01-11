@@ -5,7 +5,7 @@ global.numberOfTeams = 2;
 numberOfBluePlayers = 1;
 playerBlueGrid = ds_grid_create(3,numberOfBluePlayers);
 
-numberOfRedPlayers = 6;
+numberOfRedPlayers = 9;
 playerRedGrid = ds_grid_create(3,numberOfRedPlayers);
 
 //SCRIPT: create the spawn points where players will appear
@@ -32,7 +32,7 @@ for (i=0; i < global.numberOfTeams; i +=1 )
 {
     numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
     spawnPointsGrid = ds_grid_get(global.teamGrids, 5, i);
-    
+    spawnWaitingCount = 0;
     
     /****
     var collidableObjects;
@@ -42,6 +42,15 @@ for (i=0; i < global.numberOfTeams; i +=1 )
     ***/
     
     numberOfSpawnPoints = ds_grid_height(spawnPointsGrid);
+    numberOfSpawnZones = 2;
+    for (ia=0; ia < numberOfSpawnZones; ia +=1)
+    {
+        rollForNumberOfPlayersToSpawn = floor(random(100));
+        if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 49 ) numberOfPlayersToSpawn = 1;
+        if ( rollForNumberOfPlayersToSpawn >= 50 && rollForNumberOfPlayersToSpawn <= 84 ) numberOfPlayersToSpawn = 2;
+        if ( rollForNumberOfPlayersToSpawn >= 85 && rollForNumberOfPlayersToSpawn <= 99 ) numberOfPlayersToSpawn = 3;
+    }
+    
     for (j=0; j < numberOfPlayersOnThisTeam; j += 1)
     {
         for (k=0; k < numberOfSpawnPoints; k +=1)
@@ -59,7 +68,11 @@ for (i=0; i < global.numberOfTeams; i +=1 )
                 
                 );
                 */
-                if (k == numberOfSpawnPoints-1) show_message("No spawn points left!");
+                if (k == numberOfSpawnPoints-1) {
+                    //Add this player to spawn waiting count
+                    //show_message("No spawn points left.");
+                    spawnWaitingCount += 1;
+                }
             }
             else
             {
