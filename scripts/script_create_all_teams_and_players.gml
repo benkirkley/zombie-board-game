@@ -28,9 +28,9 @@ ds_grid_set(global.teamGrids, 4, 1, obj_player_red);
 ds_grid_set(global.teamGrids, 5, 1, redSpawnZones);
 
 //Create players on each team
+//Loop through teams
 for (i=0; i < global.numberOfTeams; i +=1 )
 {
-    //show_message("Team: "+string(i));
     numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
     playerNumberToSpawn = 0;
     
@@ -38,39 +38,25 @@ for (i=0; i < global.numberOfTeams; i +=1 )
     numberOfSpawnZones = ds_grid_height(spawnZones);    
     spawnWaitingCount = 0;
     
+    //Loop through spawn zones
     for (h=0; h < numberOfSpawnZones; h+=1)
     {
-        /*
-        show_message("numberOfSpawnZones: "+string(numberOfSpawnZones)
-                    +"#thisSpawnZone(h): "+string(h)
-        );
-        */
         spawnPointsGrid = ds_grid_get(spawnZones, 0, h);
-        
-         
         numberOfSpawnPoints = ds_grid_height(spawnPointsGrid);
         
+        randomize();
+        rollForNumberOfPlayersToSpawn = floor(random(100));
+        if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 25 ) var numberOfPlayersToSpawn = 1;
+        if ( rollForNumberOfPlayersToSpawn >= 26 && rollForNumberOfPlayersToSpawn <= 60 ) var numberOfPlayersToSpawn = 2;
+        if ( rollForNumberOfPlayersToSpawn >= 61 && rollForNumberOfPlayersToSpawn <= 99 ) var numberOfPlayersToSpawn = 3;
+        //show_message("numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn) );
         
-        for (ia=0; ia < numberOfSpawnZones; ia +=1)
-        {
-            rollForNumberOfPlayersToSpawn = floor(random(100));
-            if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 49 ) var numberOfPlayersToSpawn = 1;
-            if ( rollForNumberOfPlayersToSpawn >= 50 && rollForNumberOfPlayersToSpawn <= 84 ) var numberOfPlayersToSpawn = 2;
-            if ( rollForNumberOfPlayersToSpawn >= 85 && rollForNumberOfPlayersToSpawn <= 99 ) var numberOfPlayersToSpawn = 3;
-        }
-            show_message("numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn) );
-        
+        //Loop through players and spawn, but remember who last player was from previous zone. 
         stopLoopAtThisNumber = numberOfPlayersOnThisTeam + playerNumberToSpawn;
         stopSpawingAtThisPlayerNumber = (numberOfPlayersToSpawn - 1 + playerNumberToSpawn);
         for (j=playerNumberToSpawn; j<stopLoopAtThisNumber; j += 1)
         {
-            /*
-            show_message("j: " + string(j)
-                        +"#playerNumberToSpawn: " + string(playerNumberToSpawn)
-                        +"#total: " + string(stopLoopAtThisNumber)
-                        +"#i: " + string(i)
-            );
-            */
+            //Check if a spawn point is available in this zone
             for (k=0; k < numberOfSpawnPoints; k +=1)
             {
                 spawnDirection = ds_grid_get(spawnPointsGrid, 0, k);
@@ -78,20 +64,11 @@ for (i=0; i < global.numberOfTeams; i +=1 )
                 spawnPointY = ds_grid_get(spawnPointsGrid, 2, k);
                 
                 if ( instance_position(spawnPointX,spawnPointY,all) )
-                {
-                    /*
-                    show_message("spawnPointX: " + string(spawnPointX)
-                                +"#spawnPointY: " + string(spawnPointY)
-                                +"#Team: " + string(i) + " - Player: " + string(j)
-                    
-                    );
-                    */
-                    
+                {                  
                     if (k == numberOfSpawnPoints-1) {
                         //Add this player to spawn waiting count
                         //show_message("No spawn points left.");
                         spawnWaitingCount += 1;
-                        //show_message("spawnWaitingCount: " + string(spawnWaitingCount));
                     }
                 }
                 else
@@ -101,27 +78,9 @@ for (i=0; i < global.numberOfTeams; i +=1 )
                     k = numberOfSpawnPoints; //break loop
                 }
             }
-            //show_message("stopLoopAtThisNumber: "+ string(stopLoopAtThisNumber) );
             if (j == stopSpawingAtThisPlayerNumber )
             {
-                /*
-                show_message("STOP NOW"
-                            +"#j: "+string(j) 
-                            +"#numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn)
-                            +"numberOfPlayersToSpawn - 1 + playerNumberToSpawn: " + string(numberOfPlayersToSpawn - 1 + playerNumberToSpawn)            
-                );
-                */
                 j = stopLoopAtThisNumber 
-            }
-            else
-            {
-                /*
-                show_message("OK"
-                            +"#j: "+string(j) 
-                            +"#numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn)
-                            +"#numberOfPlayersToSpawn - 1 + playerNumberToSpawn: " + string(numberOfPlayersToSpawn - 1 + playerNumberToSpawn)            
-                );
-                */
             }
         }
     }
