@@ -15,12 +15,19 @@ for (h=0; h < numberOfSpawnZones; h+=1)
     var spawnPointsGrid = ds_grid_get(spawnZones, 0, h);
     var numberOfSpawnPoints = ds_grid_height(spawnPointsGrid);
     
-    randomize();
-    var rollForNumberOfPlayersToSpawn = floor(random(100));
-    if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 33 ) var numberOfPlayersToSpawn = 1;
-    if ( rollForNumberOfPlayersToSpawn >= 34 && rollForNumberOfPlayersToSpawn <= 66 ) var numberOfPlayersToSpawn = 2;
-    if ( rollForNumberOfPlayersToSpawn >= 67 && rollForNumberOfPlayersToSpawn <= 99 ) var numberOfPlayersToSpawn = 3;
-    //show_message("numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn) );
+    if (i = 1)
+    {
+        randomize();
+        var rollForNumberOfPlayersToSpawn = floor(random(100));
+        if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 33 ) var numberOfPlayersToSpawn = 1;
+        if ( rollForNumberOfPlayersToSpawn >= 34 && rollForNumberOfPlayersToSpawn <= 66 ) var numberOfPlayersToSpawn = 2;
+        if ( rollForNumberOfPlayersToSpawn >= 67 && rollForNumberOfPlayersToSpawn <= 99 ) var numberOfPlayersToSpawn = 3;
+        //show_message("numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn) );
+    }
+    else
+    {
+        numberOfPlayersToSpawn = numberOfPlayersOnThisTeam;
+    }
     
     //Loop through players and spawn, but remember who last player was from previous zone. 
     var stopLoopAtThisNumber = numberOfPlayersOnThisTeam;

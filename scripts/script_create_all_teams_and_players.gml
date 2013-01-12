@@ -6,7 +6,7 @@ numberOfBluePlayers = 1;
 playerBlueGrid = ds_grid_create(4,numberOfBluePlayers);
 playerBlueDataMap = ds_map_create();
 
-numberOfRedPlayers = 7;
+numberOfRedPlayers = 15;
 playerRedGrid = ds_grid_create(4,numberOfRedPlayers);
 playerRedDataMap = ds_map_create();
 
