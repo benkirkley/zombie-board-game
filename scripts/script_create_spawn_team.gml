@@ -23,15 +23,17 @@ for (h=0; h < numberOfSpawnZones; h+=1)
     //show_message("numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn) );
     
     //Loop through players and spawn, but remember who last player was from previous zone. 
-    var stopLoopAtThisNumber = numberOfPlayersOnThisTeam + playerNumberToSpawn;
+    var stopLoopAtThisNumber = numberOfPlayersOnThisTeam;
     var stopSpawingAtThisPlayerNumber = (numberOfPlayersToSpawn - 1 + playerNumberToSpawn);
-    show_message("Start New Zone"
-                +"#stopLoopAtThisNumber: "+ string(stopLoopAtThisNumber) 
-                +"#stopSpawingAtThisPlayerNumber: "+string(stopSpawingAtThisPlayerNumber)
-                +"#playerNumberToSpawn: "+string(playerNumberToSpawn)
-    );
+    //show_message("Start New Zone"
+    //          +"#stopLoopAtThisNumber: "+ string(stopLoopAtThisNumber) 
+    //            +"#stopSpawingAtThisPlayerNumber: "+string(stopSpawingAtThisPlayerNumber)
+    //            +"#playerNumberToSpawn: "+string(playerNumberToSpawn)
+    //);
+    
     for (j=playerNumberToSpawn; j<stopLoopAtThisNumber; j += 1)
     {
+        
         //Check if a spawn point is available in this zone
         for (k=0; k < numberOfSpawnPoints; k +=1)
         {
@@ -66,7 +68,7 @@ for (h=0; h < numberOfSpawnZones; h+=1)
                 //            +"#playerNumberToSpawn: "+ string(playerNumberToSpawn) 
                 //);
 
-                script_create_new_player(i, j);
+                if ( playerNumberToSpawn < stopLoopAtThisNumber) script_create_new_player(i, j);
                 playerNumberToSpawn += 1;
                 k = numberOfSpawnPoints; //break loop k
             }
