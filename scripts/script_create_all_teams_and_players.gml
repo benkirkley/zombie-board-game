@@ -50,23 +50,24 @@ for (i=0; i < global.numberOfTeams; i +=1 )
          
         numberOfSpawnPoints = ds_grid_height(spawnPointsGrid);
         
-        /*
-        numberOfSpawnZones = 2;
+        
         for (ia=0; ia < numberOfSpawnZones; ia +=1)
         {
             rollForNumberOfPlayersToSpawn = floor(random(100));
-            if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 49 ) numberOfPlayersToSpawn = 1;
-            if ( rollForNumberOfPlayersToSpawn >= 50 && rollForNumberOfPlayersToSpawn <= 84 ) numberOfPlayersToSpawn = 2;
-            if ( rollForNumberOfPlayersToSpawn >= 85 && rollForNumberOfPlayersToSpawn <= 99 ) numberOfPlayersToSpawn = 3;
+            if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 49 ) var numberOfPlayersToSpawn = 1;
+            if ( rollForNumberOfPlayersToSpawn >= 50 && rollForNumberOfPlayersToSpawn <= 84 ) var numberOfPlayersToSpawn = 2;
+            if ( rollForNumberOfPlayersToSpawn >= 85 && rollForNumberOfPlayersToSpawn <= 99 ) var numberOfPlayersToSpawn = 3;
         }
-        */
-        resumePlayerNumber = numberOfPlayersOnThisTeam+playerNumberToSpawn;
-        for (j=playerNumberToSpawn; j < (resumePlayerNumber); j += 1)
+            show_message("numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn) );
+        
+        stopLoopAtThisNumber = numberOfPlayersOnThisTeam + playerNumberToSpawn;
+        stopSpawingAtThisPlayerNumber = (numberOfPlayersToSpawn - 1 + playerNumberToSpawn);
+        for (j=playerNumberToSpawn; j<stopLoopAtThisNumber; j += 1)
         {
             /*
             show_message("j: " + string(j)
                         +"#playerNumberToSpawn: " + string(playerNumberToSpawn)
-                        +"#total: " + string(resumePlayerNumber)
+                        +"#total: " + string(stopLoopAtThisNumber)
                         +"#i: " + string(i)
             );
             */
@@ -100,10 +101,28 @@ for (i=0; i < global.numberOfTeams; i +=1 )
                     k = numberOfSpawnPoints; //break loop
                 }
             }
-        
-            
-        
-            //script_create_new_player(i, j);
+            //show_message("stopLoopAtThisNumber: "+ string(stopLoopAtThisNumber) );
+            if (j == stopSpawingAtThisPlayerNumber )
+            {
+                /*
+                show_message("STOP NOW"
+                            +"#j: "+string(j) 
+                            +"#numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn)
+                            +"numberOfPlayersToSpawn - 1 + playerNumberToSpawn: " + string(numberOfPlayersToSpawn - 1 + playerNumberToSpawn)            
+                );
+                */
+                j = stopLoopAtThisNumber 
+            }
+            else
+            {
+                /*
+                show_message("OK"
+                            +"#j: "+string(j) 
+                            +"#numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn)
+                            +"#numberOfPlayersToSpawn - 1 + playerNumberToSpawn: " + string(numberOfPlayersToSpawn - 1 + playerNumberToSpawn)            
+                );
+                */
+            }
         }
     }
 }
