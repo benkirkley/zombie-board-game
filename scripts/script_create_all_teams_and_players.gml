@@ -31,13 +31,8 @@ ds_grid_set(global.teamGrids, 4, 1, obj_player_red);
 ds_grid_set(global.teamGrids, 5, 1, redSpawnZones);
 ds_grid_set(global.teamGrids, 6, 1, playerRedDataMap);
 
-//Create players on each team
-//Loop through teams
-for (i=0; i < global.numberOfTeams; i +=1 )
-{
-    //SCRIPT: spawn this team
-   script_create_spawn_team(i)
-}
+//SCRIPT: spawn first team
+script_create_spawn_team(global.currentTeam);
 
 //Highlight the starting player
 gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
