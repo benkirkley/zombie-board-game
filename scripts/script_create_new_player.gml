@@ -35,11 +35,13 @@ playerId.direction = spawnDirection;
 playerId.image_angle = spawnDirection;
 playerId.image_speed=0;
 
+
 //UPDATE GRID: |instance_id|player_name|alive|alread_spawned
 ds_grid_set(playersTeamsGrid, 0, counter, playerId);
 ds_grid_set(playersTeamsGrid, 1, counter, playerId.name);
 ds_grid_set(playersTeamsGrid, 2, counter, true);
 ds_grid_set(playersTeamsGrid, 3, counter, true);
+
 
 ds_map_add(playerDataMap,string(counter)+".playerId",playerId);
 ds_map_add(playerDataMap,string(counter)+".name",playerId.name);
