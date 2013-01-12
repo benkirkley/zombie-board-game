@@ -31,6 +31,7 @@ ds_grid_set(global.teamGrids, 5, 1, redSpawnZones);
 //Loop through teams
 for (i=0; i < global.numberOfTeams; i +=1 )
 {
+    /*
     numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
     playerNumberToSpawn = 0;
     
@@ -84,6 +85,12 @@ for (i=0; i < global.numberOfTeams; i +=1 )
             }
         }
     }
+    
+    show_message("global.numberOfTeams: " + string(global.numberOfTeams) 
+                +"#i :" + string(i)
+                );
+    */
+   script_create_spawn_team(i)
 }
 
 //Highlight the starting player

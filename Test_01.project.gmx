@@ -40,18 +40,19 @@
     <script>scripts\script_create_new_player.gml</script>
     <script>scripts\script_create_player_common_local_vars.gml</script>
     <script>scripts\script_create_spawn_points.gml</script>
+    <script>scripts\script_create_spawn_team.gml</script>
     <script>scripts\script_destroy_stats_window.gml</script>
     <script>scripts\script_global_vars.gml</script>
     <script>scripts\script_keyboard_move.gml</script>
     <script>scripts\script_mouse_enter_leave.gml</script>
     <script>scripts\script_player_states.gml</script>
+    <script>scripts\script_show_message_box.gml</script>
+    <script>scripts\script_stats_window.gml</script>
+    <script>scripts\script_stats_window_destroy.gml</script>
+    <script>scripts\script_stats_window_text.gml</script>
     <script>scripts\script_turn_am_i_current_player.gml</script>
     <script>scripts\script_turn_end_turn.gml</script>
     <script>scripts\script_turn_next_team.gml</script>
-    <script>scripts\script_stats_window.gml</script>
-    <script>scripts\script_stats_window_text.gml</script>
-    <script>scripts\script_stats_window_destroy.gml</script>
-    <script>scripts\script_show_message_box.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
