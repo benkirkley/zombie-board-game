@@ -30,7 +30,7 @@ ds_grid_set(global.teamGrids, 5, 1, redSpawnZones);
 //Create players on each team
 for (i=0; i < global.numberOfTeams; i +=1 )
 {
-    show_message("Team: "+string(i));
+    //show_message("Team: "+string(i));
     numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
     playerNumberToSpawn = 0;
     
@@ -40,9 +40,11 @@ for (i=0; i < global.numberOfTeams; i +=1 )
     
     for (h=0; h < numberOfSpawnZones; h+=1)
     {
+        /*
         show_message("numberOfSpawnZones: "+string(numberOfSpawnZones)
                     +"#thisSpawnZone(h): "+string(h)
         );
+        */
         spawnPointsGrid = ds_grid_get(spawnZones, 0, h);
         
          
@@ -61,13 +63,13 @@ for (i=0; i < global.numberOfTeams; i +=1 )
         resumePlayerNumber = numberOfPlayersOnThisTeam+playerNumberToSpawn;
         for (j=playerNumberToSpawn; j < (resumePlayerNumber); j += 1)
         {
+            /*
             show_message("j: " + string(j)
                         +"#playerNumberToSpawn: " + string(playerNumberToSpawn)
                         +"#total: " + string(resumePlayerNumber)
                         +"#i: " + string(i)
-                        
-            
             );
+            */
             for (k=0; k < numberOfSpawnPoints; k +=1)
             {
                 spawnDirection = ds_grid_get(spawnPointsGrid, 0, k);
@@ -88,7 +90,7 @@ for (i=0; i < global.numberOfTeams; i +=1 )
                         //Add this player to spawn waiting count
                         //show_message("No spawn points left.");
                         spawnWaitingCount += 1;
-                        show_message("spawnWaitingCount: " + string(spawnWaitingCount));
+                        //show_message("spawnWaitingCount: " + string(spawnWaitingCount));
                     }
                 }
                 else
