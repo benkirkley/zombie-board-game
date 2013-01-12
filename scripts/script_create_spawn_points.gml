@@ -77,18 +77,14 @@ ds_grid_set(redSpawnZones,0,0,redSpawnPoints);
 ////Spawn 1
 spawn_direction = 270;
 redSpawnPoints = ds_grid_create(3,6)
-ds_grid_set(redSpawnPoints,0,3,spawn_direction);
-ds_grid_set(redSpawnPoints,1,3,96);
-ds_grid_set(redSpawnPoints,2,3,480);
-ds_grid_set(redSpawnPoints,0,4,spawn_direction);
-ds_grid_set(redSpawnPoints,1,4,96);
-ds_grid_set(redSpawnPoints,2,4,544);
-ds_grid_set(redSpawnPoints,0,5,spawn_direction);
-ds_grid_set(redSpawnPoints,1,5,96);
-ds_grid_set(redSpawnPoints,2,5,608);
+ds_grid_set(redSpawnPoints,0,0,spawn_direction);
+ds_grid_set(redSpawnPoints,1,0,96);
+ds_grid_set(redSpawnPoints,2,0,480);
+ds_grid_set(redSpawnPoints,0,1,spawn_direction);
+ds_grid_set(redSpawnPoints,1,1,96);
+ds_grid_set(redSpawnPoints,2,1,544);
+ds_grid_set(redSpawnPoints,0,2,spawn_direction);
+ds_grid_set(redSpawnPoints,1,2,96);
+ds_grid_set(redSpawnPoints,2,2,608);
 
 ds_grid_set(redSpawnZones,0,1,redSpawnPoints);
-
-test = ds_grid_get(blueSpawnZones,0,0);
-test2 = ds_grid_get(test,2,0);
-show_message(test2);
