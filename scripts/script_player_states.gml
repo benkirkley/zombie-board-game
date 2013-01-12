@@ -11,6 +11,7 @@ if ( hitPoints <= 0 )
     //show_message(string(thisPlayerId) + " Died");
     gridCurrentTeam = ds_grid_get(global.teamGrids, 1, thisTeamId);
     setPlayerToDead = ds_grid_set(gridCurrentTeam, 2, thisPlayerId, false);
+    global.numberOfRedPlayersKilled += 1;
     
     var teamStillHasPlayers = false;
     loopLimit = ds_grid_height(gridCurrentTeam) ;
