@@ -4,6 +4,8 @@ var teamId = argument0;
 var counter = argument1;
 
 playersTeamsGrid = ds_grid_get(global.teamGrids, 1, teamId);
+playerDataMap = ds_grid_get(global.teamGrids, 6, teamId);
+
 nameOfTeam = ds_grid_get(global.teamGrids, 2, teamId);
 numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
 objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
@@ -33,9 +35,14 @@ playerId.direction = spawnDirection;
 playerId.image_angle = spawnDirection;
 playerId.image_speed=0;
 
-//UPDATE GRID: |instance_id|player_name|alive|
+//UPDATE GRID: |instance_id|player_name|alive|alread_spawned
 ds_grid_set(playersTeamsGrid, 0, counter, playerId);
 ds_grid_set(playersTeamsGrid, 1, counter, playerId.name);
 ds_grid_set(playersTeamsGrid, 2, counter, true);
+ds_grid_set(playersTeamsGrid, 3, counter, true);
 
+ds_map_add(playerDataMap,string(counter)+".playerId",playerId);
+ds_map_add(playerDataMap,string(counter)+".name",playerId.name);
+ds_map_add(playerDataMap,string(counter)+".is_alive",true);
+ds_map_add(playerDataMap,string(counter)+".has_spawned",true);
 

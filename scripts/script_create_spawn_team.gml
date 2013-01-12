@@ -1,11 +1,13 @@
+/* This script uses a team's spawn point data to spawn players on the board */
+
 i=argument0;
 
 var numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
-var playerNumberToSpawn = 0;
+playerNumberToSpawn = 0;
 
 var spawnZones = ds_grid_get(global.teamGrids, 5, i);
 var numberOfSpawnZones = ds_grid_height(spawnZones);    
-var spawnWaitingCount = 0;
+spawnWaitingCount = 0;
 
 //Loop through spawn zones
 for (h=0; h < numberOfSpawnZones; h+=1)
@@ -42,9 +44,18 @@ for (h=0; h < numberOfSpawnZones; h+=1)
             }
             else
             {
-                script_create_new_player(i, j);
-                playerNumberToSpawn += 1;
-                k = numberOfSpawnPoints; //break loop k
+                gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, i);
+                //show_message( ds_map_find_value(gridCurrentTeamDataMap, (string(j)+".name")) );
+                if ( ds_map_exists(gridCurrentTeamDataMap, (string(j)+".has_spawned")) )
+                {
+                    j += 1
+                }
+                else
+                {
+                    script_create_new_player(i, j);
+                    playerNumberToSpawn += 1;
+                    k = numberOfSpawnPoints; //break loop k
+                }
             }
         }
         if (j == stopSpawingAtThisPlayerNumber )

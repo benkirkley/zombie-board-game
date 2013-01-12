@@ -1,9 +1,10 @@
 /* This script is called to change the active team */
     
-//show_message("No more players on team");
 global.currentPlayer = 0;
 global.currentTeam += 1;
 if ( global.currentTeam >= global.numberOfTeams ) global.currentTeam = 0 ;
+
+script_create_spawn_team(global.currentTeam);
 
 gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
 isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
