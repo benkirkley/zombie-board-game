@@ -6,16 +6,21 @@ image_angle = angle;
 collisionObjectId = collision_point(finalX,finalY,objectToCheckWith,true,true)
 if ( collisionObjectId && (objectToCheckWith != thisObject) ) 
 {
-  if ( script_collision_item(objectToCheckWith) )
+    if ( script_collision_item(objectToCheckWith) )
     {
-        with (collisionObjectId) { instance_destroy(); }
-        id.hitPoints = id.totalHitPoints;
-        return false;
+        //Only allow team0 (blue) to pick up items
+        if (id.thisTeamId == 0)
+        {
+            with (collisionObjectId) { instance_destroy(); }
+            id.hitPoints = id.totalHitPoints;
+        }
+        return false; //no blocking collision
     }
     
     if ( script_collision_wall(objectToCheckWith) )
     {
         //show_message("Blocked");
+        return true; //blocking collision
     }
     else
     {
@@ -26,14 +31,14 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
             script_combat_trigger(objectToCheckWith);
         }
     }
-    return true;
+    return true; //blocking collision
 
 }
 else if ( (collision_point(finalX,finalY,objectToCheckWith,true,true)) && (objectToCheckWith == thisObject) )
 {
     //show_message("Friendly, treat like a wall");
     script_collision_wall(objectToCheckWith)
-    return true;
+    return true; //blocking collision
 }
 
-return false;
+return false; //no blocking collision
