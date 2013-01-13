@@ -28,7 +28,7 @@
             <string>//gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
 //currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
 //isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
-/*
+
 playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 currentPlayerId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");
 isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".is_alive");
@@ -52,7 +52,7 @@ if (isCurrentPlayerAlive)
     );
     
 }
-*/
+
 </string>
           </argument>
         </arguments>

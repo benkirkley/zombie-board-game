@@ -9,10 +9,10 @@ var triggeredObjectName = argument6;
 var triggeredObjectTotalNumberOfAttacks = argument7;
 
 // Stats for the object attacking
-//var mainObjectId = obj_master.allPlayers[global.currentPlayer,0] ;
-gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
-var mainObjectId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
-var mainObjectName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
+playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
+var mainObjectId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");
+var mainObjectName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
+
 var mainObjectDicePool = mainObjectId.dicePool;
 var mainObjectDefense = mainObjectId.defense;
 var mainObjectNumberOfAttacks = mainObjectId.numberOfAttacks;
@@ -88,8 +88,6 @@ triggeredObjectId.hitPoints -= totalDamage;
 displayResults += "##" + string(triggeredObjectName) + " HP: " + string(triggeredObjectId.hitPoints) + "/" + string(triggeredObjectId.totalHitPoints); 
 
 show_message(displayResults);
-
-//script_show_message_box(displayResults);
 
 
 

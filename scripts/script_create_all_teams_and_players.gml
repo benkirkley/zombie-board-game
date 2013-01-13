@@ -3,12 +3,10 @@ global.totalPlayers = 0;
 global.numberOfTeams = 2;
 
 numberOfBluePlayers = 1;
-//playerBlueGrid = ds_grid_create(4,numberOfBluePlayers);
 playerBlueDataMap = ds_map_create();
-ds_map_add(playerBlueDataMap,"numberOfPlayersOnTeam",0);
+ds_map_add(playerBlueDataMap,".numberOfPlayersOnTeam",0);
 
-numberOfRedPlayers = 8;
-//playerRedGrid = ds_grid_create(4,numberOfRedPlayers);
+numberOfRedPlayers = 9;
 playerRedDataMap = ds_map_create();
 ds_map_add(playerRedDataMap,".numberOfPlayersOnTeam",0);
 
@@ -19,14 +17,14 @@ script_create_spawn_points();
 //GRID: |table_id|teams_grid|team_name|team_player_count|
 global.teamGrids = ds_grid_create(7,global.numberOfTeams);
 ds_grid_set(global.teamGrids, 0, 0, 0);
-ds_grid_set(global.teamGrids, 1, 0, 0);
+ds_grid_set(global.teamGrids, 1, 0, 0); //DEFUNCT -- delete me soon
 ds_grid_set(global.teamGrids, 2, 0, "Blue");
 ds_grid_set(global.teamGrids, 3, 0, numberOfBluePlayers);
 ds_grid_set(global.teamGrids, 4, 0, obj_player_blue);
 ds_grid_set(global.teamGrids, 5, 0, blueSpawnZones);
 ds_grid_set(global.teamGrids, 6, 0, playerBlueDataMap);
 ds_grid_set(global.teamGrids, 0, 1, 1);
-ds_grid_set(global.teamGrids, 1, 1, 0);
+ds_grid_set(global.teamGrids, 1, 1, 0); //DEFUNCT -- delete me soon
 ds_grid_set(global.teamGrids, 2, 1, "Red");
 ds_grid_set(global.teamGrids, 3, 1, numberOfRedPlayers);
 ds_grid_set(global.teamGrids, 4, 1, obj_player_red);

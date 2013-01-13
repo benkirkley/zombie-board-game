@@ -8,7 +8,7 @@ if (isMoving == false && amICurrentPlayer == true)
     if ( keyboard_check_pressed(vk_numpad5) )
     {
         //show_message("Enter debug here");
-        show_message(obj_message_box.id);
+        show_message(global.currentPlayer);
     }
     if (currentPlayerId == self.id && ( actionPoints > 0 || numberOfAttacks > 0) )
     {
