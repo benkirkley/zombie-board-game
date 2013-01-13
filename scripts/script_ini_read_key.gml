@@ -1,5 +1,6 @@
 /***************************************************
-  TEXT
+  This script either reads existing values from an
+  INI file, or it creates them using the defaults
  ***************************************************/
 
 section = argument0;

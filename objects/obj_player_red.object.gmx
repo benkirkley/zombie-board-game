@@ -66,30 +66,41 @@
           <argument>
             <kind>1</kind>
             <string>/* Initalise stats */
+
+//DEFAULT VALUES
 characterBonus = - 1;
 dicePool = 1;
+sidedDiceDefense = 6
+sidedDiceHitPoints = 4
+totalActionPoints = 2;
+damage = 1;
+totalNumberOfAttacks = 1;
+
+
+//INI file -- read existing or create using defaults
+ini_open("config.ini");
+    characterBonus = script_ini_read_key("Red_Player_Stats","character_bonus", characterBonus,"real");
+    dicePool = script_ini_read_key("Red_Player_Stats","dice_pool", dicePool,"real");
+    sidedDiceDefense = script_ini_read_key("Red_Player_Stats","sided_dice_defense", sidedDiceDefense,"real");
+    sidedDiceHitPoints = script_ini_read_key("Red_Player_Stats","sided_dice_hit_points", sidedDiceHitPoints,"real");
+    totalActionPoints = script_ini_read_key("Red_Player_Stats","move_points", totalActionPoints,"real");
+    damage = script_ini_read_key("Red_Player_Stats","damage", damage,"real");
+    totalNumberOfAttacks = script_ini_read_key("Red_Player_Stats","number_of_attacks", totalNumberOfAttacks,"real");
+ini_close();
 
 randomize();
 
 //Defense
-defense = floor(random(6)) + characterBonus ;
+defense = floor(random(sidedDiceDefense)) + characterBonus ;
 if (defense &lt; 1) defense = 1;
-
 //Hit Points
-hitPoints = floor(random(4)) + characterBonus ;
-if (hitPoints &lt; 1) hitPoints = 1;
-totalHitPoints = hitPoints;
+totalHitPoints = floor(random(sidedDiceHitPoints)) + characterBonus ;
+if (totalHitPoints &lt; 1) totalHitPoints = 1;
 
-//Action Points
-actionPoints = 2;
-totalActionPoints = actionPoints;
-
-//Damage
-damage = 1;
-
-//Number of Attacks
-totalNumberOfAttacks = 1;
+hitPoints = totalHitPoints;
+actionPoints = totalActionPoints;
 numberOfAttacks = totalNumberOfAttacks;
+
 </string>
           </argument>
         </arguments>

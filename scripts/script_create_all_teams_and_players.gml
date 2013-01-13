@@ -1,14 +1,23 @@
+//DEFAULT VALUES
+global.numberOfTeams = 2;
+numberOfBluePlayers = 1;
+numberOfRedPlayers = 9;
 
+//INI file -- read existing or create using defaults
+ini_open("config.ini");
+    numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", numberOfBluePlayers,"real");
+    numberOfRedPlayers = script_ini_read_key("Start","number_of_red_players", numberOfRedPlayers,"real");
+ini_close();
 
 //Define variables
 global.totalPlayers = 0;
-global.numberOfTeams = 2;
+//global.numberOfTeams = 2;
 
-numberOfBluePlayers = 1;
+//numberOfBluePlayers = 1;
 playerBlueDataMap = ds_map_create();
 ds_map_add(playerBlueDataMap,".numberOfPlayersOnTeam",0);
 
-numberOfRedPlayers = 9;
+//numberOfRedPlayers = 9;
 playerRedDataMap = ds_map_create();
 ds_map_add(playerRedDataMap,".numberOfPlayersOnTeam",0);
 

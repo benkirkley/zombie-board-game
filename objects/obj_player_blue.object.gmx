@@ -67,15 +67,26 @@
             <kind>1</kind>
             <string>/* Initalise stats */
 
+//DEFAULT VALUES
 dicePool=2;
 defense=5;
 totalHitPoints=5;
-hitPoints=totalHitPoints;
 totalActionPoints=4;
-actionPoints=totalActionPoints;
-
 damage = 2;
 totalNumberOfAttacks = 4;
+
+//INI file -- read existing or create using defaults
+ini_open("config.ini");
+    dicePool = script_ini_read_key("Blue_Player_Stats","dice_pool", dicePool,"real");
+    defense = script_ini_read_key("Blue_Player_Stats","defense", defense,"real");
+    totalHitPoints = script_ini_read_key("Blue_Player_Stats","max_hit_points", totalHitPoints,"real");
+    totalActionPoints = script_ini_read_key("Blue_Player_Stats","move_points", totalActionPoints,"real");
+    damage = script_ini_read_key("Blue_Player_Stats","damage", damage,"real");
+    totalNumberOfAttacks = script_ini_read_key("Blue_Player_Stats","number_of_attacks", totalNumberOfAttacks,"real");
+ini_close();
+
+hitPoints=totalHitPoints;
+actionPoints=totalActionPoints;
 numberOfAttacks = totalNumberOfAttacks;
 </string>
           </argument>
