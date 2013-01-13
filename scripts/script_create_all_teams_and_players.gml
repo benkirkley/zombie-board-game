@@ -1,3 +1,5 @@
+
+
 //Define variables
 global.totalPlayers = 0;
 global.numberOfTeams = 2;

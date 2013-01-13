@@ -13,7 +13,7 @@ var dropItemCheck = floor(random(item_drop_chance_dice)) + 1;
 if ( dropItemCheck >= item_drop_chance_fail_start && dropItemCheck <= item_drop_chance_fail_end ) var dropItemCheckResult = 0;
 if ( dropItemCheck >= item_drop_chance_pass_start && dropItemCheck <= item_drop_chance_pass_end ) var dropItemCheckResult = 1;
 //dropItemCheckResult = 1;
-if (global.debug_roll_for_chance_of_item_drop)
+if (global.debug_show_roll_for_chance_of_item_drop)
     show_message("Rolling D100 to see if item drops: " + string(dropItemCheck));
     
 
