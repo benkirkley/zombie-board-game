@@ -93,7 +93,7 @@ if (isMoving == false && amICurrentPlayer == true)
    and update location relevant to set speeds.
    Stop moving when moveTimer reaches zero.
 */
-if (isMoving == true)
+if (isMoving == true || (isMoving == false && moveTimer != 0) )
 {
     //Check if final resting position is occupied
     if (moveTimer == gridSize)

@@ -69,7 +69,7 @@
 
 dicePool=2;
 defense=5;
-totalHitPoints=3;
+totalHitPoints=5;
 hitPoints=totalHitPoints;
 totalActionPoints=4;
 actionPoints=totalActionPoints;

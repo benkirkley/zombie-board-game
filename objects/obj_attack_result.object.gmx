@@ -185,7 +185,7 @@ argument5: the color of the outline
 */
 draw_set_font(thisFont);
 draw_set_alpha(image_alpha);
-    script_draw_text_outline_color(x,y,1,totalDamage,c_white, c_black);
+    script_draw_text_outline_color(x,y,1,totalDamage,c_red, c_black);
 draw_set_alpha(1);
 </string>
           </argument>
