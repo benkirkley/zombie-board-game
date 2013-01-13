@@ -6,22 +6,27 @@ if ( global.currentTeam >= global.numberOfTeams ) global.currentTeam = 0 ;
 
 script_create_spawn_team(global.currentTeam);
 
-gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
-isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
+//gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
+//isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
+playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
+isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(global.currentTeam)+".is_alive");
 
 //Go to next team if all players on this team have had their turn
 while (!isCurrentPlayerAlive)
 {
     //show_message("He's dead, skip him");
     global.currentPlayer += 1;
-    isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
+    isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(counter)+".is_alive");
     
-    if ( global.currentPlayer == ds_grid_height(gridCurrentTeam) )
+    //if ( global.currentPlayer == ds_grid_height(gridCurrentTeam) )
+    if ( global.currentPlayer == ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam") ) 
     {
         global.currentPlayer = 0;
         global.currentTeam += 1;
         if ( global.currentTeam >= global.numberOfTeams ) global.currentTeam = 0 ;
-        gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
-        isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
+        //gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
+        //isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
+        playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
+        isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(counter)+".is_alive");
     }
 }

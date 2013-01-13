@@ -7,14 +7,12 @@ playerNumberToSpawn = 0;
 
 var spawnZones = ds_grid_get(global.teamGrids, 5, i);
 var numberOfSpawnZones = ds_grid_height(spawnZones);    
-spawnWaitingCount = 0;
 
 //Loop through spawn zones
 for (h=0; h < numberOfSpawnZones; h+=1)
 {
     var spawnPointsGrid = ds_grid_get(spawnZones, 0, h);
     var numberOfSpawnPoints = ds_grid_height(spawnPointsGrid);
-    
     if (i = 1)
     {
         randomize();
@@ -32,10 +30,8 @@ for (h=0; h < numberOfSpawnZones; h+=1)
     //Loop through players and spawn, but remember who last player was from previous zone. 
     var stopLoopAtThisNumber = numberOfPlayersOnThisTeam;
     var stopSpawingAtThisPlayerNumber = (numberOfPlayersToSpawn - 1 + playerNumberToSpawn);
-    
     for (j=playerNumberToSpawn; j<stopLoopAtThisNumber; j += 1)
     {
-        
         //Check if a spawn point is available in this zone
         for (k=0; k < numberOfSpawnPoints; k +=1)
         {
@@ -54,8 +50,7 @@ for (h=0; h < numberOfSpawnZones; h+=1)
                     playerNumberToSpawn += 1;
                     stopSpawingAtThisPlayerNumber += 1;
                 }
-
-                if ( playerNumberToSpawn < stopLoopAtThisNumber) 
+                if ( playerNumberToSpawn < stopLoopAtThisNumber)     
                     script_create_new_player(i, j);
                 playerNumberToSpawn += 1;
                 k = numberOfSpawnPoints; //break loop k

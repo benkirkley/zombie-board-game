@@ -25,9 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
-currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
-isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
+            <string>//gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
+//currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+//isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
+/*
+playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
+currentPlayerId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");
+isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".is_alive");
 
 //show_message( "isCurrentPlayerAlive: " + string(isCurrentPlayerAlive));
 
@@ -37,7 +41,8 @@ if (isCurrentPlayerAlive)
     draw_set_font(font1)
     draw_set_color(c_lime);
     
-    currentPlayerName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
+    //currentPlayerName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
+    currentPlayerName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
     
     
     draw_text(self.x,self.y,string(currentPlayerName)
@@ -47,7 +52,7 @@ if (isCurrentPlayerAlive)
     );
     
 }
-
+*/
 </string>
           </argument>
         </arguments>

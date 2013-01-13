@@ -54,7 +54,7 @@
           <argument>
             <kind>1</kind>
             <string>gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
-currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
+//currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
 totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
 
 draw_set_color(c_navy);

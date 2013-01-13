@@ -9,12 +9,16 @@ if (resolveCombat == true )
 if ( hitPoints <= 0 )
 {
     //show_message(string(thisPlayerId) + " Died");
-    gridCurrentTeam = ds_grid_get(global.teamGrids, 1, thisTeamId);
-    setPlayerToDead = ds_grid_set(gridCurrentTeam, 2, thisPlayerId, false);
+    //gridCurrentTeam = ds_grid_get(global.teamGrids, 1, thisTeamId);
+    //setPlayerToDead = ds_grid_set(gridCurrentTeam, 2, thisPlayerId, false);
+    playerDataMap = ds_grid_get(global.teamGrids, 6, teamId);
+    setPlayerToDead = ds_map_replace(playerDataMap,"is_alive",false);
+    
     global.numberOfRedPlayersKilled += 1;
     
     var teamStillHasPlayers = false;
-    loopLimit = ds_grid_height(gridCurrentTeam) ;
+    //loopLimit = ds_grid_height(gridCurrentTeam) ;
+    loopLimit = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
     for (i=0; i < loopLimit; i +=1 )
     {
         //show_message( "Checking for players left alive on Team " + string(gridCurrentTeam) + ": " + string(ds_grid_get(gridCurrentTeam, 2, i)) );
