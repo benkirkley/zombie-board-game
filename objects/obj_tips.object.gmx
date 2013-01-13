@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>refreshText = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -31,18 +54,24 @@ draw_set_alpha(0.6);
 draw_rectangle(x-6,y-6,x+128,y+70,false);
 draw_set_alpha(1);
 */
-
-draw_set_font(font1)
-draw_set_color(c_white);
-testString = "How To Play"
-            +"##1) Move with arrow keys or numpad. Numpad gives you diagonal movement"
-            +"##2) You can move and attack separately"
-            +"##3) Attack by "+chr(34)+"walking"+chr(34)+" into enemy. Only melee combat for now - ranged coming"
-            +"##4) Mouse over a unit to see its vital stats"
-            +"##5) Press Enter or use End Turn button when a player has finished his go"
-            ;
-draw_text_ext(x,y, testString, -1, 224);
-
+if (refreshText)
+{
+    refreshText = false;
+    
+    currentAlpha =  draw_get_alpha();
+    draw_set_alpha(1);
+    draw_set_font(font1)
+    draw_set_color(c_white);
+    testString = "How To Play"
+                +"##1) Move with arrow keys or numpad. Numpad gives you diagonal movement"
+                +"##2) You can move and attack separately"
+                +"##3) Attack by "+chr(34)+"walking"+chr(34)+" into enemy. Only melee combat for now - ranged coming"
+                +"##4) Mouse over a unit to see its vital stats"
+                +"##5) Press Enter or use End Turn button when a player has finished his go"
+                ;
+    draw_text_ext(x,y, testString, -1, 224);
+    draw_set_alpha(currentAlpha);
+}
 
 </string>
           </argument>

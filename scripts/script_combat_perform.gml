@@ -92,6 +92,19 @@ displayResults += "##" + string(triggeredObjectName) + " HP: " + string(triggere
 if (global.debug_show_combat_rolls )
     show_message(displayResults);
 
+    
+//TEXT: Floating daamage results above target's head
 combatResultFeedback = instance_create(triggeredObjectId.x,triggeredObjectId.y,obj_attack_result);
+if (totalDamage = 0)
+{
+    totalDamage = "MISS";
+    thisFont = combat_result_small
+}
+else
+{
+    thisFont = combat_result_big
+}
+combatResultFeedback.totalDamage = totalDamage;
+combatResultFeedback.thisFont = thisFont
 
 

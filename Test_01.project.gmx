@@ -56,11 +56,13 @@
     <script>scripts\script_turn_am_i_current_player.gml</script>
     <script>scripts\script_turn_end_turn.gml</script>
     <script>scripts\script_turn_next_team.gml</script>
+    <script>scripts\script_draw_text_outline_color.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
     <font>fonts\font1</font>
-    <font>fonts\font2</font>
+    <font>fonts\combat_result_small</font>
+    <font>fonts\combat_result_big</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_button_end_turn</object>
