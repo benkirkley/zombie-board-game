@@ -4,8 +4,7 @@ itemList[0] = obj_item_health;
 randomize();
 var dropItemCheck = floor(random(100));
 if ( dropItemCheck >= 0 && dropItemCheck <= 75 ) var dropItemCheckResult = 0;
-if ( dropItemCheck >= 67 && dropItemCheck <= 99 ) var dropItemCheckResult = 1;
-show_message("dropItemCheckResult: "+ string(dropItemCheckResult) );
+if ( dropItemCheck >= 76 && dropItemCheck <= 99 ) var dropItemCheckResult = 1;
 
 if ( dropItemCheckResult )
 {
