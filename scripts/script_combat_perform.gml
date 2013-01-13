@@ -99,15 +99,18 @@ if (totalDamage = 0)
 {
     totalDamage = "MISS";
     thisFont = combat_result_small
+    thisFillColor = c_white
 }
 else
 {
     thisFont = combat_result_big
+    thisFillColor = c_red
 }
 
 combatResultFeedback = instance_create(triggeredObjectId.x,triggeredObjectId.y,obj_attack_result);
+combatResultFeedback.thisFont = thisFont;
 combatResultFeedback.thisText = string(totalDamage);
-combatResultFeedback.thisFillColor = c_red;
+combatResultFeedback.thisFillColor = thisFillColor;
 combatResultFeedback.thisOutlineColor = c_black;
 
 
