@@ -15,7 +15,7 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
             id.hitPoints = id.totalHitPoints;
             
             combatResultFeedback = instance_create(x,y,obj_attack_result);
-            combatResultFeedback.thisText = string(id.totalHitPoints);
+            combatResultFeedback.thisText = "+" + string(id.totalHitPoints) + " HP";
             combatResultFeedback.thisFillColor = c_lime;
             combatResultFeedback.thisOutlineColor = c_black;
         }

@@ -12,7 +12,7 @@ if (global.endTurn == true )
   
     
     //Reset variables on turn end
-    currentPlayerId.isMoving = false
+    if (currentPlayerId.actionPoints == 0) currentPlayerId.isMoving = false
     currentPlayerId.amICurrentPlayer = false;
     currentPlayerId.actionPoints = currentPlayerId.totalActionPoints;
     currentPlayerId.numberOfAttacks = currentPlayerId.totalNumberOfAttacks; 
