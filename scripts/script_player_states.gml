@@ -9,6 +9,7 @@ if (resolveCombat == true )
 if ( hitPoints <= 0 )
 {
     //show_message(string(thisPlayerId) + " Died");
+    totalNumberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, thisTeamId)
     playerDataMap = ds_grid_get(global.teamGrids, 6, thisTeamId);
     ds_map_replace(playerDataMap,string(thisPlayerId) + ".is_alive",false);
     
@@ -30,7 +31,7 @@ if ( hitPoints <= 0 )
     }
     
     with (id) instance_destroy();
-    if (!teamStillHasPlayers) {
+    if (!teamStillHasPlayers && (loopLimit >= totalNumberOfPlayersOnThisTeam) ) {
         teamName = ds_grid_get( global.teamGrids, 2, global.currentTeam );
         show_message(string(teamName) + " wins! Restarting game");
         game_restart()

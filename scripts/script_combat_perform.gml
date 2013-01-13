@@ -92,5 +92,6 @@ displayResults += "##" + string(triggeredObjectName) + " HP: " + string(triggere
 if (global.debug_show_combat_rolls )
     show_message(displayResults);
 
+combatResultFeedback = instance_create(triggeredObjectId.x,triggeredObjectId.y,obj_attack_result);
 
 

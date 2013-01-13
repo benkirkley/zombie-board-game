@@ -76,6 +76,7 @@
     <object>objects\obj_tips</object>
     <object>objects\obj_message_box</object>
     <object>objects\obj_item_health</object>
+    <object>objects\obj_attack_result</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_dining</room>
