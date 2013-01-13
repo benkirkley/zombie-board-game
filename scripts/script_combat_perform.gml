@@ -94,7 +94,7 @@ if (global.debug_show_combat_rolls )
 
     
 //TEXT: Floating daamage results above target's head
-combatResultFeedback = instance_create(triggeredObjectId.x,triggeredObjectId.y,obj_attack_result);
+////Show no damage as text instead of zero
 if (totalDamage = 0)
 {
     totalDamage = "MISS";
@@ -104,7 +104,10 @@ else
 {
     thisFont = combat_result_big
 }
+
+combatResultFeedback = instance_create(triggeredObjectId.x,triggeredObjectId.y,obj_attack_result);
 combatResultFeedback.totalDamage = totalDamage;
-combatResultFeedback.thisFont = thisFont
+combatResultFeedback.thisFillColor = c_red;
+combatResultFeedback.thisOutlineColor = c_black;
 
 
