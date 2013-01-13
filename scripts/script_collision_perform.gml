@@ -3,8 +3,16 @@ var thisObject = argument1;
 direction = angle;
 image_angle = angle;
 
-if ( (collision_point(finalX,finalY,objectToCheckWith,true,true)) && (objectToCheckWith != thisObject) ) 
+collisionObjectId = collision_point(finalX,finalY,objectToCheckWith,true,true)
+if ( collisionObjectId && (objectToCheckWith != thisObject) ) 
 {
+  if ( script_collision_item(objectToCheckWith) )
+    {
+        with (collisionObjectId) { instance_destroy(); }
+        id.hitPoints = id.totalHitPoints;
+        return false;
+    }
+    
     if ( script_collision_wall(objectToCheckWith) )
     {
         //show_message("Blocked");
@@ -18,7 +26,6 @@ if ( (collision_point(finalX,finalY,objectToCheckWith,true,true)) && (objectToCh
             script_combat_trigger(objectToCheckWith);
         }
     }
-    
     return true;
 
 }

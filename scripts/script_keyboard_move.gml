@@ -115,8 +115,10 @@ if (isMoving == true)
         collidableObjects[0]=obj_player_blue;
         collidableObjects[1]=obj_player_red;
         collidableObjects[2]=obj_wall_hidden;
+        collidableObjects[3]=obj_item_health;
         
-        for (i=0; i < 3; i += 1) {
+        for (i=0; i < 4; i += 1)
+        {          
             collide = script_collision_perform(collidableObjects[i],self.object_index);
             if ( collide )
             {
@@ -125,9 +127,9 @@ if (isMoving == true)
             }
         }
     }
-    
     //Move if no collision and player has moves
     if ( !collide && actionPoints > 0 ) {
+        
         direction = angle;
         image_angle = angle;
         x += speedX;

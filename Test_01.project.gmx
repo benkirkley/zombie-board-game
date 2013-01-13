@@ -24,6 +24,7 @@
     <sprite>sprites\spr_player_red_64</sprite>
     <sprite>sprites\spr_player_blue_64_anim</sprite>
     <sprite>sprites\sprite_player_red_64_anim</sprite>
+    <sprite>sprites\spr_item_health</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -32,6 +33,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\script_collision_item.gml</script>
     <script>scripts\script_collision_perform.gml</script>
     <script>scripts\script_collision_wall.gml</script>
     <script>scripts\script_combat_perform.gml</script>
@@ -42,6 +44,7 @@
     <script>scripts\script_create_spawn_points.gml</script>
     <script>scripts\script_create_spawn_team.gml</script>
     <script>scripts\script_destroy_stats_window.gml</script>
+    <script>scripts\script_drop_random_item.gml</script>
     <script>scripts\script_global_vars.gml</script>
     <script>scripts\script_keyboard_move.gml</script>
     <script>scripts\script_mouse_enter_leave.gml</script>
@@ -72,6 +75,7 @@
     <object>objects\obj_wall_hidden</object>
     <object>objects\obj_tips</object>
     <object>objects\obj_message_box</object>
+    <object>objects\obj_item_health</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_dining</room>

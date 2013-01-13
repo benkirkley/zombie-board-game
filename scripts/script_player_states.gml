@@ -36,5 +36,6 @@ if ( hitPoints <= 0 )
         game_restart()
     }
     
+    script_drop_random_item();
 }
 
