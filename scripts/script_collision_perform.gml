@@ -13,6 +13,11 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
         {
             with (collisionObjectId) { instance_destroy(); }
             id.hitPoints = id.totalHitPoints;
+            
+            combatResultFeedback = instance_create(x,y,obj_attack_result);
+            combatResultFeedback.thisText = string(id.totalHitPoints);
+            combatResultFeedback.thisFillColor = c_lime;
+            combatResultFeedback.thisOutlineColor = c_black;
         }
         return false; //no blocking collision
     }

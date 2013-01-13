@@ -49,7 +49,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>totalDamage = 0;
+            <string>thisText = 0;
 thisFont = combat_result_big;
 thisFillColor = 0;
 thisOutlineColor = 0;
@@ -173,7 +173,7 @@ else
 
 draw_set_font(thisFont);
 draw_set_alpha(image_alpha);
-    script_draw_text_outline_color(x,y,1,totalDamage,thisFillColor, thisOutlineColor);
+    script_draw_text_outline_color(x,y,1,thisText,thisFillColor, thisOutlineColor);
 draw_set_alpha(1);
 </string>
           </argument>

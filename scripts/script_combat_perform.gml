@@ -106,7 +106,7 @@ else
 }
 
 combatResultFeedback = instance_create(triggeredObjectId.x,triggeredObjectId.y,obj_attack_result);
-combatResultFeedback.totalDamage = totalDamage;
+combatResultFeedback.thisText = string(totalDamage);
 combatResultFeedback.thisFillColor = c_red;
 combatResultFeedback.thisOutlineColor = c_black;
 
