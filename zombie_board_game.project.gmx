@@ -62,6 +62,7 @@
   <fonts name="fonts">
     <font>fonts\font0</font>
     <font>fonts\font1</font>
+    <font>fonts\font_inventory</font>
     <font>fonts\combat_result_small</font>
     <font>fonts\combat_result_big</font>
   </fonts>
@@ -80,6 +81,7 @@
     <object>objects\obj_message_box</object>
     <object>objects\obj_item_health</object>
     <object>objects\obj_attack_result</object>
+    <object>objects\obj_equppied_items</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_dining</room>
