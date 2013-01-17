@@ -74,7 +74,7 @@ defense=5;
 totalHitPoints=5;
 totalActionPoints=4;
 damage = 2;
-totalNumberOfAttacks = 4;
+totalNumberOfAttacks = 1;
 
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
