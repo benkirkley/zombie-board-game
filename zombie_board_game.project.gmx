@@ -25,6 +25,7 @@
     <sprite>sprites\spr_player_blue_64_anim</sprite>
     <sprite>sprites\sprite_player_red_64_anim</sprite>
     <sprite>sprites\spr_item_health</sprite>
+    <sprite>sprites\spr_item_medkit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
