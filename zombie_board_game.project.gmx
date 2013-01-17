@@ -11,21 +11,25 @@
     <sprite>sprites\spr_button_endTurn_down</sprite>
     <sprite>sprites\spr_button_endTurn_up</sprite>
     <sprite>sprites\spr_hidden_32</sprite>
-    <sprite>sprites\spr_wall_hidden_64</sprite>
+    <sprite>sprites\spr_inventory_armour_helmet_riot</sprite>
+    <sprite>sprites\spr_inventory_armour_shield_riot</sprite>
+    <sprite>sprites\spr_inventory_weapon_axe</sprite>
+    <sprite>sprites\spr_inventory_weapon_chainsaw</sprite>
+    <sprite>sprites\spr_inventory_weapon_knife_kitchen</sprite>
+    <sprite>sprites\spr_inventory_weapon_sword</sprite>
+    <sprite>sprites\spr_item_medkit</sprite>
+    <sprite>sprites\spr_player_blue_64</sprite>
+    <sprite>sprites\spr_player_blue_64_anim</sprite>
+    <sprite>sprites\spr_player_red_64</sprite>
     <sprite>sprites\spr_red</sprite>
     <sprite>sprites\spr_red_64</sprite>
     <sprite>sprites\spr_wall_barrier</sprite>
     <sprite>sprites\spr_wall_barrier_64</sprite>
     <sprite>sprites\spr_wall_brick</sprite>
-    <sprite>sprites\sprite5</sprite>
+    <sprite>sprites\spr_wall_hidden_64</sprite>
     <sprite>sprites\spr_yellow_border</sprite>
     <sprite>sprites\spr_yellow_border_64</sprite>
-    <sprite>sprites\spr_player_blue_64</sprite>
-    <sprite>sprites\spr_player_red_64</sprite>
-    <sprite>sprites\spr_player_blue_64_anim</sprite>
     <sprite>sprites\sprite_player_red_64_anim</sprite>
-    <sprite>sprites\spr_item_health</sprite>
-    <sprite>sprites\spr_item_medkit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -68,21 +72,27 @@
     <font>fonts\combat_result_big</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_attack_result</object>
     <object>objects\obj_button_end_turn</object>
     <object>objects\obj_info_bg</object>
+    <object>objects\obj_inventory_armour_helmet_riot</object>
+    <object>objects\obj_inventory_armour_shield_riot</object>
+    <object>objects\obj_inventory_equipped</object>
+    <object>objects\obj_inventory_weapon_axe</object>
+    <object>objects\obj_inventory_weapon_chainsaw</object>
+    <object>objects\obj_inventory_weapon_knife_kitchen</object>
+    <object>objects\obj_inventory_weapon_sword</object>
+    <object>objects\obj_item_health</object>
     <object>objects\obj_master</object>
+    <object>objects\obj_message_box</object>
     <object>objects\obj_player_blue</object>
     <object>objects\obj_player_highlight</object>
     <object>objects\obj_player_red</object>
     <object>objects\obj_stats</object>
     <object>objects\obj_text_debug</object>
     <object>objects\obj_text_info</object>
-    <object>objects\obj_wall_hidden</object>
     <object>objects\obj_tips</object>
-    <object>objects\obj_message_box</object>
-    <object>objects\obj_item_health</object>
-    <object>objects\obj_attack_result</object>
-    <object>objects\obj_equppied_items</object>
+    <object>objects\obj_wall_hidden</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_dining</room>
