@@ -63,6 +63,7 @@
     <script>scripts\script_turn_next_team.gml</script>
     <script>scripts\script_draw_text_outline_color.gml</script>
     <script>scripts\script_ini_read_key.gml</script>
+    <script>scripts\script_global_items.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
