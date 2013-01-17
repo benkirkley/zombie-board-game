@@ -49,3 +49,5 @@ ds_map_add(playerDataMap,string(counter)+".playerId",playerId);
 ds_map_add(playerDataMap,string(counter)+".name",playerId.name);
 ds_map_add(playerDataMap,string(counter)+".is_alive",true);
 ds_map_add(playerDataMap,string(counter)+".has_spawned",true);
+ds_map_add(playerDataMap,string(counter)+".inventory_weapon_1",false);
+ds_map_add(playerDataMap,string(counter)+".inventory_armour_1",false);

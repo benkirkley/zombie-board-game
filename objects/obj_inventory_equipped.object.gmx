@@ -72,8 +72,14 @@ draw_text(self.x+64,self.y+44,"Armour");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>test = instance_create(20+16,10+16,obj_inventory_weapon_knife_kitchen);
-test2 = instance_create(64+16,10+16,obj_inventory_armour_helmet_riot);
+            <string>//test = instance_create(20+16,10+16,obj_inventory_weapon_knife_kitchen);
+//test2 = instance_create(64+16,10+16,obj_inventory_armour_helmet_riot);
+
+test = ds_map_find_value(global.mapItemWeapon, "item.weapon.axe.inventory");
+instance_create(20+16,10+16,test);
+
+
+
 </string>
           </argument>
         </arguments>

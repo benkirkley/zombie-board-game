@@ -69,6 +69,7 @@
 
 //DEFAULT VALUES
 characterBonus = - 1;
+attack = 0;
 dicePool = 1;
 sidedDiceDefense = 6
 sidedDiceHitPoints = 4
@@ -80,6 +81,7 @@ totalNumberOfAttacks = 1;
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
     characterBonus = script_ini_read_key("Red_Player_Stats","character_bonus", characterBonus,"real");
+    attack = script_ini_read_key("Red_Player_Stats","attack", attack,"real");
     dicePool = script_ini_read_key("Red_Player_Stats","dice_pool", dicePool,"real");
     sidedDiceDefense = script_ini_read_key("Red_Player_Stats","sided_dice_defense", sidedDiceDefense,"real");
     sidedDiceHitPoints = script_ini_read_key("Red_Player_Stats","sided_dice_hit_points", sidedDiceHitPoints,"real");
