@@ -11,7 +11,7 @@ if (isMoving == false && amICurrentPlayer == true)
         //show_message(global.currentPlayer);
         gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
         currentPlayerId = ds_map_find_value(gridCurrentTeamDataMap, (string(global.currentPlayer)+".playerId"))
-        show_message(currentPlayerId.equippedWeapon);
+        show_message(currentPlayerId.equippedWeaponName);
     }
     if (currentPlayerId == self.id && ( actionPoints > 0 || numberOfAttacks > 0) )
     {

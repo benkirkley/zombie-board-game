@@ -92,15 +92,35 @@ actionPoints=totalActionPoints;
 numberOfAttacks = totalNumberOfAttacks;
 
 
-equippedWeapon = "item_weapon_axe";
-equippedArmour = "item_armour_chest_riot";
-inventorySlotWeapon =string(equippedWeapon) + "_inventory";
-inventorySlotArmour = string(equippedArmour) + "_inventory";
 
-//inventorySlotWeapon = 0;
-//inventorySlotArmour = 0;
-//equippedWeapon = 0;
-//equippedArmour = 0;
+equippedWeaponName = "";
+equippedWeaponAttack = 0;
+equippedWeaponDicePool = 0;
+equippedWeaponDefense = 0;
+equippedWeaponTotalHitPoints = 0;
+equippedWeaponTotalActionPoints = 0;
+equippedWeaponDamage = 0;
+equippedWeaponTotalNumberOfAttacks = 0;
+equippedWeaponString = "";
+
+equippedArmourName = "";
+equippedArmourAttack = 0;
+equippedArmourDicePool = 0;
+equippedArmourDefense = 0;
+equippedArmourTotalHitPoints = 0;
+equippedArmourTotalActionPoints = 0;
+equippedArmourDamage = 0;
+equippedArmourTotalNumberOfAttacks = 0;
+equippedArmourString = "";
+
+//equippedArmour = "item_armour_chest_riot";
+//inventorySlotWeapon =string(equippedWeaponString) + "_inventory";
+//inventorySlotArmour = string(equippedWeaponString) + "_inventory";
+
+inventorySlotWeapon = 0;
+inventorySlotArmour = 0;
+equippedWeapon = 0;
+equippedArmour = 0;
 </string>
           </argument>
         </arguments>
