@@ -91,11 +91,16 @@ hitPoints=totalHitPoints;
 actionPoints=totalActionPoints;
 numberOfAttacks = totalNumberOfAttacks;
 
-//inventorySlotWeapon = "item_weapon_chainsaw_inventory";
-//inventorySlotArmour = "item_armour_shield_riot_inventory";
 
-inventorySlotWeapon = 0;
-inventorySlotArmour = 0;
+equippedWeapon = "item_weapon_chainsaw";
+equippedArmour = "item_armour_chest_riot";
+inventorySlotWeapon =string(equippedWeapon) + "_inventory";
+inventorySlotArmour = string(equippedArmour) + "_inventory";
+
+//inventorySlotWeapon = 0;
+//inventorySlotArmour = 0;
+//equippedWeapon = 0;
+//equippedArmour = 0;
 </string>
           </argument>
         </arguments>

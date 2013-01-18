@@ -16,7 +16,11 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
                 itemObjectName=object_get_name(objectToCheckWith.object_index); 
                 mapItemStats = ds_map_find_value(global.mapItemTypeAndStatsMap, ie);
                 itemString = ds_map_find_value(mapItemStats,objectToCheckWith);
-                //show_message(itemString);
+                if (itemString!="")
+                {
+                    ie = ds_map_size(global.mapItemTypeAndStatsMap) //break loop
+                    show_message(itemString);
+                }
             }
             with (collisionObjectId) { instance_destroy(); }
             /*
