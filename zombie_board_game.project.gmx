@@ -11,13 +11,21 @@
     <sprite>sprites\spr_button_endTurn_down</sprite>
     <sprite>sprites\spr_button_endTurn_up</sprite>
     <sprite>sprites\spr_hidden_32</sprite>
+    <sprite>sprites\spr_inventory_armour_chest_riot</sprite>
     <sprite>sprites\spr_inventory_armour_helmet_riot</sprite>
     <sprite>sprites\spr_inventory_armour_shield_riot</sprite>
     <sprite>sprites\spr_inventory_weapon_axe</sprite>
     <sprite>sprites\spr_inventory_weapon_chainsaw</sprite>
     <sprite>sprites\spr_inventory_weapon_knife_kitchen</sprite>
     <sprite>sprites\spr_inventory_weapon_sword_rapier</sprite>
+    <sprite>sprites\spr_item_armour_chest_riot</sprite>
+    <sprite>sprites\spr_item_armour_helmet_riot</sprite>
+    <sprite>sprites\spr_item_armour_shield_riot</sprite>
     <sprite>sprites\spr_item_medkit</sprite>
+    <sprite>sprites\spr_item_weapon_axe</sprite>
+    <sprite>sprites\spr_item_weapon_chainsaw</sprite>
+    <sprite>sprites\spr_item_weapon_knife_kitchen</sprite>
+    <sprite>sprites\spr_item_weapon_sword_rapier</sprite>
     <sprite>sprites\spr_player_blue_64</sprite>
     <sprite>sprites\spr_player_blue_64_anim</sprite>
     <sprite>sprites\spr_player_red_64</sprite>
@@ -64,6 +72,7 @@
     <script>scripts\script_draw_text_outline_color.gml</script>
     <script>scripts\script_ini_read_key.gml</script>
     <script>scripts\script_global_items.gml</script>
+    <script>scripts\script_global_items_blank_template.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -83,7 +92,14 @@
     <object>objects\obj_inventory_weapon_chainsaw</object>
     <object>objects\obj_inventory_weapon_knife_kitchen</object>
     <object>objects\obj_inventory_weapon_sword_rapier</object>
+    <object>objects\obj_item_armour_chest_riot</object>
+    <object>objects\obj_item_armour_helmet_riot</object>
+    <object>objects\obj_item_armour_shield_riot</object>
     <object>objects\obj_item_health</object>
+    <object>objects\obj_item_weapon_axe</object>
+    <object>objects\obj_item_weapon_chainsaw</object>
+    <object>objects\obj_item_weapon_knife_kitchen</object>
+    <object>objects\obj_item_weapon_sword_rapier</object>
     <object>objects\obj_master</object>
     <object>objects\obj_message_box</object>
     <object>objects\obj_player_blue</object>
