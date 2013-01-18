@@ -1,4 +1,4 @@
-
+/*
 global.dslist_ItemStats = ds_list_create();
 ds_list_add(dslist_ItemStats,"name");
 ds_list_add(dslist_ItemStats,"attack");
@@ -8,7 +8,7 @@ ds_list_add(dslist_ItemStats,"totalHitPoints");
 ds_list_add(dslist_ItemStats,"totalActionPoints");
 ds_list_add(dslist_ItemStats,"damage");
 ds_list_add(dslist_ItemStats,"totalNumberOfAttacks");
-
+*/
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
 
@@ -22,7 +22,7 @@ ini_open("config.ini");
     script_ini_read_key("Items","item_weapon_axe_defense", 0,"real");
     script_ini_read_key("Items","item_weapon_axe_totalHitPoints", 0,"real");
     script_ini_read_key("Items","item_weapon_axe_totalActionPoints", 0,"real");
-    script_ini_read_key("Items","item_weapon_axe_damage", itemWeaponAxeDamage,"real");
+    itemWeaponAxeDamage = script_ini_read_key("Items","item_weapon_axe_damage", itemWeaponAxeDamage,"real");
     script_ini_read_key("Items","item_weapon_axe_totalNumberOfAttacks", 0,"real");
     
     //Chainsaw
@@ -30,7 +30,7 @@ ini_open("config.ini");
     itemWeaponChainsawDicePool = 1;
     script_ini_read_key("Items","item_weapon_chainsaw_name", itemWeaponChainsawName,"string");
     script_ini_read_key("Items","item_weapon_chainsaw_attack", 0,"real");
-    script_ini_read_key("Items","item_weapon_chainsaw_dicePool", itemWeaponChainsawDicePool,"real");
+    itemWeaponChainsawDicePool = script_ini_read_key("Items","item_weapon_chainsaw_dicePool", itemWeaponChainsawDicePool,"real");
     script_ini_read_key("Items","item_weapon_chainsaw_defense", 0,"real");
     script_ini_read_key("Items","item_weapon_chainsaw_totalHitPoints", 0,"real");
     script_ini_read_key("Items","item_weapon_chainsaw_totalActionPoints", 0,"real");
@@ -40,35 +40,69 @@ ini_open("config.ini");
     //Kitchen Knife
     itemWeaponKnifeKitchenName = "Kitchen Knife";
     itemWeaponKnifeKitchenDamage = 1;
-    script_ini_read_key("Items","item_weapon_chainsaw_name", itemWeaponKnifeKitchenName,"string");
+    script_ini_read_key("Items","item_weapon_knife_kitchen_name", itemWeaponKnifeKitchenName,"string");
     script_ini_read_key("Items","item_weapon_knife_kitchen_attack", 0,"real");
     script_ini_read_key("Items","item_weapon_knife_kitchen_dicePool", 0,"real");
     script_ini_read_key("Items","item_weapon_knife_kitchen_defense", 0,"real");
     script_ini_read_key("Items","item_weapon_knife_kitchen_totalHitPoints", 0,"real");
     script_ini_read_key("Items","item_weapon_knife_kitchen_totalActionPoints", 0,"real");
-    script_ini_read_key("Items","item_weapon_knife_kitchen_damage", itemWeaponKnifeKitchenDamage,"real");
+    itemWeaponKnifeKitchenDamage = script_ini_read_key("Items","item_weapon_knife_kitchen_damage", itemWeaponKnifeKitchenDamage,"real");
     script_ini_read_key("Items","item_weapon_knife_kitchen_totalNumberOfAttacks", 0,"real");
     
     //Rapier Sword
-    itemWeaponSwordRapierName = "Kitchen Knife";
+    itemWeaponSwordRapierName = "Rapier";
     itemWeaponSwordRapierNumberOfAttacks = 1;
-    script_ini_read_key("Items","item_weapon_chainsaw_name", itemWeaponSwordRapierName,"string");
-    script_ini_read_key("Items","item_weapon_knife_kitchen_attack", 0,"real");
-    script_ini_read_key("Items","item_weapon_knife_kitchen_dicePool", 0,"real");
-    script_ini_read_key("Items","item_weapon_knife_kitchen_defense", 0,"real");
-    script_ini_read_key("Items","item_weapon_knife_kitchen_totalHitPoints", 0,"real");
-    script_ini_read_key("Items","item_weapon_knife_kitchen_totalActionPoints", 0,"real");
-    script_ini_read_key("Items","item_weapon_knife_kitchen_damage", 0,"real");
-    script_ini_read_key("Items","item_weapon_knife_kitchen_totalNumberOfAttacks", itemWeaponSwordRapierNumberOfAttacks,"real");
+    script_ini_read_key("Items","item_weapon_sword_rapier_name", itemWeaponSwordRapierName,"string");
+    script_ini_read_key("Items","item_weapon_sword_rapier_attack", 0,"real");
+    script_ini_read_key("Items","item_weapon_sword_rapier_dicePool", 0,"real");
+    script_ini_read_key("Items","item_weapon_sword_rapier_defense", 0,"real");
+    script_ini_read_key("Items","item_weapon_sword_rapier_totalHitPoints", 0,"real");
+    script_ini_read_key("Items","item_weapon_sword_rapier_totalActionPoints", 0,"real");
+    script_ini_read_key("Items","item_weapon_sword_rapier_damage", 0,"real");
+    itemWeaponSwordRapierNumberOfAttacks = script_ini_read_key("Items","item_weapon_sword_rapier_totalNumberOfAttacks", itemWeaponSwordRapierNumberOfAttacks,"real");
 
+//Armour
+    //Riot Helmet
+    itemArmourHelmetRiotName = "Riot Helmet";
+    itemArmourHelmetRiotDefense = 1;
+    script_ini_read_key("Items","item_armour_helmet_riot_name", itemArmourHelmetRiotName,"string");
+    script_ini_read_key("Items","item_armour_helmet_riot_attack", 0,"real");
+    script_ini_read_key("Items","item_armour_helmet_riot_dicePool", 0,"real");
+    itemArmourHelmetRiotDefense = script_ini_read_key("Items","item_armour_helmet_riot_defense", itemArmourHelmetRiotDefense,"real");
+    script_ini_read_key("Items","item_armour_helmet_riot_totalHitPoints", 0,"real");
+    script_ini_read_key("Items","item_armour_helmet_riot_totalActionPoints", 0,"real");
+    script_ini_read_key("Items","item_armour_helmet_riot_damage", 0,"real");
+    script_ini_read_key("Items","item_armour_helmet_riot_totalNumberOfAttacks", 0,"real");
+    
+    //Riot Shield
+    itemArmourShieldRiotName = "Riot Shield";
+    itemArmourShieldRiotDefense = 2;
+    itemArmourShieldRiotActionPoints = -1;
+    script_ini_read_key("Items","item_armour_shield_riot_name", itemArmourShieldRiotName,"string");
+    script_ini_read_key("Items","item_armour_shield_riot_attack", 0,"real");
+    script_ini_read_key("Items","item_armour_shield_riot_dicePool", 0,"real");
+    itemArmourShieldRiotDefense = script_ini_read_key("Items","item_armour_shield_riot_defense", itemArmourShieldRiotDefense,"real");
+    script_ini_read_key("Items","item_armour_shield_riot_totalHitPoints", 0,"real");
+    itemArmourShieldRiotActionPoints = script_ini_read_key("Items","item_armour_shield_riot_totalActionPoints", itemArmourShieldRiotActionPoints,"real");
+    script_ini_read_key("Items","item_armour_shield_riot_damage", 0,"real");
+    script_ini_read_key("Items","item_armour_shield_riot_totalNumberOfAttacks", 0,"real");
+    
+    //Riot Vest
+    itemArmourChestRiotName = "Riot Vest";
+    itemArmourChestRiotDefense = 2;
+    itemArmourChestRiotTotalHitPoints = 1;
+    script_ini_read_key("Items","item_armour_chest_riot_name", itemArmourChestRiotName,"string");
+    script_ini_read_key("Items","item_armour_chest_riot_attack", 0,"real");
+    script_ini_read_key("Items","item_armour_chest_riot_dicePool", 0,"real");
+    itemArmourChestRiotDefense = script_ini_read_key("Items","item_armour_chest_riot_defense", itemArmourChestRiotDefense,"real");
+    itemArmourChestRiotTotalHitPoints = script_ini_read_key("Items","item_armour_chest_riot_totalHitPoints", itemArmourChestRiotTotalHitPoints,"real");
+    script_ini_read_key("Items","item_armour_chest_riot_totalActionPoints", 0,"real");
+    script_ini_read_key("Items","item_armour_chest_riot_damage", 0,"real");
+    script_ini_read_key("Items","item_armour_chest_riot_totalNumberOfAttacks", 0,"real");
+    
 ini_close();
 
-itemArmourHelmetRiotName = "Riot Helmet";
-itemArmourHelmetRiotDefense = 1;
 
-itemArmourShieldRiotName = "Riot Shield";
-itemArmourShieldRiotDefense = 2;
-itemArmourShieldRiotActionPoints = -1;
 
     
 
