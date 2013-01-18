@@ -11,6 +11,13 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
         //Only allow team0 (blue) to pick up items
         if (id.thisTeamId == 0)
         {
+            for (ie=0; ie < ds_map_size(global.mapItemTypeAndStatsMap); ie+=1)
+            {
+                itemObjectName=object_get_name(objectToCheckWith.object_index); 
+                mapItemStats = ds_map_find_value(global.mapItemTypeAndStatsMap, ie);
+                itemString = ds_map_find_value(mapItemStats,objectToCheckWith);
+                //show_message(itemString);
+            }
             with (collisionObjectId) { instance_destroy(); }
             /*
             id.hitPoints = id.totalHitPoints;
