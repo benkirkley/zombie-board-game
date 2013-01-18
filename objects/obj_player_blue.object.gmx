@@ -90,8 +90,12 @@ ini_close();
 hitPoints=totalHitPoints;
 actionPoints=totalActionPoints;
 numberOfAttacks = totalNumberOfAttacks;
-inventorySlotWeapon = "item_weapon_chainsaw_inventory";
-inventorySlotArmour = "item_armour_shield_riot_inventory";
+
+//inventorySlotWeapon = "item_weapon_chainsaw_inventory";
+//inventorySlotArmour = "item_armour_shield_riot_inventory";
+
+inventorySlotWeapon = 0;
+inventorySlotArmour = 0;
 </string>
           </argument>
         </arguments>

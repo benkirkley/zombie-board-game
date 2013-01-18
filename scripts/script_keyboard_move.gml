@@ -117,8 +117,9 @@ if ( isMoving == true )
         collidableObjects[1]=obj_player_red;
         collidableObjects[2]=obj_wall_hidden;
         collidableObjects[3]=obj_item_consumable_medkit;
+        collidableObjects[4]=obj_item_weapon_chainsaw;
         
-        for (i=0; i < 4; i += 1)
+        for (i=0; i < 5; i += 1)
         {          
             collide = script_collision_perform(collidableObjects[i],self.object_index);
             if ( collide )
