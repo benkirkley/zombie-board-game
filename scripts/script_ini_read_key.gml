@@ -26,7 +26,7 @@ else
     //show_message("key_does_not_exist");
     if (keyType == "real")
     {
-       ini_write_real(section,key,keyDefault);
+        ini_write_real(section,key,keyDefault);
     }
     else if (keyType == "string")
     {
