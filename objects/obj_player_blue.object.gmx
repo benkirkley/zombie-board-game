@@ -92,7 +92,7 @@ actionPoints=totalActionPoints;
 numberOfAttacks = totalNumberOfAttacks;
 
 
-equippedWeapon = "item_weapon_chainsaw";
+equippedWeapon = "item_weapon_axe";
 equippedArmour = "item_armour_chest_riot";
 inventorySlotWeapon =string(equippedWeapon) + "_inventory";
 inventorySlotArmour = string(equippedArmour) + "_inventory";

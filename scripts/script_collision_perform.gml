@@ -18,8 +18,22 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
                 itemString = ds_map_find_value(mapItemStats,objectToCheckWith);
                 if (itemString!="")
                 {
+                    if (ie == 0)
+                    {
+                        id.equippedWeapon = itemString;
+                        id.inventorySlotWeapon = string(itemString) + "_inventory";
+                        script_inventory_destroy_items();
+                        script_inventory_create_items();
+                    }
+                    else if(ie == 1)
+                    {
+                        id.equippedArmour = itemString;
+                        id.inventorySlotArmour = string(itemString) + "_inventory";
+                        script_inventory_destroy_items();
+                        script_inventory_create_items();
+                    }
                     ie = ds_map_size(global.mapItemTypeAndStatsMap) //break loop
-                    show_message(itemString);
+                    
                 }
             }
             with (collisionObjectId) { instance_destroy(); }
