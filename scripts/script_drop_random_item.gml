@@ -1,5 +1,5 @@
 var itemList;
-itemList[0] = obj_item_health;
+itemList[0] = obj_item_consumable_medkit;
 
 //These are the dice roll chances of an item dropping
 var item_drop_chance_dice = 100;

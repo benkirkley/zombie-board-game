@@ -211,7 +211,7 @@ ini_open("config.ini");
     ds_map_add(global.mapItemConsumableStats,string(itemString)+"_name",itemName);
     ds_map_add(global.mapItemConsumableStats,string(itemString)+"_healPoints",itemHealPoints);
     ds_map_add(global.mapItemConsumableStats,string(itemString)+"_object",obj_item_armour_helmet_riot);
-    ds_map_add(global.mapItemConsumableStats,string(itemString)+"_inventory",obj_inventory_consumable_medkit);
+    ds_map_add(global.mapItemConsumableStats,string(itemString)+"_inventory",obj_item_consumable_medkit);
     
     
 ini_close();

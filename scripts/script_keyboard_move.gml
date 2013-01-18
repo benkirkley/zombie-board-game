@@ -116,7 +116,7 @@ if ( isMoving == true )
         collidableObjects[0]=obj_player_blue;
         collidableObjects[1]=obj_player_red;
         collidableObjects[2]=obj_wall_hidden;
-        collidableObjects[3]=obj_item_health;
+        collidableObjects[3]=obj_item_consumable_medkit;
         
         for (i=0; i < 4; i += 1)
         {          
