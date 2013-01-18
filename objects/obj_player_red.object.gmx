@@ -103,6 +103,8 @@ hitPoints = totalHitPoints;
 actionPoints = totalActionPoints;
 numberOfAttacks = totalNumberOfAttacks;
 
+inventorySlotWeapon = 0;
+inventorySlotArmour = 0;
 </string>
           </argument>
         </arguments>

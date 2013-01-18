@@ -73,6 +73,8 @@
     <script>scripts\script_ini_read_key.gml</script>
     <script>scripts\script_global_items.gml</script>
     <script>scripts\script_global_items_blank_template.gml</script>
+    <script>scripts\script_inventory_create_items.gml</script>
+    <script>scripts\script_inventory_destroy_items.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>

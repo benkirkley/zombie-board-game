@@ -15,7 +15,9 @@ if (global.endTurn == true )
     if (currentPlayerId.actionPoints == 0) currentPlayerId.isMoving = false
     currentPlayerId.amICurrentPlayer = false;
     currentPlayerId.actionPoints = currentPlayerId.totalActionPoints;
-    currentPlayerId.numberOfAttacks = currentPlayerId.totalNumberOfAttacks; 
+    currentPlayerId.numberOfAttacks = currentPlayerId.totalNumberOfAttacks;
+    
+    script_inventory_destroy_items();
     
     //Check if there are any other players on this team 
     
@@ -32,20 +34,22 @@ if (global.endTurn == true )
             global.currentPlayer += 1;
             if ( global.currentPlayer == numberOfPlayersOnTeam )
             {
-                isNextPlayerAlive = 1;
+                isNextPlayerAlive = 1; //break while loop
                 script_turn_next_team();
+                script_inventory_create_items();
             }
             else
             {
                 isNextPlayerAlive = ds_map_find_value(gridCurrentTeamDataMap, string(global.currentPlayer) + ".is_alive");
             }
         }
-        
+        script_inventory_create_items();
     }
     else
     {
         //show_message("All players on this team have moved");
         script_turn_next_team();
+        script_inventory_create_items();
     }
     
 }
