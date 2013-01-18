@@ -47,5 +47,5 @@ script_create_spawn_team(global.currentTeam);
 
 //Highlight the starting player
 gridCurrentTeam = ds_grid_get(global.teamGrids, 6, global.currentTeam);
-currentPlayerId = ds_map_find_value(playerBlueDataMap,string(global.currentPlayer)+".playerID");
+currentPlayerId = ds_map_find_value(playerBlueDataMap,string(global.currentPlayer)+".playerId");
 playerHighlightId = instance_create(currentPlayerId.x,currentPlayerId.y,obj_player_highlight);
