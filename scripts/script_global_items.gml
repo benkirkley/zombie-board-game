@@ -1,34 +1,42 @@
-/*
-global.dslist_ItemStats = ds_list_create();
-ds_list_add(global.dslist_ItemStats,"name");
-ds_list_add(global.dslist_ItemStats,"attack");
-ds_list_add(global.dslist_ItemStats,"dicePool");
-ds_list_add(global.dslist_ItemStats,"defense");
-ds_list_add(global.dslist_ItemStats,"totalHitPoints");
-ds_list_add(global.dslist_ItemStats,"totalActionPoints");
-ds_list_add(global.dslist_ItemStats,"damage");
-ds_list_add(global.dslist_ItemStats,"totalNumberOfAttacks");
-*/
+/***************************************************
+  This script creates all of the items that can be
+  used in the game. It read from or creates and INI 
+  file and sets up all of the data structures.
+ ***************************************************/
 
-
-global.dslist_ItemTypes = ds_list_create();
-ds_list_add(global.dslist_ItemTypes,"weapon");
-ds_list_add(global.dslist_ItemTypes,"armour");
-ds_list_add(global.dslist_ItemTypes,"consumable");
-
-
-global.mapItemWeaponStats = ds_map_create();
-global.mapItemArmourStats = ds_map_create();
-global.mapItemConsumableStats = ds_map_create();
-
-global.dslist_AllWeaponStrings = ds_list_create();
-global.dslist_AllArmourStrings = ds_list_create();
-global.dslist_AllConsumableStrings = ds_list_create();
-
-global.mapItemTypeAndStatsMap = ds_map_create();
-ds_map_add(global.mapItemTypeAndStatsMap,"weapon",global.mapItemWeaponStats);
-ds_map_add(global.mapItemTypeAndStatsMap,"armor",global.mapItemArmourStats);
-ds_map_add(global.mapItemTypeAndStatsMap,"consumable",global.mapItemConsumableStats);
+//Setup all Data Structures
+    //This lists all the possible stats an item can have
+    global.dslist_ItemStats = ds_list_create();
+    ds_list_add(global.dslist_ItemStats,"name");
+    ds_list_add(global.dslist_ItemStats,"attack");
+    ds_list_add(global.dslist_ItemStats,"dicePool");
+    ds_list_add(global.dslist_ItemStats,"defense");
+    ds_list_add(global.dslist_ItemStats,"totalHitPoints");
+    ds_list_add(global.dslist_ItemStats,"totalActionPoints");
+    ds_list_add(global.dslist_ItemStats,"damage");
+    ds_list_add(global.dslist_ItemStats,"totalNumberOfAttacks");
+    
+    //This lists the category of items available
+    global.dslist_ItemTypes = ds_list_create();
+    ds_list_add(global.dslist_ItemTypes,"weapon");
+    ds_list_add(global.dslist_ItemTypes,"armour");
+    ds_list_add(global.dslist_ItemTypes,"consumable");
+    
+    //Store a list of the items available to each category
+    global.dslist_AllWeaponStrings = ds_list_create();
+    global.dslist_AllArmourStrings = ds_list_create();
+    global.dslist_AllConsumableStrings = ds_list_create();
+    
+    //Store the details of each item
+    global.mapItemWeaponStats = ds_map_create();
+    global.mapItemArmourStats = ds_map_create();
+    global.mapItemConsumableStats = ds_map_create();
+    
+    //Reference item categories with their list of items
+    global.mapItemTypeAndStatsMap = ds_map_create();
+    ds_map_add(global.mapItemTypeAndStatsMap,"weapon",global.mapItemWeaponStats);
+    ds_map_add(global.mapItemTypeAndStatsMap,"armor",global.mapItemArmourStats);
+    ds_map_add(global.mapItemTypeAndStatsMap,"consumable",global.mapItemConsumableStats);
 
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
