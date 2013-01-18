@@ -85,6 +85,7 @@
     <object>objects\obj_attack_result</object>
     <object>objects\obj_button_end_turn</object>
     <object>objects\obj_info_bg</object>
+    <object>objects\obj_inventory_armour_chest_riot</object>
     <object>objects\obj_inventory_armour_helmet_riot</object>
     <object>objects\obj_inventory_armour_shield_riot</object>
     <object>objects\obj_inventory_equipped</object>
@@ -95,7 +96,7 @@
     <object>objects\obj_item_armour_chest_riot</object>
     <object>objects\obj_item_armour_helmet_riot</object>
     <object>objects\obj_item_armour_shield_riot</object>
-    <object>objects\obj_item_health</object>
+    <object>objects\obj_inventory_consumable_medkit</object>
     <object>objects\obj_item_weapon_axe</object>
     <object>objects\obj_item_weapon_chainsaw</object>
     <object>objects\obj_item_weapon_knife_kitchen</object>
