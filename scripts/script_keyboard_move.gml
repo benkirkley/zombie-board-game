@@ -8,16 +8,16 @@ if (isMoving == false && amICurrentPlayer == true)
     if ( keyboard_check_pressed(vk_numpad5) )
     {
         //show_message("Enter debug here");
-        //show_message(global.currentPlayer);
-        gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
-        currentPlayerId = ds_map_find_value(gridCurrentTeamDataMap, (string(global.currentPlayer)+".playerId"))
-        show_message(currentPlayerId.equippedWeaponName);
+        show_message((numberOfAttacks  + equippedWeaponTotalNumberOfAttacks + equippedArmourTotalNumberOfAttacks));
+        //gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
+        //currentPlayerId = ds_map_find_value(gridCurrentTeamDataMap, (string(global.currentPlayer)+".playerId"))
+        //show_message(currentPlayerId.equippedWeaponName);
     }
-    if (currentPlayerId == self.id && ( (actionPoints + equippedWeaponActionPoints + equippedArmourActionPoints) > 0 || (numberOfAttacks  + equippedWeaponTotalNumberOfAttacks + equippedArmourTotalNumberOfAttacks) > 0) )
+    if (currentPlayerId == self.id && ( (actionPoints + equippedWeaponActionPoints + equippedArmourActionPoints) > 0 || (numberOfAttacks  + equippedWeaponNumberOfAttacks + equippedArmourNumberOfAttacks) > 0) )
     {
         //Arrow Keys and Numpad Keys
         if ( keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6) )
-        {
+        {   
             angle = 270;
             isMoving = true;
             moveTimer = gridSize;
@@ -133,8 +133,8 @@ if ( isMoving == true )
         }
     }
     //Move if no collision and player has moves
-    if ( !collide && actionPoints > 0 ) {
-        
+    if ( !collide && (actionPoints + equippedWeaponActionPoints + equippedArmourActionPoints) > 0 )
+    {
         direction = angle;
         image_angle = angle;
         x += speedX;
@@ -148,9 +148,23 @@ if ( isMoving == true )
             image_speed=0;
             image_index += 1;
             isMoving = false;
-            actionPoints -=1 ;
+            if (equippedWeaponActionPoints > 0)
+            {
+                equippedWeaponActionPoints -= 1;
+            }
+            else if (equippedArmourActionPoints > 0)
+            {
+                equippedArmourActionPoints -= 1;
+            }
+            else
+            {
+                actionPoints -=1 ;
+            }
             collide = 1;
         }
     }
-    
+    else
+    {
+        isMoving = false;
+    }
 }
