@@ -195,7 +195,7 @@ ini_open("config.ini");
     
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_name",itemName);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_defense",itemDefense);
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_defense",itemTotalHitPoints);
+    ds_map_add(global.mapItemArmourStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
     ds_map_add(global.mapItemArmourStats,string(itemString),obj_item_armour_chest_riot);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_inventory",obj_inventory_armour_chest_riot);
     
