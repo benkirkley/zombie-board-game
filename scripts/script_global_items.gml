@@ -9,10 +9,10 @@
     global.dslist_ItemStats = ds_list_create();
     ds_list_add(global.dslist_ItemStats,"name");
     ds_list_add(global.dslist_ItemStats,"attack");
-    ds_list_add(global.dslist_ItemStats,"dicePool");
-    ds_list_add(global.dslist_ItemStats,"defense");
-    ds_list_add(global.dslist_ItemStats,"hitPoints");
     ds_list_add(global.dslist_ItemStats,"damage");
+    ds_list_add(global.dslist_ItemStats,"defense");
+    ds_list_add(global.dslist_ItemStats,"dicePool");
+    ds_list_add(global.dslist_ItemStats,"hitPoints");
     ds_list_add(global.dslist_ItemStats,"totalHitPoints");
     ds_list_add(global.dslist_ItemStats,"actionPoints");
     ds_list_add(global.dslist_ItemStats,"totalActionPoints");
@@ -48,154 +48,239 @@ ini_open("config.ini");
     //Axe
     itemName = "Axe";
     itemAttack = 1;
-    
+    itemDamage = 0;
+    itemDefense = 0;
+    itemDicePool = 0;
+    itemTotalHitPoints = 0;
+    itemTotalActionPoints = 0;
+    itemTotalNumberOfAttacks = 0;
     itemString = "item_weapon_axe";
     ds_list_add(global.dslist_AllWeaponStrings,itemString);
     
-    script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
+    itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
     itemAttack = script_ini_read_key("Items",string(itemString)+"_attack", itemAttack,"real");
-    script_ini_read_key("Items",string(itemString)+"_dicePool", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_defense", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalHitPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalActionPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_damage", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", 0,"real");
+    itemDamage = script_ini_read_key("Items",string(itemString)+"_damage", itemDamage,"real");
+    itemDefense = script_ini_read_key("Items",string(itemString)+"_defense", itemDefense,"real");
+    itemDicePool = script_ini_read_key("Items",string(itemString)+"_dicePool", itemDicePool,"real");
+    itemTotalHitPoints = script_ini_read_key("Items",string(itemString)+"_totalHitPoints", itemTotalHitPoints,"real");
+    itemTotalActionPoints = script_ini_read_key("Items",string(itemString)+"_totalActionPoints", itemTotalActionPoints,"real");
+    itemTotalNumberOfAttacks = script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", itemTotalNumberOfAttacks,"real");
     
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_name",itemName);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_attack",itemAttack);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_damage",itemDamage);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_defense",itemDefense);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_dicePool",itemDicePool);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalNumberOfAttacks",itemTotalNumberOfAttacks);
+    
     ds_map_add(global.mapItemWeaponStats,obj_item_weapon_axe,string(itemString));
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_inventory",obj_inventory_weapon_axe);
     
     
     //Chainsaw
     itemName = "Chainsaw";
+    itemAttack = 0;
+    itemDamage = 0;
+    itemDefense = 0;
     itemDicePool = 1;
-    
+    itemTotalHitPoints = 0;
+    itemTotalActionPoints = 0;
+    itemTotalNumberOfAttacks = 0;
     itemString = "item_weapon_chainsaw";
     ds_list_add(global.dslist_AllWeaponStrings,itemString);
     
-    script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
-    script_ini_read_key("Items",string(itemString)+"_attack", 0,"real");
+    itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
+    itemAttack = script_ini_read_key("Items",string(itemString)+"_attack", itemAttack,"real");
     itemDicePool = script_ini_read_key("Items",string(itemString)+"_dicePool", itemDicePool,"real");
-    script_ini_read_key("Items",string(itemString)+"_defense", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalHitPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalActionPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_damage", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", 0,"real");
+    itemDefense = script_ini_read_key("Items",string(itemString)+"_defense", itemDefense,"real");
+    itemTotalHitPoints = script_ini_read_key("Items",string(itemString)+"_totalHitPoints", itemTotalHitPoints,"real");
+    itemTotalActionPoints = script_ini_read_key("Items",string(itemString)+"_totalActionPoints", itemTotalActionPoints,"real");
+    itemDamage = script_ini_read_key("Items",string(itemString)+"_damage", itemDamage,"real");
+    itemTotalNumberOfAttacks = script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", itemTotalNumberOfAttacks,"real");
     
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_name",itemName);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_attack",itemAttack);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_damage",itemDamage);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_defense",itemDefense);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_dicePool",itemDicePool);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalNumberOfAttacks",itemTotalNumberOfAttacks);
+    
     ds_map_add(global.mapItemWeaponStats,obj_item_weapon_chainsaw,string(itemString));
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_inventory",obj_inventory_weapon_chainsaw);
     
     
     //Kitchen Knife
-    itemName = "Kitchen Knife";
+    itemName = "Kitchen Knife";   
+    itemAttack = 0;
     itemDamage = 1;
+    itemDefense = 0;
+    itemDicePool = 0;
+    itemTotalHitPoints = 0;
+    itemTotalActionPoints = 0;
+    itemTotalNumberOfAttacks = 0;
     
     itemString = "item_weapon_knife_kitchen";
     ds_list_add(global.dslist_AllWeaponStrings,itemString);
     
-    script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
-    script_ini_read_key("Items",string(itemString)+"_attack", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_dicePool", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_defense", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalHitPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalActionPoints", 0,"real");
+    itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
+    itemAttack = script_ini_read_key("Items",string(itemString)+"_attack", itemAttack,"real");
+    itemDicePool = script_ini_read_key("Items",string(itemString)+"_dicePool", itemDicePool,"real");
+    itemDefense = script_ini_read_key("Items",string(itemString)+"_defense", itemDefense,"real");
+    itemTotalHitPoints = script_ini_read_key("Items",string(itemString)+"_totalHitPoints", itemTotalHitPoints,"real");
+    itemTotalActionPoints = script_ini_read_key("Items",string(itemString)+"_totalActionPoints", itemTotalActionPoints,"real");
     itemDamage = script_ini_read_key("Items",string(itemString)+"_damage", itemDamage,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", 0,"real");
+    itemTotalNumberOfAttacks = script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", itemTotalNumberOfAttacks,"real");
     
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_name",itemName);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_attack",itemAttack);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_damage",itemDamage);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_defense",itemDefense);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_dicePool",itemDicePool);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalNumberOfAttacks",itemTotalNumberOfAttacks);
+    
     ds_map_add(global.mapItemWeaponStats,string(itemString),obj_item_weapon_knife_kitchen);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_inventory",obj_inventory_weapon_knife_kitchen);
     
     //Rapier Sword
     itemName = "Rapier";
+    itemAttack = 0;
+    itemDamage = 0;
+    itemDefense = 0;
+    itemDicePool = 0;
+    itemTotalHitPoints = 0;
+    itemTotalActionPoints = 0;
     itemTotalNumberOfAttacks = 1;
     
     itemString = "item_weapon_sword_rapier";
     ds_list_add(global.dslist_AllWeaponStrings,itemString);
     
-    script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
-    script_ini_read_key("Items",string(itemString)+"_attack", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_dicePool", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_defense", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalHitPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalActionPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_damage", 0,"real");
+    itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
+    itemAttack = script_ini_read_key("Items",string(itemString)+"_attack", itemAttack,"real");
+    itemDicePool = script_ini_read_key("Items",string(itemString)+"_dicePool", itemDicePool,"real");
+    itemDefense = script_ini_read_key("Items",string(itemString)+"_defense", itemDefense,"real");
+    itemTotalHitPoints = script_ini_read_key("Items",string(itemString)+"_totalHitPoints", itemTotalHitPoints,"real");
+    itemTotalActionPoints = script_ini_read_key("Items",string(itemString)+"_totalActionPoints", itemTotalActionPoints,"real");
+    itemDamage = script_ini_read_key("Items",string(itemString)+"_damage", itemDamage,"real");
     itemTotalNumberOfAttacks = script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", itemTotalNumberOfAttacks,"real");
     
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_name",itemName);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_attack",itemAttack);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_damage",itemDamage);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_defense",itemDefense);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_dicePool",itemDicePool);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalNumberOfAttacks",itemTotalNumberOfAttacks);
+    
     ds_map_add(global.mapItemWeaponStats,string(itemString),obj_item_weapon_sword_rapier);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_inventory",obj_inventory_weapon_sword_rapier);
 
 //Armour
     //Riot Helmet
     itemName = "Riot Helmet";
+    itemAttack = 0;
+    itemDamage = 0;
     itemDefense = 1;
+    itemDicePool = 0;
+    itemTotalHitPoints = 0;
+    itemTotalActionPoints = 0;
+    itemTotalNumberOfAttacks = 0;
     
     itemString = "item_armour_helmet_riot";
     ds_list_add(global.dslist_AllArmourStrings,itemString);
     
-    script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
-    script_ini_read_key("Items",string(itemString)+"_attack", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_dicePool", 0,"real");
+    itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
+    itemAttack = script_ini_read_key("Items",string(itemString)+"_attack", itemAttack,"real");
+    itemDicePool = script_ini_read_key("Items",string(itemString)+"_dicePool", itemDicePool,"real");
     itemDefense = script_ini_read_key("Items",string(itemString)+"_defense", itemDefense,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalHitPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalActionPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_damage", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", 0,"real");
+    itemTotalHitPoints = script_ini_read_key("Items",string(itemString)+"_totalHitPoints", itemTotalHitPoints,"real");
+    itemTotalActionPoints = script_ini_read_key("Items",string(itemString)+"_totalActionPoints", itemTotalActionPoints,"real");
+    itemDamage = script_ini_read_key("Items",string(itemString)+"_damage", itemDamage,"real");
+    itemTotalNumberOfAttacks = script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", itemTotalNumberOfAttacks,"real");
     
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_name",itemName);
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_defense",itemDefense);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_name",itemName);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_attack",itemAttack);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_damage",itemDamage);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_defense",itemDefense);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_dicePool",itemDicePool);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalNumberOfAttacks",itemTotalNumberOfAttacks);
+    
     ds_map_add(global.mapItemArmourStats,string(itemString),obj_item_armour_helmet_riot);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_inventory",obj_inventory_armour_helmet_riot);
     
     //Riot Shield
     itemName = "Riot Shield";
+    itemAttack = 0;
+    itemDamage = 0;
     itemDefense = 2;
+    itemDicePool = 0;
+    itemTotalHitPoints = 0;
     itemTotalActionPoints = -1;
+    itemTotalNumberOfAttacks = 0;
     
     itemString = "item_armour_shield_riot";
     ds_list_add(global.dslist_AllArmourStrings,itemString);
     
-    script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
-    script_ini_read_key("Items",string(itemString)+"_attack", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_dicePool", 0,"real");
-    itemDefense = script_ini_read_key("Items","item_armour_shield_riot_defense", itemDefense,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalHitPoints", 0,"real");
+    itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
+    itemAttack = script_ini_read_key("Items",string(itemString)+"_attack", itemAttack,"real");
+    itemDicePool = script_ini_read_key("Items",string(itemString)+"_dicePool", itemDicePool,"real");
+    itemDefense = script_ini_read_key("Items",string(itemString)+"_defense", itemDefense,"real");
+    itemTotalHitPoints = script_ini_read_key("Items",string(itemString)+"_totalHitPoints", itemTotalHitPoints,"real");
     itemTotalActionPoints = script_ini_read_key("Items",string(itemString)+"_totalActionPoints", itemTotalActionPoints,"real");
-    script_ini_read_key("Items",string(itemString)+"_damage", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", 0,"real");
+    itemDamage = script_ini_read_key("Items",string(itemString)+"_damage", itemDamage,"real");
+    itemTotalNumberOfAttacks = script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", itemTotalNumberOfAttacks,"real");
     
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_name",itemName);
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_defense",itemDefense);
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_name",itemName);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_attack",itemAttack);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_damage",itemDamage);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_defense",itemDefense);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_dicePool",itemDicePool);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalNumberOfAttacks",itemTotalNumberOfAttacks);
+    
     ds_map_add(global.mapItemArmourStats,string(itemString),obj_item_armour_shield_riot);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_inventory",obj_inventory_armour_shield_riot);
     
     //Riot Vest
     itemName = "Riot Vest";
+    itemAttack = 0;
+    itemDamage = 0;
     itemDefense = 1;
+    itemDicePool = 0;
     itemTotalHitPoints = 1;
+    itemTotalActionPoints = 0;
+    itemTotalNumberOfAttacks = 0;
     
     itemString = "item_armour_chest_riot";
     ds_list_add(global.dslist_AllArmourStrings,itemString);
     
-    script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
-    script_ini_read_key("Items",string(itemString)+"_attack", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_dicePool", 0,"real");
+    itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
+    itemAttack = script_ini_read_key("Items",string(itemString)+"_attack", itemAttack,"real");
+    itemDicePool = script_ini_read_key("Items",string(itemString)+"_dicePool", itemDicePool,"real");
     itemDefense = script_ini_read_key("Items",string(itemString)+"_defense", itemDefense,"real");
     itemTotalHitPoints = script_ini_read_key("Items",string(itemString)+"_totalHitPoints", itemTotalHitPoints,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalActionPoints", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_damage", 0,"real");
-    script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", 0,"real");
+    itemTotalActionPoints = script_ini_read_key("Items",string(itemString)+"_totalActionPoints", itemTotalActionPoints,"real");
+    itemDamage = script_ini_read_key("Items",string(itemString)+"_damage", itemDamage,"real");
+    itemTotalNumberOfAttacks = script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", itemTotalNumberOfAttacks,"real");
     
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_name",itemName);
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_defense",itemDefense);
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_name",itemName);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_attack",itemAttack);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_damage",itemDamage);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_defense",itemDefense);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_dicePool",itemDicePool);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
+    ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalNumberOfAttacks",itemTotalNumberOfAttacks);
+    
     ds_map_add(global.mapItemArmourStats,string(itemString),obj_item_armour_chest_riot);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_inventory",obj_inventory_armour_chest_riot);
     
@@ -203,18 +288,15 @@ ini_open("config.ini");
     //Medkit
     itemName = "Medkit";
     itemHealPoints = 5;
-    //itemTotalUses = 1;
-    
     itemString = "item_consumable_medkit";
     ds_list_add(global.dslist_AllArmourStrings,itemString);
-    script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
-    script_ini_read_key("Items",string(itemString)+"_healPoints", itemHealPoints,"real");
-    //script_ini_read_key("Items",string(itemString)+"_totalUses", itemTotalUses,"real");
+    
+    itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
+    itemHealPoints = script_ini_read_key("Items",string(itemString)+"_healPoints", itemHealPoints,"real");
     
     ds_map_add(global.mapItemConsumableStats,string(itemString)+"_name",itemName);
     ds_map_add(global.mapItemConsumableStats,string(itemString)+"_healPoints",itemHealPoints);
-    ds_map_add(global.mapItemConsumableStats,string(itemString),obj_item_armour_helmet_riot);
-    ds_map_add(global.mapItemConsumableStats,string(itemString)+"_inventory",obj_item_consumable_medkit);
+    ds_map_add(global.mapItemConsumableStats,string(itemString),obj_item_consumable_medkit);
     
     
 ini_close();
