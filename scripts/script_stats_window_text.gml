@@ -53,7 +53,7 @@ else if (typeOfWindow == "item")
                 +"#--------";
     
     var key = ds_map_find_first(global.mapAllItemStats);
-    for (i=0; i < ds_map_size(global.mapAllItemStats)-1; i+=1)
+    for (i=0; i < ds_map_size(global.mapAllItemStats); i+=1)
     {
         value = ds_map_find_value(global.mapAllItemStats, key);
         if (key != "name") script_stats_window_text_items(key, value);
