@@ -57,6 +57,7 @@ ini_open("config.ini");
     itemString = "item_weapon_axe";
     ds_list_add(global.dslist_AllWeaponStrings,itemString);
     
+    /*
     itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
     itemAttack = script_ini_read_key("Items",string(itemString)+"_attack", itemAttack,"real");
     itemDamage = script_ini_read_key("Items",string(itemString)+"_damage", itemDamage,"real");
@@ -74,6 +75,8 @@ ini_open("config.ini");
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalHitPoints",itemTotalHitPoints);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_totalNumberOfAttacks",itemTotalNumberOfAttacks);
+    */
+    script_items_create(global.mapItemWeaponStats);
     
     ds_map_add(global.mapItemWeaponStats,obj_item_weapon_axe,string(itemString));
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_inventory",obj_inventory_weapon_axe);
