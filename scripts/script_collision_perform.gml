@@ -57,12 +57,12 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
     else
     {
         //show_message("Attack");
-        if (equippedWeaponTotalNumberOfAttacks > 0)
+        if (equippedWeaponNumberOfAttacks > 0)
         {
             equippedWeaponNumberOfAttacks -= 1
             script_combat_trigger(objectToCheckWith);
         }
-        else if (equippedArmourTotalNumberOfAttacks > 0)
+        else if (equippedArmourNumberOfAttacks > 0)
         {
             equippedArmourNumberOfAttacks -= 1
             script_combat_trigger(objectToCheckWith);

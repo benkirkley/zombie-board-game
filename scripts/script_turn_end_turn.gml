@@ -14,8 +14,14 @@ if (global.endTurn == true )
     //Reset variables on turn end
     if (currentPlayerId.actionPoints == 0) currentPlayerId.isMoving = false
     currentPlayerId.amICurrentPlayer = false;
+    
     currentPlayerId.actionPoints = currentPlayerId.totalActionPoints;
+    currentPlayerId.equippedWeaponActionPoints = currentPlayerId.equippedWeaponTotalActionPoints;
+    currentPlayerId.equippedArmourActionPoints = currentPlayerId.equippedArmourTotalActionPoints;
+    
     currentPlayerId.numberOfAttacks = currentPlayerId.totalNumberOfAttacks;
+    currentPlayerId.equippedWeaponNumberOfAttacks = currentPlayerId.equippedWeaponTotalNumberOfAttacks;
+    currentPlayerId.equippedArmourNumberOfAttacks = currentPlayerId.equippedArmourTotalNumberOfAttacks;
     
     script_inventory_destroy_items();
     
