@@ -6,18 +6,16 @@
 
 //Setup all Data Structures
     //This lists all the possible stats an item can have
-    global.dslist_ItemStats = ds_list_create();
-    ds_list_add(global.dslist_ItemStats,"name");
-    ds_list_add(global.dslist_ItemStats,"attack");
-    ds_list_add(global.dslist_ItemStats,"damage");
-    ds_list_add(global.dslist_ItemStats,"defense");
-    ds_list_add(global.dslist_ItemStats,"dicePool");
-    ds_list_add(global.dslist_ItemStats,"hitPoints");
-    ds_list_add(global.dslist_ItemStats,"totalHitPoints");
-    ds_list_add(global.dslist_ItemStats,"actionPoints");
-    ds_list_add(global.dslist_ItemStats,"totalActionPoints");
-    ds_list_add(global.dslist_ItemStats,"numberOfAttacks");
-    ds_list_add(global.dslist_ItemStats,"totalNumberOfAttacks");
+    
+    global.mapAllItemStats = ds_map_create();
+    ds_map_add(global.mapAllItemStats,"name","Name");
+    ds_map_add(global.mapAllItemStats,"attack","Attack Dice");
+    ds_map_add(global.mapAllItemStats,"damage","Damage");
+    ds_map_add(global.mapAllItemStats,"defense","Defense");
+    ds_map_add(global.mapAllItemStats,"dicePool","Dice Pool");
+    ds_map_add(global.mapAllItemStats,"totalHitPoints","Max Hit Points");
+    ds_map_add(global.mapAllItemStats,"totalActionPoints","Max Action Points");
+    ds_map_add(global.mapAllItemStats,"totalNumberOfAttacks","Max Attacks");
     
     //This lists the category of items available
     global.dslist_ItemTypes = ds_list_create();

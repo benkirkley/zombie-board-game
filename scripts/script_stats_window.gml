@@ -8,7 +8,6 @@ if ( position_meeting(mouse_x, mouse_y, self) )
         statsWindowsId = instance_create(mouse_x+20,mouse_y+6,obj_stats);
         statsWindowsId.typeOfWindow = typeOfWindow;
         statsWindowsId.instanceId = instanceId;
-        //global.statsWindowPlayerID = self.id;
     }
     else
     {

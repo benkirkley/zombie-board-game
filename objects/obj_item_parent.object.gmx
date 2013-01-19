@@ -57,7 +57,7 @@ typeOfWindow = "item";
           </argument>
           <argument>
             <kind>0</kind>
-            <string>0</string>
+            <string>instanceId</string>
           </argument>
           <argument>
             <kind>0</kind>
