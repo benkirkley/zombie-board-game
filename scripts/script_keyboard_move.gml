@@ -13,7 +13,7 @@ if (isMoving == false && amICurrentPlayer == true)
         currentPlayerId = ds_map_find_value(gridCurrentTeamDataMap, (string(global.currentPlayer)+".playerId"))
         show_message(currentPlayerId.equippedWeaponName);
     }
-    if (currentPlayerId == self.id && ( actionPoints > 0 || (numberOfAttacks  + equippedWeaponTotalNumberOfAttacks + equippedArmourTotalNumberOfAttacks) > 0) )
+    if (currentPlayerId == self.id && ( (actionPoints + equippedWeaponActionPoints + equippedArmourActionPoints) > 0 || (numberOfAttacks  + equippedWeaponTotalNumberOfAttacks + equippedArmourTotalNumberOfAttacks) > 0) )
     {
         //Arrow Keys and Numpad Keys
         if ( keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6) )

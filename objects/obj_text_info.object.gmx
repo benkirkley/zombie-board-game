@@ -46,9 +46,12 @@ if (isCurrentPlayerAlive)
     
     
     draw_text(self.x,self.y,string(currentPlayerName)
-                            +"#Moves: " + string(currentPlayerId.actionPoints)+ "/" + string(currentPlayerId.totalActionPoints) 
-                            +"#Attacks: " + string(currentPlayerId.numberOfAttacks)+ "/" + string(currentPlayerId.totalNumberOfAttacks)
-                            +"     HP: " + string(currentPlayerId.hitPoints)+ "/" + string(currentPlayerId.totalHitPoints)
+                            +"#Moves: " + string(currentPlayerId.actionPoints + currentPlayerId.equippedWeaponActionPoints + currentPlayerId.equippedArmourActionPoints)
+                            + "/" + string(currentPlayerId.totalActionPoints + currentPlayerId.equippedWeaponTotalActionPoints + currentPlayerId.equippedArmourTotalActionPoints) 
+                            +"#Attacks: " + string(currentPlayerId.numberOfAttacks + currentPlayerId.equippedWeaponNumberOfAttacks + currentPlayerId.equippedArmourNumberOfAttacks)
+                            + "/" + string(currentPlayerId.totalNumberOfAttacks + currentPlayerId.equippedWeaponTotalNumberOfAttacks + currentPlayerId.equippedArmourTotalNumberOfAttacks)
+                            +"     HP: " + string(currentPlayerId.hitPoints + currentPlayerId.equippedArmourHitPoints + currentPlayerId.equippedArmourHitPoints)
+                            + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedArmourTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints)
     );
     
 }
