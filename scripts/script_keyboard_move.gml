@@ -8,7 +8,6 @@ if (isMoving == false && amICurrentPlayer == true)
     if ( keyboard_check_pressed(vk_numpad5) )
     {
         //show_message("Enter debug here");
-        show_message((numberOfAttacks  + equippedWeaponTotalNumberOfAttacks + equippedArmourTotalNumberOfAttacks));
         //gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
         //currentPlayerId = ds_map_find_value(gridCurrentTeamDataMap, (string(global.currentPlayer)+".playerId"))
         //show_message(currentPlayerId.equippedWeaponName);

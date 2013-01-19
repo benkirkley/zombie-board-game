@@ -17,10 +17,16 @@ draw_text(x,y,
     +"#DAM: "+string(global.statsWindowPlayerID.damage
         + global.statsWindowPlayerID.equippedWeaponDamage
         + global.statsWindowPlayerID.equippedArmourDamage)
-    +"#HP : "+string(global.statsWindowPlayerID.hitPoints)+"/"+string(global.statsWindowPlayerID.totalHitPoints
+    +"#HP : "+string(global.statsWindowPlayerID.hitPoints
+        + global.statsWindowPlayerID.equippedWeaponHitPoints
+        + global.statsWindowPlayerID.equippedArmourHitPoints)
+    +"/"+string(global.statsWindowPlayerID.totalHitPoints
         + global.statsWindowPlayerID.equippedWeaponTotalHitPoints
         + global.statsWindowPlayerID.equippedArmourTotalHitPoints)
-    +"#Moves : "+string(global.statsWindowPlayerID.actionPoints)+"/"+string(global.statsWindowPlayerID.totalActionPoints
+    +"#Moves : "+string(global.statsWindowPlayerID.actionPoints
+        + global.statsWindowPlayerID.equippedWeaponActionPoints
+        + global.statsWindowPlayerID.equippedArmourActionPoints)
+    +"/"+string(global.statsWindowPlayerID.totalActionPoints
         + global.statsWindowPlayerID.equippedWeaponTotalActionPoints
         + global.statsWindowPlayerID.equippedArmourTotalActionPoints)
     +"#Attacks : "+string(global.statsWindowPlayerID.numberOfAttacks
