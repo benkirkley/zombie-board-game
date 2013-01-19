@@ -97,20 +97,27 @@ equippedWeaponName = "";
 equippedWeaponAttack = 0;
 equippedWeaponDicePool = 0;
 equippedWeaponDefense = 0;
-equippedWeaponTotalHitPoints = 0;
-equippedWeaponTotalActionPoints = 0;
 equippedWeaponDamage = 0;
+equippedWeaponTotalHitPoints = 0;
+equippedWeaponHitPoints = 0;
+equippedWeaponTotalActionPoints = 0;
+equippedWeaponActionPoints = 0;
 equippedWeaponTotalNumberOfAttacks = 0;
+equippedWeaponNumberOfAttacks = 0;
 equippedWeaponString = "";
 
 equippedArmourName = "";
 equippedArmourAttack = 0;
 equippedArmourDicePool = 0;
 equippedArmourDefense = 0;
-equippedArmourTotalHitPoints = 0;
-equippedArmourTotalActionPoints = 0;
 equippedArmourDamage = 0;
+equippedArmourTotalHitPoints = 0;
+equippedArmourHitPoints = 0;
+equippedArmourTotalActionPoints = 0;
+equippedArmourActionPoints = 0;
 equippedArmourTotalNumberOfAttacks = 0;
+equippedArmourNumberOfAttacks = 0;
+
 equippedArmourString = "";
 
 //equippedArmour = "item_armour_chest_riot";

@@ -24,8 +24,8 @@ draw_text(x,y,
         + global.statsWindowPlayerID.equippedWeaponTotalActionPoints
         + global.statsWindowPlayerID.equippedArmourTotalActionPoints)
     +"#Attacks : "+string(global.statsWindowPlayerID.numberOfAttacks
-        + global.statsWindowPlayerID.equippedWeaponTotalNumberOfAttacks
-        + global.statsWindowPlayerID.equippedArmourTotalNumberOfAttacks)
+        + global.statsWindowPlayerID.equippedWeaponNumberOfAttacks
+        + global.statsWindowPlayerID.equippedArmourNumberOfAttacks)
     +"/"+string(global.statsWindowPlayerID.totalNumberOfAttacks
         + global.statsWindowPlayerID.equippedWeaponTotalNumberOfAttacks
         + global.statsWindowPlayerID.equippedArmourTotalNumberOfAttacks)

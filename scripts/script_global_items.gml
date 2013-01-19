@@ -11,9 +11,12 @@
     ds_list_add(global.dslist_ItemStats,"attack");
     ds_list_add(global.dslist_ItemStats,"dicePool");
     ds_list_add(global.dslist_ItemStats,"defense");
-    ds_list_add(global.dslist_ItemStats,"totalHitPoints");
-    ds_list_add(global.dslist_ItemStats,"totalActionPoints");
+    ds_list_add(global.dslist_ItemStats,"hitPoints");
     ds_list_add(global.dslist_ItemStats,"damage");
+    ds_list_add(global.dslist_ItemStats,"totalHitPoints");
+    ds_list_add(global.dslist_ItemStats,"actionPoints");
+    ds_list_add(global.dslist_ItemStats,"totalActionPoints");
+    ds_list_add(global.dslist_ItemStats,"numberOfAttacks");
     ds_list_add(global.dslist_ItemStats,"totalNumberOfAttacks");
     
     //This lists the category of items available
@@ -169,7 +172,7 @@ ini_open("config.ini");
     
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_name",itemName);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_defense",itemDefense);
-    ds_map_add(global.mapItemArmourStats,string(itemString)+"_actionPoints",itemTotalActionPoints);
+    ds_map_add(global.mapItemArmourStats,string(itemString)+"_totalActionPoints",itemTotalActionPoints);
     ds_map_add(global.mapItemArmourStats,string(itemString),obj_item_armour_shield_riot);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_inventory",obj_inventory_armour_shield_riot);
     
