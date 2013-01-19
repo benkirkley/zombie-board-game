@@ -14,11 +14,10 @@ equippedArmourAttack = 0;
 equippedArmourDicePool = 0;
 equippedArmourDefense = 0;
 equippedArmourTotalHitPoints = 0;
-equippedArmourTotalActionPoints = 0;
+equippedArmourTotalActionPoints = 0
 equippedArmourDamage = 0;
 equippedArmourTotalNumberOfAttacks = 0;
 equippedArmourString = "";
-
 */
 
 // Stats for the object being attacked
@@ -40,7 +39,6 @@ var triggeredObjectWeaponTotalHitPoints = triggeredObjectId.equippedWeaponTotalH
 var triggeredObjectWeaponTotalActionPoints = triggeredObjectId.equippedWeaponTotalActionPoints;
 var triggeredObjectWeaponDamage = triggeredObjectId.equippedWeaponDamage;
 var triggeredObjectWeaponTotalNumberOfAttacks = triggeredObjectId.equippedWeaponTotalNumberOfAttacks;
-
     //Armour
 var triggeredObjectArmourName = triggeredObjectId.equippedArmourName;
 var triggeredObjectArmourAttack = triggeredObjectId.equippedArmourAttack;
@@ -75,7 +73,6 @@ var mainObjectWeaponTotalHitPoints = mainObjectId.equippedWeaponTotalHitPoints;
 var mainObjectWeaponTotalActionPoints = mainObjectId.equippedWeaponTotalActionPoints;
 var mainObjectWeaponDamage = mainObjectId.equippedWeaponDamage;
 var mainObjectWeaponTotalNumberOfAttacks = mainObjectId.equippedWeaponTotalNumberOfAttacks;
-
     //Armour
 var mainObjectArmourName = mainObjectId.equippedArmourName;
 var mainObjectArmourAttack = mainObjectId.equippedArmourAttack;

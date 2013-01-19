@@ -57,12 +57,18 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
     else
     {
         //show_message("Attack");
-        var thisInstance = self.id
-        if (thisInstance.numberOfAttacks) > 0 {
-            thisInstance.numberOfAttacks -= 1;
+        if (equippedWeaponTotalNumberOfAttacks > 0)
+        {
+            equippedWeaponTotalNumberOfAttacks -= 1
+            script_combat_trigger(objectToCheckWith);
+        }
+        else if (numberOfAttacks > 0)
+        {
+            numberOfAttacks -= 1;
             script_combat_trigger(objectToCheckWith);
         }
     }
+    
     return true; //blocking collision
 
 }

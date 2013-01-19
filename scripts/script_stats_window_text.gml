@@ -23,7 +23,10 @@ draw_text(x,y,
     +"#Moves : "+string(global.statsWindowPlayerID.actionPoints)+"/"+string(global.statsWindowPlayerID.totalActionPoints
         + global.statsWindowPlayerID.equippedWeaponTotalActionPoints
         + global.statsWindowPlayerID.equippedArmourTotalActionPoints)
-    +"#Attacks : "+string(global.statsWindowPlayerID.numberOfAttacks)+"/"+string(global.statsWindowPlayerID.totalNumberOfAttacks
+    +"#Attacks : "+string(global.statsWindowPlayerID.numberOfAttacks
+        + global.statsWindowPlayerID.equippedWeaponTotalNumberOfAttacks
+        + global.statsWindowPlayerID.equippedArmourTotalNumberOfAttacks)
+    +"/"+string(global.statsWindowPlayerID.totalNumberOfAttacks
         + global.statsWindowPlayerID.equippedWeaponTotalNumberOfAttacks
         + global.statsWindowPlayerID.equippedArmourTotalNumberOfAttacks)
 );
