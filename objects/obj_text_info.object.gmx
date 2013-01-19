@@ -50,8 +50,8 @@ if (isCurrentPlayerAlive)
                             + "/" + string(currentPlayerId.totalActionPoints + currentPlayerId.equippedWeaponTotalActionPoints + currentPlayerId.equippedArmourTotalActionPoints) 
                             +"#Attacks: " + string(currentPlayerId.numberOfAttacks + currentPlayerId.equippedWeaponNumberOfAttacks + currentPlayerId.equippedArmourNumberOfAttacks)
                             + "/" + string(currentPlayerId.totalNumberOfAttacks + currentPlayerId.equippedWeaponTotalNumberOfAttacks + currentPlayerId.equippedArmourTotalNumberOfAttacks)
-                            +"     HP: " + string(currentPlayerId.hitPoints + currentPlayerId.equippedArmourHitPoints + currentPlayerId.equippedArmourHitPoints)
-                            + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedArmourTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints)
+                            +"     HP: " + string(currentPlayerId.hitPoints + currentPlayerId.equippedWeaponHitPoints + currentPlayerId.equippedArmourHitPoints)
+                            + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedWeaponTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints)
     );
     
 }
