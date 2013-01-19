@@ -133,7 +133,20 @@ if ( numberOfHits > 0 )
 displayResults += "##" + string(mainObjectName) + "'s DAM stat: " + string(mainObjectDamage + mainObjectWeaponDamage + mainObjectArmourDamage);
 displayResults += "#Damage Inflicted: " + string(totalDamage);
 
-triggeredObjectId.hitPoints -= totalDamage;
+//Deduct Hit Points
+if (triggeredObjectId.equippedWeaponHitPoints > 0)
+{
+    triggeredObjectId.equippedWeaponHitPoints -= totalDamage;
+}
+else if (triggeredObjectId.equippedArmourHitPoints > 0)
+{
+    triggeredObjectId.equippedArmourHitPoints -= totalDamage;
+}
+else
+{
+    triggeredObjectId.hitPoints -= totalDamage;
+}
+
 displayResults += "##" + string(triggeredObjectName) + " HP: " + string(triggeredObjectId.hitPoints) + "/" + string(triggeredObjectId.totalHitPoints); 
 
 if (global.debug_show_combat_rolls )
