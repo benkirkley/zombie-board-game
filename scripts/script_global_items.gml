@@ -58,7 +58,6 @@ ini_open("config.ini");
     ds_list_add(global.dslist_AllWeaponStrings,itemString);
     
     script_items_create(global.mapItemWeaponStats);
-    
     ds_map_add(global.mapItemWeaponStats,obj_item_weapon_axe,string(itemString));
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_inventory",obj_inventory_weapon_axe);
     
@@ -76,7 +75,6 @@ ini_open("config.ini");
     ds_list_add(global.dslist_AllWeaponStrings,itemString);
     
     script_items_create(global.mapItemWeaponStats);
-    
     ds_map_add(global.mapItemWeaponStats,obj_item_weapon_chainsaw,string(itemString));
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_inventory",obj_inventory_weapon_chainsaw);
     
@@ -95,7 +93,6 @@ ini_open("config.ini");
     ds_list_add(global.dslist_AllWeaponStrings,itemString);
     
     script_items_create(global.mapItemWeaponStats);
-    
     ds_map_add(global.mapItemWeaponStats,string(itemString),obj_item_weapon_knife_kitchen);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_inventory",obj_inventory_weapon_knife_kitchen);
     
@@ -113,7 +110,6 @@ ini_open("config.ini");
     ds_list_add(global.dslist_AllWeaponStrings,itemString);
     
     script_items_create(global.mapItemWeaponStats);
-    
     ds_map_add(global.mapItemWeaponStats,string(itemString),obj_item_weapon_sword_rapier);
     ds_map_add(global.mapItemWeaponStats,string(itemString)+"_inventory",obj_inventory_weapon_sword_rapier);
 
@@ -131,17 +127,7 @@ ini_open("config.ini");
     itemString = "item_armour_helmet_riot";
     ds_list_add(global.dslist_AllArmourStrings,itemString);
     
-    itemName = script_ini_read_key("Items",string(itemString)+"_name", itemName,"string");
-    itemAttack = script_ini_read_key("Items",string(itemString)+"_attack", itemAttack,"real");
-    itemDicePool = script_ini_read_key("Items",string(itemString)+"_dicePool", itemDicePool,"real");
-    itemDefense = script_ini_read_key("Items",string(itemString)+"_defense", itemDefense,"real");
-    itemTotalHitPoints = script_ini_read_key("Items",string(itemString)+"_totalHitPoints", itemTotalHitPoints,"real");
-    itemTotalActionPoints = script_ini_read_key("Items",string(itemString)+"_totalActionPoints", itemTotalActionPoints,"real");
-    itemDamage = script_ini_read_key("Items",string(itemString)+"_damage", itemDamage,"real");
-    itemTotalNumberOfAttacks = script_ini_read_key("Items",string(itemString)+"_totalNumberOfAttacks", itemTotalNumberOfAttacks,"real");
-    
     script_items_create(global.mapItemArmourStats);
-    
     ds_map_add(global.mapItemArmourStats,string(itemString),obj_item_armour_helmet_riot);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_inventory",obj_inventory_armour_helmet_riot);
     
@@ -159,7 +145,6 @@ ini_open("config.ini");
     ds_list_add(global.dslist_AllArmourStrings,itemString);
     
     script_items_create(global.mapItemArmourStats);
-    
     ds_map_add(global.mapItemArmourStats,string(itemString),obj_item_armour_shield_riot);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_inventory",obj_inventory_armour_shield_riot);
     
@@ -177,7 +162,6 @@ ini_open("config.ini");
     ds_list_add(global.dslist_AllArmourStrings,itemString);
     
     script_items_create(global.mapItemArmourStats);
-    
     ds_map_add(global.mapItemArmourStats,string(itemString),obj_item_armour_chest_riot);
     ds_map_add(global.mapItemArmourStats,string(itemString)+"_inventory",obj_inventory_armour_chest_riot);
     
