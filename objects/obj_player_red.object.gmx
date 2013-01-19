@@ -69,7 +69,7 @@
 
 //DEFAULT VALUES
 characterBonus = - 1;
-attack = 0;
+attack = 10;
 dicePool = 1;
 sidedDiceDefense = 6
 sidedDiceHitPoints = 4

@@ -68,7 +68,7 @@
             <string>/* Initalise stats */
 
 //DEFAULT VALUES
-attack = 0;
+attack = 10;
 dicePool=2;
 defense=5;
 totalHitPoints=5;
@@ -90,7 +90,7 @@ ini_close();
 hitPoints=totalHitPoints;
 actionPoints=totalActionPoints;
 numberOfAttacks = totalNumberOfAttacks;
-
+attackDice = 10;
 
 
 equippedWeaponName = "";

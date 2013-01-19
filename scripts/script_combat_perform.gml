@@ -58,6 +58,7 @@ playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 var mainObjectId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");
 var mainObjectName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
 
+var mainObjectAttack = mainObjectId.attack;
 var mainObjectDicePool = mainObjectId.dicePool;
 var mainObjectDefense = mainObjectId.defense;
 var mainObjectNumberOfAttacks = mainObjectId.numberOfAttacks;
@@ -83,34 +84,16 @@ var mainObjectArmourTotalActionPoints = mainObjectId.equippedArmourTotalActionPo
 var mainObjectArmourDamage = mainObjectId.equippedArmourDamage;
 var mainObjectId = triggeredObjectId.equippedArmourTotalNumberOfAttacks;
 
-//Debug output for variables declared above
-/*
-show_message("Triggered Object" + 
-            "#Dice: " + string(triggeredObjectDicePool) + 
-            "#Def: " + string(triggeredObjectDefense) +
-            "#Att: " + string(triggeredObjectAttack) +
-            "#Hit: " + string(triggeredObjectHitPoints)
-);
 
-
-
-show_message("Main Object" + 
-            "#Dice: " + string(mainObjectDicePool) + 
-            "#Def: " + string(mainObjectDefense) +
-            "#Att: " + string(mainObjectAttack) +
-            "#Hit: " + string(mainObjectHitPoints)
-);
-*/
 
 // Do comabat rolls
-var attackDice = 10;
 var attackResults;
 
 
 //Show a summary of the attack about to take place
 var displayResultsPreamble = string(mainObjectName) + " attacks " + string(triggeredObjectName) +
                             "##" + string(mainObjectName) + " has " + string(mainObjectDicePool + mainObjectWeaponDicePool + mainObjectArmourDicePool) + " chance(s) to " +
-                            "roll a " + string(triggeredObjectDefense + triggeredObjectWeaponDefense + triggeredObjectArmourDefense) + " on a d" + string(attackDice + mainObjectWeaponAttack + mainObjectArmourAttack);
+                            "roll a " + string(triggeredObjectDefense + triggeredObjectWeaponDefense + triggeredObjectArmourDefense) + " on a d" + string(mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack);
 
 if (global.debug_show_combat_rolls )    
     show_message(displayResultsPreamble);
@@ -122,9 +105,9 @@ var numberOfHits = 0;
 ////Main attack loop
 for(i = 0; i < (mainObjectDicePool + mainObjectWeaponDicePool + mainObjectArmourDicePool); i += 1){
     randomize();
-    var result = floor(random(attackDice + mainObjectWeaponAttack + mainObjectArmourAttack)) + 1;
+    var result = floor(random(mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack)) + 1;
     if (result < 1) result = 1;
-    if (result > (attackDice + mainObjectWeaponAttack + mainObjectArmourAttack) ) result = attackDice + mainObjectWeaponAttack + mainObjectArmourAttack;
+    if (result > (mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack) ) result = mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack;
     attackResults[i] = result;
     displayResults += "##Dice Roll " + string(i+1);
     displayResults += "#    " + string(triggeredObjectName) + " defense: " + string(triggeredObjectDefense + triggeredObjectWeaponDefense + triggeredObjectArmourDefense)
