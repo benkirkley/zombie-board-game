@@ -26,12 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>statsWindowsId = 0;
+typeOfWindow = "item";
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="10">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>601</id>
@@ -52,7 +53,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>"item"</string>
+            <string>typeOfWindow</string>
           </argument>
           <argument>
             <kind>0</kind>

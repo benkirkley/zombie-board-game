@@ -15,3 +15,4 @@ thisTeamId = 0;
 amICurrentPlayer = false;
 name = 0;
 statsWindowsId = 0;
+typeOfWindow = "player";

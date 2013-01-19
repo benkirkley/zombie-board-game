@@ -1,38 +1,54 @@
-draw_set_color(c_navy);
-draw_set_alpha(0.8);
-draw_rectangle(x-6,y-6,x+100,y+148,false);
-draw_set_alpha(1);
+typeOfWindow = argument0;
+instanceId = argument1;
+
+if (typeOfWindow == "player")
+{
+    text =  string(instanceId.name)
+    +"#--------"
+    +"#Dice: "+string(instanceId.dicePool 
+        + instanceId.equippedWeaponDicePool
+        + instanceId.equippedArmourDicePool)
+    +"#DEF: "+ string(instanceId.defense
+        + instanceId.equippedWeaponDefense
+        + instanceId.equippedArmourDefense)
+    +"#DAM: "+string(instanceId.damage
+        + instanceId.equippedWeaponDamage
+        + instanceId.equippedArmourDamage)
+    +"#HP : "+string(instanceId.hitPoints
+        + instanceId.equippedWeaponHitPoints
+        + instanceId.equippedArmourHitPoints)
+    +"/"+string(instanceId.totalHitPoints
+        + instanceId.equippedWeaponTotalHitPoints
+        + instanceId.equippedArmourTotalHitPoints)
+    +"#Moves : "+string(instanceId.actionPoints
+        + instanceId.equippedWeaponActionPoints
+        + instanceId.equippedArmourActionPoints)
+    +"/"+string(instanceId.totalActionPoints
+        + instanceId.equippedWeaponTotalActionPoints
+        + instanceId.equippedArmourTotalActionPoints)
+    +"#Attacks : "+string(instanceId.numberOfAttacks
+        + instanceId.equippedWeaponNumberOfAttacks
+        + instanceId.equippedArmourNumberOfAttacks)
+    +"/"+string(instanceId.totalNumberOfAttacks
+        + instanceId.equippedWeaponTotalNumberOfAttacks
+        + instanceId.equippedArmourTotalNumberOfAttacks)
+    ;
+}
+else if (typeOfWindow == "item")
+{
+    text = "SDFSDFSDFS"
+            +"#DFSD";
+}
 
 draw_set_font(font1);
+
+text_width = string_width(text);
+text_height =  string_height(text);
+
+draw_set_color(c_navy);
+draw_set_alpha(0.8);
+draw_rectangle(x-6,y-6,x+text_width+6,y+text_height+6,false);
+draw_set_alpha(1);
+
 draw_set_color(c_lime);
-draw_text(x,y,
-    string(global.statsWindowPlayerID.name)
-    +"#--------"
-    +"#Dice: "+string(global.statsWindowPlayerID.dicePool 
-        + global.statsWindowPlayerID.equippedWeaponDicePool
-        + global.statsWindowPlayerID.equippedArmourDicePool)
-    +"#DEF: "+ string(global.statsWindowPlayerID.defense
-        + global.statsWindowPlayerID.equippedWeaponDefense
-        + global.statsWindowPlayerID.equippedArmourDefense)
-    +"#DAM: "+string(global.statsWindowPlayerID.damage
-        + global.statsWindowPlayerID.equippedWeaponDamage
-        + global.statsWindowPlayerID.equippedArmourDamage)
-    +"#HP : "+string(global.statsWindowPlayerID.hitPoints
-        + global.statsWindowPlayerID.equippedWeaponHitPoints
-        + global.statsWindowPlayerID.equippedArmourHitPoints)
-    +"/"+string(global.statsWindowPlayerID.totalHitPoints
-        + global.statsWindowPlayerID.equippedWeaponTotalHitPoints
-        + global.statsWindowPlayerID.equippedArmourTotalHitPoints)
-    +"#Moves : "+string(global.statsWindowPlayerID.actionPoints
-        + global.statsWindowPlayerID.equippedWeaponActionPoints
-        + global.statsWindowPlayerID.equippedArmourActionPoints)
-    +"/"+string(global.statsWindowPlayerID.totalActionPoints
-        + global.statsWindowPlayerID.equippedWeaponTotalActionPoints
-        + global.statsWindowPlayerID.equippedArmourTotalActionPoints)
-    +"#Attacks : "+string(global.statsWindowPlayerID.numberOfAttacks
-        + global.statsWindowPlayerID.equippedWeaponNumberOfAttacks
-        + global.statsWindowPlayerID.equippedArmourNumberOfAttacks)
-    +"/"+string(global.statsWindowPlayerID.totalNumberOfAttacks
-        + global.statsWindowPlayerID.equippedWeaponTotalNumberOfAttacks
-        + global.statsWindowPlayerID.equippedArmourTotalNumberOfAttacks)
-);
+draw_text(x,y,text);

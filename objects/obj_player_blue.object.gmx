@@ -274,11 +274,11 @@ equippedArmour = 0;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>"player"</string>
+            <string>typeOfWindow</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>0</string>
+            <string>id</string>
           </argument>
           <argument>
             <kind>0</kind>

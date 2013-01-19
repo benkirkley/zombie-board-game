@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>depth = -(room_height+1);
 obj_stats.depth = -(room_height+2);
+
+typeOfWindow = "";
+text  = "";
+instanceId = 0;
 </string>
           </argument>
         </arguments>
@@ -53,11 +57,11 @@ obj_stats.depth = -(room_height+2);
           </argument>
           <argument>
             <kind>0</kind>
-            <string>0</string>
+            <string>typeOfWindow</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>0</string>
+            <string>instanceId</string>
           </argument>
           <argument>
             <kind>0</kind>
