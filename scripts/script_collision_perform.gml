@@ -24,6 +24,7 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
                         id.inventorySlotWeapon = string(itemString) + "_inventory";
                         script_inventory_destroy_items();
                         script_inventory_create_items();
+                        script_items_equip("weapon",itemString,id);
                     }
                     else if(ie == 1)
                     {
@@ -31,6 +32,11 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
                         id.inventorySlotArmour = string(itemString) + "_inventory";
                         script_inventory_destroy_items();
                         script_inventory_create_items();
+                        script_items_equip("armour",itemString,id);
+                    }
+                    else if(ie == 2)
+                    {
+                        //HEALTH
                     }
                     ie = ds_map_size(global.mapItemTypeAndStatsMap) //break loop
                     
