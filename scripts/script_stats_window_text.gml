@@ -79,3 +79,6 @@ draw_set_alpha(1);
 
 draw_set_color(c_lime);
 draw_text(x,y,text);
+
+
+

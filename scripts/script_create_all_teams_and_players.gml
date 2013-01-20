@@ -52,5 +52,5 @@ playerHighlightId = instance_create(currentPlayerId.x,currentPlayerId.y,obj_play
 
 //Show the inventory of the starting player
 script_items_equip("weapon","item_weapon_axe",currentPlayerId);
-script_items_equip("armour","item_armour_shield_riot",currentPlayerId);
+script_items_equip("armour","item_armour_helmet_riot",currentPlayerId);
 script_inventory_create_items();
