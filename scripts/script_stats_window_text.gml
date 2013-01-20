@@ -43,11 +43,16 @@ else if (typeOfWindow == "item")
             mapItemsStats = global.mapItemWeaponStats;
         break;
         
+        case "armour":
+            mapItemsStats = global.mapItemArmourStats;
+        break;
+        
         default:
     }
     
     thisItemObject = instanceId.object_index;
     itemString = ds_map_find_value(mapItemsStats, thisItemObject);
+    //show_message(itemString);
     itemName = ds_map_find_value(mapItemsStats, string(itemString)+"_name");
         text += string(itemName)
                 +"#--------";
@@ -60,25 +65,6 @@ else if (typeOfWindow == "item")
         key = ds_map_find_next(global.mapAllItemStats, key);
     }
     
-   
-    /*
-    itemAttack = ds_map_find_value(mapItemsStats, string(itemString)+"_attack")
-    if (itemAttack != 0)
-    {
-        text += "#Attack Dice: "
-        if (itemAttack > 0) text += "+";
-        text +=  +string(itemAttack);
-    }
-       
-        
-    itemDicePool = ds_map_find_value(mapItemsStats, string(itemString)+"_dicePool")
-    if (itemDicePool != 0)
-    {
-        text += "#Dice Pool: "
-        if (itemDicePool > 0) text += "+";
-        text += string(itemDicePool);
-    }
-    */
 }
 
 draw_set_font(font1);

@@ -65,7 +65,6 @@
     <scripts name="global">
       <script>scripts\script_global_vars.gml</script>
       <script>scripts\script_global_items_blank_template.gml</script>
-      <script>scripts\script_global_items.gml</script>
       <script>scripts\script_ini_read_key.gml</script>
     </scripts>
     <scripts name="items">
@@ -76,6 +75,7 @@
       <script>scripts\script_inventory_destroy_items.gml</script>
       <script>scripts\script_inventory_create_items.gml</script>
       <script>scripts\script_drop_random_item.gml</script>
+      <script>scripts\script_global_items.gml</script>
     </scripts>
     <scripts name="misc">
       <script>scripts\script_show_message_box.gml</script>
@@ -135,7 +135,6 @@
     <object>objects\obj_tips</object>
     <object>objects\obj_wall_hidden</object>
     <object>objects\obj_item_parent</object>
-    <object>objects\obj_inventory_parent</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_dining</room>
