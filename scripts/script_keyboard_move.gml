@@ -8,9 +8,20 @@ if (isMoving == false && amICurrentPlayer == true)
     if ( keyboard_check_pressed(vk_numpad5) )
     {
         //show_message("Enter debug here");
-        //gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
-        //currentPlayerId = ds_map_find_value(gridCurrentTeamDataMap, (string(global.currentPlayer)+".playerId"))
-        //show_message(currentPlayerId.equippedWeaponName);
+        var thisObject = object_get_name(self.object_index); 
+        var collidableObjects;
+        collidableObjects[0]=obj_item_consumable_medkit;
+        collidableObjects[1]=obj_item_weapon_chainsaw;
+        
+        for (i=0; i < 2; i += 1)
+        {          
+            collide = script_collision_perform(collidableObjects[i],self.object_index);
+            if ( collide )
+            {
+                //show_message("Collision");
+                return false;
+            }
+        }
     }
     if (currentPlayerId == self.id && ( (actionPoints + equippedWeaponActionPoints + equippedArmourActionPoints) > 0 || (numberOfAttacks  + equippedWeaponNumberOfAttacks + equippedArmourNumberOfAttacks) > 0) )
     {

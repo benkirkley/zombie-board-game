@@ -44,7 +44,7 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
             }
             with (collisionObjectId) { instance_destroy(); }
         }
-        return false; //no blocking collision
+        return true; //no blocking collision
     }
     
     if ( script_collision_wall(objectToCheckWith) )
