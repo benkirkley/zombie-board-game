@@ -46,38 +46,56 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script_collision_item.gml</script>
-    <script>scripts\script_collision_perform.gml</script>
-    <script>scripts\script_collision_wall.gml</script>
-    <script>scripts\script_combat_perform.gml</script>
-    <script>scripts\script_combat_trigger.gml</script>
-    <script>scripts\script_create_all_teams_and_players.gml</script>
-    <script>scripts\script_create_new_player.gml</script>
-    <script>scripts\script_create_player_common_local_vars.gml</script>
-    <script>scripts\script_create_spawn_points.gml</script>
-    <script>scripts\script_create_spawn_team.gml</script>
-    <script>scripts\script_destroy_stats_window.gml</script>
-    <script>scripts\script_drop_random_item.gml</script>
-    <script>scripts\script_global_vars.gml</script>
-    <script>scripts\script_keyboard_move.gml</script>
-    <script>scripts\script_mouse_enter_leave.gml</script>
-    <script>scripts\script_player_states.gml</script>
-    <script>scripts\script_show_message_box.gml</script>
-    <script>scripts\script_stats_window.gml</script>
-    <script>scripts\script_stats_window_destroy.gml</script>
-    <script>scripts\script_stats_window_text.gml</script>
-    <script>scripts\script_turn_am_i_current_player.gml</script>
-    <script>scripts\script_turn_end_turn.gml</script>
-    <script>scripts\script_turn_next_team.gml</script>
-    <script>scripts\script_draw_text_outline_color.gml</script>
-    <script>scripts\script_ini_read_key.gml</script>
-    <script>scripts\script_global_items.gml</script>
-    <script>scripts\script_global_items_blank_template.gml</script>
-    <script>scripts\script_inventory_create_items.gml</script>
-    <script>scripts\script_inventory_destroy_items.gml</script>
-    <script>scripts\script_items_equip.gml</script>
-    <script>scripts\script_items_create.gml</script>
-    <script>scripts\script_stats_window_text_items.gml</script>
+    <scripts name="collision">
+      <script>scripts\script_collision_perform.gml</script>
+      <script>scripts\script_collision_item.gml</script>
+      <script>scripts\script_collision_wall.gml</script>
+    </scripts>
+    <scripts name="combat">
+      <script>scripts\script_combat_trigger.gml</script>
+      <script>scripts\script_combat_perform.gml</script>
+    </scripts>
+    <scripts name="create">
+      <script>scripts\script_create_all_teams_and_players.gml</script>
+      <script>scripts\script_create_new_player.gml</script>
+      <script>scripts\script_create_player_common_local_vars.gml</script>
+      <script>scripts\script_create_spawn_points.gml</script>
+      <script>scripts\script_create_spawn_team.gml</script>
+    </scripts>
+    <scripts name="global">
+      <script>scripts\script_global_vars.gml</script>
+      <script>scripts\script_global_items_blank_template.gml</script>
+      <script>scripts\script_global_items.gml</script>
+      <script>scripts\script_ini_read_key.gml</script>
+    </scripts>
+    <scripts name="items">
+      <script>scripts\script_items_equip.gml</script>
+      <script>scripts\script_items_create.gml</script>
+      <script>scripts\script_item_weapon_vars.gml</script>
+      <script>scripts\script_item_armour_vars.gml</script>
+      <script>scripts\script_inventory_destroy_items.gml</script>
+      <script>scripts\script_inventory_create_items.gml</script>
+      <script>scripts\script_drop_random_item.gml</script>
+    </scripts>
+    <scripts name="misc">
+      <script>scripts\script_show_message_box.gml</script>
+      <script>scripts\script_mouse_enter_leave.gml</script>
+      <script>scripts\script_draw_text_outline_color.gml</script>
+    </scripts>
+    <scripts name="stats_window">
+      <script>scripts\script_stats_window_text.gml</script>
+      <script>scripts\script_stats_window_destroy.gml</script>
+      <script>scripts\script_stats_window.gml</script>
+      <script>scripts\script_stats_window_text_items.gml</script>
+      <script>scripts\script_destroy_stats_window.gml</script>
+    </scripts>
+    <scripts name="turn">
+      <script>scripts\script_turn_next_team.gml</script>
+      <script>scripts\script_turn_end_turn.gml</script>
+      <script>scripts\script_turn_am_i_current_player.gml</script>
+      <script>scripts\script_player_states.gml</script>
+      <script>scripts\script_keyboard_move.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -117,6 +135,7 @@
     <object>objects\obj_tips</object>
     <object>objects\obj_wall_hidden</object>
     <object>objects\obj_item_parent</object>
+    <object>objects\obj_inventory_parent</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_dining</room>

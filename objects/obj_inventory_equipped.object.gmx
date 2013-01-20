@@ -25,14 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
-//totalRedPlayers = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".numberOfPlayersOnTeam");
-/*
-draw_set_color(c_navy);
-draw_set_alpha(0.6);
-draw_rectangle(x,y,x+116,y+68,false);
-draw_set_alpha(1);
-*/
+            <string>
 //Inventory Weapon
 draw_set_color(c_lime);
 draw_rectangle(x+20,y+10,x+20+32,y+10+32,true);
@@ -52,44 +45,6 @@ draw_set_font(font_inventory)
 draw_set_color(c_lime); 
 
 draw_text(self.x+64,self.y+44,"Armour");
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/***************************************************
-  This script adds the items equipped by the active
-  player into the inventory window
- ***************************************************/
-/*
- //Get the current player's ID
-playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
-currentPlayerId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");
-
-//If the player has an item equipped, show it
-equippedWeapon = ds_map_find_value(global.mapItemWeaponStats, currentPlayerId.inventorySlotWeapon);
-if (equippedWeapon)
-    equippedWeaponId = instance_create(20+16,10+16,equippedWeapon);
-
-equippedArmour = ds_map_find_value(global.mapItemArmourStats, currentPlayerId.inventorySlotArmour);
-if (equippedArmour)
-    equippedArmourId = instance_create(64+16,10+16,equippedArmour);
-    */
 </string>
           </argument>
         </arguments>
