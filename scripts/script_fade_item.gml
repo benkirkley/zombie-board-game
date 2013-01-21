@@ -12,13 +12,15 @@ for (i=0; i < ds_list_size(listPlayerObjects); i += 1)
     {
         image_alpha = 0.5;
         i=ds_list_size(listPlayerObjects); //break loop
+        itemFade = tempObject;
     }
     else
     {
-       if ( image_alpha != 1 ) 
+       if ( itemFade == tempObject && image_alpha != 1 ) 
         {
             image_alpha = 1;
             i=ds_list_size(listPlayerObjects); //break loop
+            itemFade = 0;
         }
     }
 }
