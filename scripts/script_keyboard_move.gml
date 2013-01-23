@@ -12,6 +12,8 @@ if (isMoving == false && amICurrentPlayer == true)
         var collidableObjects;
         collidableObjects[0]=obj_item_consumable_medkit;
         collidableObjects[1]=obj_item_weapon_chainsaw;
+        finalX = x;
+        finalY = y;
         
         for (i=0; i < 2; i += 1)
         {          
