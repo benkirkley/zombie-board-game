@@ -84,11 +84,11 @@
       <script>scripts\script_draw_text_outline_color.gml</script>
     </scripts>
     <scripts name="stats_window">
-      <script>scripts\script_stats_window_text.gml</script>
-      <script>scripts\script_stats_window_destroy.gml</script>
-      <script>scripts\script_stats_window.gml</script>
-      <script>scripts\script_stats_window_text_items.gml</script>
       <script>scripts\script_destroy_stats_window.gml</script>
+      <script>scripts\script_stats_window.gml</script>
+      <script>scripts\script_stats_window_destroy.gml</script>
+      <script>scripts\script_stats_window_text.gml</script>
+      <script>scripts\script_stats_window_text_items.gml</script>
     </scripts>
     <scripts name="turn">
       <script>scripts\script_turn_next_team.gml</script>

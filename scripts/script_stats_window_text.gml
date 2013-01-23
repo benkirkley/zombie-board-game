@@ -52,7 +52,6 @@ else if (typeOfWindow == "item")
     
     thisItemObject = instanceId.object_index;
     itemString = ds_map_find_value(mapItemsStats, thisItemObject);
-    //show_message(itemString);
     itemName = ds_map_find_value(mapItemsStats, string(itemString)+"_name");
         text += string(itemName)
                 +"#--------";

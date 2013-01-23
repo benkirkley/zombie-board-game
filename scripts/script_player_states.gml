@@ -16,7 +16,6 @@ if ( hitPoints <= 0 )
     global.numberOfRedPlayersKilled += 1;
     
     var teamStillHasPlayers = false;
-    //loopLimit = ds_grid_height(gridCurrentTeam) ;
     loopLimit = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
     for (i=0; i < loopLimit; i +=1 )
     {
