@@ -9,13 +9,17 @@ if (isMoving == false && amICurrentPlayer == true)
     {
         //show_message("Enter debug here");
         var thisObject = object_get_name(self.object_index); 
+        
         var collidableObjects;
         collidableObjects[0]=obj_item_consumable_medkit;
         collidableObjects[1]=obj_item_weapon_chainsaw;
+        collidableObjects[2]=obj_item_weapon_axe;
+        
+        
         finalX = x;
         finalY = y;
         
-        for (i=0; i < 2; i += 1)
+        for (i=0; i < 3; i += 1)
         {          
             collide = script_collision_perform(collidableObjects[i],self.object_index);
             if ( collide )
