@@ -17,11 +17,21 @@
     ds_map_add(global.mapAllItemStats,"totalActionPoints","Max Action Points");
     ds_map_add(global.mapAllItemStats,"totalNumberOfAttacks","Max Attacks");
     
-    //This lists the category of items available
+    //List: item categories
     global.dslist_ItemTypes = ds_list_create();
     ds_list_add(global.dslist_ItemTypes,"weapon");
     ds_list_add(global.dslist_ItemTypes,"armour");
     ds_list_add(global.dslist_ItemTypes,"consumable");
+    
+    //List: all item objects
+    global.dslist_AllItemObjects = ds_list_create();
+    ds_list_add(global.dslist_AllItemObjects,obj_item_weapon_axe);
+    ds_list_add(global.dslist_AllItemObjects,obj_item_weapon_chainsaw);
+    ds_list_add(global.dslist_AllItemObjects,obj_item_weapon_knife_kitchen);
+    ds_list_add(global.dslist_AllItemObjects,obj_item_weapon_sword_rapier);
+    ds_list_add(global.dslist_AllItemObjects,obj_item_armour_helmet_riot);
+    ds_list_add(global.dslist_AllItemObjects,obj_item_armour_chest_riot);
+    ds_list_add(global.dslist_AllItemObjects,obj_item_armour_shield_riot);
     
     //Store a list of the items available to each category
     global.dslist_AllWeaponStrings = ds_list_create();
