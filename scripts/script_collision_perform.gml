@@ -11,38 +11,45 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
         //Only allow team0 (blue) to pick up items
         if (id.thisTeamId == 0)
         {
-            for (ie=0; ie < ds_map_size(global.mapItemTypeAndStatsMap); ie+=1)
+            var loopLimit = ds_map_size(global.mapItemTypeAndStatsMap);
+            for (ie=0; ie < loopLimit; ie+=1)
             {
-                itemObjectName=object_get_name(objectToCheckWith.object_index); 
+                itemObjectName=object_get_name(objectToCheckWith); 
                 mapItemStats = ds_map_find_value(global.mapItemTypeAndStatsMap, ie);
                 itemString = ds_map_find_value(mapItemStats,objectToCheckWith);
-                if (itemString!="")
+                if (is_string(itemString) )
                 {
-                    if (ie == 0)
+                    if (itemString != "")
                     {
-                        id.equippedWeapon = itemString;
-                        id.inventorySlotWeapon = string(itemString) + "_inventory";
-                        script_inventory_destroy_items();
-                        script_inventory_create_items();
-                        script_items_equip("weapon",itemString,id);
+                        if (ie == 0)
+                        {
+                            id.equippedWeapon = itemString;
+                            id.inventorySlotWeapon = string(itemString) + "_inventory";
+                            script_inventory_destroy_items();
+                            script_inventory_create_items();
+                            script_items_equip("weapon",itemString,id);
+                            ie = loopLimit //break loop
+                        }
+                        else if(ie == 1)
+                        {
+                            id.equippedArmour = itemString;
+                            id.inventorySlotArmour = string(itemString) + "_inventory";
+                            script_inventory_destroy_items();
+                            script_inventory_create_items();
+                            script_items_equip("armour",itemString,id);
+                            ie = loopLimit //break loop
+                        }
+                        else if(ie == 2)
+                        {
+                            //HEALTH
+                        }
+                        ie = ds_map_size(global.mapItemTypeAndStatsMap) //break loop
+                        
                     }
-                    else if(ie == 1)
-                    {
-                        id.equippedArmour = itemString;
-                        id.inventorySlotArmour = string(itemString) + "_inventory";
-                        script_inventory_destroy_items();
-                        script_inventory_create_items();
-                        script_items_equip("armour",itemString,id);
-                    }
-                    else if(ie == 2)
-                    {
-                        //HEALTH
-                    }
-                    ie = ds_map_size(global.mapItemTypeAndStatsMap) //break loop
-                    
                 }
+                with (collisionObjectId) { instance_destroy(); }
             }
-            with (collisionObjectId) { instance_destroy(); }
+            
         }
         return true; //no blocking collision
     }

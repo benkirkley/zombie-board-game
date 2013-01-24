@@ -6,6 +6,9 @@ if (typeOfWindow == "player")
 {
     text =  string(instanceId.name)
     +"#--------"
+    +"#Attack Dice: d"+string(instanceId.attack
+        + instanceId.equippedWeaponAttack
+        + instanceId.equippedArmourAttack)
     +"#Dice: "+string(instanceId.dicePool 
         + instanceId.equippedWeaponDicePool
         + instanceId.equippedArmourDicePool)

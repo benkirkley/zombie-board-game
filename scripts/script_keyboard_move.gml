@@ -8,18 +8,11 @@ if (isMoving == false && amICurrentPlayer == true)
     if ( keyboard_check_pressed(vk_numpad5) )
     {
         //show_message("Enter debug here");
-        var thisObject = object_get_name(self.object_index); 
-        
-        /*
-        var collidableObjects;
-        collidableObjects[0]=obj_item_consumable_medkit;
-        collidableObjects[1]=obj_item_weapon_chainsaw;
-        collidableObjects[2]=obj_item_weapon_axe;
-        */
-        
+        var thisObject = object_get_name(self.object_index);         
         finalX = x;
         finalY = y;
         
+        //Check if player is colliding with an item
         for (i=0; i < ds_list_size(global.dslist_AllItemObjects); i += 1)
         {   
             collidableObjects = ds_list_find_value(global.dslist_AllItemObjects,i);
