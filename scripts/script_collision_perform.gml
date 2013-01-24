@@ -53,7 +53,7 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
         }
         return true; //no blocking collision
     }
-    
+        
     if ( script_collision_wall(objectToCheckWith) )
     {
         //show_message("Blocked");
