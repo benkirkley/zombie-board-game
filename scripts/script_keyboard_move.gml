@@ -5,7 +5,7 @@
 if (isMoving == false && amICurrentPlayer == true)
 {   
     //DEBUG:  use numpad 5 to being up a debug dialog
-    if ( keyboard_check_pressed(vk_numpad5) )
+    if ( keyboard_check_pressed( ord("E") ) )
     {
         //show_message("Enter debug here");
         var thisObject = object_get_name(self.object_index);         
