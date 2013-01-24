@@ -44,10 +44,17 @@ else if (typeOfWindow == "item")
     {
         case "weapon":
             mapItemsStats = global.mapItemWeaponStats;
+            //mapItemsStatsEnglish = global.mapAllItemStats;
         break;
         
         case "armour":
             mapItemsStats = global.mapItemArmourStats;
+            //mapItemsStatsEnglish = global.mapAllItemStats;
+        break;
+        
+        case "consumable":
+            mapItemsStats = global.mapItemConsumableStats;
+            //mapItemsStatsEnglish = global.mapAllItemStats;
         break;
         
         default:

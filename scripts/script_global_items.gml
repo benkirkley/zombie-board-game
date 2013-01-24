@@ -16,6 +16,8 @@
     ds_map_add(global.mapAllItemStats,"totalHitPoints","Max Hit Points");
     ds_map_add(global.mapAllItemStats,"totalActionPoints","Max Action Points");
     ds_map_add(global.mapAllItemStats,"totalNumberOfAttacks","Max Attacks");
+    ds_map_add(global.mapAllItemStats,"healPoints","HP Heal");
+    
     
     //List: item categories
     global.dslist_ItemTypes = ds_list_create();
