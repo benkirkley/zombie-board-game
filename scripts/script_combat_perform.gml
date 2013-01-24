@@ -154,7 +154,7 @@ if (global.debug_show_combat_rolls )
 
     
 //TEXT: Floating daamage results above target's head
-////Show no damage as text instead of zero
+////Show no damage as "MISS" instead of zero
 if (totalDamage = 0)
 {
     totalDamage = "MISS";

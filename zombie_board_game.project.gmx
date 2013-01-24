@@ -77,6 +77,8 @@
       <script>scripts\script_drop_random_item.gml</script>
       <script>scripts\script_global_items.gml</script>
       <script>scripts\script_fade_item.gml</script>
+      <script>scripts\script_items_consume.gml</script>
+      <script>scripts\script_item_consumable_vars.gml</script>
     </scripts>
     <scripts name="misc">
       <script>scripts\script_show_message_box.gml</script>

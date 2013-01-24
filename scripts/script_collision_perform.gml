@@ -42,6 +42,7 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
                         else if(ie == 2)
                         {
                             //HEALTH
+                            script_items_consume("consumable", itemString,id);
                         }
                         ie = ds_map_size(global.mapItemTypeAndStatsMap) //break loop
                         

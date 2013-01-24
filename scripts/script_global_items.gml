@@ -32,6 +32,7 @@
     ds_list_add(global.dslist_AllItemObjects,obj_item_armour_helmet_riot);
     ds_list_add(global.dslist_AllItemObjects,obj_item_armour_chest_riot);
     ds_list_add(global.dslist_AllItemObjects,obj_item_armour_shield_riot);
+    ds_list_add(global.dslist_AllItemObjects,obj_item_consumable_medkit);
     
     //Store a list of the items available to each category
     global.dslist_AllWeaponStrings = ds_list_create();
