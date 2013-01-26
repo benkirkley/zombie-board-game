@@ -11,13 +11,6 @@
     <sprite>sprites\spr_button_endTurn_down</sprite>
     <sprite>sprites\spr_button_endTurn_up</sprite>
     <sprite>sprites\spr_hidden_32</sprite>
-    <sprite>sprites\spr_inventory_armour_chest_riot</sprite>
-    <sprite>sprites\spr_inventory_armour_helmet_riot</sprite>
-    <sprite>sprites\spr_inventory_armour_shield_riot</sprite>
-    <sprite>sprites\spr_inventory_weapon_axe</sprite>
-    <sprite>sprites\spr_inventory_weapon_chainsaw</sprite>
-    <sprite>sprites\spr_inventory_weapon_knife_kitchen</sprite>
-    <sprite>sprites\spr_inventory_weapon_sword_rapier</sprite>
     <sprite>sprites\spr_item_armour_chest_riot</sprite>
     <sprite>sprites\spr_item_armour_helmet_riot</sprite>
     <sprite>sprites\spr_item_armour_shield_riot</sprite>
