@@ -3,10 +3,16 @@ global.numberOfTeams = 2;
 numberOfBluePlayers = 1;
 numberOfRedPlayers = 9;
 
+//Debug
+//var blueStartingWeapon = "";
+//var blueStartingArmour = "";
+
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
     numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", numberOfBluePlayers,"real");
     numberOfRedPlayers = script_ini_read_key("Start","number_of_red_players", numberOfRedPlayers,"real");
+    //blueStartingWeapon = script_ini_read_key("Start","blue_player_starting_weapon", blueStartingWeapon,"string");
+    //blueStartingArmour = script_ini_read_key("Start","blue_player_starting_armour", blueStartingArmour,"string");
 ini_close();
 
 //Define variables
@@ -50,7 +56,17 @@ gridCurrentTeam = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 currentPlayerId = ds_map_find_value(playerBlueDataMap,string(global.currentPlayer)+".playerId");
 playerHighlightId = instance_create(currentPlayerId.x,currentPlayerId.y,obj_player_highlight);
 
-//Show the inventory of the starting player
-//script_items_equip("weapon","item_weapon_axe",currentPlayerId);
-//script_items_equip("armour","item_armour_helmet_riot",currentPlayerId);
 script_inventory_create_items();
+
+//Debug
+if (global.debug_all_items_on_map)
+{
+    var item_x=608;
+    var item_y=160
+    for (var j=0; j < ds_list_size(global.dslist_AllItemObjects); j +=1 )
+    {
+        var tempObj = ds_list_find_value(global.dslist_AllItemObjects, j);
+        instance_create(item_x,item_y,tempObj);
+        item_x -= 64;
+    }
+}
