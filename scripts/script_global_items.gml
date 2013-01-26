@@ -36,6 +36,26 @@
     ds_list_add(global.dslist_AllItemObjects,obj_item_armour_shield_riot);
     ds_list_add(global.dslist_AllItemObjects,obj_item_consumable_medkit);
     
+    //Map: all item objects with type
+    global.mapAllItemObjects = ds_grid_create(2,8);
+    ds_grid_add(global.mapAllItemObjects, 0, 0, "weapon");
+    ds_grid_add(global.mapAllItemObjects, 1, 0, obj_item_weapon_axe);
+    ds_grid_add(global.mapAllItemObjects, 0, 1, "weapon");
+    ds_grid_add(global.mapAllItemObjects, 1, 1, obj_item_weapon_chainsaw);
+    ds_grid_add(global.mapAllItemObjects, 0, 2, "weapon");
+    ds_grid_add(global.mapAllItemObjects, 1, 2, obj_item_weapon_knife_kitchen);
+    ds_grid_add(global.mapAllItemObjects, 0, 3, "weapon");
+    ds_grid_add(global.mapAllItemObjects, 1, 3, obj_item_weapon_sword_rapier);
+    ds_grid_add(global.mapAllItemObjects, 0, 4, "armour");
+    ds_grid_add(global.mapAllItemObjects, 1, 4, obj_item_armour_helmet_riot);
+    ds_grid_add(global.mapAllItemObjects, 0, 5, "armour");
+    ds_grid_add(global.mapAllItemObjects, 1, 5, obj_item_armour_chest_riot);
+    ds_grid_add(global.mapAllItemObjects, 0, 6, "armour");
+    ds_grid_add(global.mapAllItemObjects, 1, 6, obj_item_armour_shield_riot);
+    ds_grid_add(global.mapAllItemObjects, 0, 7, "consumable");
+    ds_grid_add(global.mapAllItemObjects, 1, 7, obj_item_consumable_medkit);
+    
+    
     //Store a list of the items available to each category
     global.dslist_AllWeaponStrings = ds_list_create();
     global.dslist_AllArmourStrings = ds_list_create();

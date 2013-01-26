@@ -24,25 +24,45 @@ if ( dropItemCheck >= item_drop_chance_fail_start && dropItemCheck <= item_drop_
 if ( dropItemCheck >= item_drop_chance_pass_start && dropItemCheck <= item_drop_chance_pass_end ) var dropItemCheckResult = 1;
 //dropItemCheckResult = 1;
 if (global.debug_show_roll_for_chance_of_item_drop)
-    show_message("Rolling D100 to see if item drops: " + string(dropItemCheck));
+    show_message("Rolling d100 to see if item drops: " + string(dropItemCheck));
     
 
 if ( dropItemCheckResult )
 {
+    //Roll to see what type of item will drop
     randomize();
-    var rollForItemToDrop = floor(random(100)) + 1;
-    if ( rollForItemToDrop >= 1 && rollForItemToDrop <= 100 ) var itemToDrop = 0;
-    //if ( rollForItemToDrop >= 67 && rollForItemToDrop <= 100 ) var itemToDrop = 1;
-    //show_message("rollForItemToDrop: "+ string(rollForItemToDrop) );
-    
-    for (ic=0; ic < 1; ic += 1)
+    var rollForTypeOfItemToDrop = floor(random(100)) + 1;
+    if ( rollForTypeOfItemToDrop >= 1 && rollForTypeOfItemToDrop <= 66 )
     {
-        if (ic == itemToDrop)
-        {
-            itemId = instance_create(x,y,itemList[ic]);
-            itemId.depth=10;
-        }
-        ;
+        var itemToDrop = "consumable";
+        var itemMapToUse = global.mapItemConsumableStats;
+    }
+    else if ( rollForTypeOfItemToDrop >= 67 && rollForTypeOfItemToDrop <= 83 )
+    {
+        var itemToDrop = "weapon";
+        var itemMapToUse = global.mapItemArmourStats;
+    }
+    else if ( rollForTypeOfItemToDrop >= 84 && rollForTypeOfItemToDrop <= 100 ) 
+    {
+        var itemToDrop = "armour";
+        var itemMapToUse = global.mapItemWeaponStats;
+    }
+    if (global.debug_show_roll_for_chance_of_item_drop)
+        show_message( "Rolling d100 to see what type of item drops: " + string(rollForTypeOfItemToDrop) + " (" + string(itemToDrop) + ")" ) ;
+    
+    //Roll to see which item drops depending according to item type
+    var rollForItemToDrop = floor(random(100)) + 1;
+    if (itemToDrop == "consumable")
+    {
+        if ( rollForItemToDrop >= 1 && rollForItemToDrop <= 100 ) itemId = instance_create(x,y,obj_item_consumable_medkit);
+    }
+    else if (itemToDrop == "weapon")
+    {
+        if ( rollForItemToDrop >= 1 && rollForItemToDrop <= 100 ) itemId = instance_create(x,y,obj_item_weapon_axe);
+    }
+    else if (itemToDrop == "armour")
+    {
+        if ( rollForItemToDrop >= 1 && rollForItemToDrop <= 100 ) itemId = instance_create(x,y,obj_item_armour_helmet_riot);
     }
 
 }
