@@ -127,16 +127,10 @@ if ( isMoving == true )
         }
         
         var thisObject = object_get_name(self.object_index); 
-        var collidableObjects;
-        collidableObjects[0]=obj_player_blue;
-        collidableObjects[1]=obj_player_red;
-        collidableObjects[2]=obj_wall_hidden;
-        //collidableObjects[3]=obj_item_consumable_medkit;
-        //collidableObjects[4]=obj_item_weapon_chainsaw;
-        
-        for (i=0; i < 3; i += 1)
-        {         
-            collide = script_collision_perform(collidableObjects[i],self.object_index);
+       
+        for (i=0; i < ds_list_size(global.collidableObjects); i+=1)
+        {   
+            collide = script_collision_perform( ds_list_find_value(global.collidableObjects,i), self.object_index);
             if ( collide )
             {
                 //show_message("Collision");

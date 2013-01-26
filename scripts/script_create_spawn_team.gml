@@ -40,7 +40,15 @@ for (h=0; h < numberOfSpawnZones; h+=1)
             spawnPointY = ds_grid_get(spawnPointsGrid, 2, k);
             
             //Is this spot free?
-            if ( !instance_position(spawnPointX,spawnPointY,all) )
+            var checkSpotForObject = false;
+            for (n=0; n < ds_list_size(global.collidableObjects); n+=1)
+            {
+                var objectToCheckWith = ds_list_find_value(global.collidableObjects, n)
+                var checkSpotForObject = instance_position(spawnPointX,spawnPointY,objectToCheckWith)
+                if (checkSpotForObject) n = ds_list_size(global.collidableObjects) //break loop
+            }
+            
+            if ( !checkSpotForObject )
             {
                 gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, i);
                 //Find the first unspawned player on this team
