@@ -1,13 +1,13 @@
-forceDropToPass = argument0;
-skipConsumableDrop  = argument1;
+var forceDropToPass = argument0;
+var skipConsumableDrop  = argument1;
 
 if (forceDropToPass && global.debug_show_roll_for_chance_of_item_drop) show_message("Forcing an item to drop on the map...");
 
 //These are the dice roll chances of an item dropping
 var item_drop_chance_dice = 100;
 var item_drop_chance_fail_start = 1;
-var item_drop_chance_fail_end = 66;
-var item_drop_chance_pass_start = 67;
+var item_drop_chance_fail_end = 50;
+var item_drop_chance_pass_start = 51;
 var item_drop_chance_pass_end = 100;
 
 ////What type of item should we drop?
@@ -92,8 +92,10 @@ if ( dropItemCheckResult )
     //Roll to see what type of item will drop
     randomize();
     var rollForTypeOfItemToDrop = floor(random(item_type_drop_chance_dice)) + 1;
-    if (skipConsumableDrop == true && ( rollForTypeOfItemToDrop >= item_type_drop_chance_consumable_dice_start && rollForTypeOfItemToDrop <= item_type_drop_chance_consumable_dice_end ) )
-        rollForTypeOfItemToDrop += item_type_drop_chance_consumable_dice_end //skip consumable items
+    while (skipConsumableDrop == true && ( rollForTypeOfItemToDrop >= item_type_drop_chance_consumable_dice_start && rollForTypeOfItemToDrop <= item_type_drop_chance_consumable_dice_end ) )
+        var rollForTypeOfItemToDrop = floor(random(item_type_drop_chance_dice)) + 1;
+        //rollForTypeOfItemToDrop += item_type_drop_chance_consumable_dice_end //skip consumable items
+        
     
     if ( rollForTypeOfItemToDrop >= item_type_drop_chance_consumable_dice_start && rollForTypeOfItemToDrop <= item_type_drop_chance_consumable_dice_end )
     {
@@ -132,6 +134,7 @@ if ( dropItemCheckResult )
         if ( rollForItemToDrop >= armour_to_drop_chest_riot_start && rollForItemToDrop <= armour_to_drop_chest_riot_end ) itemId = instance_create(x,y,obj_item_armour_chest_riot);
         if ( rollForItemToDrop >= armour_to_drop_shield_riot_start && rollForItemToDrop <= armour_to_drop_shield_riot_end ) itemId = instance_create(x,y,obj_item_armour_shield_riot);
     }
-    show_message( "Finally, rolling d100 to see which item is dropped: " + string(rollForItemToDrop) + " #(" + string(object_get_name(itemId.object_index)) + ")" ) ;
     itemId.depth = -2;
+    if (global.debug_show_roll_for_chance_of_item_drop)
+        show_message( "Finally, rolling d100 to see which item is dropped: " + string(rollForItemToDrop) + " #(" + string(object_get_name(itemId.object_index)) + ")" ) ;
 }
