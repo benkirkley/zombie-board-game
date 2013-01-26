@@ -58,11 +58,16 @@ if ( dropItemCheckResult )
     }
     else if (itemToDrop == "weapon")
     {
-        if ( rollForItemToDrop >= 1 && rollForItemToDrop <= 100 ) itemId = instance_create(x,y,obj_item_weapon_axe);
+        if ( rollForItemToDrop >= 1 && rollForItemToDrop <= 25 ) itemId = instance_create(x,y,obj_item_weapon_axe);
+        if ( rollForItemToDrop >= 26 && rollForItemToDrop <= 50 ) itemId = instance_create(x,y,obj_item_weapon_chainsaw);
+        if ( rollForItemToDrop >= 51 && rollForItemToDrop <= 75 ) itemId = instance_create(x,y,obj_item_weapon_knife_kitchen);
+        if ( rollForItemToDrop >= 76 && rollForItemToDrop <= 100 ) itemId = instance_create(x,y,obj_item_weapon_sword_rapier);
     }
     else if (itemToDrop == "armour")
     {
-        if ( rollForItemToDrop >= 1 && rollForItemToDrop <= 100 ) itemId = instance_create(x,y,obj_item_armour_helmet_riot);
+        if ( rollForItemToDrop >= 1 && rollForItemToDrop <= 33 ) itemId = instance_create(x,y,obj_item_armour_helmet_riot);
+        if ( rollForItemToDrop >= 34 && rollForItemToDrop <= 66 ) itemId = instance_create(x,y,obj_item_armour_chest_riot);
+        if ( rollForItemToDrop >= 67 && rollForItemToDrop <= 100 ) itemId = instance_create(x,y,obj_item_armour_shield_riot);
     }
-
+    itemId.depth = -2;
 }
