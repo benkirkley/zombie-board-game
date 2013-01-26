@@ -1,5 +1,7 @@
-var itemList;
-itemList[0] = obj_item_consumable_medkit;
+forceDropToPass = argument0;
+skipConsumableDrop  = argument1;
+
+if (forceDropToPass && global.debug_show_roll_for_chance_of_item_drop) show_message("Forcing an item to drop on the map...");
 
 //These are the dice roll chances of an item dropping
 var item_drop_chance_dice = 100;
@@ -81,16 +83,18 @@ randomize();
 var dropItemCheck = floor(random(item_drop_chance_dice)) + 1;
 if ( dropItemCheck >= item_drop_chance_fail_start && dropItemCheck <= item_drop_chance_fail_end ) var dropItemCheckResult = 0;
 if ( dropItemCheck >= item_drop_chance_pass_start && dropItemCheck <= item_drop_chance_pass_end ) var dropItemCheckResult = 1;
-//dropItemCheckResult = 1;
+if (forceDropToPass) dropItemCheckResult = 1; //force this check to pass and let an item drop
 if (global.debug_show_roll_for_chance_of_item_drop)
-    show_message("Rolling d100 to see if item drops: " + string(dropItemCheck));
-    
+    show_message("Rolling d100 to see if item drops: " + string(dropItemCheck) + " #(" + string(dropItemCheckResult) + ")" );
 
 if ( dropItemCheckResult )
 {
     //Roll to see what type of item will drop
     randomize();
     var rollForTypeOfItemToDrop = floor(random(item_type_drop_chance_dice)) + 1;
+    if (skipConsumableDrop == true && ( rollForTypeOfItemToDrop >= item_type_drop_chance_consumable_dice_start && rollForTypeOfItemToDrop <= item_type_drop_chance_consumable_dice_end ) )
+        rollForTypeOfItemToDrop += item_type_drop_chance_consumable_dice_end //skip consumable items
+    
     if ( rollForTypeOfItemToDrop >= item_type_drop_chance_consumable_dice_start && rollForTypeOfItemToDrop <= item_type_drop_chance_consumable_dice_end )
     {
         var itemToDrop = "consumable";
@@ -107,7 +111,7 @@ if ( dropItemCheckResult )
         var itemMapToUse = global.mapItemWeaponStats;
     }
     if (global.debug_show_roll_for_chance_of_item_drop)
-        show_message( "Rolling d100 to see what type of item drops: " + string(rollForTypeOfItemToDrop) + " (" + string(itemToDrop) + ")" ) ;
+        show_message( "Rolling d100 to see what type of item drops: " + string(rollForTypeOfItemToDrop) + " #(" + string(itemToDrop) + ")" ) ;
     
     //Roll to see which item drops depending according to item type
     var rollForItemToDrop = floor(random(which_item_to_drop_dice)) + 1;
@@ -128,5 +132,6 @@ if ( dropItemCheckResult )
         if ( rollForItemToDrop >= armour_to_drop_chest_riot_start && rollForItemToDrop <= armour_to_drop_chest_riot_end ) itemId = instance_create(x,y,obj_item_armour_chest_riot);
         if ( rollForItemToDrop >= armour_to_drop_shield_riot_start && rollForItemToDrop <= armour_to_drop_shield_riot_end ) itemId = instance_create(x,y,obj_item_armour_shield_riot);
     }
+    show_message( "Finally, rolling d100 to see which item is dropped: " + string(rollForItemToDrop) + " #(" + string(object_get_name(itemId.object_index)) + ")" ) ;
     itemId.depth = -2;
 }
