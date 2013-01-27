@@ -60,7 +60,6 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
                         if (is_string(oldArmour))
                         {
                             oldArmourObject = ds_map_find_value(global.mapItemArmourStats,oldArmour)
-                            //show_message(oldArmourObject);
                             itemId = instance_create(x,y,oldArmourObject);
                         }
                          

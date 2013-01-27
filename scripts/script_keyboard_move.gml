@@ -28,7 +28,36 @@ if (isMoving == false && amICurrentPlayer == true)
         }
     }
     //ITEMS: Drop Weapon
+    if ( keyboard_check_pressed( ord("F") ) )
+    {
+        oldWeapon = id.inventorySlotWeapon;
+        if (is_string(oldWeapon))
+        {
+            oldWeaponObject = ds_map_find_value(global.mapItemWeaponStats,oldWeapon)
+            itemId = instance_create(x,y,oldWeaponObject);
+            with (global.equippedWeaponId) instance_destroy();
+            global.equippedWeaponId = 0;
+            id.inventorySlotWeapon = 0;
+            
+        }
+                        
+    }
+    
     //ITEMS: Drop Armour
+    if ( keyboard_check_pressed( ord("G") ) )
+    {
+        oldArmour = id.inventorySlotArmour;
+        if (is_string(oldArmour))
+        {
+            oldArmourObject = ds_map_find_value(global.mapItemArmourStats,oldArmour)
+            itemId = instance_create(x,y,oldArmourObject);
+            with (global.equippedArmourId) instance_destroy();
+            global.equippedArmourId = 0;
+            id.inventorySlotArmour = 0;
+            
+        }
+    }
+    
     
     if (currentPlayerId == self.id && ( (actionPoints + equippedWeaponActionPoints + equippedArmourActionPoints) > 0 || (numberOfAttacks  + equippedWeaponNumberOfAttacks + equippedArmourNumberOfAttacks) > 0) )
     {
