@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>refreshText = true;
+            <string>refreshText = 1;
 </string>
           </argument>
         </arguments>
@@ -48,30 +48,45 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-draw_set_color(c_navy);
-draw_set_alpha(0.6);
-draw_rectangle(x-6,y-6,x+128,y+70,false);
-draw_set_alpha(1);
-*/
+            <string>/***************************************************
+  This script puts some useful info up on screen
+ ***************************************************/
+
 if (refreshText)
 {
-    refreshText = false;
-    
+    refreshText = 0;
     currentAlpha =  draw_get_alpha();
-    draw_set_alpha(1);
-    draw_set_font(font1)
-    draw_set_color(c_white);
-    testString = "How To Play"
-                +"##1) Move with arrow keys or numpad. Numpad gives you diagonal movement"
-                +"##2) You can move and attack separately"
-                +"##3) Attack by "+chr(34)+"walking"+chr(34)+" into enemy. Only melee combat for now - ranged coming"
-                +"##4) Mouse over a unit to see its vital stats"
-                +"##5) Press Enter or use End Turn button when a player has finished his go"
+    
+    /*
+    tipString = "How To Play"
+                +"#-- Move with arrow keys or numpad. Numpad gives you diagonal movement"
+                +"#-- You can move and attack separately"
+                +"#-- Attack by "+chr(34)+"walking"+chr(34)+" into enemy. (ranged coming soon)"
+                +"#-- Mouse over a unit or item to see its vital stats"
+                +"#-- Press 'e' to use the item your standing over"
+                +"#-- Press 'f' to drop your weapon"
+                +"#-- Press 'g' to drop your armour"
+                +"#-- Press Enter or use End Turn button when a player has finished his go"
                 ;
-    draw_text_ext(x,y, testString, -1, 224);
+   */
+   tipString = +"CONTROLS"
+               +"#  Arrow keys or Numpad = Move"
+               +"#  Enter = end turn"
+               +"#  e = equip / use"
+               +"#  f = drop weapon"
+               +"#  g = drop armour" 
+               +"#"
+               +"#You can move and attack separately"
+               +"#"
+               +"#Attack by "+chr(34)+"walking"+chr(34)+"into enemy."
+               
+   
     draw_set_alpha(currentAlpha);
 }
+draw_set_alpha(1);
+draw_set_font(font1)
+draw_set_color(c_white);
+draw_text_ext(x,y, string(tipString), -1, 224);
 
 </string>
           </argument>
