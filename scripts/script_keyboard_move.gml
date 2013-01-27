@@ -5,6 +5,8 @@
 if (isMoving == false && amICurrentPlayer == true)
 {   
     //DEBUG:  use numpad 5 to being up a debug dialog
+    
+    //ITEMS: Pick up
     if ( keyboard_check_pressed( ord("E") ) )
     {
         //show_message("Enter debug here");
@@ -25,6 +27,9 @@ if (isMoving == false && amICurrentPlayer == true)
             }
         }
     }
+    //ITEMS: Drop Weapon
+    //ITEMS: Drop Armour
+    
     if (currentPlayerId == self.id && ( (actionPoints + equippedWeaponActionPoints + equippedArmourActionPoints) > 0 || (numberOfAttacks  + equippedWeaponNumberOfAttacks + equippedArmourNumberOfAttacks) > 0) )
     {
         //Arrow Keys and Numpad Keys

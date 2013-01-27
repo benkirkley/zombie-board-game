@@ -21,8 +21,11 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
                 {
                     if (itemString != "")
                     {
+                        var oldWeapon = 0;
+                        var oldArmour = 0;
                         if (ie == 0)
                         {
+                            oldWeapon = id.inventorySlotWeapon;
                             id.equippedWeapon = itemString;
                             id.inventorySlotWeapon = string(itemString) + "_inventory";
                             script_inventory_destroy_items();
@@ -32,6 +35,7 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
                         }
                         else if(ie == 1)
                         {
+                            oldArmour = id.inventorySlotArmour;
                             id.equippedArmour = itemString;
                             id.inventorySlotArmour = string(itemString) + "_inventory";
                             script_inventory_destroy_items();
@@ -46,9 +50,22 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
                         }
                         ie = ds_map_size(global.mapItemTypeAndStatsMap) //break loop
                         
+                        with (collisionObjectId) { instance_destroy(); }
+                        //Put item in inventory on to ground
+                        if (is_string(oldWeapon))
+                        {
+                            oldWeaponObject = ds_map_find_value(global.mapItemWeaponStats,oldWeapon)
+                            itemId = instance_create(x,y,oldWeaponObject);
+                        }
+                        if (is_string(oldArmour))
+                        {
+                            oldArmourObject = ds_map_find_value(global.mapItemArmourStats,oldArmour)
+                            //show_message(oldArmourObject);
+                            itemId = instance_create(x,y,oldArmourObject);
+                        }
+                         
                     }
                 }
-                with (collisionObjectId) { instance_destroy(); }
             }
             
         }

@@ -68,5 +68,10 @@ if (global.debug_all_items_on_map)
         var tempObj = ds_list_find_value(global.dslist_AllItemObjects, j);
         instance_create(item_x,item_y,tempObj);
         item_x -= 64;
+        if (item_x <= 352) 
+        {
+            item_x = 608;
+            item_y = 224;
+        }
     }
 }
