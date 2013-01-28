@@ -28,7 +28,15 @@ playerRedDataMap = ds_map_create();
 ds_map_add(playerRedDataMap,".numberOfPlayersOnTeam",0);
 
 //SCRIPT: create the spawn points where players will appear
-script_create_spawn_points();
+if (global.roomTile == "dining")
+{
+    script_create_spawn_points_room_dining();
+}
+else if (global.roomTile == "garage")
+{
+    script_create_spawn_points_room_garage();
+}
+
 
 //Put all player grids into container grid
 //GRID: |table_id|teams_grid|team_name|team_player_count|

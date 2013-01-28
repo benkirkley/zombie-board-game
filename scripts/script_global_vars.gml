@@ -2,6 +2,7 @@
 
 global.endTurn = false;
 global.numberOfRedPlayersKilled = 0;
+global.numberOfTeams = 0;
 
 global.currentPlayer = 0;
 global.currentTeam = 0;
@@ -24,3 +25,5 @@ ds_list_add(global.collidableObjects, obj_player_blue);
 ds_list_add(global.collidableObjects, obj_player_red);
 ds_list_add(global.collidableObjects, obj_wall_hidden);
 
+global.savedPlayerData = ds_map_create();
+global.test=0;

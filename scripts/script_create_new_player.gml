@@ -35,13 +35,9 @@ playerId.direction = spawnDirection;
 playerId.image_angle = spawnDirection;
 playerId.image_speed=0;
 
-/*
-//UPDATE GRID: |instance_id|player_name|alive|alread_spawned
-ds_grid_set(playersTeamsGrid, 0, counter, playerId);
-ds_grid_set(playersTeamsGrid, 1, counter, playerId.name);
-ds_grid_set(playersTeamsGrid, 2, counter, true);
-ds_grid_set(playersTeamsGrid, 3, counter, true);
-*/
+//Check if player was saved from previous room
+doesPlayerExistInSave = ds_map_find_value(global.savedPlayerData,string(counter)+".playerId");
+//show_message(global.test);
 
 numberOfPlayersOnTeam = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
 ds_map_replace(playerDataMap,".numberOfPlayersOnTeam",numberOfPlayersOnTeam+1);
