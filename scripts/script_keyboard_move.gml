@@ -5,6 +5,7 @@
 if (isMoving == false && amICurrentPlayer == true)
 {   
     //DEBUG:  use numpad 5 to being up a debug dialog
+    /*
     if ( keyboard_check_pressed( vk_numpad5 ) )
     {
         //TODO: Add loop to save all alive blue players
@@ -15,7 +16,7 @@ if (isMoving == false && amICurrentPlayer == true)
         
         room_goto_next();
     }
-    
+    */
     if ( keyboard_check_pressed( ord("M") ) )
     {
         //TODO: Add loop to save all alive blue players

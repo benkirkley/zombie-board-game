@@ -5,17 +5,14 @@ blueSpawnZones = ds_grid_create(3,0);
 
 //GRID: |spawn_point_id|x|y|
 ////Spawn 0
-spawn_direction = 0;
-blueSpawnPoints = ds_grid_create(3,3);
+spawn_direction = 180;
+blueSpawnPoints = ds_grid_create(3,2);
 ds_grid_set(blueSpawnPoints,0,0,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,0,224);
-ds_grid_set(blueSpawnPoints,2,0,480);
+ds_grid_set(blueSpawnPoints,1,0,480);
+ds_grid_set(blueSpawnPoints,2,0,288);
 ds_grid_set(blueSpawnPoints,0,1,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,1,288);
-ds_grid_set(blueSpawnPoints,2,1,480);
-ds_grid_set(blueSpawnPoints,0,2,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,2,352);
-ds_grid_set(blueSpawnPoints,2,2,480);
+ds_grid_set(blueSpawnPoints,1,1,544);
+ds_grid_set(blueSpawnPoints,2,1,288);
 
 ////Add the new spawn point to the zone grid
 var current_height = ds_grid_height(blueSpawnZones);
@@ -28,17 +25,17 @@ redSpawnZones = ds_grid_create(3,0);
 
 //GRID: |spawn_point_id|x|y|
 ////Spawn 0
-spawn_direction = 90;
+spawn_direction = 270;
 redSpawnPoints = ds_grid_create(3,3)
 ds_grid_set(redSpawnPoints,0,0,spawn_direction);
-ds_grid_set(redSpawnPoints,1,0,608);
-ds_grid_set(redSpawnPoints,2,0,288);
+ds_grid_set(redSpawnPoints,1,0,160);
+ds_grid_set(redSpawnPoints,2,0,352);
 ds_grid_set(redSpawnPoints,0,1,spawn_direction);
-ds_grid_set(redSpawnPoints,1,1,608);
-ds_grid_set(redSpawnPoints,2,1,352);
+ds_grid_set(redSpawnPoints,1,1,160);
+ds_grid_set(redSpawnPoints,2,1,416);
 ds_grid_set(redSpawnPoints,0,2,spawn_direction);
-ds_grid_set(redSpawnPoints,1,2,608);
-ds_grid_set(redSpawnPoints,2,2,416);
+ds_grid_set(redSpawnPoints,1,2,160);
+ds_grid_set(redSpawnPoints,2,2,480);
 
 ////Add the new spawn point to the zone grid
 var current_height = ds_grid_height(redSpawnZones);
