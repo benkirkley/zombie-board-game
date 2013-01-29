@@ -3,6 +3,9 @@ global.numberOfTeams = 2;
 numberOfBluePlayers = 1;
 numberOfRedPlayers = 9;
 
+global.currentTeam = 0;
+global.currentPlayer = 0;
+
 //Debug
 //var blueStartingWeapon = "";
 //var blueStartingArmour = "";
@@ -57,6 +60,7 @@ else if (global.roomTile == "kitchen")
     script_create_spawn_points_room_kitchen();
 }
 
+
 //Put all player grids into container grid
 //GRID: |table_id|teams_grid|team_name|team_player_count|
 global.teamGrids = ds_grid_create(7,global.numberOfTeams);
@@ -83,6 +87,7 @@ script_create_spawn_team(global.currentTeam);
 //Highlight the starting player
 gridCurrentTeam = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 currentPlayerId = ds_map_find_value(playerBlueDataMap,string(global.currentPlayer)+".playerId");
+//show_message(global.currentTeam);
 playerHighlightId = instance_create(currentPlayerId.x,currentPlayerId.y,obj_player_highlight);
 
 script_inventory_create_items();
