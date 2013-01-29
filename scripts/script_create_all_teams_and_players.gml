@@ -44,6 +44,18 @@ else if (global.roomTile == "bedroom_2")
 {
     script_create_spawn_points_room_bedroom_2();
 }
+else if (global.roomTile == "corridor_1")
+{
+    script_create_spawn_points_room_corridor_1();
+}
+else if (global.roomTile == "corridor_2")
+{
+    script_create_spawn_points_room_corridor_2();
+}
+else if (global.roomTile == "kitchen")
+{
+    script_create_spawn_points_room_kitchen();
+}
 
 //Put all player grids into container grid
 //GRID: |table_id|teams_grid|team_name|team_player_count|
