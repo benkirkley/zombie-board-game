@@ -37,7 +37,6 @@ else if (global.roomTile == "garage")
     script_create_spawn_points_room_garage();
 }
 
-
 //Put all player grids into container grid
 //GRID: |table_id|teams_grid|team_name|team_player_count|
 global.teamGrids = ds_grid_create(7,global.numberOfTeams);
@@ -57,6 +56,8 @@ ds_grid_set(global.teamGrids, 5, 1, redSpawnZones);
 ds_grid_set(global.teamGrids, 6, 1, playerRedDataMap);
 
 //SCRIPT: spawn first team
+
+    
 script_create_spawn_team(global.currentTeam);
 
 //Highlight the starting player

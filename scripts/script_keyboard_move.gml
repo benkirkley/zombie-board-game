@@ -12,7 +12,7 @@ if (isMoving == false && amICurrentPlayer == true)
         ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".name",name);
         ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1",inventorySlotWeapon);
         ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1",inventorySlotArmour);
-        global.test=222;
+        
         room_goto_next();
     }
     

@@ -5,14 +5,14 @@ blueSpawnZones = ds_grid_create(3,0);
 
 //GRID: |spawn_point_id|x|y|
 ////Spawn 0
-spawn_direction = 180;
+spawn_direction = 0;
 blueSpawnPoints = ds_grid_create(3,2);
 ds_grid_set(blueSpawnPoints,0,0,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,0,416);
-ds_grid_set(blueSpawnPoints,2,0,96);
+ds_grid_set(blueSpawnPoints,1,0,192);
+ds_grid_set(blueSpawnPoints,2,0,448);
 ds_grid_set(blueSpawnPoints,0,1,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,1,480);
-ds_grid_set(blueSpawnPoints,2,1,96);
+ds_grid_set(blueSpawnPoints,1,1,256);
+ds_grid_set(blueSpawnPoints,2,1,448);
 
 ////Add the new spawn point to the zone grid
 var current_height = ds_grid_height(blueSpawnZones);
