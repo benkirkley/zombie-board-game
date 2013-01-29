@@ -8,13 +8,13 @@ blueSpawnZones = ds_grid_create(3,0);
 spawn_direction = 0;
 blueSpawnPoints = ds_grid_create(3,3);
 ds_grid_set(blueSpawnPoints,0,0,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,0,192);
+ds_grid_set(blueSpawnPoints,1,0,224);
 ds_grid_set(blueSpawnPoints,2,0,480);
 ds_grid_set(blueSpawnPoints,0,1,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,1,256);
+ds_grid_set(blueSpawnPoints,1,1,288);
 ds_grid_set(blueSpawnPoints,2,1,480);
 ds_grid_set(blueSpawnPoints,0,2,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,2,320);
+ds_grid_set(blueSpawnPoints,1,2,352);
 ds_grid_set(blueSpawnPoints,2,2,480);
 
 ////Add the new spawn point to the zone grid
