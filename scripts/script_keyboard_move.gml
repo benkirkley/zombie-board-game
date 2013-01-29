@@ -16,6 +16,17 @@ if (isMoving == false && amICurrentPlayer == true)
         room_goto_next();
     }
     
+    if ( keyboard_check_pressed( ord("M") ) )
+    {
+        //TODO: Add loop to save all alive blue players
+        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".playerId",id);
+        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".name",name);
+        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1",inventorySlotWeapon);
+        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1",inventorySlotArmour);
+        
+        room_goto_next();
+    }
+    
     //ITEMS: Pick up
     if ( keyboard_check_pressed( ord("E") ) )
     {
