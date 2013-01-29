@@ -36,6 +36,10 @@ else if (global.roomTile == "garage")
 {
     script_create_spawn_points_room_garage();
 }
+else if (global.roomTile == "bedroom_1")
+{
+    script_create_spawn_points_room_bedroom_1();
+}
 else if (global.roomTile == "bedroom_2")
 {
     script_create_spawn_points_room_bedroom_2();
