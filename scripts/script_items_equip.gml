@@ -37,5 +37,3 @@ else if (itemType == "armour")
 
     currentPlayerId.inventorySlotArmour = string(currentPlayerId.equippedArmourString) + "_inventory";
 }
-
-

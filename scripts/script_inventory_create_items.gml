@@ -2,7 +2,6 @@
   This script adds the items equipped by the active
   player into the inventory window
  ***************************************************/
-
  //Get the current player's ID
 playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 currentPlayerId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");

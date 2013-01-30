@@ -167,10 +167,11 @@ else
     thisFillColor = c_red
 }
 
+/*
 combatResultFeedback = instance_create(triggeredObjectId.x,triggeredObjectId.y,obj_attack_result);
 combatResultFeedback.thisFont = thisFont;
 combatResultFeedback.thisText = string(totalDamage);
 combatResultFeedback.thisFillColor = thisFillColor;
 combatResultFeedback.thisOutlineColor = c_black;
-
+*/
 

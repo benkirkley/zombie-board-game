@@ -5,25 +5,71 @@
 if (isMoving == false && amICurrentPlayer == true)
 {   
     //DEBUG:  use numpad 5 to being up a debug dialog
-    /*
+    
     if ( keyboard_check_pressed( vk_numpad5 ) )
     {
-        //TODO: Add loop to save all alive blue players
-        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".playerId",id);
-        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".name",name);
-        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1",inventorySlotWeapon);
-        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1",inventorySlotArmour);
+        /*
+        var storedInventoryWeapon1 = ds_map_find_value(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1");
+        var storedObject = ds_map_find_value(global.mapItemWeaponStats,storedInventoryWeapon1);
+        var storedItemString = ds_map_find_value(global.mapItemWeaponStats,storedObject);
+        oldWeapon = id.inventorySlotWeapon;
+        id.equippedWeapon = storedItemString;
+        id.inventorySlotWeapon = string(storedItemString) + "_inventory";
+        script_inventory_destroy_items();
+        script_inventory_create_items();
+        script_items_equip("weapon",storedItemString,id);
         
-        room_goto_next();
+        var storedInventoryArmour1 = ds_map_find_value(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1");
+        var storedObject = ds_map_find_value(global.mapItemArmourStats,storedInventoryArmour1);
+        var storedItemString = ds_map_find_value(global.mapItemArmourStats,storedObject);
+        oldArmour = id.inventorySlotArmour;
+        id.equippedArmour = storedItemString;
+        id.inventorySlotArmour = string(storedItemString) + "_inventory";
+        script_inventory_destroy_items();
+        script_inventory_create_items();
+        script_items_equip("armour",storedItemString,id);
+        */
     }
-    */
+    
     if ( keyboard_check_pressed( ord("M") ) )
     {
         //TODO: Add loop to save all alive blue players
-        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".playerId",id);
-        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".name",name);
-        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1",inventorySlotWeapon);
-        ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1",inventorySlotArmour);
+        //Store player id
+        if ( ds_map_exists(global.savedPlayerData, string(global.currentPlayer)+".playerId") )
+        {
+            ds_map_replace(global.savedPlayerData, string(global.currentPlayer)+".playerId",id);
+        }
+        else
+        {
+            ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".playerId",id);
+        }
+        //Store player name
+        if ( ds_map_exists(global.savedPlayerData, string(global.currentPlayer)+".name") )
+        {
+            ds_map_replace(global.savedPlayerData, string(global.currentPlayer)+".name",name);
+        }
+        else
+        {
+            ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1",name);
+        }
+        //Store weapon equipped
+        if ( ds_map_exists(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1") )
+        {
+            ds_map_replace(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1",inventorySlotWeapon);
+        }
+        else
+        {
+            ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1",inventorySlotWeapon);
+        }
+        //Store armour equipped
+        if ( ds_map_exists(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1") )
+        {
+            ds_map_replace(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1",inventorySlotArmour);
+        }
+        else
+        {
+            ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1",inventorySlotArmour);
+        }
         
         room_goto_next();
     }
@@ -41,7 +87,6 @@ if (isMoving == false && amICurrentPlayer == true)
         {   
             collidableObjects = ds_list_find_value(global.dslist_AllItemObjects,i);
             collide = script_collision_perform(collidableObjects,self.object_index);
-            
             if ( collide )
             {
                 //show_message("Collision");

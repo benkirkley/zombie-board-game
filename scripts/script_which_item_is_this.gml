@@ -15,7 +15,7 @@ if (id.thisTeamId == 0)
         {
             //We have a match
             if (itemString != "")
-            {
+            {  
                 var oldWeapon = 0;
                 var oldArmour = 0;
                 if (itemTypeMap == 0)
@@ -23,6 +23,7 @@ if (id.thisTeamId == 0)
                     oldWeapon = id.inventorySlotWeapon;
                     id.equippedWeapon = itemString;
                     id.inventorySlotWeapon = string(itemString) + "_inventory";
+                    
                     script_inventory_destroy_items();
                     script_inventory_create_items();
                     script_items_equip("weapon",itemString,id);
@@ -42,6 +43,7 @@ if (id.thisTeamId == 0)
                 {
                     //HEALTH
                     script_items_consume("consumable", itemString,id);
+                    itemTypeMap = loopLimit //break loop
                 }
                 itemTypeMap = ds_map_size(global.mapItemTypeAndStatsMap) //break loop
                 
@@ -50,14 +52,20 @@ if (id.thisTeamId == 0)
                 if (is_string(oldWeapon))
                 {
                     oldWeaponObject = ds_map_find_value(global.mapItemWeaponStats,oldWeapon)
-                    itemId = instance_create(x,y,oldWeaponObject);
-                    itemId.image_alpha = 0.5;
+                    if (oldWeaponObject)
+                    {
+                        itemId = instance_create(x,y,oldWeaponObject);
+                        itemId.image_alpha = 0.5;
+                    }
                 }
                 if (is_string(oldArmour))
                 {
                     oldArmourObject = ds_map_find_value(global.mapItemArmourStats,oldArmour)
-                    itemId = instance_create(x,y,oldArmourObject);
-                    itemId.image_alpha = 0.5;
+                    if (oldArmourObject)
+                    {
+                        itemId = instance_create(x,y,oldArmourObject);
+                        itemId.image_alpha = 0.5;
+                    }
                 }
                  
             }
