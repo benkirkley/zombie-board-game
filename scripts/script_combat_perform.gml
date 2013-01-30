@@ -1,25 +1,3 @@
-/*
-equippedWeaponName = "";
-equippedWeaponAttack = 0;
-equippedWeaponDicePool = 0;
-equippedWeaponDefense = 0;
-equippedWeaponTotalHitPoints = 0;
-equippedWeaponTotalActionPoints = 0;
-equippedWeaponDamage = 0;
-equippedWeaponTotalNumberOfAttacks = 0;
-equippedWeaponString = "";
-
-equippedArmourName = "";
-equippedArmourAttack = 0;
-equippedArmourDicePool = 0;
-equippedArmourDefense = 0;
-equippedArmourTotalHitPoints = 0;
-equippedArmourTotalActionPoints = 0
-equippedArmourDamage = 0;
-equippedArmourTotalNumberOfAttacks = 0;
-equippedArmourString = "";
-*/
-
 // Stats for the object being attacked
     //Player
 var triggeredObjectId = argument0;
@@ -167,11 +145,11 @@ else
     thisFillColor = c_red
 }
 
-/*
+
 combatResultFeedback = instance_create(triggeredObjectId.x,triggeredObjectId.y,obj_attack_result);
 combatResultFeedback.thisFont = thisFont;
 combatResultFeedback.thisText = string(totalDamage);
 combatResultFeedback.thisFillColor = thisFillColor;
 combatResultFeedback.thisOutlineColor = c_black;
-*/
+
 

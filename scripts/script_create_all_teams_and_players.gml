@@ -5,6 +5,7 @@ numberOfBluePlayers = 1;
 
 global.currentTeam = 0;
 global.currentPlayer = 0;
+global.numberOfRedPlayersKilled = 0;
 
 //Debug
 //var blueStartingWeapon = "";
