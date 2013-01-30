@@ -5,8 +5,10 @@ currentPlayerId = argument2;
 if (itemType == "consumable")
 {
     healPoints = ds_map_find_value(global.mapItemConsumableStats,string(itemString)+"_healPoints");
-    if (healPoints > currentPlayerId.totalHitPoints) healPoints = currentPlayerId.totalHitPoints;
-    currentPlayerId.hitPoints = healPoints;
+    //if (healPoints > currentPlayerId.totalHitPoints) healPoints = currentPlayerId.totalHitPoints;
+    currentPlayerId.hitPoints = currentPlayerId.hitPoints + healPoints;
+    if ( currentPlayerId.hitPoints > (currentPlayerId.totalHitPoints + equippedWeaponTotalHitPoints + equippedArmourTotalHitPoints) )
+        currentPlayerId.hitPoints = (currentPlayerId.totalHitPoints + equippedWeaponTotalHitPoints + equippedArmourTotalHitPoints);
     
     combatResultFeedback = instance_create(x,y,obj_attack_result);
     combatResultFeedback.thisFont = combat_result_big;

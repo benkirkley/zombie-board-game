@@ -129,6 +129,8 @@ inventorySlotArmour = 0;
 equippedWeapon = 0;
 equippedArmour = 0;
 
+storedHitPoints = ds_map_find_value(global.savedPlayerData, string(global.currentPlayer)+".hitPoints");
+if (storedHitPoints) hitPoints = storedHitPoints;
 
 var storedInventoryWeapon1 = ds_map_find_value(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1");
 var storedObject = ds_map_find_value(global.mapItemWeaponStats,storedInventoryWeapon1);

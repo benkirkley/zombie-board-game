@@ -50,7 +50,16 @@ if (isMoving == false && amICurrentPlayer == true)
         }
         else
         {
-            ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1",name);
+            ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".name",name);
+        }
+        //Store player hit points
+        if ( ds_map_exists(global.savedPlayerData, string(global.currentPlayer)+".hitPoints") )
+        {
+            ds_map_replace(global.savedPlayerData, string(global.currentPlayer)+".hitPoints",hitPoints);
+        }
+        else
+        {
+            ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".hitPoints",hitPoints);
         }
         //Store weapon equipped
         if ( ds_map_exists(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1") )
