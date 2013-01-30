@@ -21,21 +21,8 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
     else
     {
         //show_message("Attack");
-        if (equippedWeaponNumberOfAttacks > 0)
-        {
+        if (equippedWeaponNumberOfAttacks > 0 || equippedWeaponNumberOfAttacks > 0 || numberOfAttacks > 0)
             script_combat_trigger(objectToCheckWith);
-            //equippedWeaponNumberOfAttacks -= 1
-        }
-        else if (equippedArmourNumberOfAttacks > 0)
-        {
-            script_combat_trigger(objectToCheckWith);
-            //equippedArmourNumberOfAttacks -= 1
-        }
-        else if (numberOfAttacks > 0)
-        {
-            script_combat_trigger(objectToCheckWith);
-            //numberOfAttacks -= 1;
-        }
     }
     
     return true; //blocking collision
