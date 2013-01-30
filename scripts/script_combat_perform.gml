@@ -60,7 +60,7 @@ var mainObjectArmourDefense = mainObjectId.equippedArmourDefense;
 var mainObjectArmourTotalHitPoints = mainObjectId.equippedArmourTotalHitPoints;
 var mainObjectArmourTotalActionPoints = mainObjectId.equippedArmourTotalActionPoints;
 var mainObjectArmourDamage = mainObjectId.equippedArmourDamage;
-var mainObjectId = triggeredObjectId.equippedArmourTotalNumberOfAttacks;
+var mainObjectIdArmourTotalNumberOfAttacks = mainObjectId.equippedArmourTotalNumberOfAttacks;
 
 
 
@@ -111,6 +111,23 @@ if ( numberOfHits > 0 )
 displayResults += "##" + string(mainObjectName) + "'s DAM stat: " + string(mainObjectDamage + mainObjectWeaponDamage + mainObjectArmourDamage);
 displayResults += "#Damage Inflicted: " + string(totalDamage);
 
+
+if (mainObjectId.equippedWeaponNumberOfAttacks > 0)
+{
+    //script_combat_trigger(objectToCheckWith);
+    mainObjectId.equippedWeaponNumberOfAttacks -= 1
+}
+else if (mainObjectId.equippedArmourNumberOfAttacks > 0)
+{
+    //script_combat_trigger(objectToCheckWith);
+    mainObjectId.equippedArmourNumberOfAttacks -= 1
+}
+else if (numberOfAttacks > 0)
+{
+    //script_combat_trigger(objectToCheckWith);
+    mainObjectId.numberOfAttacks -= 1;
+}
+
 //Deduct Hit Points
 if (triggeredObjectId.equippedWeaponHitPoints > 0)
 {
@@ -152,4 +169,5 @@ combatResultFeedback.thisText = string(totalDamage);
 combatResultFeedback.thisFillColor = thisFillColor;
 combatResultFeedback.thisOutlineColor = c_black;
 
+return true;
 

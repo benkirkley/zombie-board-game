@@ -30,18 +30,21 @@ if ( hitPoints <= 0 )
     }
     
     with (id) instance_destroy();
+    /*
+    //If all enemies are dead, win game
     if (!teamStillHasPlayers && (loopLimit >= totalNumberOfPlayersOnThisTeam) ) {
         teamName = ds_grid_get( global.teamGrids, 2, global.currentTeam );
         show_message(string(teamName) + " wins! Restarting game");
         game_restart()
     }
+    */
     
     script_drop_random_item(false,false);
 }
 
 if (global.debug_auto_end_turn )
 {
-    if (actionPoints == 0 && numberOfAttacks == 0)
+    if ( actionPoints == 0 && numberOfAttacks == 0 )
     {
         global.endTurn = true;
     }

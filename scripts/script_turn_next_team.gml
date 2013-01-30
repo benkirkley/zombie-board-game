@@ -23,6 +23,6 @@ while (!isCurrentPlayerAlive)
         global.currentTeam += 1;
         if ( global.currentTeam >= global.numberOfTeams ) global.currentTeam = 0 ;
         playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
-        isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(counter)+".is_alive");
+        isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".is_alive");
     }
 }

@@ -10,6 +10,7 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
     {
         //Find the item we've collided with
         script_which_item_is_this(objectToCheckWith,thisObject);
+        return false;
     }
         
     if ( script_collision_wall(objectToCheckWith) )
@@ -22,18 +23,18 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
         //show_message("Attack");
         if (equippedWeaponNumberOfAttacks > 0)
         {
-            equippedWeaponNumberOfAttacks -= 1
             script_combat_trigger(objectToCheckWith);
+            //equippedWeaponNumberOfAttacks -= 1
         }
         else if (equippedArmourNumberOfAttacks > 0)
         {
-            equippedArmourNumberOfAttacks -= 1
             script_combat_trigger(objectToCheckWith);
+            //equippedArmourNumberOfAttacks -= 1
         }
         else if (numberOfAttacks > 0)
         {
-            numberOfAttacks -= 1;
             script_combat_trigger(objectToCheckWith);
+            //numberOfAttacks -= 1;
         }
     }
     

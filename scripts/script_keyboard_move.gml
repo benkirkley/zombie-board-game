@@ -8,27 +8,7 @@ if (isMoving == false && amICurrentPlayer == true)
     
     if ( keyboard_check_pressed( vk_numpad5 ) )
     {
-        /*
-        var storedInventoryWeapon1 = ds_map_find_value(global.savedPlayerData, string(global.currentPlayer)+".inventory_weapon_1");
-        var storedObject = ds_map_find_value(global.mapItemWeaponStats,storedInventoryWeapon1);
-        var storedItemString = ds_map_find_value(global.mapItemWeaponStats,storedObject);
-        oldWeapon = id.inventorySlotWeapon;
-        id.equippedWeapon = storedItemString;
-        id.inventorySlotWeapon = string(storedItemString) + "_inventory";
-        script_inventory_destroy_items();
-        script_inventory_create_items();
-        script_items_equip("weapon",storedItemString,id);
-        
-        var storedInventoryArmour1 = ds_map_find_value(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1");
-        var storedObject = ds_map_find_value(global.mapItemArmourStats,storedInventoryArmour1);
-        var storedItemString = ds_map_find_value(global.mapItemArmourStats,storedObject);
-        oldArmour = id.inventorySlotArmour;
-        id.equippedArmour = storedItemString;
-        id.inventorySlotArmour = string(storedItemString) + "_inventory";
-        script_inventory_destroy_items();
-        script_inventory_create_items();
-        script_items_equip("armour",storedItemString,id);
-        */
+        //DEBUG HERE
     }
     
     if ( keyboard_check_pressed( ord("M") ) )
