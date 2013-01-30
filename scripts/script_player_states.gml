@@ -39,3 +39,10 @@ if ( hitPoints <= 0 )
     script_drop_random_item(false,false);
 }
 
+if (global.debug_auto_end_turn )
+{
+    if (actionPoints == 0 && numberOfAttacks == 0)
+    {
+        global.endTurn = true;
+    }
+}

@@ -12,6 +12,7 @@ global.debug = true;
 global.debug_show_combat_rolls = false ;
 global.debug_show_roll_for_chance_of_item_drop = false ;
 global.debug_all_items_on_map = false;
+global.debug_auto_end_turn = true;
 
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
@@ -19,6 +20,7 @@ ini_open("config.ini");
     global.currentTeam = script_ini_read_key("Start","starting_team", global.currentTeam,"real");
     global.debug_show_roll_for_chance_of_item_drop = script_ini_read_key("Debug","debug_show_roll_for_chance_of_item_drop", global.debug_show_roll_for_chance_of_item_drop,"real");
     global.debug_all_items_on_map = script_ini_read_key("Debug","debug_all_items_on_map", global.debug_all_items_on_map,"real");
+    global.debug_auto_end_turn = script_ini_read_key("Debug","debug_auto_end_turn", global.debug_auto_end_turn,"real");
 ini_close();
 
 global.collidableObjects = ds_list_create();
