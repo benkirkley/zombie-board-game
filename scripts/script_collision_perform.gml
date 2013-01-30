@@ -10,7 +10,7 @@ if ( collisionObjectId && (objectToCheckWith != thisObject) )
     {
         //Find the item we've collided with
         script_which_item_is_this(objectToCheckWith,thisObject);
-        return false;
+        //return false;
     }
         
     if ( script_collision_wall(objectToCheckWith) )
