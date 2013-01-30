@@ -166,7 +166,7 @@ ini_open("config.ini");
     itemName = "Riot Shield";
     itemAttack = 0;
     itemDamage = 0;
-    itemDefense = 2;
+    itemDefense = 3;
     itemDicePool = 0;
     itemTotalHitPoints = 0;
     itemTotalActionPoints = -1;
