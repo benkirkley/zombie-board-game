@@ -3,6 +3,7 @@
 global.endTurn = false;
 global.numberOfRedPlayersKilled = 0;
 global.numberOfTeams = 0;
+global.numberOfRedPlayersToCarryOver = 0;
 
 global.currentPlayer = 0;
 global.currentTeam = 0;

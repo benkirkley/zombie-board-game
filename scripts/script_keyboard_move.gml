@@ -71,6 +71,9 @@ if (isMoving == false && amICurrentPlayer == true)
             ds_map_add(global.savedPlayerData, string(global.currentPlayer)+".inventory_armour_1",inventorySlotArmour);
         }
         
+        totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
+        global.numberOfRedPlayersToCarryOver = totalRedPlayers - global.numberOfRedPlayersKilled;
+        
         room_goto_next();
     }
     

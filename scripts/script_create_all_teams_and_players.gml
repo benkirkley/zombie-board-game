@@ -60,7 +60,11 @@ else if (global.roomTile == "kitchen")
     script_create_spawn_points_room_kitchen();
 }
 
-
+if (global.numberOfRedPlayersToCarryOver)
+{
+    numberOfRedPlayers += global.numberOfRedPlayersToCarryOver;
+    global.numberOfRedPlayersToCarryOver = 0;
+}
 //Put all player grids into container grid
 //GRID: |table_id|teams_grid|team_name|team_player_count|
 global.teamGrids = ds_grid_create(7,global.numberOfTeams);
