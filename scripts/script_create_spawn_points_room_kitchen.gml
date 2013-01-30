@@ -1,4 +1,9 @@
 /* This script sets up the spawn zones and spawn points within a zone for Red and Blue */
+numberOfRedPlayers = 14;
+//INI file -- read existing or create using defaults
+ini_open("config.ini");
+    numberOfRedPlayers = script_ini_read_key("Rooms","kitchen_enemy_count", numberOfRedPlayers,"real");
+ini_close();
 
 //GRID: |spawn_point_grid|is_active|is_random_spawn_count|
 blueSpawnZones = ds_grid_create(3,0);
