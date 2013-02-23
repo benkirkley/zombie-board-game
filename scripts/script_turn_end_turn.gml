@@ -23,6 +23,8 @@ if (global.endTurn == true )
     currentPlayerId.equippedWeaponNumberOfAttacks = currentPlayerId.equippedWeaponTotalNumberOfAttacks;
     currentPlayerId.equippedArmourNumberOfAttacks = currentPlayerId.equippedArmourTotalNumberOfAttacks;
     
+    currentPlayerId.createNewPath = true;
+    
     script_inventory_destroy_items();
     
     //Check if there are any other players on this team 

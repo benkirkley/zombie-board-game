@@ -154,7 +154,8 @@ equippedArmour = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_deactivate_object(id)
+            <string>
+instance_deactivate_object(id)
     mp_grid_clear_all(id);
     mp_grid_add_instances(global.AI_grid,obj_player_red,false);
     mp_grid_add_instances(global.AI_grid,obj_wall_hidden,false);
@@ -173,11 +174,12 @@ if (pathExists)
 }
 else
 {
-    speed=0; //If no path is found it goes into alert state...
-    show_message("NO PATH!!!! Press OK to restart"); //Tells us there is no path...
+    show_message("NO PATH");
 }
 
+
 moveTimer = gridSize;
+createNewPath = 1;
     
 
 </string>
@@ -366,20 +368,52 @@ moveTimer = gridSize;
 
 if (amICurrentPlayer)
 {
-    //show_message("moveTimer: "+string(moveTimer) );
-    if (actionPoints &gt; 0)
+    /*
+    if (createNewPath)
+    {
+        //show_message("Create Path");
+        instance_deactivate_object(id)
+        mp_grid_clear_all(id);
+        //mp_grid_add_instances(global.AI_grid,obj_player_red,false);
+        mp_grid_add_instances(global.AI_grid,obj_wall_hidden,false);
+        instance_activate_object(id)
+        
+        mypath=path_add(); //creates an empty path...
+        pathExists = mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true)
+        
+        if (pathExists)
         {
-        if (moveTimer &gt; 0)
-        {
-            if (moveTimer == gridSize) path_start(mypath,8,0,false);
-            moveTimer -= moveSpeed;
+            mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true); //Assigns the path...
+            path_set_kind(mypath,0); //Sets the path to allow diagonals
+            path_set_precision(mypath,1); //Sets the precision to make it curvy. Can be 1-8. 1 is straight, 8 curvy...
+            path_start(mypath,0,0,false); //Starts the path...
         }
         else
         {
-            path_start(mypath,0,0,false);
-            actionPoints -= 1;
-            moveTimer = gridSize;
+            show_message("NO PATH");
         }
+        createNewPath = false;
+    }
+    */
+    //show_message("moveTimer: "+string(moveTimer) );
+    if (actionPoints &gt; 0)
+    {
+        if (moveTimer &gt; 0)
+        {
+            //if (moveTimer == gridSize) path_start(mypath,8,0,false);
+            path_start(mypath,8,0,false);
+            moveTimer -= moveSpeed;
+        }
+        else
+        {   
+            moveTimer = gridSize;
+            actionPoints -= 1;
+            path_start(mypath,0,0,false); //Stops the path...      
+        }
+    }
+    else
+    {
+        path_start(mypath,0,0,false); //Stops the path...
     }
 }
 else 
