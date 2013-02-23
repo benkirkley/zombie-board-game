@@ -93,10 +93,10 @@ ini_close();
 randomize();
 
 //Defense
-defense = floor(random(sidedDiceDefense)) + characterBonus ;
+defense = floor(random(sidedDiceDefense)) + 1 + characterBonus ;
 if (defense &lt; 1) defense = 1;
 //Hit Points
-totalHitPoints = floor(random(sidedDiceHitPoints)) + characterBonus ;
+totalHitPoints = floor(random(sidedDiceHitPoints)) + 1 + characterBonus ;
 if (totalHitPoints &lt; 1) totalHitPoints = 1;
 
 hitPoints = totalHitPoints;
@@ -134,6 +134,44 @@ inventorySlotWeapon = 0;
 inventorySlotArmour = 0;
 equippedWeapon = 0;
 equippedArmour = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.startingDirection = direction;
+mypath=path_add(); //creates an empty path...
+
+if !mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true) //Checks to see if the path is possible...
+    {
+    speed=0; //If no path is found it goes into alert state...
+    show_message("NO PATH!!!! Press OK to restart"); //Tells us there is no path...
+    //room_restart();
+    }
+else
+    {
+    mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true); //Assigns the path...
+    path_set_kind(mypath,0); //Sets the path to allow diagonals
+    path_set_precision(mypath,1); //Sets the precision to make it curvy. Can be 1-8. 1 is straight, 8 curvy...
+    path_start(mypath,1,0,false); //Starts the path...
+    }
+    
+
 </string>
           </argument>
         </arguments>
@@ -297,6 +335,51 @@ equippedArmour = 0;
           <argument>
             <kind>0</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//image_angle=direction + global.startingDirection; //Makes the image_angle the same as the direction...
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_path(mypath,x,y,true);
+draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+</string>
           </argument>
         </arguments>
       </action>

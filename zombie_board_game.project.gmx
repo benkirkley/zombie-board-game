@@ -56,16 +56,17 @@
     </scripts>
     <scripts name="create">
       <script>scripts\script_create_all_teams_and_players.gml</script>
+      <script>scripts\script_create_mp_grid.gml</script>
       <script>scripts\script_create_new_player.gml</script>
       <script>scripts\script_create_player_common_local_vars.gml</script>
-      <script>scripts\script_create_spawn_team.gml</script>
-      <script>scripts\script_create_spawn_points_room_dining.gml</script>
-      <script>scripts\script_create_spawn_points_room_garage.gml</script>
       <script>scripts\script_create_spawn_points_room_bedroom_1.gml</script>
       <script>scripts\script_create_spawn_points_room_bedroom_2.gml</script>
       <script>scripts\script_create_spawn_points_room_corridor_1.gml</script>
       <script>scripts\script_create_spawn_points_room_corridor_2.gml</script>
+      <script>scripts\script_create_spawn_points_room_dining.gml</script>
+      <script>scripts\script_create_spawn_points_room_garage.gml</script>
       <script>scripts\script_create_spawn_points_room_kitchen.gml</script>
+      <script>scripts\script_create_spawn_team.gml</script>
     </scripts>
     <scripts name="global">
       <script>scripts\script_global_vars.gml</script>
