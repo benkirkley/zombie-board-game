@@ -42,6 +42,8 @@
     <background>background\bg_room_corridor_1</background>
     <background>background\bg_room_corridor_2</background>
     <background>background\bg_room_kitchen</background>
+    <background>background\bg_room_bedroom_3</background>
+    <background>background\bg_room_driveway</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -66,6 +68,7 @@
       <script>scripts\script_create_spawn_points_room_corridor_1.gml</script>
       <script>scripts\script_create_spawn_points_room_corridor_2.gml</script>
       <script>scripts\script_create_spawn_points_room_kitchen.gml</script>
+      <script>scripts\script_create_spawn_points_room_driveway.gml</script>
     </scripts>
     <scripts name="global">
       <script>scripts\script_global_vars.gml</script>
@@ -156,6 +159,7 @@
     <room>rooms\room_corridor_2</room>
     <room>rooms\room_kitchen</room>
     <room>rooms\room_garage</room>
+    <room>rooms\room_driveway</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
