@@ -14,6 +14,6 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>640</width>
-  <height>640</height>
-  <data>images\bg_room_bedroom_2.png</data>
+  <height>641</height>
+  <data>images\bg_room_driveway.png</data>
 </background>

@@ -60,6 +60,10 @@ else if (global.roomTile == "kitchen")
 {
     script_create_spawn_points_room_kitchen();
 }
+else if (global.roomTile == "driveway")
+{
+    script_create_spawn_points_room_driveway();
+}
 
 if (global.numberOfRedPlayersToCarryOver)
 {

@@ -9,7 +9,11 @@
   <tilevsep>0</tilevsep>
   <HTile>0</HTile>
   <VTile>0</VTile>
-  <TextureGroup>0</TextureGroup>
+  <TextureGroups>
+    <TextureGroup0>0</TextureGroup0>
+  </TextureGroups>
   <For3D>0</For3D>
+  <width>320</width>
+  <height>320</height>
   <data>images\bg_room1.png</data>
 </background>
