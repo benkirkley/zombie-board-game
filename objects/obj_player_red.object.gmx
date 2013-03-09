@@ -370,7 +370,7 @@ if (amICurrentPlayer)
 {
     if (createNewPath)
     {
-        //show_message("Create Path");
+        show_message("Create Path");
         instance_deactivate_object(id)
         mp_grid_clear_all(id);
         //mp_grid_add_instances(global.AI_grid,obj_player_red,false);
@@ -379,6 +379,7 @@ if (amICurrentPlayer)
         
         mypath=path_add(); //creates an empty path...
         pathExists = mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
+        //show_message("mypath1: " + string(mypath));
         
         if (pathExists)
         {
@@ -401,11 +402,10 @@ if (amICurrentPlayer)
         if (moveTimer &gt; 0)
         {
             if (moveTimer == gridSize) {
-                //show_message(mypath);
+                show_message("moveTimer1: " + string(moveTimer));
+                //show_message("mypath2: " + string(mypath));
                 path_start(mypath,8,0,false);
-                //show_message("Go");
             }
-            //if (moveTimer == gridSize) show_message("moveTimer2: "+string(moveTimer) );
             //path_start(mypath,8,0,false);
             moveTimer -= moveSpeed;
         }
@@ -415,10 +415,11 @@ if (amICurrentPlayer)
             actionPoints -= 1;
             path_start(mypath,0,0,false); //Stops the path...      
         }
+        show_message("moveTimer2: " + string(moveTimer));
     }
     else
     {
-        path_start(mypath,0,0,false); //Stops the path...
+        //ath_start(mypath,0,0,false); //Stops the path...
         global.endTurn = true;
     }
 }

@@ -202,6 +202,7 @@ for(ii=0; ii&lt;room_height; ii+=64)
   draw_line(0,ii,room_width,ii);
 }
 draw_set_alpha(1);
+
 </string>
           </argument>
         </arguments>
