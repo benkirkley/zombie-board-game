@@ -25,6 +25,7 @@
   <option_android_google_analytics_enable>0</option_android_google_analytics_enable>
   <option_android_google_tracking_id></option_android_google_tracking_id>
   <option_android_iap_suppress_toast>0</option_android_iap_suppress_toast>
+  <option_android_icade_support>false</option_android_icade_support>
   <option_android_icon_170>Configs\Default\android\icons\icon170.png</option_android_icon_170>
   <option_android_icon_36>Configs\Default\android\icons\icon36.png</option_android_icon_36>
   <option_android_icon_48>Configs\Default\android\icons\icon48.png</option_android_icon_48>
@@ -40,6 +41,7 @@
   <option_android_package_company>companyname</option_android_package_company>
   <option_android_package_domain>com</option_android_package_domain>
   <option_android_package_product>Test_01</option_android_package_product>
+  <option_android_permission_flags>8</option_android_permission_flags>
   <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
   <option_android_pocketchange_id></option_android_pocketchange_id>
   <option_android_set_device_id></option_android_set_device_id>
@@ -63,6 +65,7 @@
   <option_fullscreen>False</option_fullscreen>
   <option_gameguid>{2B59EFB8-0522-4F79-B714-86306BC0FC3F}</option_gameguid>
   <option_gameid>719381212</option_gameid>
+  <option_haptic_effects>false</option_haptic_effects>
   <option_hasloadimage>false</option_hasloadimage>
   <option_helpkey>true</option_helpkey>
   <option_html5_CreationEventOrder>true</option_html5_CreationEventOrder>
@@ -129,6 +132,7 @@
   <option_lastchanged></option_lastchanged>
   <option_linux_display_name>zombie_board_game</option_linux_display_name>
   <option_linux_fullscreen>false</option_linux_fullscreen>
+  <option_linux_icon>Configs\Default\linux\icon64.png</option_linux_icon>
   <option_linux_interpolate>true</option_linux_interpolate>
   <option_linux_scale>-1</option_linux_scale>
   <option_linux_screenkey>true</option_linux_screenkey>
