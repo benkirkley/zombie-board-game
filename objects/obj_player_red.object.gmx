@@ -154,10 +154,10 @@ equippedArmour = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/*
 instance_deactivate_object(id)
     mp_grid_clear_all(id);
-    mp_grid_add_instances(global.AI_grid,obj_player_red,false);
+    //mp_grid_add_instances(global.AI_grid,obj_player_red,false);
     mp_grid_add_instances(global.AI_grid,obj_wall_hidden,false);
 instance_activate_object(id)
 
@@ -176,10 +176,10 @@ else
 {
     show_message("NO PATH");
 }
-
+*/
 
 moveTimer = gridSize;
-createNewPath = 1;
+createNewPath = true;
     
 
 </string>
@@ -368,7 +368,6 @@ createNewPath = 1;
 
 if (amICurrentPlayer)
 {
-    /*
     if (createNewPath)
     {
         //show_message("Create Path");
@@ -379,14 +378,15 @@ if (amICurrentPlayer)
         instance_activate_object(id)
         
         mypath=path_add(); //creates an empty path...
-        pathExists = mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true)
+        pathExists = mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
         
         if (pathExists)
         {
-            mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true); //Assigns the path...
+            //mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true); //Assigns the path...
+            //show_message("mypath: "+string(mypath) );
             path_set_kind(mypath,0); //Sets the path to allow diagonals
             path_set_precision(mypath,1); //Sets the precision to make it curvy. Can be 1-8. 1 is straight, 8 curvy...
-            path_start(mypath,0,0,false); //Starts the path...
+            //path_start(mypath,8,0,false); //Starts the path...
         }
         else
         {
@@ -394,14 +394,19 @@ if (amICurrentPlayer)
         }
         createNewPath = false;
     }
-    */
+    
     //show_message("moveTimer: "+string(moveTimer) );
     if (actionPoints &gt; 0)
     {
         if (moveTimer &gt; 0)
         {
-            //if (moveTimer == gridSize) path_start(mypath,8,0,false);
-            path_start(mypath,8,0,false);
+            if (moveTimer == gridSize) {
+                //show_message(mypath);
+                path_start(mypath,8,0,false);
+                //show_message("Go");
+            }
+            //if (moveTimer == gridSize) show_message("moveTimer2: "+string(moveTimer) );
+            //path_start(mypath,8,0,false);
             moveTimer -= moveSpeed;
         }
         else
@@ -414,6 +419,7 @@ if (amICurrentPlayer)
     else
     {
         path_start(mypath,0,0,false); //Stops the path...
+        global.endTurn = true;
     }
 }
 else 
