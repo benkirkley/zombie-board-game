@@ -190,7 +190,7 @@
           <argument>
             <kind>1</kind>
             <string>//Draw mp_grid on screen
-
+/*
 draw_set_alpha(0.1);
 mp_grid_draw(global.AI_grid);
 for (i=0; i&lt;room_width; i+=64)
@@ -202,7 +202,7 @@ for(ii=0; ii&lt;room_height; ii+=64)
   draw_line(0,ii,room_width,ii);
 }
 draw_set_alpha(1);
-
+*/
 </string>
           </argument>
         </arguments>
