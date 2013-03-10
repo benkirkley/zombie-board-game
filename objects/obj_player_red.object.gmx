@@ -454,27 +454,6 @@ else
             <kind>1</kind>
             <string>draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
 
-/*
-if (amICurrentPlayer)
-{
-    draw_path(mypath,x,y,true);
-    obj_master.playerHighlightId.x = x;
-    obj_master.playerHighlightId.y = y;
-    
-    show_message("moveTimer3: " + string(moveTimer));
-    if (moveTimer &gt; 0) 
-    {
-        path_start(mypath,8,0,false); 
-    }
-    else
-    {
-        path_start(mypath,0,0,false);
-        moveTimer = gridSize;
-        actionPoints -= 1;
-    }
-}
-*/
-
 if (amICurrentPlayer)
 {
 
@@ -493,7 +472,6 @@ if (amICurrentPlayer)
         
         mypath=path_add(); //creates an empty path...
         pathExists = mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
-        draw_path(mypath,x,y,true);
         //show_message("mypath1: " + string(mypath));
         
         if (pathExists)
@@ -528,18 +506,24 @@ if (amICurrentPlayer)
         else
         {   
             //show_message("moveTimer4: " + string(moveTimer));
-            path_start(mypath,0,0,false); //Stops the path... 
-            moveTimer = gridSize;
-            actionPoints -= 1;
+            //if ((x+32)%64 == 0)
+            //{
+                //show_message("Snap");
+                //path_start(mypath,0,0,false); //Stops the path... 
+                //moveTimer = gridSize;
+                //actionPoints -= 1;
+            //}
                  
         }
         //show_message("moveTimer3: " + string(moveTimer));
+        
     }
     else
     {
         //path_start(mypath,0,0,false); //Stops the path...
         global.endTurn = true;
     }
+    draw_path(mypath,x,y,true);
 }
 else 
 {
