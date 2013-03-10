@@ -364,13 +364,11 @@ createNewPath = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//image_angle=direction + 270  //Makes the image_angle the same as the direction...
-
-if (amICurrentPlayer)
+            <string>if (amICurrentPlayer)
 {
     if (createNewPath)
     {
-        show_message("Create Path");
+        //show_message("Create Path");
         instance_deactivate_object(id)
         mp_grid_clear_all(id);
         //mp_grid_add_instances(global.AI_grid,obj_player_red,false);
@@ -401,25 +399,28 @@ if (amICurrentPlayer)
     {
         if (moveTimer &gt; 0)
         {
-            if (moveTimer == gridSize) {
-                show_message("moveTimer1: " + string(moveTimer));
+            //if (moveTimer == gridSize) {
+                //show_message("moveTimer1: " + string(moveTimer));
                 //show_message("mypath2: " + string(mypath));
-                path_start(mypath,8,0,false);
-            }
-            //path_start(mypath,8,0,false);
+                //path_start(mypath,8,0,false);
+            //}
+            path_start(mypath,8,0,false);
             moveTimer -= moveSpeed;
+            //show_message("moveTimer2: " + string(moveTimer));
         }
         else
         {   
+            //show_message("moveTimer4: " + string(moveTimer));
+            path_start(mypath,0,0,false); //Stops the path... 
             moveTimer = gridSize;
             actionPoints -= 1;
-            path_start(mypath,0,0,false); //Stops the path...      
+                 
         }
-        show_message("moveTimer2: " + string(moveTimer));
+        //show_message("moveTimer3: " + string(moveTimer));
     }
     else
     {
-        //ath_start(mypath,0,0,false); //Stops the path...
+        //path_start(mypath,0,0,false); //Stops the path...
         global.endTurn = true;
     }
 }
@@ -449,12 +450,16 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if (amICurrentPlayer == true)
+            <string>draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+
+if (amICurrentPlayer)
 {
     draw_path(mypath,x,y,true);
+    obj_master.playerHighlightId.x = x;
+    obj_master.playerHighlightId.y = y;
 }
-draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+
+
 
 </string>
           </argument>
