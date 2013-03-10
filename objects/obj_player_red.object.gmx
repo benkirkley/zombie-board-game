@@ -76,6 +76,7 @@ sidedDiceHitPoints = 4
 totalActionPoints = 2;
 damage = 1;
 totalNumberOfAttacks = 1;
+moveSpeed = 4;
 
 
 //INI file -- read existing or create using defaults
@@ -179,7 +180,9 @@ else
 */
 
 moveTimer = gridSize;
+script_create_mp_grid();
 createNewPath = true;
+
     
 
 </string>
@@ -364,7 +367,39 @@ createNewPath = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
+            <string>
+if (amICurrentPlayer)
+{
+    if (createNewPath)
+    {
+        //show_message("Create Path");
+        instance_deactivate_object(id);
+        mp_grid_clear_all(AI_grid);
+        mp_grid_add_instances(AI_grid,obj_player_red,true);
+        mp_grid_add_instances(AI_grid,obj_wall_hidden,false);
+        instance_activate_object(id);
+        
+        
+        mypath=path_add(); //creates an empty path...
+        pathExists = mp_grid_path(AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
+        //show_message("mypath1: " + string(mypath));
+        
+        if (pathExists)
+        {
+            //mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true); //Assigns the path...
+            //show_message("mypath: "+string(mypath) );
+            path_set_kind(mypath,0); //Sets the path to allow diagonals
+            path_set_precision(mypath,1); //Sets the precision to make it curvy. Can be 1-8. 1 is straight, 8 curvy...
+        }
+        else
+        {
+            show_message("NO PATH");
+        }
+        createNewPath = false;
+    }
+}
+
+/*
 if (amICurrentPlayer)
 {
     if (createNewPath)
@@ -456,20 +491,22 @@ else
 
 if (amICurrentPlayer)
 {  
-    obj_master.playerHighlightId.x = x;
-    obj_master.playerHighlightId.y = y;
+    //obj_master.playerHighlightId.x = x;
+    //obj_master.playerHighlightId.y = y;
     
+    /*
     if (createNewPath)
     {
         //show_message("Create Path");
-        instance_deactivate_object(id)
+        instance_deactivate_object(id);
         mp_grid_clear_all(id);
-        //mp_grid_add_instances(global.AI_grid,obj_player_red,false);
-        mp_grid_add_instances(global.AI_grid,obj_wall_hidden,false);
-        instance_activate_object(id)
+        mp_grid_add_instances(AI_grid,obj_player_red,false);
+        mp_grid_add_instances(AI_grid,obj_wall_hidden,false);
+        instance_activate_object(id);
+        
         
         mypath=path_add(); //creates an empty path...
-        pathExists = mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
+        pathExists = mp_grid_path(AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
         //show_message("mypath1: " + string(mypath));
         
         if (pathExists)
@@ -478,7 +515,6 @@ if (amICurrentPlayer)
             //show_message("mypath: "+string(mypath) );
             path_set_kind(mypath,0); //Sets the path to allow diagonals
             path_set_precision(mypath,1); //Sets the precision to make it curvy. Can be 1-8. 1 is straight, 8 curvy...
-            //path_start(mypath,8,0,false); //Starts the path...
         }
         else
         {
@@ -486,7 +522,7 @@ if (amICurrentPlayer)
         }
         createNewPath = false;
     }
-    
+    */
     //show_message("moveTimer: "+string(moveTimer) );
     if (actionPoints &gt; 0)
     {
@@ -495,11 +531,11 @@ if (amICurrentPlayer)
             if (moveTimer == gridSize) {
                 //show_message("moveTimer1: " + string(moveTimer));
                 //show_message("mypath2: " + string(mypath));
-                path_start(mypath,8,0,false);
+                path_start(mypath,moveSpeed,0,false);
             }
             //path_start(mypath,8,0,false);
             moveTimer -= moveSpeed;
-            move_snap( 8, 8 );
+            move_snap( moveSpeed, moveSpeed );
             image_angle = direction+270;
             draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
             //show_message("x: " + string(x) + "y: " + string(y));
@@ -507,7 +543,7 @@ if (amICurrentPlayer)
         }
         else
         {   
-            move_snap( 8, 8 );
+            move_snap( moveSpeed, moveSpeed );
             //show_message("x: " + string(round(x)) + "y: " + string(round(y)));
             if (((y+32)%64 == 0))
             {
@@ -529,6 +565,18 @@ if (amICurrentPlayer)
     }
     
     draw_path(mypath,x,y,true);
+    //Draw mp_grid on screen
+    draw_set_alpha(0.1);
+    mp_grid_draw(AI_grid);
+    for (i=0; i&lt;room_width; i+=64)
+    {
+      draw_line(i,0,i,room_height);
+    }
+    for(ii=0; ii&lt;room_height; ii+=64)
+    {
+      draw_line(0,ii,room_width,ii);
+    }
+    draw_set_alpha(1);
     
 }
 else 
