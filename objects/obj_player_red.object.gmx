@@ -364,7 +364,8 @@ createNewPath = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (amICurrentPlayer)
+            <string>/*
+if (amICurrentPlayer)
 {
     if (createNewPath)
     {
@@ -377,6 +378,122 @@ createNewPath = true;
         
         mypath=path_add(); //creates an empty path...
         pathExists = mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
+        //show_message("mypath1: " + string(mypath));
+        
+        if (pathExists)
+        {
+            //mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true); //Assigns the path...
+            //show_message("mypath: "+string(mypath) );
+            path_set_kind(mypath,0); //Sets the path to allow diagonals
+            path_set_precision(mypath,1); //Sets the precision to make it curvy. Can be 1-8. 1 is straight, 8 curvy...
+            //path_start(mypath,8,0,false); //Starts the path...
+        }
+        else
+        {
+            show_message("NO PATH");
+        }
+        createNewPath = false;
+    }
+    
+    //show_message("moveTimer: "+string(moveTimer) );
+    if (actionPoints &gt; 0)
+    {
+        if (moveTimer &gt; 0)
+        {
+            //if (moveTimer == gridSize) {
+                //show_message("moveTimer1: " + string(moveTimer));
+                //show_message("mypath2: " + string(mypath));
+                //path_start(mypath,8,0,false);
+            //}
+            //path_start(mypath,8,0,false);
+            //moveTimer -= moveSpeed;
+            //show_message("moveTimer2: " + string(moveTimer));
+        }
+        else
+        {   
+            //show_message("moveTimer4: " + string(moveTimer));
+            //path_start(mypath,0,0,false); //Stops the path... 
+            //moveTimer = gridSize;
+            //actionPoints -= 1;
+                 
+        }
+        //show_message("moveTimer3: " + string(moveTimer));
+    }
+    else
+    {
+        //path_start(mypath,0,0,false); //Stops the path...
+        global.endTurn = true;
+    }
+}
+else 
+{
+    //path_start(mypath,0,0,false);
+}
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+
+/*
+if (amICurrentPlayer)
+{
+    draw_path(mypath,x,y,true);
+    obj_master.playerHighlightId.x = x;
+    obj_master.playerHighlightId.y = y;
+    
+    show_message("moveTimer3: " + string(moveTimer));
+    if (moveTimer &gt; 0) 
+    {
+        path_start(mypath,8,0,false); 
+    }
+    else
+    {
+        path_start(mypath,0,0,false);
+        moveTimer = gridSize;
+        actionPoints -= 1;
+    }
+}
+*/
+
+if (amICurrentPlayer)
+{
+
+    
+    obj_master.playerHighlightId.x = x;
+    obj_master.playerHighlightId.y = y;
+    
+    if (createNewPath)
+    {
+        //show_message("Create Path");
+        instance_deactivate_object(id)
+        mp_grid_clear_all(id);
+        //mp_grid_add_instances(global.AI_grid,obj_player_red,false);
+        mp_grid_add_instances(global.AI_grid,obj_wall_hidden,false);
+        instance_activate_object(id)
+        
+        mypath=path_add(); //creates an empty path...
+        pathExists = mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
+        draw_path(mypath,x,y,true);
         //show_message("mypath1: " + string(mypath));
         
         if (pathExists)
@@ -428,37 +545,6 @@ else
 {
     //path_start(mypath,0,0,false);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-
-if (amICurrentPlayer)
-{
-    draw_path(mypath,x,y,true);
-    obj_master.playerHighlightId.x = x;
-    obj_master.playerHighlightId.y = y;
-}
-
 
 
 </string>
