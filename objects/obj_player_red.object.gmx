@@ -455,8 +455,7 @@ else
             <string>draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
 
 if (amICurrentPlayer)
-{
-    
+{  
     obj_master.playerHighlightId.x = x;
     obj_master.playerHighlightId.y = y;
     
@@ -511,11 +510,11 @@ if (amICurrentPlayer)
             //show_message("x: " + string(round(x)) + "y: " + string(round(y)));
             if (((y+32)%64 == 0))
             {
-                //show_message("Snap");
                 path_start(mypath,0,0,false); //Stops the path... 
-                draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
                 moveTimer = gridSize;
                 actionPoints -= 1;
+                createNewPath = true;
+                //show_message("Snap");
             }
                  
         }
@@ -523,9 +522,12 @@ if (amICurrentPlayer)
     else
     {
         path_start(mypath,0,0,false); //Stops the path...
+        draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
         global.endTurn = true;
     }
+    
     draw_path(mypath,x,y,true);
+    
 }
 else 
 {
