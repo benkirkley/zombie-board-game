@@ -456,7 +456,6 @@ else
 
 if (amICurrentPlayer)
 {
-
     
     obj_master.playerHighlightId.x = x;
     obj_master.playerHighlightId.y = y;
@@ -494,33 +493,36 @@ if (amICurrentPlayer)
     {
         if (moveTimer &gt; 0)
         {
-            //if (moveTimer == gridSize) {
+            if (moveTimer == gridSize) {
                 //show_message("moveTimer1: " + string(moveTimer));
                 //show_message("mypath2: " + string(mypath));
-                //path_start(mypath,8,0,false);
-            //}
-            path_start(mypath,8,0,false);
+                path_start(mypath,8,0,false);
+            }
+            //path_start(mypath,8,0,false);
             moveTimer -= moveSpeed;
+            move_snap( 8, 8 );
+            draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+            //show_message("x: " + string(x) + "y: " + string(y));
             //show_message("moveTimer2: " + string(moveTimer));
         }
         else
         {   
-            //show_message("moveTimer4: " + string(moveTimer));
-            //if ((x+32)%64 == 0)
-            //{
+            move_snap( 8, 8 );
+            //show_message("x: " + string(round(x)) + "y: " + string(round(y)));
+            if (((y+32)%64 == 0))
+            {
                 //show_message("Snap");
-                //path_start(mypath,0,0,false); //Stops the path... 
-                //moveTimer = gridSize;
-                //actionPoints -= 1;
-            //}
+                path_start(mypath,0,0,false); //Stops the path... 
+                draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+                moveTimer = gridSize;
+                actionPoints -= 1;
+            }
                  
         }
-        //show_message("moveTimer3: " + string(moveTimer));
-        
     }
     else
     {
-        //path_start(mypath,0,0,false); //Stops the path...
+        path_start(mypath,0,0,false); //Stops the path...
         global.endTurn = true;
     }
     draw_path(mypath,x,y,true);
