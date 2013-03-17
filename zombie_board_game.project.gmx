@@ -150,6 +150,7 @@
     <object>objects\obj_item_parent</object>
     <object>objects\obj_random_item</object>
     <object>objects\object_start_game</object>
+    <object>objects\obj_player_stub</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>
