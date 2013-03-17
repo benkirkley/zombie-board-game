@@ -158,10 +158,10 @@ equippedArmour = 0;
             <string>moveTimer = gridSize;
 script_create_mp_grid();
 createNewPath = true;
-stubIdForThisPlayer = instance_create(x,y,obj_player_stub);
-stubIdForThisPlayer.objCreatedBy = id;
-stopMe = false;
-old_path_positionprevious = 0;
+//stubIdForThisPlayer = instance_create(x,y,obj_player_stub);
+//stubIdForThisPlayer.objCreatedBy = id;
+//stopMe = false;
+//old_path_positionprevious = 0;
 
     
 
@@ -420,8 +420,8 @@ if (stopMe == true)
 */
 
 draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-stubIdForThisPlayer.x = x;
-stubIdForThisPlayer.y = y;
+//stubIdForThisPlayer.x = x;
+//stubIdForThisPlayer.y = y;
 
 if (amICurrentPlayer)
 {  
@@ -434,21 +434,23 @@ if (amICurrentPlayer)
         if (moveTimer &gt; 0)
         {
             if (moveTimer == gridSize) {
-                //show_message("moveTimer1: " + string(moveTimer));
-                //show_message("mypath2: " + string(mypath));
-                
                 pathIncrements = 1/(gridSize/moveSpeed);
                 path_start(mypath,moveSpeed,0,false);
                 if (path_get_number(mypath) == 2)
                 {
+                    finalX = path_get_point_x(mypath, 1);
+                    finalY = path_get_point_y(mypath, 1);
                     
-                    futureX = path_get_point_x(mypath, 1);
-                    futureY = path_get_point_y(mypath, 1);
-                    //show_message(futureX);
-                    checkCollisionBlue = place_meeting(futureX,futureY,obj_player_blue);
-                    if (checkCollisionBlue)
+                    //checkCollisionBlue = place_meeting(futureX,futureY,obj_player_blue);
+                    collisionObjectId = collision_point(finalX,finalY,obj_player_blue,false,false);
+                    if (collisionObjectId)
                     {
                         //show_message("Collide");
+                        if (numberOfAttacks &gt; 0)
+                        {
+                            script_combat_trigger(collisionObjectId);
+                            numberOfAttacks-=1;
+                        }
                         path_start(mypath,0,0,false); //Stops the path
                         i = gridSize;
                         draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
