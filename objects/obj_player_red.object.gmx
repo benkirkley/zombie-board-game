@@ -505,6 +505,7 @@ if (amICurrentPlayer)
     
     draw_path(mypath,x,y,true);
     //Draw mp_grid on screen
+    /*
     draw_set_alpha(0.1);
     mp_grid_draw(AI_grid);
     for (i=0; i&lt;room_width; i+=64)
@@ -516,7 +517,7 @@ if (amICurrentPlayer)
       draw_line(0,ii,room_width,ii);
     }
     draw_set_alpha(1);
-    
+    */
 }
 else 
 {
