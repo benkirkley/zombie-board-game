@@ -11,6 +11,11 @@ if (isMoving == false && amICurrentPlayer == true)
         //DEBUG HERE
     }
     
+    if ( keyboard_check_pressed( vk_enter ) )
+    {
+        global.endTurn = true;
+    }
+    
     if ( keyboard_check_pressed( ord("M") ) )
     {
         //TODO: Add loop to save all alive blue players
@@ -201,6 +206,7 @@ if (isMoving == false && amICurrentPlayer == true)
    and update location relevant to set speeds.
    Stop moving when moveTimer reaches zero.
 */
+/*
 //if ( isMoving == true || (isMoving == false && moveTimer >= 0 && moveTimer < gridSize ) )
 if ( isMoving == true )
 {
@@ -267,3 +273,4 @@ if ( isMoving == true )
         isMoving = false;
     }
 }
+*/

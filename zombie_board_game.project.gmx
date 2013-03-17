@@ -108,6 +108,7 @@
       <script>scripts\script_turn_am_i_current_player.gml</script>
       <script>scripts\script_player_states.gml</script>
       <script>scripts\script_keyboard_move.gml</script>
+      <script>scripts\script_move_me.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
