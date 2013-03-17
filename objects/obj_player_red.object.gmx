@@ -360,12 +360,12 @@ createNewPath = true;
         
         
         mypath=path_add(); //creates an empty path...
+        //show_message(mypath);
         pathExists = mp_grid_path(AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
         //show_message("mypath1: " + string(mypath));
         
         if (pathExists)
         {
-            //mp_grid_path(global.AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true); //Assigns the path...
             //show_message("mypath: "+string(mypath) );
             path_set_kind(mypath,0); //Sets the path to allow diagonals
             path_set_precision(mypath,1); //Sets the precision to make it curvy. Can be 1-8. 1 is straight, 8 curvy...
@@ -411,17 +411,7 @@ createNewPath = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-if (stopMe == true)
-{
-    stopMe = false;
-    //path_position = 0;
-}
-*/
-
-draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-//stubIdForThisPlayer.x = x;
-//stubIdForThisPlayer.y = y;
+            <string>draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
 
 if (amICurrentPlayer)
 {  
@@ -436,30 +426,25 @@ if (amICurrentPlayer)
             if (moveTimer == gridSize) {
                 pathIncrements = 1/(gridSize/moveSpeed);
                 path_start(mypath,moveSpeed,0,false);
+                
                 if (path_get_number(mypath) == 2)
                 {
                     finalX = path_get_point_x(mypath, 1);
                     finalY = path_get_point_y(mypath, 1);
                     
-                    //checkCollisionBlue = place_meeting(futureX,futureY,obj_player_blue);
                     collisionObjectId = collision_point(finalX,finalY,obj_player_blue,false,false);
                     if (collisionObjectId)
                     {
-                        //show_message("Collide");
-                        if (numberOfAttacks &gt; 0)
-                        {
-                            script_combat_trigger(collisionObjectId);
-                            numberOfAttacks-=1;
-                        }
                         path_start(mypath,0,0,false); //Stops the path
                         i = gridSize;
                         draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
                     }
                        
                  }
+                 
                 
             }
-            //path_start(mypath,8,0,false);
+            
             moveTimer -= moveSpeed;
             move_snap( moveSpeed, moveSpeed );
             image_angle = direction+270;
@@ -505,6 +490,7 @@ if (amICurrentPlayer)
         global.endTurn = true;
     }
     
+    
     draw_path(mypath,x,y,true);
     //Draw mp_grid on screen
     /*
@@ -520,10 +506,30 @@ if (amICurrentPlayer)
     }
     draw_set_alpha(1);
     */
-}
-else 
-{
-    //path_start(mypath,0,0,false);
+    firstRoundTimer = gridSize - moveSpeed;
+    if (numberOfAttacks &gt; 0 &amp;&amp; moveTimer == firstRoundTimer )
+    //if (numberOfAttacks &gt; 0 )
+    {
+        if (path_get_number(mypath) == 2)
+        {
+            finalX = path_get_point_x(mypath, 1);
+            finalY = path_get_point_y(mypath, 1);
+            
+            //checkCollisionBlue = place_meeting(futureX,futureY,obj_player_blue);
+            collisionObjectId = collision_point(finalX,finalY,obj_player_blue,false,false);
+            if (collisionObjectId)
+            {
+                script_combat_trigger(collisionObjectId);
+                numberOfAttacks-=1;
+                
+                path_start(mypath,0,0,false); //Stops the path
+                i = gridSize;
+                draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+            }
+               
+         }
+    }
+    
 }
 
 
