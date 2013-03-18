@@ -418,6 +418,7 @@ if (amICurrentPlayer)
     obj_master.playerHighlightId.x = x;
     obj_master.playerHighlightId.y = y;
     
+    
     //show_message("moveTimer: "+string(moveTimer) );
     if (actionPoints &gt; 0)
     {
@@ -436,35 +437,22 @@ if (amICurrentPlayer)
                     if (collisionObjectId)
                     {
                         path_start(mypath,0,0,false); //Stops the path
-                        i = gridSize;
                         draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
                     }
                        
+                 }
+                 else
+                 {
+                    actionPoints -= 1;
                  }
                  
                 
             }
             
-            moveTimer -= moveSpeed;
+            //moveTimer -= moveSpeed;
             move_snap( moveSpeed, moveSpeed );
-            image_angle = direction+270;
+            //image_angle = direction+270;
             draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-            //show_message("x: " + string(x) + "y: " + string(y));
-            //show_message("moveTimer2: " + string(moveTimer));
-        }
-        else
-        {   
-            move_snap( moveSpeed, moveSpeed );
-            //show_message("x: " + string(round(x)) + "y: " + string(round(y)));
-            if (((y+32)%64 == 0))
-            {
-                path_start(mypath,0,0,false); //Stops the path
-                moveTimer = gridSize;
-                actionPoints -= 1;
-                createNewPath = true;
-                //show_message("Snap");
-            }
-                 
         }
         
         if (path_get_number(mypath) &gt; 2)
@@ -487,9 +475,11 @@ if (amICurrentPlayer)
         path_start(mypath,0,0,false); //Stops the path
         image_angle = direction+270;
         draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-        global.endTurn = true;
+        //moveTimer -= moveSpeed;
+        //global.endTurn = true;
     }
     
+  
     
     draw_path(mypath,x,y,true);
     //Draw mp_grid on screen
@@ -506,12 +496,16 @@ if (amICurrentPlayer)
     }
     draw_set_alpha(1);
     */
-    firstRoundTimer = gridSize - moveSpeed;
-    if (numberOfAttacks &gt; 0 &amp;&amp; moveTimer == firstRoundTimer )
-    //if (numberOfAttacks &gt; 0 )
+    
+    
+    //firstRoundTimer = gridSize - moveSpeed;
+    //show_message("firstRoundTimer: " + string(firstRoundTimer) + ", moveTimer: " + string(moveTimer));
+    if (numberOfAttacks &gt; 0 &amp;&amp; moveTimer == gridSize )
     {
+        //show_message();      
         if (path_get_number(mypath) == 2)
         {
+            //show_message("firstRoundTimer: " + string(firstRoundTimer) + ", moveTimer: " + string(moveTimer));
             finalX = path_get_point_x(mypath, 1);
             finalY = path_get_point_y(mypath, 1);
             
@@ -520,16 +514,49 @@ if (amICurrentPlayer)
             if (collisionObjectId)
             {
                 script_combat_trigger(collisionObjectId);
-                numberOfAttacks-=1;
+                //numberOfAttacks-=1;
                 
                 path_start(mypath,0,0,false); //Stops the path
-                i = gridSize;
                 draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
             }
                
          }
+         else
+         {
+            //show_message("actionPoints2: " + string(actionPoints));
+            if ( actionPoints &lt; 0)
+            {
+                show_message("FIRST END");
+                global.endTurn = true;
+            }
+         }
+    }
+    else if (numberOfAttacks == 0)
+    {
+        if ( actionPoints== 0)
+        {
+            //show_message("BLAJH");
+            global.endTurn = true;
+        }    
     }
     
+    
+    if (moveTimer == 0 )
+    {
+        move_snap( moveSpeed, moveSpeed );
+        //show_message("x: " + string(round(x)) + "y: " + string(round(y)));
+        if (((y+32)%64 == 0))
+        {
+            path_start(mypath,0,0,false); //Stops the path
+            moveTimer = gridSize;
+            createNewPath = true;
+            //show_message("Snap");
+        }
+    }
+    else
+    {
+        moveTimer -= moveSpeed;
+    }
 }
 
 
