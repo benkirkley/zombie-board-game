@@ -411,21 +411,55 @@ createNewPath = true;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>//Draw mp_grid on screen
+    /*
+    draw_set_alpha(0.1);
+    mp_grid_draw(AI_grid);
+    for (i=0; i&lt;room_width; i+=64)
+    {
+      draw_line(i,0,i,room_height);
+    }
+    for(ii=0; ii&lt;room_height; ii+=64)
+    {
+      draw_line(0,ii,room_width,ii);
+    }
+    draw_set_alpha(1);
+    */
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>//draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
 
 if (amICurrentPlayer)
 {
-
-    draw_path(mypath,x,y,true);
+   draw_path(mypath,x,y,true);
     //show_message("moveTimer: "+string(moveTimer) );
     obj_master.playerHighlightId.x = x;
     obj_master.playerHighlightId.y = y;
     
-    if (moveTimer == gridSize)
+
+    if (moveTimer == gridSize) //Is it the first turn?
     {
-        if (path_get_number(mypath) &gt; 2)
+        if (path_get_number(mypath) &gt; 2) //Is the enemy more than one square away?
         {
-            if (actionPoints &gt; 0)
+            if (actionPoints &gt; 0) //Do I have any action points left?
             {
                 actionPoints -= 1;
                 path_start(mypath,moveSpeed,0,false);
@@ -439,12 +473,23 @@ if (amICurrentPlayer)
                     path_start(mypath,0,0,false); //Stops the path
                     draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
                 }
-                
+            }
+            else
+            {
+                global.endTurn = true;
             }
         }
         else if (path_get_number(mypath) == 2)
         {
-            actionPoints -= 1;
+            if (numberOfAttacks &gt; 0)
+            {
+                //show_message("Attack");
+                numberOfAttacks -= 1;
+            }
+            else
+            {
+                global.endTurn = true;
+            }
         }
     }
     else if (moveTimer &lt;= 0)
@@ -455,8 +500,6 @@ if (amICurrentPlayer)
             path_start(mypath,0,0,false); //Stop the path
             moveTimer = gridSize + moveSpeed;
             createNewPath = true;
-            if (actionPoints == 0) global.endTurn = true;
-            
         }
     }
     else
@@ -469,7 +512,6 @@ if (amICurrentPlayer)
     moveTimer -= moveSpeed;
     move_snap( moveSpeed, moveSpeed );
     image_angle = direction+270;
-    //draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
     
     
     
@@ -604,40 +646,6 @@ if (amICurrentPlayer)
 }
 draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Draw mp_grid on screen
-    /*
-    draw_set_alpha(0.1);
-    mp_grid_draw(AI_grid);
-    for (i=0; i&lt;room_width; i+=64)
-    {
-      draw_line(i,0,i,room_height);
-    }
-    for(ii=0; ii&lt;room_height; ii+=64)
-    {
-      draw_line(0,ii,room_width,ii);
-    }
-    draw_set_alpha(1);
-    */
 </string>
           </argument>
         </arguments>
