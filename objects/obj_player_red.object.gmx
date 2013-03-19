@@ -158,10 +158,7 @@ equippedArmour = 0;
             <string>moveTimer = gridSize;
 script_create_mp_grid();
 createNewPath = true;
-//stubIdForThisPlayer = instance_create(x,y,obj_player_stub);
-//stubIdForThisPlayer.objCreatedBy = id;
-//stopMe = false;
-//old_path_positionprevious = 0;
+listFriendlyBlock = ds_list_create();
 
     
 
@@ -412,19 +409,19 @@ createNewPath = true;
           <argument>
             <kind>1</kind>
             <string>//Draw mp_grid on screen
-    /*
-    draw_set_alpha(0.1);
-    mp_grid_draw(AI_grid);
-    for (i=0; i&lt;room_width; i+=64)
-    {
-      draw_line(i,0,i,room_height);
-    }
-    for(ii=0; ii&lt;room_height; ii+=64)
-    {
-      draw_line(0,ii,room_width,ii);
-    }
-    draw_set_alpha(1);
-    */
+/*
+draw_set_alpha(0.1);
+mp_grid_draw(AI_grid);
+for (i=0; i&lt;room_width; i+=64)
+{
+  draw_line(i,0,i,room_height);
+}
+for(ii=0; ii&lt;room_height; ii+=64)
+{
+  draw_line(0,ii,room_width,ii);
+}
+draw_set_alpha(1);
+*/
 </string>
           </argument>
         </arguments>
@@ -466,12 +463,31 @@ if (amICurrentPlayer)
                 
                 finalX = path_get_point_x(mypath, 1);
                 finalY = path_get_point_y(mypath, 1);
-                checkCollisionRed = place_meeting(finalX,finalY,obj_player_red);
-                //checkCollisionRed = collision_point(finalX,finalY,obj_player_red,false,true);
+                //checkCollisionRed = place_meeting(finalX,finalY,obj_player_red);
+                checkCollisionRed = collision_point(finalX,finalY,obj_player_red,false,true);
                 if (checkCollisionRed) //Friendly collision
                 {
                     path_start(mypath,0,0,false); //Stops the path
                     draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+                    
+                    ds_list_add(listFriendlyBlock, checkCollisionRed);
+                    instance_deactivate_object(id);
+                    mp_grid_clear_all(AI_grid);
+                    for (i=0; i &lt; ds_list_size(listFriendlyBlock); i++)
+                    {
+                        friendlyToAdd = ds_list_find_value(listFriendlyBlock, i);
+                        mp_grid_add_instances(AI_grid,friendlyToAdd,true);
+                    }
+                    mp_grid_add_instances(AI_grid,obj_wall_hidden,false);
+                    instance_activate_object(id);
+                    mypath=path_add(); //creates an empty path...
+                    pathExists = mp_grid_path(AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
+                    if (pathExists)
+                    {
+                        if (global.debug_show_ai_path) draw_path(mypath,x,y,true);       
+                        actionPoints += 1;
+                        moveTimer += moveSpeed;
+                    } 
                 }
             }
             else
@@ -507,6 +523,7 @@ if (amICurrentPlayer)
             path_start(mypath,0,0,false); //Stop the path
             moveTimer = gridSize + moveSpeed;
             createNewPath = true;
+            ds_list_empty(listFriendlyBlock);
         }
     }
     else
