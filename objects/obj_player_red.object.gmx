@@ -449,7 +449,7 @@ createNewPath = true;
 
 if (amICurrentPlayer)
 {
-   draw_path(mypath,x,y,true);
+    draw_path(mypath,x,y,true);
     //show_message("moveTimer: "+string(moveTimer) );
     obj_master.playerHighlightId.x = x;
     obj_master.playerHighlightId.y = y;
@@ -467,9 +467,9 @@ if (amICurrentPlayer)
                 finalX = path_get_point_x(mypath, 1);
                 finalY = path_get_point_y(mypath, 1);
                 checkCollisionRed = place_meeting(finalX,finalY,obj_player_red);
-                if (checkCollisionRed)
+                //checkCollisionRed = collision_point(finalX,finalY,obj_player_red,false,true);
+                if (checkCollisionRed) //Friendly collision
                 {
-                    show_message("Collide");
                     path_start(mypath,0,0,false); //Stops the path
                     draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
                 }
@@ -484,7 +484,19 @@ if (amICurrentPlayer)
             if (numberOfAttacks &gt; 0)
             {
                 //show_message("Attack");
-                numberOfAttacks -= 1;
+                //numberOfAttacks -= 1;
+                finalX = path_get_point_x(mypath, 1);
+                finalY = path_get_point_y(mypath, 1);
+                
+                //checkCollisionBlue = place_meeting(futureX,futureY,obj_player_blue);
+                collisionObjectId = collision_point(finalX,finalY,obj_player_blue,false,false);
+                if (collisionObjectId)
+                {
+                    script_combat_trigger(collisionObjectId);
+                    numberOfAttacks-=1;
+                    //path_start(mypath,0,0,false); //Stops the path
+                    //draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+                }
             }
             else
             {
@@ -504,10 +516,7 @@ if (amICurrentPlayer)
     }
     else
     {   
-        //x = 0;
         move_snap( moveSpeed, moveSpeed );
-        //draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-        //show_message("x: " + string(x));
     }
     moveTimer -= moveSpeed;
     move_snap( moveSpeed, moveSpeed );
