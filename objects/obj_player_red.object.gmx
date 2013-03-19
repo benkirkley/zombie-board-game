@@ -411,10 +411,13 @@ createNewPath = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+            <string>//draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
 
 if (amICurrentPlayer)
 {
+
+    draw_path(mypath,x,y,true);
+    //show_message("moveTimer: "+string(moveTimer) );
     obj_master.playerHighlightId.x = x;
     obj_master.playerHighlightId.y = y;
     
@@ -426,6 +429,7 @@ if (amICurrentPlayer)
             {
                 actionPoints -= 1;
                 path_start(mypath,moveSpeed,0,false);
+                
                 finalX = path_get_point_x(mypath, 1);
                 finalY = path_get_point_y(mypath, 1);
                 checkCollisionRed = place_meeting(finalX,finalY,obj_player_red);
@@ -435,6 +439,7 @@ if (amICurrentPlayer)
                     path_start(mypath,0,0,false); //Stops the path
                     draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
                 }
+                
             }
         }
         else if (path_get_number(mypath) == 2)
@@ -442,26 +447,35 @@ if (amICurrentPlayer)
             actionPoints -= 1;
         }
     }
-    else if (moveTimer == 0)
+    else if (moveTimer &lt;= 0)
     {
         move_snap( moveSpeed, moveSpeed );
-        if (((y+32)%64 == 0)) //Check we are on a grid point
+        if (((y+32)%64 == 0)) //Check if we are on a grid point
         {
             path_start(mypath,0,0,false); //Stop the path
             moveTimer = gridSize + moveSpeed;
             createNewPath = true;
             if (actionPoints == 0) global.endTurn = true;
+            
         }
     }
     else
-    {
+    {   
+        //x = 0;
         move_snap( moveSpeed, moveSpeed );
-        //show_message("moveTimer: " + string(moveTimer));
+        //draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+        //show_message("x: " + string(x));
     }
     moveTimer -= moveSpeed;
+    move_snap( moveSpeed, moveSpeed );
+    image_angle = direction+270;
+    //draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
     
-   /* 
-    //show_message("moveTimer: "+string(moveTimer) );
+    
+    
+    
+   /*
+    show_message("moveTimer: "+string(moveTimer) );
     if (actionPoints &gt; 0)
     {
         if (moveTimer &gt; 0)
@@ -493,7 +507,7 @@ if (amICurrentPlayer)
             
             //moveTimer -= moveSpeed;
             move_snap( moveSpeed, moveSpeed );
-            //image_angle = direction+270;
+            image_angle = direction+270;
             draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
         }
         
@@ -524,19 +538,6 @@ if (amICurrentPlayer)
   
     
     draw_path(mypath,x,y,true);
-    //Draw mp_grid on screen
-    /*
-    draw_set_alpha(0.1);
-    mp_grid_draw(AI_grid);
-    for (i=0; i&lt;room_width; i+=64)
-    {
-      draw_line(i,0,i,room_height);
-    }
-    for(ii=0; ii&lt;room_height; ii+=64)
-    {
-      draw_line(0,ii,room_width,ii);
-    }
-    draw_set_alpha(1);
     
     
     
@@ -599,10 +600,44 @@ if (amICurrentPlayer)
     {
         moveTimer -= moveSpeed;
     }
-    */    
+    */  
 }
+draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
 
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Draw mp_grid on screen
+    /*
+    draw_set_alpha(0.1);
+    mp_grid_draw(AI_grid);
+    for (i=0; i&lt;room_width; i+=64)
+    {
+      draw_line(i,0,i,room_height);
+    }
+    for(ii=0; ii&lt;room_height; ii+=64)
+    {
+      draw_line(0,ii,room_width,ii);
+    }
+    draw_set_alpha(1);
+    */
 </string>
           </argument>
         </arguments>
