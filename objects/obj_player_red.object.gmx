@@ -445,11 +445,11 @@ createNewPath = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+            <string>
 
 if (amICurrentPlayer)
 {
-    draw_path(mypath,x,y,true);
+    if (global.debug_show_ai_path) draw_path(mypath,x,y,true);
     //show_message("moveTimer: "+string(moveTimer) );
     obj_master.playerHighlightId.x = x;
     obj_master.playerHighlightId.y = y;
@@ -479,23 +479,18 @@ if (amICurrentPlayer)
                 global.endTurn = true;
             }
         }
-        else if (path_get_number(mypath) == 2)
+        else if (path_get_number(mypath) == 2) //Is the enemy right next to me?
         {
-            if (numberOfAttacks &gt; 0)
+            if (numberOfAttacks &gt; 0) //Do I have any attacks left?
             {
-                //show_message("Attack");
-                //numberOfAttacks -= 1;
                 finalX = path_get_point_x(mypath, 1);
                 finalY = path_get_point_y(mypath, 1);
                 
-                //checkCollisionBlue = place_meeting(futureX,futureY,obj_player_blue);
                 collisionObjectId = collision_point(finalX,finalY,obj_player_blue,false,false);
                 if (collisionObjectId)
                 {
-                    script_combat_trigger(collisionObjectId);
+                    script_combat_trigger(collisionObjectId); //ATTACK
                     numberOfAttacks-=1;
-                    //path_start(mypath,0,0,false); //Stops the path
-                    //draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
                 }
             }
             else
@@ -521,138 +516,8 @@ if (amICurrentPlayer)
     moveTimer -= moveSpeed;
     move_snap( moveSpeed, moveSpeed );
     image_angle = direction+270;
-    
-    
-    
-    
-   /*
-    show_message("moveTimer: "+string(moveTimer) );
-    if (actionPoints &gt; 0)
-    {
-        if (moveTimer &gt; 0)
-        {
-            if (moveTimer == gridSize) {
-                pathIncrements = 1/(gridSize/moveSpeed);
-                path_start(mypath,moveSpeed,0,false);
-                
-                if (path_get_number(mypath) == 2)
-                {
-                    finalX = path_get_point_x(mypath, 1);
-                    finalY = path_get_point_y(mypath, 1);
-                    
-                    collisionObjectId = collision_point(finalX,finalY,obj_player_blue,false,false);
-                    if (collisionObjectId)
-                    {
-                        path_start(mypath,0,0,false); //Stops the path
-                        draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-                    }
-                       
-                 }
-                 else
-                 {
-                    actionPoints -= 1;
-                 }
-                 
-                
-            }
-            
-            //moveTimer -= moveSpeed;
-            move_snap( moveSpeed, moveSpeed );
-            image_angle = direction+270;
-            draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-        }
-        
-        if (path_get_number(mypath) &gt; 2)
-        {
-            futureX = path_get_point_x(mypath, 1);
-            futureY = path_get_point_y(mypath, 1);
-            
-            //pathIncrement = 1/(gridSize/moveSpeed);
-            checkCollisionRed = place_meeting(futureX,futureY,obj_player_red);
-            if (checkCollisionRed)
-            {
-                //show_message("Collide");
-                path_start(mypath,0,0,false); //Stops the path
-                draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-            }
-        }
-    }
-    else
-    {
-        path_start(mypath,0,0,false); //Stops the path
-        image_angle = direction+270;
-        draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-        //moveTimer -= moveSpeed;
-        //global.endTurn = true;
-    }
-    
-  
-    
-    draw_path(mypath,x,y,true);
-    
-    
-    
-    //firstRoundTimer = gridSize - moveSpeed;
-    //show_message("firstRoundTimer: " + string(firstRoundTimer) + ", moveTimer: " + string(moveTimer));
-    if (numberOfAttacks &gt; 0 &amp;&amp; moveTimer == gridSize )
-    {
-        //show_message();      
-        if (path_get_number(mypath) == 2)
-        {
-            //show_message("firstRoundTimer: " + string(firstRoundTimer) + ", moveTimer: " + string(moveTimer));
-            finalX = path_get_point_x(mypath, 1);
-            finalY = path_get_point_y(mypath, 1);
-            
-            //checkCollisionBlue = place_meeting(futureX,futureY,obj_player_blue);
-            collisionObjectId = collision_point(finalX,finalY,obj_player_blue,false,false);
-            if (collisionObjectId)
-            {
-                script_combat_trigger(collisionObjectId);
-                //numberOfAttacks-=1;
-                
-                path_start(mypath,0,0,false); //Stops the path
-                draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
-            }
-               
-         }
-         else
-         {
-            //show_message("actionPoints2: " + string(actionPoints));
-            if ( actionPoints &lt; 0)
-            {
-                show_message("FIRST END");
-                global.endTurn = true;
-            }
-         }
-    }
-    else if (numberOfAttacks == 0)
-    {
-        if ( actionPoints== 0)
-        {
-            //show_message("BLAJH");
-            global.endTurn = true;
-        }    
-    }
-    
-    
-    if (moveTimer == 0 )
-    {
-        move_snap( moveSpeed, moveSpeed );
-        //show_message("x: " + string(round(x)) + "y: " + string(round(y)));
-        if (((y+32)%64 == 0))
-        {
-            path_start(mypath,0,0,false); //Stops the path
-            moveTimer = gridSize;
-            createNewPath = true;
-            //show_message("Snap");
-        }
-    }
-    else
-    {
-        moveTimer -= moveSpeed;
-    }
-    */  
 }
+
 draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
 
 </string>
