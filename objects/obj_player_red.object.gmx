@@ -488,7 +488,12 @@ if (amICurrentPlayer)
                         if (global.debug_show_ai_path) draw_path(mypath,x,y,true);       
                         actionPoints += 1;
                         moveTimer += moveSpeed;
-                    } 
+                    }
+                    else
+                    {
+                        image_speed=0;
+                        image_index = 0;
+                    }
                 }
             }
             else
