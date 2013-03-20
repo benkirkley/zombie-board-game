@@ -42,6 +42,7 @@
     <background>background\bg_room_corridor_1</background>
     <background>background\bg_room_corridor_2</background>
     <background>background\bg_room_kitchen</background>
+    <background>background\bg_room_bedroom_3</background>
     <background>background\bg_room_driveway</background>
   </backgrounds>
   <paths name="paths"/>
@@ -56,19 +57,19 @@
       <script>scripts\script_combat_perform.gml</script>
     </scripts>
     <scripts name="create">
-      <script>scripts\script_create_all_teams_and_players_old.gml</script>
+      <script>scripts\script_create_all_teams_and_players.gml</script>
+      <script>scripts\script_create_mp_grid.gml</script>
       <script>scripts\script_create_new_player.gml</script>
       <script>scripts\script_create_player_common_local_vars.gml</script>
-      <script>scripts\script_create_spawn_team.gml</script>
-      <script>scripts\script_create_spawn_points_room_dining.gml</script>
-      <script>scripts\script_create_spawn_points_room_garage.gml</script>
       <script>scripts\script_create_spawn_points_room_bedroom_1.gml</script>
       <script>scripts\script_create_spawn_points_room_bedroom_2.gml</script>
       <script>scripts\script_create_spawn_points_room_corridor_1.gml</script>
       <script>scripts\script_create_spawn_points_room_corridor_2.gml</script>
+      <script>scripts\script_create_spawn_points_room_dining.gml</script>
+      <script>scripts\script_create_spawn_points_room_garage.gml</script>
       <script>scripts\script_create_spawn_points_room_kitchen.gml</script>
+      <script>scripts\script_create_spawn_team.gml</script>
       <script>scripts\script_create_spawn_points_room_driveway.gml</script>
-      <script>scripts\script_create_all_teams_and_players.gml</script>
     </scripts>
     <scripts name="global">
       <script>scripts\script_global_vars.gml</script>
@@ -107,6 +108,7 @@
       <script>scripts\script_turn_am_i_current_player.gml</script>
       <script>scripts\script_player_states.gml</script>
       <script>scripts\script_keyboard_move.gml</script>
+      <script>scripts\script_move_me.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -149,6 +151,7 @@
     <object>objects\obj_item_parent</object>
     <object>objects\obj_random_item</object>
     <object>objects\object_start_game</object>
+    <object>objects\obj_player_stub</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>

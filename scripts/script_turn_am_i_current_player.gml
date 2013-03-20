@@ -8,6 +8,6 @@ if ( currentPlayerId = self.id )
     
     // Highlight the current player with a yellow square
     
-    obj_master.playerHighlightId.x = x;
-    obj_master.playerHighlightId.y = y;
+    //obj_master.playerHighlightId.x = x;
+    //obj_master.playerHighlightId.y = y;
 }

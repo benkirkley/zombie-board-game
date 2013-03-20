@@ -1,7 +1,7 @@
 var objectToCheckWith = argument0;
 var thisObject = argument1;
-direction = angle;
-image_angle = angle;
+//direction = angle;
+//image_angle = angle;
 
 collisionObjectId = collision_point(finalX,finalY,objectToCheckWith,true,true)
 if ( collisionObjectId && (objectToCheckWith != thisObject) ) 
