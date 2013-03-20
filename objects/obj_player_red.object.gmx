@@ -460,6 +460,7 @@ if (amICurrentPlayer)
             {
                 actionPoints -= 1;
                 path_start(mypath,moveSpeed,0,false);
+                image_speed=1;
                 
                 finalX = path_get_point_x(mypath, 1);
                 finalY = path_get_point_y(mypath, 1);
@@ -468,7 +469,7 @@ if (amICurrentPlayer)
                 if (checkCollisionRed) //Friendly collision
                 {
                     path_start(mypath,0,0,false); //Stops the path
-                    draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
+                    //draw_sprite_ext(sprite_index,image_index,x,y,1,1,image_angle,-1,1);
                     
                     ds_list_add(listFriendlyBlock, checkCollisionRed);
                     instance_deactivate_object(id);
@@ -524,6 +525,8 @@ if (amICurrentPlayer)
             moveTimer = gridSize + moveSpeed;
             createNewPath = true;
             ds_list_empty(listFriendlyBlock);
+            image_speed=0;
+            image_index = 0;
         }
     }
     else
