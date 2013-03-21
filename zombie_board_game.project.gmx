@@ -155,6 +155,7 @@
     <object>objects\obj_text_info</object>
     <object>objects\obj_tips</object>
     <object>objects\obj_wall_hidden</object>
+    <object>objects\obj_wall_hidden_red</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>
