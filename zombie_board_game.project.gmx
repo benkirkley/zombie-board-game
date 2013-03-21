@@ -47,6 +47,10 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="ai">
+      <script>scripts\script_ai_debug_grid.gml</script>
+      <script>scripts\script_ai_move_attack.gml</script>
+    </scripts>
     <scripts name="collision">
       <script>scripts\script_collision_perform.gml</script>
       <script>scripts\script_collision_item.gml</script>
@@ -134,6 +138,7 @@
     <object>objects\obj_item_armour_helmet_riot</object>
     <object>objects\obj_item_armour_shield_riot</object>
     <object>objects\obj_item_consumable_medkit</object>
+    <object>objects\obj_item_parent</object>
     <object>objects\obj_item_weapon_axe</object>
     <object>objects\obj_item_weapon_chainsaw</object>
     <object>objects\obj_item_weapon_knife_kitchen</object>
@@ -143,15 +148,13 @@
     <object>objects\obj_player_blue</object>
     <object>objects\obj_player_highlight</object>
     <object>objects\obj_player_red</object>
+    <object>objects\obj_random_item</object>
+    <object>objects\obj_start_game</object>
     <object>objects\obj_stats</object>
     <object>objects\obj_text_debug</object>
     <object>objects\obj_text_info</object>
     <object>objects\obj_tips</object>
     <object>objects\obj_wall_hidden</object>
-    <object>objects\obj_item_parent</object>
-    <object>objects\obj_random_item</object>
-    <object>objects\object_start_game</object>
-    <object>objects\obj_player_stub</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>
