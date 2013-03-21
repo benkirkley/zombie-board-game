@@ -56,6 +56,10 @@ if (id.thisTeamId == 0)
                     {
                         itemId = instance_create(x,y,oldWeaponObject);
                         itemId.image_alpha = 0.5;
+                        with (obj_item_parent)
+                        {
+                            if (instance_position(obj_player_blue.x,obj_player_blue.y,id)) show_message(object_get_name(object_index));
+                        }
                     }
                 }
                 if (is_string(oldArmour))
