@@ -1,6 +1,6 @@
 //DEFAULT VALUES
 global.numberOfTeams = 2;
-numberOfBluePlayers = 2;
+numberOfBluePlayers = 1;
 //numberOfRedPlayers = 9;
 
 global.currentTeam = 0;
@@ -13,7 +13,7 @@ global.numberOfRedPlayersKilled = 0;
 
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
-    //numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", numberOfBluePlayers,"real");
+    numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", numberOfBluePlayers,"real");
     //numberOfRedPlayers = script_ini_read_key("Start","number_of_red_players", numberOfRedPlayers,"real");
     //blueStartingWeapon = script_ini_read_key("Start","blue_player_starting_weapon", blueStartingWeapon,"string");
     //blueStartingArmour = script_ini_read_key("Start","blue_player_starting_armour", blueStartingArmour,"string");
