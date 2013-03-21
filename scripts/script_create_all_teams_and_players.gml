@@ -1,6 +1,6 @@
 //DEFAULT VALUES
 global.numberOfTeams = 2;
-numberOfBluePlayers = 1;
+numberOfBluePlayers = 2;
 //numberOfRedPlayers = 9;
 
 global.currentTeam = 0;

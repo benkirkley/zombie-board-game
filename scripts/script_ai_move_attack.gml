@@ -37,7 +37,8 @@ if (amICurrentPlayer)
                     mp_grid_add_instances(AI_grid,obj_wall_hidden_red,false);
                     instance_activate_object(id);
                     mypath=path_add(); //creates an empty path...
-                    pathExists = mp_grid_path(AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
+                    nearestTarget = instance_nearest(x,y,obj_player_blue);
+                    pathExists = mp_grid_path(AI_grid,mypath,x,y,nearestTarget.x,nearestTarget.y,true);
                     if (pathExists)
                     {
                         if (global.debug_show_ai_path) draw_path(mypath,x,y,true);       

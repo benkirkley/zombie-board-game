@@ -159,6 +159,8 @@ equippedArmour = 0;
 script_create_mp_grid();
 createNewPath = true;
 listFriendlyBlock = ds_list_create();
+image_speed=0;
+image_index=0;
 
     
 
@@ -358,7 +360,8 @@ listFriendlyBlock = ds_list_create();
         
         
         mypath=path_add(); //creates an empty path...
-        pathExists = mp_grid_path(AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
+        nearestTarget = instance_nearest(x,y,obj_player_blue);
+        pathExists = mp_grid_path(AI_grid,mypath,x,y,nearestTarget.x,nearestTarget.y,true);
         
         if (pathExists)
         {
@@ -373,7 +376,8 @@ listFriendlyBlock = ds_list_create();
             mp_grid_add_instances(AI_grid,obj_wall_hidden_red,false);
             instance_activate_object(id);
             mypath=path_add(); //creates an empty path...
-            pathExists = mp_grid_path(AI_grid,mypath,x,y,obj_player_blue.x,obj_player_blue.y,true);
+            nearestTarget = instance_nearest(x,y,obj_player_blue);
+            pathExists = mp_grid_path(AI_grid,mypath,x,y,nearestTarget.x,nearestTarget.y,true);
             
             
         }
