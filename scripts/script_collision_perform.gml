@@ -3,7 +3,8 @@ var thisObject = argument1;
 //direction = angle;
 //image_angle = angle;
 
-collisionObjectId = collision_point(finalX,finalY,objectToCheckWith,true,true)
+collisionObjectId = collision_point(finalX,finalY,objectToCheckWith,true,true);
+//show_message(object_get_name(collisionObjectId.object_index));
 if ( collisionObjectId && (objectToCheckWith != thisObject) ) 
 {
     if ( script_collision_item(objectToCheckWith) )

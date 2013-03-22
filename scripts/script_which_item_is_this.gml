@@ -1,9 +1,27 @@
-objectToCheckWith = argument0;
+collisionObjectId = argument0;
 thisObject = argument1;
+objectToCheckWith = collisionObjectId.object_index;
 
 //Only allow team0 (blue) to pick up items
 if (id.thisTeamId == 0)
 {
+    /*
+    global.itemsOnThisTile = ds_list_create();
+    global.tempThisPlayer = id;
+    with (obj_item_parent)
+    {
+        if (instance_position(global.tempThisPlayer.x,global.tempThisPlayer.y,id))
+        {
+            ds_list_add(global.itemsOnThisTile,id);
+            //show_message(string(object_get_name(object_index))+": " +string(id)) ;
+        }
+    }
+    ds_list_sort(global.itemsOnThisTile,true);
+    objectToCheckWith = (ds_list_find_value(global.itemsOnThisTile,0).object_index);
+    ds_list_destroy(global.itemsOnThisTile);
+    global.tempThisPlayer = 0;
+    */
+                 
     //Cycle through the types of item maps and find a matching type
     var loopLimit = ds_map_size(global.mapItemTypeAndStatsMap);
     for (itemTypeMap=0; itemTypeMap < loopLimit; itemTypeMap+=1)
@@ -56,10 +74,28 @@ if (id.thisTeamId == 0)
                     {
                         itemId = instance_create(x,y,oldWeaponObject);
                         itemId.image_alpha = 0.5;
+                        /*
+                        global.itemsOnThisTile = ds_stack_create();
+                        global.tempThisPlayer = id;
                         with (obj_item_parent)
                         {
-                            if (instance_position(obj_player_blue.x,obj_player_blue.y,id)) show_message(object_get_name(object_index));
+                            if (instance_position(global.tempThisPlayer.x,global.tempThisPlayer.y,id))
+                            {
+                                ds_stack_push(global.itemsOnThisTile,id);
+                                //show_message(string(object_get_name(object_index))+": " +string(depth)) ;
+                            }
                         }
+                        global.tempThisPlayer = 0;
+                        var loopLimit = ds_stack_size(global.itemsOnThisTile);
+                        for (ii=0; ii < loopLimit; ii+=1)
+                        {
+                            var thisItem = ds_stack_pop(global.itemsOnThisTile);
+                            thisItem.depth -= ii;
+                            //if (object_get_name(thisItem.object_index) == "obj_item_weapon_knife_kitchen") thisItem.depth = -10;
+                            //show_message(string(object_get_name(thisItem.object_index))+": " +string(thisItem.depth) + ", ii: " + string(ii));
+                        }
+                        ds_stack_destroy(global.itemsOnThisTile);
+                        */
                     }
                 }
                 if (is_string(oldArmour))

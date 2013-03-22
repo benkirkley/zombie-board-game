@@ -9,7 +9,7 @@ if (isMoving == false && amICurrentPlayer == true)
     if ( keyboard_check_pressed( vk_numpad5 ) )
     {
         //DEBUG HERE
-        show_message(id);
+        //show_message(id);
     }
     
     if ( keyboard_check_pressed( vk_enter ) )
@@ -75,11 +75,11 @@ if (isMoving == false && amICurrentPlayer == true)
     //ITEMS: Pick up
     if ( keyboard_check_pressed( ord("E") ) )
     {
-        //show_message("Enter debug here");
+        /*
         var thisObject = object_get_name(self.object_index);         
         finalX = x;
         finalY = y;
-        
+        /*
         //Check if player is colliding with an item
         for (i=0; i < ds_list_size(global.dslist_AllItemObjects); i += 1)
         {   
@@ -91,6 +91,28 @@ if (isMoving == false && amICurrentPlayer == true)
                 return false;
             }
         }
+        */
+        global.itemsOnThisTile = ds_list_create();
+        global.tempThisPlayer = id;
+        with (obj_item_parent)
+        {
+            if (instance_position(global.tempThisPlayer.x,global.tempThisPlayer.y,id))
+            {
+                ds_list_add(global.itemsOnThisTile,id);
+                //show_message(string(object_get_name(object_index))+": " +string(id)) ;
+            }
+        }
+        if (ds_list_size(global.itemsOnThisTile) > 0)
+        {
+            ds_list_sort(global.itemsOnThisTile,true);
+            //objectToCheckWith = (ds_list_find_value(global.itemsOnThisTile,0).object_index);
+            objectToCheckWith = ds_list_find_value(global.itemsOnThisTile,0);
+            script_which_item_is_this(objectToCheckWith, object_index);
+        }
+        ds_list_destroy(global.itemsOnThisTile);
+        global.tempThisPlayer = 0;
+        
+        
     }
     //ITEMS: Drop Weapon
     if ( keyboard_check_pressed( ord("F") ) )
