@@ -10,6 +10,7 @@ if (amICurrentPlayer)
 
     if (moveTimer == gridSize) //Is it the first turn?
     {
+        moveSpeed = currentSpeed;
         if (path_get_number(mypath) > 2) //Is the enemy more than one square away?
         {
             if (actionPoints > 0) //Do I have any action points left?

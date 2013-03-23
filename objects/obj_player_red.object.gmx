@@ -76,7 +76,8 @@ sidedDiceHitPoints = 4
 totalActionPoints = 2;
 damage = 1;
 totalNumberOfAttacks = 1;
-moveSpeed = 4;
+currentSpeed = 4;
+moveSpeed = currentSpeed;
 
 
 //INI file -- read existing or create using defaults

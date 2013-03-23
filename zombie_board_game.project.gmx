@@ -156,6 +156,7 @@
     <object>objects\obj_tips</object>
     <object>objects\obj_wall_hidden</object>
     <object>objects\obj_wall_hidden_red</object>
+    <object>objects\obj_checkbox</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>
