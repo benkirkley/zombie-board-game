@@ -30,14 +30,16 @@ if ( hitPoints <= 0 )
     }
     
     with (id) instance_destroy();
-    /*
+    
     //If all enemies are dead, win game
-    if (!teamStillHasPlayers && (loopLimit >= totalNumberOfPlayersOnThisTeam) ) {
+    if (!teamStillHasPlayers && (loopLimit >= totalNumberOfPlayersOnThisTeam) && global.currentTeam == 1)
+    {
         teamName = ds_grid_get( global.teamGrids, 2, global.currentTeam );
-        show_message(string(teamName) + " wins! Restarting game");
+        show_message("You have become one with the zombies. 
+                     #Try again.");
         game_restart()
     }
-    */
+    
     
     script_drop_random_item(false,false);
 }
