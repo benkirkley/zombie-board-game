@@ -6,7 +6,7 @@ global.numberOfTeams = 0;
 global.numberOfRedPlayersToCarryOver = 0;
 
 global.currentPlayer = 0;
-global.currentTeam = 0;
+global.currentTeam = 1;
 
 global.debug = true;
 global.debug_show_combat_rolls = false ;

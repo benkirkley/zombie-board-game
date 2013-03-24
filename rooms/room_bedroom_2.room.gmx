@@ -93,6 +93,7 @@ instance_create(0,0,obj_master);</code>
     <instance objName="obj_wall_hidden" x="128" y="384" name="inst_4BCB28C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_item" x="416" y="416" name="inst_1A7AB0E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_checkbox" x="768" y="64" name="inst_42F0FB85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_zone_exit" x="352" y="160" name="inst_0185BEE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_info_bg" x="768" y="704" name="inst_D90C9C67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button_end_turn" x="976" y="720" name="inst_39E7F446" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_text_info" x="776" y="708" name="inst_C29FBE27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

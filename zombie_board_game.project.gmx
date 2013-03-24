@@ -24,6 +24,7 @@
     <sprite>sprites\spr_player_red_64</sprite>
     <sprite>sprites\spr_red</sprite>
     <sprite>sprites\spr_red_64</sprite>
+    <sprite>sprites\spr_zone_exit</sprite>
     <sprite>sprites\spr_wall_barrier</sprite>
     <sprite>sprites\spr_wall_barrier_64</sprite>
     <sprite>sprites\spr_wall_brick</sprite>
@@ -157,6 +158,7 @@
     <object>objects\obj_wall_hidden</object>
     <object>objects\obj_wall_hidden_red</object>
     <object>objects\obj_checkbox</object>
+    <object>objects\obj_zone_exit</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>
