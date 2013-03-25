@@ -6,7 +6,7 @@ global.numberOfTeams = 0;
 global.numberOfRedPlayersToCarryOver = 0;
 
 global.currentPlayer = 0;
-global.currentTeam = 0;
+global.currentTeam = 1;
 
 global.debug = true;
 global.debug_show_combat_rolls = false ;
@@ -31,3 +31,5 @@ ds_list_add(global.collidableObjects, obj_wall_hidden);
 global.savedPlayerData = ds_map_create();
 
 global.checked = 0;
+
+global.spawnRedOnLoad = false;

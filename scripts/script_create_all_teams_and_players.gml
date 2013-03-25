@@ -3,7 +3,7 @@ global.numberOfTeams = 2;
 numberOfBluePlayers = 1;
 //numberOfRedPlayers = 9;
 
-global.currentTeam = 0;
+//global.currentTeam = 0;
 global.currentPlayer = 0;
 global.numberOfRedPlayersKilled = 0;
 
@@ -91,7 +91,8 @@ ds_grid_set(global.teamGrids, 6, 1, playerRedDataMap);
 //SCRIPT: spawn first team
 
     
-script_create_spawn_team(global.currentTeam);
+script_create_spawn_team(0);
+if (global.spawnRedOnLoad == true) script_create_spawn_team(1);
 
 //Highlight the starting player
 gridCurrentTeam = ds_grid_get(global.teamGrids, 6, global.currentTeam);
