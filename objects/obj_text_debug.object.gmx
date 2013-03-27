@@ -53,8 +53,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
-totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
+            <string>totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
 
 text = "Enemies killed: " + string(global.numberOfRedPlayersKilled) + "/" + string(totalRedPlayers);
 

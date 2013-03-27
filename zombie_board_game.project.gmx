@@ -110,6 +110,7 @@
     </scripts>
     <scripts name="turn">
       <script>scripts\script_keyboard_exit_room.gml</script>
+      <script>scripts\script_keyboard_items.gml</script>
       <script>scripts\script_keyboard_move.gml</script>
       <script>scripts\script_move_me.gml</script>
       <script>scripts\script_player_states.gml</script>

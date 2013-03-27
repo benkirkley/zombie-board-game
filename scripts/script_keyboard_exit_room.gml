@@ -7,6 +7,7 @@ if (isMoving == false && amICurrentPlayer == true)
         
         if ( isOnNextRoomTile ||  isOnPrevRoomTile )
         {
+            global.newRoom = true;
             //TODO: Add loop to save all alive blue players
             //Store player id
             if ( ds_map_exists(global.savedPlayerData, string(global.currentPlayer)+".playerId") )

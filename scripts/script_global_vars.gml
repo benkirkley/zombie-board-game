@@ -33,3 +33,4 @@ global.savedPlayerData = ds_map_create();
 global.checked = 0;
 
 global.spawnRedOnLoad = false;
+global.newRoom = false;

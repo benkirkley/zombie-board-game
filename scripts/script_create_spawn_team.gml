@@ -17,10 +17,10 @@ for (h=0; h < numberOfSpawnZones; h+=1)
     {
         randomize();
         var rollForNumberOfPlayersToSpawn = floor(random(100));
-        if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 65 ) var numberOfPlayersToSpawn = 1;
+        if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 20 ) var numberOfPlayersToSpawn = 0;
+        if ( rollForNumberOfPlayersToSpawn >= 21 && rollForNumberOfPlayersToSpawn <= 65 ) var numberOfPlayersToSpawn = 1;
         if ( rollForNumberOfPlayersToSpawn >= 66 && rollForNumberOfPlayersToSpawn <= 90 ) var numberOfPlayersToSpawn = 2;
         if ( rollForNumberOfPlayersToSpawn >= 91 && rollForNumberOfPlayersToSpawn <= 99 ) var numberOfPlayersToSpawn = 3;
-        //show_message("numberOfPlayersToSpawn: "+ string(numberOfPlayersToSpawn) );
     }
     else
     {
