@@ -19,7 +19,10 @@ if (isMoving == false && amICurrentPlayer == true)
     
     if ( keyboard_check_pressed( ord("M") ) )
     {
-        if ( place_meeting(x,y,obj_zone_exit) ||  (place_meeting(x,y,obj_zone_exit_prev)) )
+        var isOnNextRoomTile = place_meeting(x,y,obj_zone_exit);
+        var isOnPrevRoomTile = place_meeting(x,y,obj_zone_exit_prev);
+        
+        if ( isOnNextRoomTile ||  isOnPrevRoomTile )
         {
             //TODO: Add loop to save all alive blue players
             //Store player id
@@ -71,7 +74,8 @@ if (isMoving == false && amICurrentPlayer == true)
             totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
             global.numberOfRedPlayersToCarryOver = totalRedPlayers - global.numberOfRedPlayersKilled;
             
-            room_goto_next();
+            if (isOnPrevRoomTile) room_goto_previous();
+            if (isOnNextRoomTile) room_goto_next();
         }
     }
     
