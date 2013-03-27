@@ -19,8 +19,8 @@ if (isMoving == false && amICurrentPlayer == true)
     
     if ( keyboard_check_pressed( ord("M") ) )
     {
-        //if (place_meeting(x,y,obj_zone_exit))
-        //{
+        if ( place_meeting(x,y,obj_zone_exit) ||  (place_meeting(x,y,obj_zone_exit_prev)) )
+        {
             //TODO: Add loop to save all alive blue players
             //Store player id
             if ( ds_map_exists(global.savedPlayerData, string(global.currentPlayer)+".playerId") )
@@ -72,7 +72,7 @@ if (isMoving == false && amICurrentPlayer == true)
             global.numberOfRedPlayersToCarryOver = totalRedPlayers - global.numberOfRedPlayersKilled;
             
             room_goto_next();
-        //}
+        }
     }
     
     //ITEMS: Pick up
