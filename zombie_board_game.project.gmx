@@ -109,12 +109,13 @@
       <script>scripts\script_stats_window_text_items.gml</script>
     </scripts>
     <scripts name="turn">
-      <script>scripts\script_turn_next_team.gml</script>
-      <script>scripts\script_turn_end_turn.gml</script>
-      <script>scripts\script_turn_am_i_current_player.gml</script>
-      <script>scripts\script_player_states.gml</script>
+      <script>scripts\script_keyboard_exit_room.gml</script>
       <script>scripts\script_keyboard_move.gml</script>
       <script>scripts\script_move_me.gml</script>
+      <script>scripts\script_player_states.gml</script>
+      <script>scripts\script_turn_am_i_current_player.gml</script>
+      <script>scripts\script_turn_end_turn.gml</script>
+      <script>scripts\script_turn_next_team.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
