@@ -100,6 +100,7 @@
       <script>scripts\script_show_message_box.gml</script>
       <script>scripts\script_mouse_enter_leave.gml</script>
       <script>scripts\script_draw_text_outline_color.gml</script>
+      <script>scripts\script_checkbox.gml</script>
     </scripts>
     <scripts name="stats_window">
       <script>scripts\script_destroy_stats_window.gml</script>
@@ -160,7 +161,8 @@
     <object>objects\obj_tips</object>
     <object>objects\obj_wall_hidden</object>
     <object>objects\obj_wall_hidden_red</object>
-    <object>objects\obj_checkbox</object>
+    <object>objects\obj_checkbox_fast_zombies</object>
+    <object>objects\obj_checkbox_show_help</object>
     <object>objects\obj_zone_exit</object>
     <object>objects\obj_zone_exit_prev</object>
   </objects>
