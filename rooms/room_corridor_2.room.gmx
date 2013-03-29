@@ -86,14 +86,12 @@ instance_create(0,0,obj_master);</code>
     <instance objName="obj_wall_hidden" x="640" y="192" name="inst_01F3465D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="704" y="192" name="inst_9EAF5CE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_item" x="288" y="416" name="inst_1A7AB0E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_checkbox" x="768" y="64" name="inst_F95BF809" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_zone_exit" x="672" y="352" name="inst_587E0C05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_zone_exit" x="672" y="416" name="inst_63E257CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_info_bg" x="768" y="704" name="inst_D90C9C67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button_end_turn" x="976" y="720" name="inst_39E7F446" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_text_info" x="776" y="708" name="inst_C29FBE27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_text_debug" x="832" y="0" name="inst_CEEDAD74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tips" x="768" y="192" name="inst_A6C02B87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_inventory_equipped" x="0" y="0" name="inst_C221E19E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

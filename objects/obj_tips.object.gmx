@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-100</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -62,7 +62,8 @@ if (refreshText)
                +"#- Enter = end turn"
                +"#- e = equip / use"
                +"#- f = drop weapon"
-               +"#- g = drop armour" 
+               +"#- g = drop armour"
+               +"#- m = exit room"
                +"#"
                +"#You can move and attack separately"
                +"#"
