@@ -42,17 +42,31 @@ if (isCurrentPlayerAlive)
     draw_set_color(c_lime);
     
     //currentPlayerName = ds_grid_get(gridCurrentTeam, 1, global.currentPlayer);
-    currentPlayerName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
+    if (global.currentTeam == 0) currentPlayerName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
     
     
-    draw_text(self.x,self.y,string(currentPlayerName)
-                            +"#Moves: " + string(currentPlayerId.actionPoints + currentPlayerId.equippedWeaponActionPoints + currentPlayerId.equippedArmourActionPoints)
-                            + "/" + string(currentPlayerId.totalActionPoints + currentPlayerId.equippedWeaponTotalActionPoints + currentPlayerId.equippedArmourTotalActionPoints) 
-                            +"#Attacks: " + string(currentPlayerId.numberOfAttacks + currentPlayerId.equippedWeaponNumberOfAttacks + currentPlayerId.equippedArmourNumberOfAttacks)
-                            + "/" + string(currentPlayerId.totalNumberOfAttacks + currentPlayerId.equippedWeaponTotalNumberOfAttacks + currentPlayerId.equippedArmourTotalNumberOfAttacks)
-                            +"     HP: " + string(currentPlayerId.hitPoints + currentPlayerId.equippedWeaponHitPoints + currentPlayerId.equippedArmourHitPoints)
-                            + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedWeaponTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints)
-    );
+    
+    
+    text = string(currentPlayerName)
+            +"#    Moves: " + string(currentPlayerId.actionPoints + currentPlayerId.equippedWeaponActionPoints + currentPlayerId.equippedArmourActionPoints)
+            + "/" + string(currentPlayerId.totalActionPoints + currentPlayerId.equippedWeaponTotalActionPoints + currentPlayerId.equippedArmourTotalActionPoints) 
+            +"     Attacks: " + string(currentPlayerId.numberOfAttacks + currentPlayerId.equippedWeaponNumberOfAttacks + currentPlayerId.equippedArmourNumberOfAttacks)
+            + "/" + string(currentPlayerId.totalNumberOfAttacks + currentPlayerId.equippedWeaponTotalNumberOfAttacks + currentPlayerId.equippedArmourTotalNumberOfAttacks)
+            +"     HP: " + string(currentPlayerId.hitPoints + currentPlayerId.equippedWeaponHitPoints + currentPlayerId.equippedArmourHitPoints)
+            + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedWeaponTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints);
+    draw_text(self.x,self.y,text);
+    
+    
+    draw_set_font(font1);
+    text_width = string_width(currentPlayerName);
+    text_height =  string_height(currentPlayerName);
+    draw_set_color(c_navy);
+    draw_set_alpha(1);
+    draw_rectangle(x-6,y-6,x+text_width+6,y+text_height+2,false);
+    draw_set_alpha(1);
+    
+    draw_set_color(c_lime);
+    draw_text(x,y,text);
     
 }
 

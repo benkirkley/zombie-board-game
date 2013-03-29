@@ -30,7 +30,7 @@ var playerId = instance_create(spawnPointX,spawnPointY,objectForThisInstance);
 
 playerId.thisTeamId = teamId;
 playerId.thisPlayerId = counter;
-playerId.name = chr(34) + string(nameOfTeam) + " Player " + string(counter+1) + chr(34);
+playerId.name = string(nameOfTeam) + " Player " + string(counter+1);
 playerId.direction = spawnDirection;
 playerId.image_angle = spawnDirection;
 playerId.image_speed=0;
