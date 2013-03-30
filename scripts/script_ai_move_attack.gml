@@ -21,12 +21,15 @@ if (amICurrentPlayer)
                 
                 finalX = path_get_point_x(mypath, 1);
                 finalY = path_get_point_y(mypath, 1);
-                checkCollisionRed = collision_point(finalX,finalY,obj_player_red,false,true);
-                if (checkCollisionRed) //Friendly collision
+                checkCollision = collision_point(finalX,finalY,obj_player_red,false,true);
+                if (!checkCollision)
+                    checkCollision = collision_point(finalX,finalY,obj_wall_hidden_red,false,false);
+                    
+                if (checkCollision) //Friendly collision
                 {
                     path_start(mypath,0,0,false); //Stops the path
                     
-                    ds_list_add(listFriendlyBlock, checkCollisionRed);
+                    ds_list_add(listFriendlyBlock, checkCollision);
                     instance_deactivate_object(id);
                     mp_grid_clear_all(AI_grid);
                     for (i=0; i < ds_list_size(listFriendlyBlock); i++)
@@ -35,7 +38,7 @@ if (amICurrentPlayer)
                         mp_grid_add_instances(AI_grid,friendlyToAdd,true);
                     }
                     mp_grid_add_instances(AI_grid,obj_wall_hidden,false);
-                    mp_grid_add_instances(AI_grid,obj_wall_hidden_red,false);
+                    //mp_grid_add_instances(AI_grid,obj_wall_hidden_red,false);
                     instance_activate_object(id);
                     mypath=path_add(); //creates an empty path...
                     nearestTarget = instance_nearest(x,y,obj_player_blue);

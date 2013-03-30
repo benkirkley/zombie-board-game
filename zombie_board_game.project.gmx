@@ -52,6 +52,7 @@
     <scripts name="ai">
       <script>scripts\script_ai_debug_grid.gml</script>
       <script>scripts\script_ai_move_attack.gml</script>
+      <script>scripts\script_ai_prepare_path.gml</script>
     </scripts>
     <scripts name="collision">
       <script>scripts\script_collision_perform.gml</script>

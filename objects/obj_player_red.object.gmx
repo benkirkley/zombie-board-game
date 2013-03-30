@@ -333,58 +333,41 @@ image_index=0;
       </action>
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>if (amICurrentPlayer)
-{
-    if (createNewPath)
-    {
-        //show_message("Create Path");
-        instance_deactivate_object(id);
-        mp_grid_clear_all(AI_grid);
-        mp_grid_add_instances(AI_grid,obj_player_red,true);
-        mp_grid_add_instances(AI_grid,obj_wall_hidden,false);
-        mp_grid_add_instances(AI_grid,obj_wall_hidden_red,false);
-        instance_activate_object(id);
-        
-        
-        mypath=path_add(); //creates an empty path...
-        nearestTarget = instance_nearest(x,y,obj_player_blue);
-        pathExists = mp_grid_path(AI_grid,mypath,x,y,nearestTarget.x,nearestTarget.y,true);
-        
-        if (pathExists)
-        {
-            path_set_kind(mypath,0); //Sets the path to allow diagonals
-            path_set_precision(mypath,1); //Sets the precision to make it curvy. Can be 1-8. 1 is straight, 8 curvy...
-        }
-        else
-        {
-            instance_deactivate_object(id);
-            mp_grid_clear_all(AI_grid);
-            mp_grid_add_instances(AI_grid,obj_wall_hidden,false);
-            //mp_grid_add_instances(AI_grid,obj_wall_hidden_red,false);
-            instance_activate_object(id);
-            mypath=path_add(); //creates an empty path...
-            nearestTarget = instance_nearest(x,y,obj_player_blue);
-            pathExists = mp_grid_path(AI_grid,mypath,x,y,nearestTarget.x,nearestTarget.y,true);
-                 
-        }
-        createNewPath = false;
-    }
-}
-</string>
+            <kind>9</kind>
+            <script>script_ai_prepare_path</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
