@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>currentPlayerId = 0;
+            <string>thisPlayerNumber = 0;
 text=""
 </string>
           </argument>
@@ -52,12 +52,13 @@ text=""
             <string>
 if (global.currentTeam == 0)
 {
+    thisPlayerNumber = global.currentPlayer;
     playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
     currentPlayerId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");
     currentPlayerName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
 }
 
-isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(currentPlayerId)+".is_alive");
+isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(thisPlayerNumber)+".is_alive");
 if (isCurrentPlayerAlive)
 { 
     text = string(currentPlayerName)
