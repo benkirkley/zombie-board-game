@@ -374,13 +374,12 @@ image_index=0;
             instance_deactivate_object(id);
             mp_grid_clear_all(AI_grid);
             mp_grid_add_instances(AI_grid,obj_wall_hidden,false);
-            mp_grid_add_instances(AI_grid,obj_wall_hidden_red,false);
+            //mp_grid_add_instances(AI_grid,obj_wall_hidden_red,false);
             instance_activate_object(id);
             mypath=path_add(); //creates an empty path...
             nearestTarget = instance_nearest(x,y,obj_player_blue);
             pathExists = mp_grid_path(AI_grid,mypath,x,y,nearestTarget.x,nearestTarget.y,true);
-            
-            
+                 
         }
         createNewPath = false;
     }

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1000</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_hud_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -55,13 +55,14 @@
             <kind>1</kind>
             <string>totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
 
-text = "Zombie Count: " + string(global.numberOfRedPlayersKilled) + "/" + string(totalRedPlayers);
-
+text = "Zombies Splatted: " + string(global.numberOfRedPlayersKilled) + "/" + string(totalRedPlayers);
+draw_set_halign(fa_right);
 draw_set_font(font1);
 text_width = string_width(text);
 text_height =  string_height(text);
 draw_set_color(c_lime);
 draw_text(x,y,text);
+draw_set_halign(fa_left);
 
 /*
 draw_set_color(c_navy);

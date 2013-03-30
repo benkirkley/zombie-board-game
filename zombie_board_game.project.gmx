@@ -126,6 +126,7 @@
     <font>fonts\font_inventory</font>
     <font>fonts\combat_result_small</font>
     <font>fonts\combat_result_big</font>
+    <font>fonts\font_tbc</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_attack_result</object>
@@ -165,6 +166,9 @@
     <object>objects\obj_checkbox_show_help</object>
     <object>objects\obj_zone_exit</object>
     <object>objects\obj_zone_exit_prev</object>
+    <object>objects\obj_tbc</object>
+    <object>objects\obj_tbc_restart</object>
+    <object>objects\obj_hud_parent</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>
@@ -177,6 +181,7 @@
     <room>rooms\room_kitchen</room>
     <room>rooms\room_garage</room>
     <room>rooms\room_driveway</room>
+    <room>rooms\room_tbc</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
