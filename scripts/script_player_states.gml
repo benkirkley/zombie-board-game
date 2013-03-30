@@ -41,7 +41,7 @@ if ( hitPoints <= 0 )
     }
     
     
-    if (global.currentTeam != 0) script_drop_random_item(false,false);
+    if (thisTeamId > 0) script_drop_random_item(false,false);
 }
 
 /*
