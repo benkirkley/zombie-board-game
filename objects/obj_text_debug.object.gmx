@@ -55,18 +55,21 @@
             <kind>1</kind>
             <string>totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
 
-text = "Enemies killed: " + string(global.numberOfRedPlayersKilled) + "/" + string(totalRedPlayers);
+text = "Zombie Count: " + string(global.numberOfRedPlayersKilled) + "/" + string(totalRedPlayers);
 
 draw_set_font(font1);
 text_width = string_width(text);
 text_height =  string_height(text);
-draw_set_color(c_navy);
-draw_set_alpha(1);
-draw_rectangle(x-6,y-6,x+text_width+6,y+text_height+6,false);
-draw_set_alpha(1);
-
 draw_set_color(c_lime);
 draw_text(x,y,text);
+
+/*
+draw_set_color(c_navy);
+draw_set_alpha(0.6);
+draw_rectangle(x-6,y-6,x+text_width+6,y+text_height+6,false);
+draw_set_alpha(1);
+*/
+
 </string>
           </argument>
         </arguments>
