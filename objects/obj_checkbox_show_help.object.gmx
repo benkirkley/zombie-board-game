@@ -3,8 +3,8 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
-  <persistent>0</persistent>
+  <depth>-1000</depth>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>checked = 1;
+            <string>checked = 0;
 </string>
           </argument>
         </arguments>

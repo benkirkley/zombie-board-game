@@ -65,7 +65,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>first_room = room_bedroom_1;
+            <string>first_room = room_HUD;
 room_goto(first_room);
 </string>
           </argument>
