@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>currentPlayerId = 0;
+text=""
 </string>
           </argument>
         </arguments>
@@ -54,12 +55,11 @@ if (global.currentTeam == 0)
     playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
     currentPlayerId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");
     currentPlayerName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
-    
 }
 
 isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(currentPlayerId)+".is_alive");
 if (isCurrentPlayerAlive)
-{
+{ 
     text = string(currentPlayerName)
             +"#    Moves: " + string(currentPlayerId.actionPoints + currentPlayerId.equippedWeaponActionPoints + currentPlayerId.equippedArmourActionPoints)
             + "/" + string(currentPlayerId.totalActionPoints + currentPlayerId.equippedWeaponTotalActionPoints + currentPlayerId.equippedArmourTotalActionPoints) 
@@ -69,7 +69,7 @@ if (isCurrentPlayerAlive)
             + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedWeaponTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints);
     text_width = string_width(currentPlayerName);
     text_height =  string_height(currentPlayerName);
-    
+  
     draw_set_font(font1)
     draw_set_color(c_lime);
     draw_text(self.x,self.y,text);
@@ -82,8 +82,8 @@ if (isCurrentPlayerAlive)
     
     draw_set_color(c_lime);
     draw_text(x,y,text);
-    
-}
+}   
+
 
 </string>
           </argument>

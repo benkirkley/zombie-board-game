@@ -5,7 +5,7 @@ if (isMoving == false && amICurrentPlayer == true)
         var isOnNextRoomTile = place_meeting(x,y,obj_zone_exit);
         var isOnPrevRoomTile = place_meeting(x,y,obj_zone_exit_prev);
         
-        isOnNextRoomTile = true;
+        //isOnNextRoomTile = true;
         if (( isOnNextRoomTile ||  isOnPrevRoomTile ) && (actionPoints == totalActionPoints) )
         {
             global.newRoom = true;

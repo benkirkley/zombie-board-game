@@ -3,7 +3,6 @@
 var teamId = argument0;
 var counter = argument1;
                 
-//playersTeamsGrid = ds_grid_get(global.teamGrids, 1, teamId);
 playerDataMap = ds_grid_get(global.teamGrids, 6, teamId);
 
 nameOfTeam = ds_grid_get(global.teamGrids, 2, teamId);
@@ -11,17 +10,6 @@ numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
 objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
 
 thisTeamsSpawnGrid =  ds_grid_get(global.teamGrids, 5, teamId);
-
-/*
-show_message("startingPositonX: " + string(spawnPointX)
-            +"#startingPositonY: " + string(spawnPointY)
-            +"#objectForThisInstance: " + string(objectForThisInstance)
-            +"#nameOfTeam: " + string(nameOfTeam)
-            +"#playersTeamsGrid: " + string(playersTeamsGrid)
-            +"#teamId: " + string(teamId)
-            +"#counter: " + string(counter)
-            );
-*/
 
 global.totalPlayers += 1;
 
@@ -37,7 +25,6 @@ playerId.image_speed=0;
 
 //Check if player was saved from previous room
 doesPlayerExistInSave = ds_map_find_value(global.savedPlayerData,string(counter)+".playerId");
-//show_message(global.test);
 
 numberOfPlayersOnTeam = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
 ds_map_replace(playerDataMap,".numberOfPlayersOnTeam",numberOfPlayersOnTeam+1);

@@ -73,10 +73,10 @@
       <script>scripts\script_create_spawn_points_room_corridor_1.gml</script>
       <script>scripts\script_create_spawn_points_room_corridor_2.gml</script>
       <script>scripts\script_create_spawn_points_room_dining.gml</script>
+      <script>scripts\script_create_spawn_points_room_driveway.gml</script>
       <script>scripts\script_create_spawn_points_room_garage.gml</script>
       <script>scripts\script_create_spawn_points_room_kitchen.gml</script>
       <script>scripts\script_create_spawn_team.gml</script>
-      <script>scripts\script_create_spawn_points_room_driveway.gml</script>
     </scripts>
     <scripts name="global">
       <script>scripts\script_global_vars.gml</script>
