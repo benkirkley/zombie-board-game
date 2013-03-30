@@ -25,7 +25,6 @@ if (global.endTurn == true )
     
     currentPlayerId.createNewPath = true;
     
-    script_inventory_destroy_items();
     
     //Check if there are any other players on this team 
     
@@ -44,20 +43,32 @@ if (global.endTurn == true )
             {
                 isNextPlayerAlive = 1; //break while loop
                 script_turn_next_team();
-                script_inventory_create_items();
+                if (global.currentTeam ==0 )
+                {
+                    script_inventory_destroy_items();
+                    script_inventory_create_items();
+                }
             }
             else
             {
                 isNextPlayerAlive = ds_map_find_value(gridCurrentTeamDataMap, string(global.currentPlayer) + ".is_alive");
             }
         }
-        script_inventory_create_items();
+        if (global.currentTeam ==0 )
+        {
+                    script_inventory_destroy_items();
+                    script_inventory_create_items();
+        }
     }
     else
     {
         //show_message("All players on this team have moved");
         script_turn_next_team();
-        script_inventory_create_items();
+        if (global.currentTeam ==0 )
+        {
+                script_inventory_destroy_items();
+                script_inventory_create_items();
+        }
     }
     
 }
