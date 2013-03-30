@@ -168,6 +168,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>
+    <room>rooms\room_HUD</room>
     <room>rooms\room_bedroom_1</room>
     <room>rooms\room_bedroom_2</room>
     <room>rooms\room_dining</room>
