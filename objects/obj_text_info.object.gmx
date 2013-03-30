@@ -25,38 +25,33 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//gridCurrentTeam = ds_grid_get(global.teamGrids, 1, global.currentTeam);
-//currentPlayerId = ds_grid_get(gridCurrentTeam, 0, global.currentPlayer);
-//isCurrentPlayerAlive = ds_grid_get(gridCurrentTeam, 2, global.currentPlayer);
+            <string>
+if (global.currentTeam == 0)
+{
+    playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
+    currentPlayerId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");
+    currentPlayerName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
+    
+}
 
-playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
-currentPlayerId = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".playerId");
 isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".is_alive");
-
-//show_message( "isCurrentPlayerAlive: " + string(isCurrentPlayerAlive));
-
 if (isCurrentPlayerAlive)
 {
-
+    text = string(currentPlayerName)
+            +"#    Moves: " + string(currentPlayerId.actionPoints + currentPlayerId.equippedWeaponActionPoints + currentPlayerId.equippedArmourActionPoints)
+            + "/" + string(currentPlayerId.totalActionPoints + currentPlayerId.equippedWeaponTotalActionPoints + currentPlayerId.equippedArmourTotalActionPoints) 
+            +"     Attacks: " + string(currentPlayerId.numberOfAttacks + currentPlayerId.equippedWeaponNumberOfAttacks + currentPlayerId.equippedArmourNumberOfAttacks)
+            + "/" + string(currentPlayerId.totalNumberOfAttacks + currentPlayerId.equippedWeaponTotalNumberOfAttacks + currentPlayerId.equippedArmourTotalNumberOfAttacks)
+            +"     HP: " + string(currentPlayerId.hitPoints + currentPlayerId.equippedWeaponHitPoints + currentPlayerId.equippedArmourHitPoints)
+            + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedWeaponTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints);
+    text_width = string_width(currentPlayerName);
+    text_height =  string_height(currentPlayerName);
+    
     draw_set_font(font1)
     draw_set_color(c_lime);
-    
-    if (global.currentTeam == 0)
-    {
-        currentPlayerName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
-        text = string(currentPlayerName)
-                +"#    Moves: " + string(currentPlayerId.actionPoints + currentPlayerId.equippedWeaponActionPoints + currentPlayerId.equippedArmourActionPoints)
-                + "/" + string(currentPlayerId.totalActionPoints + currentPlayerId.equippedWeaponTotalActionPoints + currentPlayerId.equippedArmourTotalActionPoints) 
-                +"     Attacks: " + string(currentPlayerId.numberOfAttacks + currentPlayerId.equippedWeaponNumberOfAttacks + currentPlayerId.equippedArmourNumberOfAttacks)
-                + "/" + string(currentPlayerId.totalNumberOfAttacks + currentPlayerId.equippedWeaponTotalNumberOfAttacks + currentPlayerId.equippedArmourTotalNumberOfAttacks)
-                +"     HP: " + string(currentPlayerId.hitPoints + currentPlayerId.equippedWeaponHitPoints + currentPlayerId.equippedArmourHitPoints)
-                + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedWeaponTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints);
-    }
     draw_text(self.x,self.y,text);
         
     draw_set_font(font1);
-    text_width = string_width(currentPlayerName);
-    text_height =  string_height(currentPlayerName);
     draw_set_color(c_navy);
     draw_set_alpha(1);
     draw_rectangle(x-6,y-6,x+text_width+6,y+text_height+2,false);
