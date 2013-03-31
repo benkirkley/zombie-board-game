@@ -33,6 +33,8 @@
     <sprite>sprites\spr_yellow_border</sprite>
     <sprite>sprites\spr_yellow_border_64</sprite>
     <sprite>sprites\sprite_player_red_64_anim</sprite>
+    <sprite>sprites\spr_loading_screen</sprite>
+    <sprite>sprites\sprite28</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -125,6 +127,7 @@
   <fonts name="fonts">
     <font>fonts\font0</font>
     <font>fonts\font1</font>
+    <font>fonts\font_menu</font>
     <font>fonts\font_inventory</font>
     <font>fonts\combat_result_small</font>
     <font>fonts\combat_result_big</font>
@@ -164,7 +167,11 @@
     </objects>
     <objects name="narrative">
       <object>objects\obj_tbc</object>
+      <object>objects\obj_dead</object>
       <object>objects\obj_tbc_restart</object>
+      <object>objects\obj_menu_new_game</object>
+      <object>objects\obj_menu_quit</object>
+      <object>objects\obj_loading_screen</object>
     </objects>
     <objects name="players">
       <object>objects\obj_player_blue</object>
@@ -191,6 +198,8 @@
     <room>rooms\room_garage</room>
     <room>rooms\room_driveway</room>
     <room>rooms\room_tbc</room>
+    <room>rooms\room_dead</room>
+    <room>rooms\room_menu_main</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
