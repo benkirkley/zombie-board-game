@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>thisPlayerNumber = 0;
+currentPlayerId = 0;
+playerDataMap = 0;
 text=""
 </string>
           </argument>
@@ -58,34 +60,35 @@ if (global.currentTeam == 0)
     currentPlayerName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
 }
 
-isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(thisPlayerNumber)+".is_alive");
-if (isCurrentPlayerAlive &amp;&amp; currentPlayerId != 0)
-{ 
-    text = string(currentPlayerName)
-            +"#    Moves: " + string(currentPlayerId.actionPoints + currentPlayerId.equippedWeaponActionPoints + currentPlayerId.equippedArmourActionPoints)
-            + "/" + string(currentPlayerId.totalActionPoints + currentPlayerId.equippedWeaponTotalActionPoints + currentPlayerId.equippedArmourTotalActionPoints) 
-            +"     Attacks: " + string(currentPlayerId.numberOfAttacks + currentPlayerId.equippedWeaponNumberOfAttacks + currentPlayerId.equippedArmourNumberOfAttacks)
-            + "/" + string(currentPlayerId.totalNumberOfAttacks + currentPlayerId.equippedWeaponTotalNumberOfAttacks + currentPlayerId.equippedArmourTotalNumberOfAttacks)
-            +"     HP: " + string(currentPlayerId.hitPoints + currentPlayerId.equippedWeaponHitPoints + currentPlayerId.equippedArmourHitPoints)
-            + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedWeaponTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints);
-    text_width = string_width(currentPlayerName);
-    text_height =  string_height(currentPlayerName);
-  
-    draw_set_font(font1)
-    draw_set_color(c_lime);
-    draw_text(self.x,self.y,text);
+if (script_instance_exists(currentPlayerId))
+{
+    isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(thisPlayerNumber)+".is_alive");
+    if (isCurrentPlayerAlive &amp;&amp; currentPlayerId != 0)
+    { 
+        text = string(currentPlayerName)
+                +"#    Moves: " + string(currentPlayerId.actionPoints + currentPlayerId.equippedWeaponActionPoints + currentPlayerId.equippedArmourActionPoints)
+                + "/" + string(currentPlayerId.totalActionPoints + currentPlayerId.equippedWeaponTotalActionPoints + currentPlayerId.equippedArmourTotalActionPoints) 
+                +"     Attacks: " + string(currentPlayerId.numberOfAttacks + currentPlayerId.equippedWeaponNumberOfAttacks + currentPlayerId.equippedArmourNumberOfAttacks)
+                + "/" + string(currentPlayerId.totalNumberOfAttacks + currentPlayerId.equippedWeaponTotalNumberOfAttacks + currentPlayerId.equippedArmourTotalNumberOfAttacks)
+                +"     HP: " + string(currentPlayerId.hitPoints + currentPlayerId.equippedWeaponHitPoints + currentPlayerId.equippedArmourHitPoints)
+                + "/" + string(currentPlayerId.totalHitPoints + currentPlayerId.equippedWeaponTotalHitPoints + currentPlayerId.equippedArmourTotalHitPoints);
+        text_width = string_width(currentPlayerName);
+        text_height =  string_height(currentPlayerName);
+      
+        draw_set_font(font1)
+        draw_set_color(c_lime);
+        draw_text(self.x,self.y,text);
+            
+        draw_set_font(font1);
+        draw_set_color(c_navy);
+        draw_set_alpha(1);
+        draw_rectangle(x-6,y-6,x+text_width+6,y+text_height+2,false);
+        draw_set_alpha(1);
         
-    draw_set_font(font1);
-    draw_set_color(c_navy);
-    draw_set_alpha(1);
-    draw_rectangle(x-6,y-6,x+text_width+6,y+text_height+2,false);
-    draw_set_alpha(1);
-    
-    draw_set_color(c_lime);
-    draw_text(x,y,text);
-}   
-
-
+        draw_set_color(c_lime);
+        draw_text(x,y,text);
+    }   
+}
 </string>
           </argument>
         </arguments>

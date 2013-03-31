@@ -119,6 +119,7 @@
       <script>scripts\script_turn_am_i_current_player.gml</script>
       <script>scripts\script_turn_end_turn.gml</script>
       <script>scripts\script_turn_next_team.gml</script>
+      <script>scripts\script_instance_exists.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -144,7 +145,6 @@
       <object>objects\obj_hud_parent</object>
       <object>objects\obj_info_bg</object>
       <object>objects\obj_inventory_equipped</object>
-      <object>objects\obj_message_box</object>
       <object>objects\obj_stats</object>
       <object>objects\obj_text_debug</object>
       <object>objects\obj_text_info</object>
@@ -178,9 +178,10 @@
       <object>objects\obj_zone_exit_prev</object>
     </objects>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\room_0</room>
-    <room>rooms\room_HUD</room>
+    <room>rooms\room_hud</room>
     <room>rooms\room_bedroom_1</room>
     <room>rooms\room_dining</room>
     <room>rooms\room_bedroom_2</room>
