@@ -93,10 +93,10 @@ instance_create(0,0,obj_master);</code>
     <instance objName="obj_wall_hidden" x="128" y="256" name="inst_75C2B051" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="128" y="320" name="inst_A611FE12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="128" y="384" name="inst_4BCB28C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_random_item" x="416" y="416" name="inst_1A7AB0E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_zone_exit" x="352" y="160" name="inst_0185BEE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_zone_exit_prev" x="544" y="288" name="inst_3231B504" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_zone_exit_prev" x="544" y="352" name="inst_8DA64103" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item_consumable_medkit" x="416" y="416" name="inst_F9C543A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

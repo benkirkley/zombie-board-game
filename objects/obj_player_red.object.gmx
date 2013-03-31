@@ -68,11 +68,11 @@
             <string>/* Initalise stats */
 
 //DEFAULT VALUES
-characterBonus = - 1;
+characterBonus = -1;
 attack = 10;
 dicePool = 1;
 sidedDiceDefense = 6
-sidedDiceHitPoints = 4
+sidedDiceHitPoints = 3
 totalActionPoints = 2;
 damage = 1;
 totalNumberOfAttacks = 1;

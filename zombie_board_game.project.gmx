@@ -185,7 +185,6 @@
       <object>objects\obj_zone_exit_prev</object>
     </objects>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\room_0</room>
     <room>rooms\room_hud</room>
