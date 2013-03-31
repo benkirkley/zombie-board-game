@@ -71,7 +71,7 @@ var attackResults;
 //Show a summary of the attack about to take place
 var displayResultsPreamble = string(mainObjectName) + " attacks " + string(triggeredObjectName) +
                             "##" + string(mainObjectName) + " has " + string(mainObjectDicePool + mainObjectWeaponDicePool + mainObjectArmourDicePool) + " chance(s) to " +
-                            "roll a " + string(triggeredObjectDefense + triggeredObjectWeaponDefense + triggeredObjectArmourDefense) + " on a d" + string(mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack);
+                            "roll a " + string(triggeredObjectDefense + triggeredObjectWeaponDefense + triggeredObjectArmourDefense) + " on a d" + string(mainObjectAttack) + "+" + string(mainObjectWeaponAttack + mainObjectArmourAttack);
 
 if (global.debug_show_combat_rolls )    
     show_message(displayResultsPreamble);
@@ -83,13 +83,14 @@ var numberOfHits = 0;
 ////Main attack loop
 for(i = 0; i < (mainObjectDicePool + mainObjectWeaponDicePool + mainObjectArmourDicePool); i += 1){
     randomize();
-    var result = floor(random(mainObjectAttack) + 1 ) + mainObjectWeaponAttack + mainObjectArmourAttack;
+    var resultOriginal = floor(random(mainObjectAttack) + 1 );
+    result = resultOriginal + (mainObjectWeaponAttack + mainObjectArmourAttack);
     if (result < 1) result = 1;
     if (result > (mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack) ) result = mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack;
     attackResults[i] = result;
     displayResults += "##Dice Roll " + string(i+1);
     displayResults += "#    " + string(triggeredObjectName) + " defense: " + string(triggeredObjectDefense + triggeredObjectWeaponDefense + triggeredObjectArmourDefense)
-                    + "#    " + string(mainObjectName) + " Rolls: " + string(result);
+                    + "#    " + string(mainObjectName) + " Rolls: " + string(result) + " (" + string(resultOriginal) + "+" + string(mainObjectWeaponAttack + mainObjectArmourAttack) + ")";
     
     if ( result >= (triggeredObjectDefense + triggeredObjectWeaponDefense + triggeredObjectArmourDefense) )
     {
