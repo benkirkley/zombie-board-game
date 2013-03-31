@@ -48,6 +48,10 @@ else if (global.roomTile == "bedroom_2")
 {
     script_create_spawn_points_room_bedroom_2();
 }
+else if (global.roomTile == "bedroom_3")
+{
+    script_create_spawn_points_room_bedroom_3();
+}
 else if (global.roomTile == "corridor_1")
 {
     script_create_spawn_points_room_corridor_1();

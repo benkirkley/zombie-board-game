@@ -83,7 +83,7 @@ var numberOfHits = 0;
 ////Main attack loop
 for(i = 0; i < (mainObjectDicePool + mainObjectWeaponDicePool + mainObjectArmourDicePool); i += 1){
     randomize();
-    var result = floor(random(mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack)) + 1;
+    var result = floor(random(mainObjectAttack) + 1 ) + mainObjectWeaponAttack + mainObjectArmourAttack;
     if (result < 1) result = 1;
     if (result > (mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack) ) result = mainObjectAttack + mainObjectWeaponAttack + mainObjectArmourAttack;
     attackResults[i] = result;

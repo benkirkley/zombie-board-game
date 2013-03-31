@@ -96,7 +96,7 @@ ini_open("config.ini");
     //Chainsaw
     itemName = "Chainsaw";
     itemAttack = 0;
-    itemDamage = 0;
+    itemDamage = 1;
     itemDefense = 0;
     itemDicePool = 1;
     itemTotalHitPoints = 0;
