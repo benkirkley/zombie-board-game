@@ -64,6 +64,7 @@
     <scripts name="combat">
       <script>scripts\script_combat_trigger.gml</script>
       <script>scripts\script_combat_perform.gml</script>
+      <script>scripts\script_combat_health_bar.gml</script>
     </scripts>
     <scripts name="create">
       <script>scripts\script_create_all_teams_and_players.gml</script>
