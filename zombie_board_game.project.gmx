@@ -130,53 +130,60 @@
     <font>fonts\font_tbc</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_attack_result</object>
-    <object>objects\obj_button_end_turn</object>
-    <object>objects\obj_info_bg</object>
-    <object>objects\obj_inventory_armour_chest_riot</object>
-    <object>objects\obj_inventory_armour_helmet_riot</object>
-    <object>objects\obj_inventory_armour_shield_riot</object>
-    <object>objects\obj_inventory_equipped</object>
-    <object>objects\obj_inventory_weapon_axe</object>
-    <object>objects\obj_inventory_weapon_chainsaw</object>
-    <object>objects\obj_inventory_weapon_knife_kitchen</object>
-    <object>objects\obj_inventory_weapon_sword_rapier</object>
-    <object>objects\obj_item_armour_chest_riot</object>
-    <object>objects\obj_item_armour_helmet_riot</object>
-    <object>objects\obj_item_armour_shield_riot</object>
-    <object>objects\obj_item_consumable_medkit</object>
-    <object>objects\obj_item_parent</object>
-    <object>objects\obj_item_weapon_axe</object>
-    <object>objects\obj_item_weapon_chainsaw</object>
-    <object>objects\obj_item_weapon_knife_kitchen</object>
-    <object>objects\obj_item_weapon_sword_rapier</object>
-    <object>objects\obj_master</object>
-    <object>objects\obj_message_box</object>
-    <object>objects\obj_player_blue</object>
-    <object>objects\obj_player_highlight</object>
-    <object>objects\obj_player_red</object>
-    <object>objects\obj_random_item</object>
-    <object>objects\obj_start_game</object>
-    <object>objects\obj_stats</object>
-    <object>objects\obj_text_debug</object>
-    <object>objects\obj_text_info</object>
-    <object>objects\obj_tips</object>
-    <object>objects\obj_wall_hidden</object>
-    <object>objects\obj_wall_hidden_red</object>
-    <object>objects\obj_checkbox_fast_zombies</object>
-    <object>objects\obj_checkbox_show_help</object>
-    <object>objects\obj_zone_exit</object>
-    <object>objects\obj_zone_exit_prev</object>
-    <object>objects\obj_tbc</object>
-    <object>objects\obj_tbc_restart</object>
-    <object>objects\obj_hud_parent</object>
+    <objects name="combat anim">
+      <object>objects\obj_attack_result</object>
+    </objects>
+    <objects name="control">
+      <object>objects\obj_master</object>
+      <object>objects\obj_start_game</object>
+    </objects>
+    <objects name="hud">
+      <object>objects\obj_button_end_turn</object>
+      <object>objects\obj_checkbox_fast_zombies</object>
+      <object>objects\obj_checkbox_show_help</object>
+      <object>objects\obj_hud_parent</object>
+      <object>objects\obj_info_bg</object>
+      <object>objects\obj_inventory_equipped</object>
+      <object>objects\obj_message_box</object>
+      <object>objects\obj_stats</object>
+      <object>objects\obj_text_debug</object>
+      <object>objects\obj_text_info</object>
+      <object>objects\obj_tips</object>
+    </objects>
+    <objects name="items">
+      <object>objects\obj_item_armour_chest_riot</object>
+      <object>objects\obj_item_armour_helmet_riot</object>
+      <object>objects\obj_item_armour_shield_riot</object>
+      <object>objects\obj_item_consumable_medkit</object>
+      <object>objects\obj_item_parent</object>
+      <object>objects\obj_item_weapon_axe</object>
+      <object>objects\obj_item_weapon_chainsaw</object>
+      <object>objects\obj_item_weapon_knife_kitchen</object>
+      <object>objects\obj_item_weapon_sword_rapier</object>
+      <object>objects\obj_random_item</object>
+    </objects>
+    <objects name="narrative">
+      <object>objects\obj_tbc</object>
+      <object>objects\obj_tbc_restart</object>
+    </objects>
+    <objects name="players">
+      <object>objects\obj_player_blue</object>
+      <object>objects\obj_player_highlight</object>
+      <object>objects\obj_player_red</object>
+    </objects>
+    <objects name="zones">
+      <object>objects\obj_wall_hidden</object>
+      <object>objects\obj_wall_hidden_red</object>
+      <object>objects\obj_zone_exit</object>
+      <object>objects\obj_zone_exit_prev</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>
     <room>rooms\room_HUD</room>
     <room>rooms\room_bedroom_1</room>
-    <room>rooms\room_bedroom_2</room>
     <room>rooms\room_dining</room>
+    <room>rooms\room_bedroom_2</room>
     <room>rooms\room_corridor_1</room>
     <room>rooms\room_corridor_2</room>
     <room>rooms\room_kitchen</room>

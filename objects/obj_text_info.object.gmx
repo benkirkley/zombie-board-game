@@ -59,7 +59,7 @@ if (global.currentTeam == 0)
 }
 
 isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(thisPlayerNumber)+".is_alive");
-if (isCurrentPlayerAlive)
+if (isCurrentPlayerAlive &amp;&amp; currentPlayerId != 0)
 { 
     text = string(currentPlayerName)
             +"#    Moves: " + string(currentPlayerId.actionPoints + currentPlayerId.equippedWeaponActionPoints + currentPlayerId.equippedArmourActionPoints)
