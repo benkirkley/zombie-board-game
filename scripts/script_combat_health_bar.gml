@@ -1,6 +1,7 @@
-if (hitPoints > 5)
+combinedTotalHitPoints = (totalHitPoints+equippedWeaponTotalHitPoints+equippedArmourTotalHitPoints);
+if (combinedTotalHitPoints > 5)
 {
-    healthBarOutlineLength = 60/totalHitPoints;
+    healthBarOutlineLength = 60/combinedTotalHitPoints;
 }
 else
 {
