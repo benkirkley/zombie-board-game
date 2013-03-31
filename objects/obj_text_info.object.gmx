@@ -60,6 +60,9 @@ if (global.currentTeam == 0)
     currentPlayerName = ds_map_find_value(playerDataMap,string(global.currentPlayer)+".name");
 }
 
+
+    
+//test = script_instance_exists(currentPlayerId);
 if (script_instance_exists(currentPlayerId))
 {
     isCurrentPlayerAlive = ds_map_find_value(playerDataMap,string(thisPlayerNumber)+".is_alive");

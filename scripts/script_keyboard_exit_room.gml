@@ -59,6 +59,7 @@ if (isMoving == false && amICurrentPlayer == true)
             totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
             global.numberOfRedPlayersToCarryOver = totalRedPlayers - global.numberOfRedPlayersKilled;
             
+            //obj_text_info.currentPlayerId = 0;
             if (isOnPrevRoomTile) room_goto_previous();
             if (isOnNextRoomTile) room_goto_next();
         }
