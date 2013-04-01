@@ -1,6 +1,6 @@
 if (isMoving == false && amICurrentPlayer == true)
 {
-    if ( keyboard_check_pressed( ord("M") ) )
+    if ( keyboard_check_pressed( vk_space ) )
     {
         var isOnNextRoomTile = place_meeting(x,y,obj_zone_exit);
         var isOnPrevRoomTile = place_meeting(x,y,obj_zone_exit_prev);

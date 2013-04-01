@@ -60,16 +60,16 @@ if (refreshText)
    tipString = +"CONTROLS"
                +"#- Arrow keys or Numpad: Move"
                +"#- Enter = end turn"
+               +"#- Space = exit room"
                +"#- e = equip / use"
                +"#- f = drop weapon"
                +"#- g = drop armour"
-               +"#- m = exit room"
                +"#"
                +"#You can move and attack separately."
                +"#"
                +"#Attack by "+chr(34)+"walking"+chr(34)+" into enemy."
                +"#"
-               +"#You cannot exit a room if you have spent any Move Points."
+               +"#You cannot exit a room if you have already spent Move Points."
                
    
     draw_set_alpha(currentAlpha);

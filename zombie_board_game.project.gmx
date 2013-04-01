@@ -172,6 +172,7 @@
       <object>objects\obj_tbc</object>
       <object>objects\obj_dead</object>
       <object>objects\obj_tbc_restart</object>
+      <object>objects\obj_text_interactive</object>
       <object>objects\obj_menu_new_game</object>
       <object>objects\obj_menu_quit</object>
       <object>objects\obj_loading_screen</object>
