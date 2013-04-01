@@ -65,9 +65,11 @@ if (refreshText)
                +"#- g = drop armour"
                +"#- m = exit room"
                +"#"
-               +"#You can move and attack separately"
+               +"#You can move and attack separately."
                +"#"
                +"#Attack by "+chr(34)+"walking"+chr(34)+" into enemy."
+               +"#"
+               +"#You cannot exit a room if you have spent any Move Points."
                
    
     draw_set_alpha(currentAlpha);
