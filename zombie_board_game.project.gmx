@@ -190,6 +190,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_menu_main</room>
     <room>rooms\room_0</room>
     <room>rooms\room_hud</room>
     <room>rooms\room_bedroom_1</room>
@@ -202,7 +203,6 @@
     <room>rooms\room_driveway</room>
     <room>rooms\room_tbc</room>
     <room>rooms\room_dead</room>
-    <room>rooms\room_menu_main</room>
     <room>rooms\room_corridor_1</room>
   </rooms>
   <help>

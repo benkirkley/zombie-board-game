@@ -8,22 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="6" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>332</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_game</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -41,13 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>text="Quit";
+            <string>
+
+
+text="Quit";
 draw_set_halign(fa_center);
 draw_set_font(font_menu)
 draw_set_color(c_white);
 draw_set_alpha(1);
+
+text_width = string_width(text);
+text_height =  string_height(text);
+if (mouse_x &gt; (x-(text_width/2)) and mouse_y &gt; y and mouse_x &lt; (x+(text_width/2)) and mouse_y &lt; y+text_height)
+{
+    draw_set_color(c_lime);
+    if mouse_check_button_pressed(mb_left)
+    {
+        draw_set_color(c_white);
+        game_end();
+    }
+    
+}
+
 draw_text(x,y,text);
 draw_set_halign(fa_left);
+
 </string>
           </argument>
         </arguments>
