@@ -2,6 +2,8 @@ typeOfWindow = argument0;
 instanceId = argument1;
 text="";
 
+if (instance_exists(instanceId))
+{
 if (typeOfWindow == "player")
 {
     text =  string(instanceId.name)
@@ -88,6 +90,6 @@ draw_set_alpha(1);
 
 draw_set_color(c_lime);
 draw_text(x,y,text);
-
+}
 
 

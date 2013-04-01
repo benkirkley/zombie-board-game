@@ -78,8 +78,8 @@ ini_open("config.ini");
 //Weapons
     //Axe
     itemName = "Axe";
-    itemAttack = 1;
-    itemDamage = 0;
+    itemAttack = 2;
+    itemDamage = 1;
     itemDefense = 0;
     itemDicePool = 0;
     itemTotalHitPoints = 0;
@@ -149,7 +149,7 @@ ini_open("config.ini");
     itemName = "Riot Helmet";
     itemAttack = 0;
     itemDamage = 0;
-    itemDefense = 1;
+    itemDefense = 2;
     itemDicePool = 0;
     itemTotalHitPoints = 0;
     itemTotalActionPoints = 0;
@@ -166,10 +166,10 @@ ini_open("config.ini");
     itemName = "Riot Shield";
     itemAttack = 0;
     itemDamage = 0;
-    itemDefense = 3;
+    itemDefense = 4;
     itemDicePool = 0;
     itemTotalHitPoints = 0;
-    itemTotalActionPoints = -1;
+    itemTotalActionPoints = -2;
     itemTotalNumberOfAttacks = 0;
     
     itemString = "item_armour_shield_riot";
@@ -183,7 +183,7 @@ ini_open("config.ini");
     itemName = "Riot Vest";
     itemAttack = 0;
     itemDamage = 0;
-    itemDefense = 1;
+    itemDefense = 2;
     itemDicePool = 0;
     itemTotalHitPoints = 1;
     itemTotalActionPoints = 0;
@@ -199,7 +199,7 @@ ini_open("config.ini");
 //Consumables
     //Medkit
     itemName = "Medkit";
-    itemHealPoints = 5;
+    itemHealPoints = 4;
     itemString = "item_consumable_medkit";
     ds_list_add(global.dslist_AllArmourStrings,itemString);
     
