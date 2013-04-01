@@ -1,6 +1,6 @@
 //DEFAULT VALUES
 global.numberOfTeams = 2;
-numberOfBluePlayers = 1;
+global.numberOfBluePlayers = 1;
 //numberOfRedPlayers = 9;
 
 //global.currentTeam = 0;
@@ -13,7 +13,7 @@ global.numberOfRedPlayersKilled = 0;
 
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
-    numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", numberOfBluePlayers,"real");
+    global.numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", global.numberOfBluePlayers,"real");
     //numberOfRedPlayers = script_ini_read_key("Start","number_of_red_players", numberOfRedPlayers,"real");
     //blueStartingWeapon = script_ini_read_key("Start","blue_player_starting_weapon", blueStartingWeapon,"string");
     //blueStartingArmour = script_ini_read_key("Start","blue_player_starting_armour", blueStartingArmour,"string");
@@ -23,7 +23,6 @@ ini_close();
 global.totalPlayers = 0;
 //global.numberOfTeams = 2;
 
-//numberOfBluePlayers = 1;
 playerBlueDataMap = ds_map_create();
 ds_map_add(playerBlueDataMap,".numberOfPlayersOnTeam",0);
 
@@ -47,6 +46,7 @@ else if (global.roomTile == "bedroom_1")
 else if (global.roomTile == "bedroom_2")
 {
     script_create_spawn_points_room_bedroom_2();
+    //global.numberOfBluePlayers = 2;
 }
 else if (global.roomTile == "bedroom_3")
 {
@@ -80,7 +80,7 @@ global.teamGrids = ds_grid_create(7,global.numberOfTeams);
 ds_grid_set(global.teamGrids, 0, 0, 0);
 ds_grid_set(global.teamGrids, 1, 0, 0); //DEFUNCT -- delete me soon
 ds_grid_set(global.teamGrids, 2, 0, "Blue");
-ds_grid_set(global.teamGrids, 3, 0, numberOfBluePlayers);
+ds_grid_set(global.teamGrids, 3, 0, global.numberOfBluePlayers);
 ds_grid_set(global.teamGrids, 4, 0, obj_player_blue);
 ds_grid_set(global.teamGrids, 5, 0, blueSpawnZones);
 ds_grid_set(global.teamGrids, 6, 0, playerBlueDataMap);

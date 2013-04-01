@@ -26,6 +26,7 @@ playerId.image_speed=0;
 //Check if player was saved from previous room
 doesPlayerExistInSave = ds_map_find_value(global.savedPlayerData,string(counter)+".playerId");
 
+
 numberOfPlayersOnTeam = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
 ds_map_replace(playerDataMap,".numberOfPlayersOnTeam",numberOfPlayersOnTeam+1);
 ds_map_add(playerDataMap,string(counter)+".playerId",playerId);
