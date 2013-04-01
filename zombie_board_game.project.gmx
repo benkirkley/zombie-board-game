@@ -26,6 +26,7 @@
     <sprite>sprites\spr_red_64</sprite>
     <sprite>sprites\spr_zone_exit_prev</sprite>
     <sprite>sprites\spr_zone_exit</sprite>
+    <sprite>sprites\spr_exit_alt</sprite>
     <sprite>sprites\spr_wall_barrier</sprite>
     <sprite>sprites\spr_wall_barrier_64</sprite>
     <sprite>sprites\spr_wall_brick</sprite>
@@ -124,6 +125,7 @@
       <script>scripts\script_turn_end_turn.gml</script>
       <script>scripts\script_turn_next_team.gml</script>
       <script>scripts\script_instance_exists.gml</script>
+      <script>scripts\script_save_chars.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -186,24 +188,25 @@
       <object>objects\obj_wall_hidden</object>
       <object>objects\obj_wall_hidden_red</object>
       <object>objects\obj_zone_exit</object>
+      <object>objects\obj_exit_alt_1</object>
       <object>objects\obj_zone_exit_prev</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_menu_main</room>
     <room>rooms\room_0</room>
     <room>rooms\room_hud</room>
     <room>rooms\room_bedroom_1</room>
     <room>rooms\room_bedroom_2</room>
     <room>rooms\room_dining</room>
+    <room>rooms\room_corridor_1</room>
     <room>rooms\room_corridor_2</room>
-    <room>rooms\room_bedroom_3</room>
     <room>rooms\room_kitchen</room>
     <room>rooms\room_garage</room>
     <room>rooms\room_driveway</room>
     <room>rooms\room_tbc</room>
     <room>rooms\room_dead</room>
-    <room>rooms\room_corridor_1</room>
+    <room>rooms\room_menu_main</room>
+    <room>rooms\room_bedroom_3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

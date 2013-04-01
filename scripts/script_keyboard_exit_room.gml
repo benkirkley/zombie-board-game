@@ -1,3 +1,4 @@
+/*
 if (isMoving == false && amICurrentPlayer == true)
 {
     if ( keyboard_check_pressed( vk_space ) )
@@ -65,3 +66,4 @@ if (isMoving == false && amICurrentPlayer == true)
         }
     }
 }
+*/
