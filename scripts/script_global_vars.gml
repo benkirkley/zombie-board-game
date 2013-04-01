@@ -31,6 +31,7 @@ ds_list_add(global.collidableObjects, obj_wall_hidden);
 global.savedPlayerData = ds_map_create();
 
 global.checked = 0;
+global.showHealthBars = true;
 
 global.spawnRedOnLoad = false;
 global.newRoom = false;

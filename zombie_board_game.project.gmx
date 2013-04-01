@@ -146,6 +146,7 @@
     <objects name="hud">
       <object>objects\obj_button_end_turn</object>
       <object>objects\obj_checkbox_fast_zombies</object>
+      <object>objects\obj_checkbox_show_health_bars</object>
       <object>objects\obj_checkbox_show_help</object>
       <object>objects\obj_hud_parent</object>
       <object>objects\obj_info_bg</object>
