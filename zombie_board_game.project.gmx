@@ -10,6 +10,7 @@
     <sprite>sprites\spr_blue_64</sprite>
     <sprite>sprites\spr_button_endTurn_down</sprite>
     <sprite>sprites\spr_button_endTurn_up</sprite>
+    <sprite>sprites\spr_exit_alt</sprite>
     <sprite>sprites\spr_hidden_32</sprite>
     <sprite>sprites\spr_item_armour_chest_riot</sprite>
     <sprite>sprites\spr_item_armour_helmet_riot</sprite>
@@ -19,29 +20,30 @@
     <sprite>sprites\spr_item_weapon_chainsaw</sprite>
     <sprite>sprites\spr_item_weapon_knife_kitchen</sprite>
     <sprite>sprites\spr_item_weapon_sword_rapier</sprite>
+    <sprite>sprites\spr_loading_screen</sprite>
     <sprite>sprites\spr_player_blue_64</sprite>
     <sprite>sprites\spr_player_blue_64_anim</sprite>
     <sprite>sprites\spr_player_red_64</sprite>
     <sprite>sprites\spr_red</sprite>
     <sprite>sprites\spr_red_64</sprite>
-    <sprite>sprites\spr_zone_exit_prev</sprite>
-    <sprite>sprites\spr_zone_exit</sprite>
-    <sprite>sprites\spr_exit_alt</sprite>
     <sprite>sprites\spr_wall_barrier</sprite>
     <sprite>sprites\spr_wall_barrier_64</sprite>
     <sprite>sprites\spr_wall_brick</sprite>
     <sprite>sprites\spr_wall_hidden_64</sprite>
     <sprite>sprites\spr_yellow_border</sprite>
     <sprite>sprites\spr_yellow_border_64</sprite>
-    <sprite>sprites\sprite_player_red_64_anim</sprite>
-    <sprite>sprites\spr_loading_screen</sprite>
-    <sprite>sprites\spr_zone_spawn_1x5</sprite>
-    <sprite>sprites\spr_zone_spawn_1x3</sprite>
-    <sprite>sprites\spr_zone_spawn_5x1</sprite>
-    <sprite>sprites\spr_zone_spawn_4x1</sprite>
-    <sprite>sprites\sprite_zone_exit_4x4</sprite>
+    <sprite>sprites\spr_zone_exit</sprite>
     <sprite>sprites\spr_zone_exit_4x1</sprite>
+    <sprite>sprites\spr_zone_exit_prev</sprite>
     <sprite>sprites\spr_zone_spawn_1x2</sprite>
+    <sprite>sprites\spr_zone_spawn_1x3</sprite>
+    <sprite>sprites\spr_zone_spawn_1x5</sprite>
+    <sprite>sprites\spr_zone_spawn_4x1</sprite>
+    <sprite>sprites\spr_zone_spawn_5x1</sprite>
+    <sprite>sprites\spr_zonne_exit_1x1</sprite>
+    <sprite>sprites\sprite_player_red_64_anim</sprite>
+    <sprite>sprites\sprite_zone_exit_4x4</sprite>
+    <sprite>sprites\spr_zone_spawn_2x1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -193,29 +195,29 @@
     <objects name="zones">
       <object>objects\obj_wall_hidden</object>
       <object>objects\obj_wall_hidden_red</object>
-      <object>objects\obj_zone_exit</object>
+      <object>objects\obj_zone_exit_1x1</object>
+      <object>objects\obj_zone_exit_2x1</object>
       <object>objects\obj_zone_exit_4x1</object>
       <object>objects\obj_zone_exit_4x4</object>
-      <object>objects\obj_exit_alt_1</object>
-      <object>objects\obj_zone_exit_prev</object>
+      <object>objects\obj_zone_spawn_1x2</object>
+      <object>objects\obj_zone_spawn_1x3</object>
       <object>objects\obj_zone_spawn_1x5</object>
+      <object>objects\obj_zone_spawn_2x1</object>
       <object>objects\obj_zone_spawn_4x1</object>
       <object>objects\obj_zone_spawn_5x1</object>
-      <object>objects\obj_zone_spawn_1x3</object>
-      <object>objects\obj_zone_spawn_1x2</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_0</room>
     <room>rooms\room_hud</room>
     <room>rooms\room_bedroom_1</room>
-    <room>rooms\room_driveway</room>
     <room>rooms\room_bedroom_2</room>
     <room>rooms\room_dining</room>
     <room>rooms\room_corridor_1</room>
     <room>rooms\room_corridor_2</room>
     <room>rooms\room_kitchen</room>
     <room>rooms\room_garage</room>
+    <room>rooms\room_driveway</room>
     <room>rooms\room_tbc</room>
     <room>rooms\room_dead</room>
     <room>rooms\room_menu_main</room>
