@@ -17,8 +17,8 @@ for (h=0; h < numberOfSpawnZones; h+=1)
     {
         randomize();
         var rollForNumberOfPlayersToSpawn = floor(random(100));
-        if ( rollForNumberOfPlayersToSpawn >= 1 && rollForNumberOfPlayersToSpawn <= 20 ) var numberOfPlayersToSpawn = 0;
-        if ( rollForNumberOfPlayersToSpawn >= 21 && rollForNumberOfPlayersToSpawn <= 70 ) var numberOfPlayersToSpawn = 1;
+        if ( rollForNumberOfPlayersToSpawn >= 0 && rollForNumberOfPlayersToSpawn <= 20 ) var numberOfPlayersToSpawn = 0;
+        if ( rollForNumberOfPlayersToSpawn >= 1 && rollForNumberOfPlayersToSpawn <= 70 ) var numberOfPlayersToSpawn = 1;
         if ( rollForNumberOfPlayersToSpawn >= 71 && rollForNumberOfPlayersToSpawn <= 95 ) var numberOfPlayersToSpawn = 2;
         if ( rollForNumberOfPlayersToSpawn >= 96 && rollForNumberOfPlayersToSpawn <= 99 ) var numberOfPlayersToSpawn = 3;
     }

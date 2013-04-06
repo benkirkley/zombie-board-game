@@ -23,8 +23,7 @@ if (id.thisTeamId == 0)
                 {
                     oldWeapon = id.inventorySlotWeapon;
                     id.equippedWeapon = itemString;
-                    id.inventorySlotWeapon = string(itemString) + "_inventory";
-                    
+                    id.inventorySlotWeapon = string(itemString) + "_inventory";  
                     script_inventory_destroy_items();
                     script_inventory_create_items();
                     script_items_equip("weapon",itemString,id);
