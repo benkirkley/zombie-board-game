@@ -92,6 +92,8 @@
       <script>scripts\script_create_spawn_points_room_garage.gml</script>
       <script>scripts\script_create_spawn_points_room_kitchen.gml</script>
       <script>scripts\script_create_spawn_team.gml</script>
+      <script>scripts\script_create_new_zone_exit_instance.gml</script>
+      <script>scripts\script_create_blue_spawn_points.gml</script>
     </scripts>
     <scripts name="global">
       <script>scripts\script_global_vars.gml</script>
