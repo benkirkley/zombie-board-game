@@ -54,7 +54,7 @@ instance_create(0,0,obj_master);</code>
   </views>
   <instances>
     <instance objName="obj_zone_spawn_3x1" x="352" y="224" name="inst_FBB61A9A" locked="0" code="" scaleX="1" scaleY="1" colour="1023410175" rotation="0"/>
-    <instance objName="obj_zone_exit_1x1" x="480" y="544" name="inst_3EFC4078" locked="0" code="" scaleX="1" scaleY="1" colour="1526726655" rotation="0"/>
+    <instance objName="obj_zone_exit_1x1" x="480" y="544" name="inst_3EFC4078" locked="0" code="nextRoom = room_bedroom_2;&#xA;script_create_new_zone_exit_instance();" scaleX="1" scaleY="1" colour="1526726655" rotation="0"/>
     <instance objName="obj_wall_hidden" x="192" y="512" name="inst_989FD66E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="192" y="448" name="inst_E3E627BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="128" y="192" name="inst_0E106CC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

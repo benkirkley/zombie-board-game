@@ -32,6 +32,7 @@ playerRedDataMap = ds_map_create();
 ds_map_add(playerRedDataMap,".numberOfPlayersOnTeam",0);
 
 //SCRIPT: create the spawn points where players will appear
+
 script_create_blue_spawn_points();
 if (global.roomTile == "dining")
 {
@@ -48,7 +49,6 @@ else if (global.roomTile == "bedroom_1")
 else if (global.roomTile == "bedroom_2")
 {
     script_create_spawn_points_room_bedroom_2();
-    //global.numberOfBluePlayers = 2;
 }
 else if (global.roomTile == "bedroom_3")
 {
