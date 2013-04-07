@@ -2,7 +2,9 @@ showInteractiveText = argument0;
 nextRoom = argument1;
 playerOnThisZone = 0;
 playerOnThisZone = collision_rectangle(bbox_left-16,bbox_bottom-16,bbox_right-16,bbox_top-16,obj_player_blue,false,false);
+
 //playerOnThisZone = collision_point(x,y,obj_player_blue,false,false);
+/*
 textString = "";
 if (nextRoom == room_corridor_2)
 {
@@ -16,7 +18,7 @@ if (nextRoom == room_corridor_2)
                               ;
     obj_text_interactive.text = textString;
 }
-
+*/
 if (playerOnThisZone)
 {
     showInteractiveText = true;
@@ -29,19 +31,18 @@ if (playerOnThisZone)
             {
                 obj_text_interactive.text = "Press Space to exit room."
                                             +"#(Surviving zombies will follow you)"
-                                            +string(textString);
                                             ;
                 if ( keyboard_check_pressed( vk_space ) )
                 {
                     script_save_chars();
                     //room_goto_next();
+                    global.previousRoom = room;
                     room_goto(nextRoom);
                 }
             }
             else
             {
                 obj_text_interactive.text = "It takes a full turn to leave the room"
-                                            + string(textString)
                                             ;
             }
         }

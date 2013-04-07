@@ -1,3 +1,4 @@
+//show_message(global.blueSpawnZoneId);
 //DEFAULT VALUES
 global.numberOfTeams = 2;
 global.numberOfBluePlayers = 1;

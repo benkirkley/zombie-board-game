@@ -35,3 +35,5 @@ global.showHealthBars = true;
 
 global.spawnRedOnLoad = false;
 global.newRoom = false;
+global.previousRoom = room_0;
+global.blueSpawnZoneId = 0;

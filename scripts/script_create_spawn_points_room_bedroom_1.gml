@@ -8,16 +8,19 @@ ini_close();
 //GRID: |spawn_point_grid|is_active|is_random_spawn_count|
 blueSpawnZones = ds_grid_create(3,0);
 
+spawnStartX = (global.blueSpawnZoneId.bbox_left)+32;
+spawnStartY = (global.blueSpawnZoneId.bbox_top)+32;
+
 //GRID: |spawn_point_id|x|y|
 ////Spawn 0
 spawn_direction = 90;
 blueSpawnPoints = ds_grid_create(3,2);
 ds_grid_set(blueSpawnPoints,0,0,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,0,480);
-ds_grid_set(blueSpawnPoints,2,0,352);
+ds_grid_set(blueSpawnPoints,1,0,spawnStartX);
+ds_grid_set(blueSpawnPoints,2,0,spawnStartY);
 ds_grid_set(blueSpawnPoints,0,1,spawn_direction);
-ds_grid_set(blueSpawnPoints,1,1,480);
-ds_grid_set(blueSpawnPoints,2,1,416);
+ds_grid_set(blueSpawnPoints,1,1,spawnStartX);
+ds_grid_set(blueSpawnPoints,2,1,spawnStartY + 64);
 
 ////Add the new spawn point to the zone grid
 var current_height = ds_grid_height(blueSpawnZones);
