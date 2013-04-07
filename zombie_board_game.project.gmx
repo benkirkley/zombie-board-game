@@ -201,6 +201,7 @@
       <object>objects\obj_zone_exit_2x1</object>
       <object>objects\obj_zone_exit_4x1</object>
       <object>objects\obj_zone_exit_4x4</object>
+      <object>objects\obj_zone_exit_parent</object>
       <object>objects\obj_zone_spawn_1x2</object>
       <object>objects\obj_zone_spawn_1x3</object>
       <object>objects\obj_zone_spawn_1x5</object>
