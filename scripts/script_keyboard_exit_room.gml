@@ -1,8 +1,8 @@
 showInteractiveText = argument0;
 nextRoom = argument1;
 
-
-playerOnThisZone = collision_point(x,y,obj_player_blue,false,true);
+playerOnThisZone = collision_point(x,y,obj_player_blue,false,false);
+if (nextRoom == room_bedroom_2) obj_text_interactive.text = "playerOnThisZone: " +string(playerOnThisZone);
 if (playerOnThisZone)
 {
     showInteractiveText = true;
