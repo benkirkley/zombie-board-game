@@ -31,6 +31,7 @@ if (playerOnThisZone)
             {
                 obj_text_interactive.text = "Press Space to exit room."
                                             +"#(Surviving zombies will follow you)"
+                                            +"#thisExitId: " + string(id);
                                             ;
                 if ( keyboard_check_pressed( vk_space ) )
                 {
