@@ -37,3 +37,4 @@ global.spawnRedOnLoad = false;
 global.newRoom = false;
 global.previousRoom = room_bedroom_1;
 global.blueSpawnZoneId = 0;
+global.turnCounter = 1;

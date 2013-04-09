@@ -95,7 +95,6 @@ ds_grid_set(global.teamGrids, 5, 1, redSpawnZones);
 ds_grid_set(global.teamGrids, 6, 1, playerRedDataMap);
 
 //SCRIPT: spawn first team
-    
 script_create_spawn_team(0);
 if (global.spawnRedOnLoad == true) script_create_spawn_team(1);
 

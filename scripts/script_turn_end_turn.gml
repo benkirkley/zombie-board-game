@@ -63,6 +63,7 @@ if (global.endTurn == true )
     else
     {
         //show_message("All players on this team have moved");
+        global.turnCounter += 1;
         script_turn_next_team();
         if (global.currentTeam ==0 )
         {

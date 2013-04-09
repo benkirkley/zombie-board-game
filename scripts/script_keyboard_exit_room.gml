@@ -3,22 +3,6 @@ nextRoom = argument1;
 playerOnThisZone = 0;
 playerOnThisZone = collision_rectangle(bbox_left-16,bbox_bottom-16,bbox_right-16,bbox_top-16,obj_player_blue,false,false);
 
-//playerOnThisZone = collision_point(x,y,obj_player_blue,false,false);
-/*
-textString = "";
-if (nextRoom == room_corridor_2)
-{
-    textString="#playerOnThisZone: " +string(playerOnThisZone)
-              +"#obj_player_blue.x: " + string(obj_player_blue.x)
-              +"#obj_player_blue.y: " +string(obj_player_blue.y)
-              +"#bbox_left: " + string(bbox_left)
-              +"#bbox_bottom: " + string(bbox_bottom)
-              +"#bbox_right: " + string(bbox_right)
-              +"#bbox_top: " + string(bbox_top)
-                              ;
-    obj_text_interactive.text = textString;
-}
-*/
 if (playerOnThisZone)
 {
     showInteractiveText = true;
@@ -31,7 +15,6 @@ if (playerOnThisZone)
             {
                 obj_text_interactive.text = "Press Space to exit room."
                                             +"#(Surviving zombies will follow you)"
-                                            +"#thisExitId: " + string(id);
                                             ;
                 if ( keyboard_check_pressed( vk_space ) )
                 {
