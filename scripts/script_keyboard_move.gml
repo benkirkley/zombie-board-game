@@ -9,7 +9,7 @@ if (isMoving == false && amICurrentPlayer == true)
     if ( keyboard_check_pressed( vk_numpad5 ) )
     {
         //DEBUG HERE
-        //show_message(global.turnCounter);
+        show_message(global.turnCounter);
     }
     
     if ( keyboard_check_pressed( vk_enter ) )

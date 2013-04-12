@@ -2,14 +2,23 @@
 
 var teamId = argument0;
 var counter = argument1;
-                
+              
 playerDataMap = ds_grid_get(global.teamGrids, 6, teamId);
-
 nameOfTeam = ds_grid_get(global.teamGrids, 2, teamId);
 numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
 objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
-
 thisTeamsSpawnGrid =  ds_grid_get(global.teamGrids, 5, teamId);
+
+//Check if player was saved from previous room
+doesPlayerExistInSave = ds_map_find_value(global.savedPlayerData,string(counter)+".playerId");
+if (doesPlayerExistInSave)
+{
+    testname = ds_map_find_value(global.savedPlayerData, string(counter) + ".name");
+    tsetis_alive = ds_map_find_value(global.savedPlayerData, string(counter) + ".is_alive");
+    show_message(".name: " + string(testname)
+               +"#.is_alive: " + string(tsetis_alive) 
+                );
+}
 
 global.totalPlayers += 1;
 
@@ -19,12 +28,10 @@ var playerId = instance_create(spawnPointX,spawnPointY,objectForThisInstance);
 playerId.thisTeamId = teamId;
 playerId.thisPlayerId = counter;
 playerId.name = string(nameOfTeam) + " Player " + string(counter+1);
+playerId.is_alive = true;
 playerId.direction = spawnDirection;
 playerId.image_angle = spawnDirection;
 playerId.image_speed=0;
-
-//Check if player was saved from previous room
-doesPlayerExistInSave = ds_map_find_value(global.savedPlayerData,string(counter)+".playerId");
 
 
 numberOfPlayersOnTeam = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");

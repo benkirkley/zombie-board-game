@@ -2,9 +2,10 @@
 
 i=argument0;
 
-var numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
+playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 playerNumberToSpawn = 0;
 
+var numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
 var spawnZones = ds_grid_get(global.teamGrids, 5, i);
 var numberOfSpawnZones = ds_grid_height(spawnZones);    
 
@@ -34,42 +35,47 @@ for (h=0; h < numberOfSpawnZones; h+=1)
         var stopSpawingAtThisPlayerNumber = (numberOfPlayersToSpawn - 1 + playerNumberToSpawn);
         for (j=playerNumberToSpawn; j<stopLoopAtThisNumber; j += 1)
         {
-            //Check if a spawn point is available in this zone
-            for (k=0; k < numberOfSpawnPoints; k +=1)
+            
+            var temp = true;
+            if ( temp )
             {
-                spawnDirection = ds_grid_get(spawnPointsGrid, 0, k);
-                spawnPointX = ds_grid_get(spawnPointsGrid, 1, k);
-                spawnPointY = ds_grid_get(spawnPointsGrid, 2, k);
-                
-                //Is this spot free?
-                var checkSpotForObject = false;
-                for (n=0; n < ds_list_size(global.collidableObjects); n+=1)
+                //Check if a spawn point is available in this zone
+                for (k=0; k < numberOfSpawnPoints; k +=1)
                 {
-                    var objectToCheckWith = ds_list_find_value(global.collidableObjects, n)
-                    var checkSpotForObject = instance_position(spawnPointX,spawnPointY,objectToCheckWith)
-                    if (checkSpotForObject) n = ds_list_size(global.collidableObjects) //break loop
-                }
-                
-                if ( !checkSpotForObject )
-                {
-                    gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, i);
-                    //Find the first unspawned player on this team
-                    while ( ds_map_find_value(gridCurrentTeamDataMap, (string(j)+".has_spawned")) )
+                    spawnDirection = ds_grid_get(spawnPointsGrid, 0, k);
+                    spawnPointX = ds_grid_get(spawnPointsGrid, 1, k);
+                    spawnPointY = ds_grid_get(spawnPointsGrid, 2, k);
+                    
+                    //Is this spot free?
+                    var checkSpotForObject = false;
+                    for (n=0; n < ds_list_size(global.collidableObjects); n+=1)
                     {
-                        j += 1;
-                        playerNumberToSpawn += 1;
-                        stopSpawingAtThisPlayerNumber += 1;
+                        var objectToCheckWith = ds_list_find_value(global.collidableObjects, n)
+                        var checkSpotForObject = instance_position(spawnPointX,spawnPointY,objectToCheckWith)
+                        if (checkSpotForObject) n = ds_list_size(global.collidableObjects) //break loop
                     }
-                    if ( playerNumberToSpawn < stopLoopAtThisNumber)     
-                        script_create_new_player(i, j);
-                    playerNumberToSpawn += 1;
-                    k = numberOfSpawnPoints; //break loop k
+                    
+                    if ( !checkSpotForObject )
+                    {
+                        gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, i);
+                        //Find the first unspawned player on this team
+                        while ( ds_map_find_value(gridCurrentTeamDataMap, (string(j)+".has_spawned")) )
+                        {
+                            j += 1;
+                            playerNumberToSpawn += 1;
+                            stopSpawingAtThisPlayerNumber += 1;
+                        }
+                        if ( playerNumberToSpawn < stopLoopAtThisNumber)     
+                            script_create_new_player(i, j);
+                        playerNumberToSpawn += 1;
+                        k = numberOfSpawnPoints; //break loop k
+                    }
                 }
-            }
-            if (j == stopSpawingAtThisPlayerNumber )
-            {
-                //show_message("Stop spawning");
-                j = stopLoopAtThisNumber //break loop j
+                if (j == stopSpawingAtThisPlayerNumber )
+                {
+                    //show_message("Stop spawning");
+                    j = stopLoopAtThisNumber //break loop j
+                }
             }
         }
     }
