@@ -81,14 +81,6 @@
       <script>scripts\script_create_mp_grid.gml</script>
       <script>scripts\script_create_new_player.gml</script>
       <script>scripts\script_create_player_common_local_vars.gml</script>
-      <script>scripts\script_create_spawn_points_room_bedroom_2.gml</script>
-      <script>scripts\script_create_spawn_points_room_bedroom_3.gml</script>
-      <script>scripts\script_create_spawn_points_room_corridor_1.gml</script>
-      <script>scripts\script_create_spawn_points_room_corridor_2.gml</script>
-      <script>scripts\script_create_spawn_points_room_dining.gml</script>
-      <script>scripts\script_create_spawn_points_room_driveway.gml</script>
-      <script>scripts\script_create_spawn_points_room_garage.gml</script>
-      <script>scripts\script_create_spawn_points_room_kitchen.gml</script>
       <script>scripts\script_create_spawn_team.gml</script>
       <script>scripts\script_create_new_zone_exit_instance.gml</script>
       <script>scripts\script_create_blue_spawn_points.gml</script>

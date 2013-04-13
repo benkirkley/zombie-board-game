@@ -17,7 +17,7 @@ global.spawnRedOnLoad = false;
 global.numberOfRedPlayers = 6
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
-    global.numberOfRedPlayers = script_ini_read_key("Rooms","corridor2_enemy_coun", global.numberOfRedPlayers,"real");
+    global.numberOfRedPlayers = script_ini_read_key("Rooms","corridor_2_enemy_count", global.numberOfRedPlayers,"real");
 ini_close();
 
 instance_create(0,0,obj_master);</code>
