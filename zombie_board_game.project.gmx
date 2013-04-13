@@ -214,6 +214,7 @@
       <object>objects\obj_zone_spawn_4x1</object>
       <object>objects\obj_zone_spawn_5x1</object>
       <object>objects\obj_zone_start_2x1</object>
+      <object>objects\obj_zone_red_spawn_parent</object>
     </objects>
   </objects>
   <rooms name="rooms">

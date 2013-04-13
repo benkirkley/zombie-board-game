@@ -35,6 +35,6 @@ global.showHealthBars = true;
 
 global.spawnRedOnLoad = false;
 global.newRoom = false;
-global.previousRoom = room_0;
+global.previousRoom = room_corridor_1;
 global.blueSpawnZoneId = 0;
 global.turnCounter = 1;

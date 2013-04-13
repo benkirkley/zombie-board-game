@@ -4,3 +4,7 @@ if (nextRoom == global.previousRoom)
     global.blueSpawnZoneId = id;
     zoneActive = true;
 }
+else
+{
+    zoneActive = false;
+}

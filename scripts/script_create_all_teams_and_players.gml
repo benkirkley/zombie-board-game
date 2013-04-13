@@ -34,7 +34,11 @@ ds_map_add(playerRedDataMap,".numberOfPlayersOnTeam",0);
 //SCRIPT: create the spawn points where players will appear
 
 global.blueSpawnZones = ds_grid_create(3,0);
-script_create_blue_spawn_points();
+script_create_blue_spawn_points(obj_zone_exit_parent, global.blueSpawnZones);
+
+global.redSpawnZones = ds_grid_create(3,0);
+script_create_blue_spawn_points(obj_zone_red_spawn_parent, global.redSpawnZones);
+
 if (global.roomTile == "dining")
 {
     script_create_spawn_points_room_dining();
@@ -92,7 +96,7 @@ ds_grid_set(global.teamGrids, 1, 1, 0); //DEFUNCT -- delete me soon
 ds_grid_set(global.teamGrids, 2, 1, "Red");
 ds_grid_set(global.teamGrids, 3, 1, numberOfRedPlayers);
 ds_grid_set(global.teamGrids, 4, 1, obj_player_red);
-ds_grid_set(global.teamGrids, 5, 1, redSpawnZones);
+ds_grid_set(global.teamGrids, 5, 1, global.redSpawnZones);
 ds_grid_set(global.teamGrids, 6, 1, playerRedDataMap);
 
 //SCRIPT: spawn first team

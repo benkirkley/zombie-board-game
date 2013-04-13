@@ -6,7 +6,7 @@ ini_open("config.ini");
 ini_close();
 
 
-
+/*
 //GRID: |spawn_point_grid|is_active|is_random_spawn_count|
 redSpawnZones = ds_grid_create(3,0);
 
@@ -25,3 +25,5 @@ var current_height = ds_grid_height(redSpawnZones);
 var current_width = ds_grid_width(redSpawnZones);
 ds_grid_resize(redSpawnZones,current_width,current_height+1);
 ds_grid_set(redSpawnZones,0,current_height,redSpawnPoints);
+*/
+
