@@ -13,6 +13,13 @@
   <code>global.roomTile = "driveway";
 global.currentTeam = 1;
 global.spawnRedOnLoad = true;
+
+global.numberOfRedPlayers = 15;
+//INI file -- read existing or create using defaults
+ini_open("config.ini");
+    global.numberOfRedPlayers = script_ini_read_key("Rooms","driveway_enemy_count", global.numberOfRedPlayers,"real");
+ini_close();
+
 instance_create(0,0,obj_master);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

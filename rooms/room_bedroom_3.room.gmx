@@ -13,6 +13,13 @@
   <code>global.roomTile = "bedroom_3";
 global.currentTeam = 1;
 global.spawnRedOnLoad = true;
+
+global.numberOfRedPlayers = 12;
+//INI file -- read existing or create using defaults
+ini_open("config.ini");
+    global.numberOfRedPlayers = script_ini_read_key("Rooms","bedroom_3_enemy_count", global.numberOfRedPlayers,"real");
+ini_close();
+
 instance_create(0,0,obj_master);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>

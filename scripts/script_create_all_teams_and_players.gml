@@ -1,21 +1,16 @@
+
 //show_message(global.blueSpawnZoneId);
 //DEFAULT VALUES
 global.numberOfTeams = 2;
 global.numberOfBluePlayers = 1;
-//numberOfRedPlayers = 9;
 
 //global.currentTeam = 0;
 global.currentPlayer = 0;
 global.numberOfRedPlayersKilled = 0;
 
-//Debug
-//var blueStartingWeapon = "";
-//var blueStartingArmour = "";
-
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
     global.numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", global.numberOfBluePlayers,"real");
-    //numberOfRedPlayers = script_ini_read_key("Start","number_of_red_players", numberOfRedPlayers,"real");
     //blueStartingWeapon = script_ini_read_key("Start","blue_player_starting_weapon", blueStartingWeapon,"string");
     //blueStartingArmour = script_ini_read_key("Start","blue_player_starting_armour", blueStartingArmour,"string");
 ini_close();
@@ -27,7 +22,6 @@ global.totalPlayers = 0;
 playerBlueDataMap = ds_map_create();
 ds_map_add(playerBlueDataMap,".numberOfPlayersOnTeam",0);
 
-//numberOfRedPlayers = 9;
 playerRedDataMap = ds_map_create();
 ds_map_add(playerRedDataMap,".numberOfPlayersOnTeam",0);
 
@@ -39,46 +33,10 @@ script_create_blue_spawn_points(obj_zone_exit_parent, global.blueSpawnZones);
 global.redSpawnZones = ds_grid_create(3,0);
 script_create_blue_spawn_points(obj_zone_red_spawn_parent, global.redSpawnZones);
 
-if (global.roomTile == "dining")
-{
-    script_create_spawn_points_room_dining();
-}
-else if (global.roomTile == "garage")
-{
-    script_create_spawn_points_room_garage();
-}
-else if (global.roomTile == "bedroom_1")
-{
-    script_create_spawn_points_room_bedroom_1();
-}
-else if (global.roomTile == "bedroom_2")
-{
-    script_create_spawn_points_room_bedroom_2();
-}
-else if (global.roomTile == "bedroom_3")
-{
-    script_create_spawn_points_room_bedroom_3();
-}
-else if (global.roomTile == "corridor_1")
-{
-    script_create_spawn_points_room_corridor_1();
-}
-else if (global.roomTile == "corridor_2")
-{
-    script_create_spawn_points_room_corridor_2();
-}
-else if (global.roomTile == "kitchen")
-{
-    script_create_spawn_points_room_kitchen();
-}
-else if (global.roomTile == "driveway")
-{
-    script_create_spawn_points_room_driveway();
-}
-
+//Carry over unkilled red players
 if (global.numberOfRedPlayersToCarryOver)
 {
-    numberOfRedPlayers += global.numberOfRedPlayersToCarryOver;
+    global.numberOfRedPlayers += global.numberOfRedPlayersToCarryOver;
     global.numberOfRedPlayersToCarryOver = 0;
 }
 //Put all player grids into container grid
@@ -94,7 +52,7 @@ ds_grid_set(global.teamGrids, 6, 0, playerBlueDataMap);
 ds_grid_set(global.teamGrids, 0, 1, 1);
 ds_grid_set(global.teamGrids, 1, 1, 0); //DEFUNCT -- delete me soon
 ds_grid_set(global.teamGrids, 2, 1, "Red");
-ds_grid_set(global.teamGrids, 3, 1, numberOfRedPlayers);
+ds_grid_set(global.teamGrids, 3, 1, global.numberOfRedPlayers);
 ds_grid_set(global.teamGrids, 4, 1, obj_player_red);
 ds_grid_set(global.teamGrids, 5, 1, global.redSpawnZones);
 ds_grid_set(global.teamGrids, 6, 1, playerRedDataMap);
