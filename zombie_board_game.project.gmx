@@ -109,6 +109,7 @@
       <script>scripts\script_mouse_enter_leave.gml</script>
       <script>scripts\script_draw_text_outline_color.gml</script>
       <script>scripts\script_checkbox.gml</script>
+      <script>scripts\script_draw_object.gml</script>
     </scripts>
     <scripts name="stats_window">
       <script>scripts\script_destroy_stats_window.gml</script>
