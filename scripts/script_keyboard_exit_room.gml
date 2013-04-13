@@ -2,14 +2,18 @@
 
 with (obj_player_blue)
 {
-    zoneIdToCheckWith = argument0;
-    playerOnThisZone = 0;
-    playerOnThisZone = collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_top,zoneIdToCheckWith,false,false);
-    if (playerOnThisZone)
+    //zoneIdToCheckWith = argument0;
+    //playerOnThisZone = 0;
+    //playerOnThisZone = collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_top,zoneIdToCheckWith,false,false);
+    test = true;
+    if (test)
     {
         if (amICurrentPlayer)
         {
-            if (!isMoving)
+            zoneIdToCheckWith = argument0;
+            playerOnThisZone = 0;
+            playerOnThisZone = collision_rectangle(bbox_left+16,bbox_bottom-16,bbox_right-16,bbox_top+16,zoneIdToCheckWith,false,false);
+            if (!isMoving && playerOnThisZone)
             {
                 if (actionPoints == totalActionPoints)
                 {
