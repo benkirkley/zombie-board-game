@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>nextRoom = 0;
 showInteractiveText = true;
+zoneActive = false;
 </string>
           </argument>
         </arguments>
