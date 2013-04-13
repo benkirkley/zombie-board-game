@@ -1,4 +1,5 @@
 textLabel = argument0;
+iniField = argument1;
 
 draw_set_color(c_lime)
 draw_rectangle(x,y,x+16,y+16,0)
@@ -22,6 +23,9 @@ if (mouse_x > x and mouse_y > y and mouse_x < x+16 and mouse_y < y+16)
         {
             checked = 0
         }
+        ini_open("preferences.ini");
+            ini_write_real("HUD",iniField, checked);
+        ini_close();
     }
 }
     

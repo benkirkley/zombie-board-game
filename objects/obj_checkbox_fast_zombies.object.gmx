@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>checked = 0;
+//INI file -- read existing or create using defaults
+ini_open("preferences.ini");
+    checked = script_ini_read_key("HUD","fast_zombies", checked,"real");
+ini_close();
 </string>
           </argument>
         </arguments>
@@ -48,14 +52,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>checkboxState = script_checkbox("Fast Zombies");
+            <string>checkboxState = script_checkbox("Fast Zombies","fast_zombies");
 if (checkboxState)
 {
-   obj_player_red.currentSpeed = 8; 
+    obj_player_red.currentSpeed = 8; 
 }
 else
 {
-   obj_player_red.currentSpeed = 4; 
+    obj_player_red.currentSpeed = 4; 
 }
 </string>
           </argument>

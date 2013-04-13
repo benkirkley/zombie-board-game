@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>checked = 1;
+//INI file -- read existing or create using defaults
+ini_open("preferences.ini");
+    checked = script_ini_read_key("HUD","show_health", checked,"real");
+ini_close();
 </string>
           </argument>
         </arguments>
@@ -48,7 +52,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>checkboxState = script_checkbox("Show Health");
+            <string>checkboxState = script_checkbox("Show Health","show_health");
 if (checkboxState)
 {
    global.showHealthBars = true; 

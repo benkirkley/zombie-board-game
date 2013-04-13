@@ -33,6 +33,8 @@
     <sprite>sprites\spr_yellow_border</sprite>
     <sprite>sprites\spr_yellow_border_64</sprite>
     <sprite>sprites\spr_zone_exit</sprite>
+    <sprite>sprites\spr_zone_exit_1x1</sprite>
+    <sprite>sprites\spr_zone_exit_3x1</sprite>
     <sprite>sprites\spr_zone_exit_4x1</sprite>
     <sprite>sprites\spr_zone_exit_prev</sprite>
     <sprite>sprites\spr_zone_spawn_1x2</sprite>
@@ -42,10 +44,9 @@
     <sprite>sprites\spr_zone_spawn_3x1</sprite>
     <sprite>sprites\spr_zone_spawn_4x1</sprite>
     <sprite>sprites\spr_zone_spawn_5x1</sprite>
-    <sprite>sprites\spr_zone_exit_1x1</sprite>
+    <sprite>sprites\spr_zone_start_2x1</sprite>
     <sprite>sprites\sprite_player_red_64_anim</sprite>
     <sprite>sprites\sprite_zone_exit_4x4</sprite>
-    <sprite>sprites\spr_zone_start_2x1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -201,6 +202,7 @@
       <object>objects\obj_wall_hidden_red</object>
       <object>objects\obj_zone_exit_1x1</object>
       <object>objects\obj_zone_exit_2x1</object>
+      <object>objects\obj_zone_exit_3x1</object>
       <object>objects\obj_zone_exit_4x1</object>
       <object>objects\obj_zone_exit_4x4</object>
       <object>objects\obj_zone_exit_parent</object>
