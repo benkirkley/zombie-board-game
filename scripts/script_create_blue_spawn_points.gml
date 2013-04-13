@@ -11,6 +11,8 @@ if (global.blueSpawnZoneId)
     
     spawnStartX = (global.blueSpawnZoneId.x)-((32*spawnWidthSize)-32);
     spawnStartY = (global.blueSpawnZoneId.y)-((32*spawnHeightSize)-32);
+    spawnStartXOrig = spawnStartX;
+    spawnStartYOrig = spawnStartY;
     
     //GRID: |spawn_point_id|x|y|
     blueSpawnPoints = ds_grid_create(3,0);
@@ -18,10 +20,11 @@ if (global.blueSpawnZoneId)
     var spawnPointNumber = 0;
     for (i=1; i <= spawnWidthSize; i+=1)
     {
+        spawnStartX += ((64*i)-64);
+        spawnStartY = spawnStartYOrig;
         for (j=1; j <= spawnHeightSize; j+=1)
         {
             spawn_direction = (global.blueSpawnZoneId.image_angle)-180;
-            spawnStartX += ((64*i)-64);
             spawnStartY += ((64*j)-64);
             
             ds_grid_resize(blueSpawnPoints,ds_grid_width(blueSpawnPoints),ds_grid_height(blueSpawnPoints)+1);
