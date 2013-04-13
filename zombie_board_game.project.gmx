@@ -37,9 +37,7 @@
     <sprite>sprites\spr_zone_exit_3x1</sprite>
     <sprite>sprites\spr_zone_exit_4x1</sprite>
     <sprite>sprites\spr_zone_exit_prev</sprite>
-    <sprite>sprites\spr_zone_spawn_1x2</sprite>
-    <sprite>sprites\spr_zone_spawn_1x3</sprite>
-    <sprite>sprites\spr_zone_spawn_1x5</sprite>
+    <sprite>sprites\spr_zone_spawn_1x1</sprite>
     <sprite>sprites\spr_zone_spawn_2x1</sprite>
     <sprite>sprites\spr_zone_spawn_3x1</sprite>
     <sprite>sprites\spr_zone_spawn_4x1</sprite>
@@ -206,15 +204,13 @@
       <object>objects\obj_zone_exit_4x1</object>
       <object>objects\obj_zone_exit_4x4</object>
       <object>objects\obj_zone_exit_parent</object>
-      <object>objects\obj_zone_spawn_1x2</object>
-      <object>objects\obj_zone_spawn_1x3</object>
-      <object>objects\obj_zone_spawn_1x5</object>
+      <object>objects\obj_zone_red_spawn_parent</object>
+      <object>objects\obj_zone_spawn_1x1</object>
       <object>objects\obj_zone_spawn_2x1</object>
       <object>objects\obj_zone_spawn_3x1</object>
       <object>objects\obj_zone_spawn_4x1</object>
       <object>objects\obj_zone_spawn_5x1</object>
       <object>objects\obj_zone_start_2x1</object>
-      <object>objects\obj_zone_red_spawn_parent</object>
     </objects>
   </objects>
   <rooms name="rooms">

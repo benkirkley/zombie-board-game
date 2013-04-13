@@ -54,8 +54,8 @@ instance_create(0,0,obj_master);</code>
   </views>
   <instances>
     <instance objName="obj_zone_exit_2x1" x="512" y="288" name="inst_ECC86751" locked="0" code="nextRoom = room_kitchen;&#xA;script_create_new_zone_exit_instance();" scaleX="1" scaleY="1" colour="1526726655" rotation="0"/>
-    <instance objName="obj_zone_spawn_1x3" x="160" y="416" name="inst_D830CF6B" locked="0" code="" scaleX="1" scaleY="1" colour="1023410175" rotation="0"/>
     <instance objName="obj_zone_exit_3x1" x="96" y="416" name="inst_C7777507" locked="0" code="nextRoom = room_driveway;&#xA;script_create_new_zone_exit_instance();" scaleX="1" scaleY="1" colour="1526726655" rotation="90"/>
+    <instance objName="obj_zone_spawn_3x1" x="96" y="416" name="inst_5DEF7759" locked="0" code="" scaleX="1" scaleY="1" colour="771751935" rotation="90"/>
     <instance objName="obj_wall_hidden" x="64" y="512" name="inst_9D8A4E9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="128" y="512" name="inst_976CD404" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="192" y="512" name="inst_965BF503" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

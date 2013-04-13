@@ -53,11 +53,10 @@ instance_create(0,0,obj_master);</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="obj_zone_spawn_2x1" x="384" y="160" name="inst_CD736DA4" locked="0" code="" scaleX="1" scaleY="1" colour="1023410175" rotation="0"/>
-    <instance objName="obj_zone_spawn_2x1" x="384" y="672" name="inst_2A36763A" locked="0" code="" scaleX="1" scaleY="1" colour="1023410175" rotation="0"/>
     <instance objName="obj_zone_exit_2x1" x="672" y="256" name="inst_2E71E7A2" locked="0" code="nextRoom = room_bedroom_1;&#xA;script_create_new_zone_exit_instance();" scaleX="1" scaleY="1" colour="1526726655" rotation="270"/>
     <instance objName="obj_zone_exit_2x1" x="96" y="256" name="inst_AD4D9AD7" locked="0" code="nextRoom = room_bedroom_2;&#xA;script_create_new_zone_exit_instance();" scaleX="1" scaleY="1" colour="1526726655" rotation="90"/>
     <instance objName="obj_zone_exit_2x1" x="384" y="672" name="inst_54142184" locked="0" code="nextRoom = room_dining;&#xA;script_create_new_zone_exit_instance();" scaleX="1" scaleY="1" colour="1526726655" rotation="0"/>
+    <instance objName="obj_zone_spawn_4x1" x="384" y="160" name="inst_802842B6" locked="0" code="" scaleX="1" scaleY="1" colour="771751935" rotation="0"/>
     <instance objName="obj_wall_hidden" x="256" y="640" name="inst_D7AC348F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="256" y="704" name="inst_71343AD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="320" y="704" name="inst_0FF07CB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -79,12 +78,10 @@ instance_create(0,0,obj_master);</code>
     <instance objName="obj_wall_hidden" x="640" y="128" name="inst_D827021A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="576" y="128" name="inst_01E77C84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="512" y="128" name="inst_07FDDB37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_hidden" x="448" y="128" name="inst_A799E94E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="448" y="64" name="inst_03CF1764" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="384" y="64" name="inst_5C866D49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="320" y="64" name="inst_8E92EC52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="256" y="64" name="inst_7C7E612F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_hidden" x="256" y="128" name="inst_F2E75B45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="192" y="128" name="inst_D5B68595" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="128" y="128" name="inst_DC90EF17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="64" y="128" name="inst_FA4A9428" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -100,6 +97,8 @@ instance_create(0,0,obj_master);</code>
     <instance objName="obj_wall_hidden" x="256" y="448" name="inst_D8B29CC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="256" y="512" name="inst_86408478" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="256" y="576" name="inst_7002FF4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_hidden" x="192" y="64" name="inst_703C4B87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_hidden" x="512" y="64" name="inst_42AC12D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_item_consumable_medkit" x="416" y="416" name="inst_179B4348" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
