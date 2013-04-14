@@ -3,20 +3,22 @@ global.newRoom = true;
 playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 
 totalPlayers = ds_grid_get(global.teamGrids, 3, global.currentTeam);
+
 for (i=0; i < totalPlayers; i+=1)
 {
-    if ( ds_map_find_value(playerDataMap, string(i) + ".has_spawned") == true )
+   if ( ds_map_find_value(playerDataMap, string(i) + ".has_spawned") == true )
     {
         if ( ds_map_find_value(playerDataMap, string(i) + ".is_alive") == true )
         {
             playerId = ds_map_find_value(playerDataMap,string(i)+".playerId");
+               
             if ( ds_map_exists(global.savedPlayerData, string(i)+".playerId") )
             {
                 ds_map_replace(global.savedPlayerData, string(i)+".playerId",playerId);
             }
             else
             {
-                ds_map_add(global.savedPlayerData, string(i)+".playerId",playerId.id);
+                ds_map_add(global.savedPlayerData, string(i)+".playerId",playerId);
             }
             //Store player name
             if ( ds_map_exists(global.savedPlayerData, string(i)+".name") )

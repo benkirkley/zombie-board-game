@@ -3,6 +3,7 @@
 var teamId = argument0;
 var counter = argument1;
 var is_alive = 1;
+var name = "";
               
 playerDataMap = ds_grid_get(global.teamGrids, 6, teamId);
 nameOfTeam = ds_grid_get(global.teamGrids, 2, teamId);
@@ -16,18 +17,20 @@ global.totalPlayers += 1;
 doesPlayerExistInSave = ds_map_find_value(global.savedPlayerData,string(counter)+".playerId");
 if (doesPlayerExistInSave)
 {
-    var name = ds_map_find_value(global.savedPlayerData, string(counter) + ".name");
-    is_alive = ds_map_find_value(global.savedPlayerData, string(counter) + ".is_alive");
+    name = ds_map_find_value(global.savedPlayerData, string(counter) + ".name");
+    is_alive = ds_map_find_value(global.savedPlayerData, string(counter) + ".is_alive");          
 }
-
+          
 if (is_alive)
 {
     //CREATE the instance and assign some initial variables
     var playerId = instance_create(spawnPointX,spawnPointY,objectForThisInstance);
     
+    
     playerId.thisTeamId = teamId;
     playerId.thisPlayerId = counter;
-    playerId.name = string(nameOfTeam) + " Player " + string(counter+1);
+    playerId.name = name;
+    if (playerId.name=="") playerId.name = string(nameOfTeam) + " Player " + string(counter+1);
     playerId.is_alive = true;
     playerId.direction = spawnDirection;
     playerId.image_angle = spawnDirection;

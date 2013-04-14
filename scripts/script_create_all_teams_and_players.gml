@@ -1,23 +1,10 @@
 
-//show_message(global.blueSpawnZoneId);
 //DEFAULT VALUES
-global.numberOfTeams = 2;
-global.numberOfBluePlayers = 1;
-
-//global.currentTeam = 0;
 global.currentPlayer = 0;
 global.numberOfRedPlayersKilled = 0;
 
-//INI file -- read existing or create using defaults
-ini_open("config.ini");
-    global.numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", global.numberOfBluePlayers,"real");
-    //blueStartingWeapon = script_ini_read_key("Start","blue_player_starting_weapon", blueStartingWeapon,"string");
-    //blueStartingArmour = script_ini_read_key("Start","blue_player_starting_armour", blueStartingArmour,"string");
-ini_close();
-
 //Define variables
 global.totalPlayers = 0;
-//global.numberOfTeams = 2;
 
 playerBlueDataMap = ds_map_create();
 ds_map_add(playerBlueDataMap,".numberOfPlayersOnTeam",0);
@@ -41,7 +28,7 @@ if (global.numberOfRedPlayersToCarryOver)
 }
 //Put all player grids into container grid
 //GRID: |table_id|teams_grid|team_name|team_player_count|
-global.teamGrids = ds_grid_create(7,global.numberOfTeams);
+//global.teamGrids = ds_grid_create(7,global.numberOfTeams);
 ds_grid_set(global.teamGrids, 0, 0, 0);
 ds_grid_set(global.teamGrids, 1, 0, 0); //DEFUNCT -- delete me soon
 ds_grid_set(global.teamGrids, 2, 0, "Blue");
