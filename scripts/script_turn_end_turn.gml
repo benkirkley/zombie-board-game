@@ -67,7 +67,6 @@ if (global.endTurn == true )
         script_turn_next_team();
         if (global.currentTeam ==0 )
         {
-                global.turnCounter += 1;
                 script_inventory_destroy_items();
                 script_inventory_create_items();
         }

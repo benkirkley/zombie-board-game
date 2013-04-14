@@ -28,10 +28,10 @@ ds_map_add(playerRedDataMap,".numberOfPlayersOnTeam",0);
 //SCRIPT: create the spawn points where players will appear
 
 global.blueSpawnZones = ds_grid_create(3,0);
-script_create_blue_spawn_points(obj_zone_exit_parent, global.blueSpawnZones);
+script_create_team_spawn_points(obj_zone_exit_parent, global.blueSpawnZones);
 
 global.redSpawnZones = ds_grid_create(3,0);
-script_create_blue_spawn_points(obj_zone_red_spawn_parent, global.redSpawnZones);
+script_create_team_spawn_points(obj_zone_red_spawn_parent, global.redSpawnZones);
 
 //Carry over unkilled red players
 if (global.numberOfRedPlayersToCarryOver)

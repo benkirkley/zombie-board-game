@@ -2,7 +2,11 @@
     
 global.currentPlayer = 0;
 global.currentTeam += 1;
-if ( global.currentTeam >= global.numberOfTeams ) global.currentTeam = 0 ;
+if ( global.currentTeam >= global.numberOfTeams )
+{
+    global.currentTeam = 0 ;
+    global.turnCounter += 1;
+}
 
 //SCRIPT: create the team's players
 script_create_spawn_team(global.currentTeam);

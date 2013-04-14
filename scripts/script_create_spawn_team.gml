@@ -1,12 +1,21 @@
 /* This script uses a team's spawn point data to spawn players on the board */
+teamId=argument0;
 
-i=argument0;
+if (teamId == 0 && global.turnCounter == 1)
+{
+    show_message(global.turnCounter);
+    global.stackOfBluePlayersInHere = ds_list_create();
+    with(obj_player_blue)
+    {
+        ds_list_add(global.stackOfBluePlayersInHere,id);
+    }
+}
 
 playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 playerNumberToSpawn = 0;
 
-var numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, i);
-var spawnZones = ds_grid_get(global.teamGrids, 5, i);
+var numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
+var spawnZones = ds_grid_get(global.teamGrids, 5, teamId);
 var numberOfSpawnZones = ds_grid_height(spawnZones);
 //show_message("numberOfSpawnZones: " + string(numberOfSpawnZones));
 
@@ -15,7 +24,7 @@ for (h=0; h < numberOfSpawnZones; h+=1)
 {
     var spawnPointsGrid = ds_grid_get(spawnZones, 0, h);
     var numberOfSpawnPoints = ds_grid_height(spawnPointsGrid);
-    if (i == 1)
+    if (teamId == 1)
     {
         randomize();
         var rollForNumberOfPlayersToSpawn = floor(random(100));
@@ -34,7 +43,7 @@ for (h=0; h < numberOfSpawnZones; h+=1)
         //Loop through players and spawn, but remember who last player was from previous zone. 
         var stopLoopAtThisNumber = numberOfPlayersOnThisTeam;
         var stopSpawingAtThisPlayerNumber = (numberOfPlayersToSpawn - 1 + playerNumberToSpawn);
-        for (j=playerNumberToSpawn; j<stopLoopAtThisNumber; j += 1)
+        for (playerNumber=playerNumberToSpawn; playerNumber<stopLoopAtThisNumber; playerNumber += 1)
         {
             //Check if a spawn point is available in this zone
             for (k=0; k < numberOfSpawnPoints; k +=1)
@@ -56,25 +65,55 @@ for (h=0; h < numberOfSpawnZones; h+=1)
                 
                 if ( !checkSpotForObject )
                 {
-                    gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, i);
+                    gridCurrentTeamDataMap = ds_grid_get(global.teamGrids, 6, teamId);
                     //Find the first unspawned player on this team
-                    while ( ds_map_find_value(gridCurrentTeamDataMap, (string(j)+".has_spawned")) )
+                    while ( ds_map_find_value(gridCurrentTeamDataMap, (string(playerNumber)+".has_spawned")) )
                     {
-                        j += 1;
+                        playerNumber += 1;
                         playerNumberToSpawn += 1;
                         stopSpawingAtThisPlayerNumber += 1;
                     }
                     if ( playerNumberToSpawn < stopLoopAtThisNumber)     
-                        script_create_new_player(i, j);
+                        script_create_new_player(teamId, playerNumber);
                     playerNumberToSpawn += 1;
                     k = numberOfSpawnPoints; //break loop k
                 }
             }
-            if (j == stopSpawingAtThisPlayerNumber )
+            if (playerNumber == stopSpawingAtThisPlayerNumber )
             {
                 //show_message("Stop spawning");
-                j = stopLoopAtThisNumber //break loop j
+                playerNumber = stopLoopAtThisNumber //break loop playerNumber
             }
+        }
+    }
+}
+if (teamId == 0 && global.turnCounter == 1)
+{
+    with(obj_player_blue)
+    {
+        teamId=argument0;
+        for (i=0; i < ds_list_size(global.stackOfBluePlayersInHere); i+=1)
+        {
+            wasIAlreadyInHere = ds_list_find_value(global.stackOfBluePlayersInHere,i);
+        }
+        if (wasIAlreadyInHere==id)
+        {
+            playerDataMap = ds_grid_get(global.teamGrids, 6, teamId);
+            numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
+            objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
+            thisTeamsSpawnGrid =  ds_grid_get(global.teamGrids, 5, teamId);
+            
+            global.totalPlayers += 1;
+            
+            numberOfPlayersOnTeam = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
+            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".playerId",id);
+            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".name",name);
+            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".is_alive",is_alive);
+            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".has_spawned",true);
+            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_weapon_1",false);
+            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_armour_1",false);
+            ds_map_replace(playerDataMap,".numberOfPlayersOnTeam",numberOfPlayersOnTeam+1);
+            
         }
     }
 }
