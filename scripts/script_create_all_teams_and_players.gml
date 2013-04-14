@@ -55,7 +55,8 @@ currentPlayerId = ds_map_find_value(playerBlueDataMap,string(global.currentPlaye
 playerHighlightId = instance_create(currentPlayerId.x,currentPlayerId.y,obj_player_highlight);
 
 script_inventory_create_items();
-
+if (global.currentTeam ==0 ) global.turnCounter = 1;
+/*
 //Debug
 if (global.debug_all_items_on_map)
 {
@@ -73,3 +74,4 @@ if (global.debug_all_items_on_map)
         }
     }
 }
+*/
