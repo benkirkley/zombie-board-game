@@ -3,68 +3,30 @@ global.newRoom = true;
 playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 
 totalPlayers = ds_grid_get(global.teamGrids, 3, global.currentTeam);
-
 for (i=0; i < totalPlayers; i+=1)
 {
-   if ( ds_map_find_value(playerDataMap, string(i) + ".has_spawned") == true )
+    //show_message(ds_map_find_value(playerDataMap, string(i) + ".name"));
+    if ( ds_map_find_value(playerDataMap, string(i) + ".has_spawned") == true )
     {
         if ( ds_map_find_value(playerDataMap, string(i) + ".is_alive") == true )
         {
             playerId = ds_map_find_value(playerDataMap,string(i)+".playerId");
-               
-            if ( ds_map_exists(global.savedPlayerData, string(i)+".playerId") )
-            {
-                ds_map_replace(global.savedPlayerData, string(i)+".playerId",playerId);
-            }
-            else
-            {
-                ds_map_add(global.savedPlayerData, string(i)+".playerId",playerId);
-            }
-            //Store player name
-            if ( ds_map_exists(global.savedPlayerData, string(i)+".name") )
-            {
-                ds_map_replace(global.savedPlayerData, string(i)+".name",playerId.name);
-            }
-            else
-            {
-                ds_map_add(global.savedPlayerData, string(i)+".name",playerId.name);
-            }
-            //Store player hit points
-            if ( ds_map_exists(global.savedPlayerData, string(i)+".hitPoints") )
-            {
-                ds_map_replace(global.savedPlayerData, string(i)+".hitPoints",playerId.hitPoints);
-            }
-            else
-            {
-                ds_map_add(global.savedPlayerData, string(i)+".hitPoints",playerId.hitPoints);
-            }
-            //Store player alive or dead
-            if ( ds_map_exists(global.savedPlayerData, string(i)+".is_alive") )
-            {
-                ds_map_replace(global.savedPlayerData, string(i)+".is_alive",playerId.is_alive);
-            }
-            else
-            {
-                ds_map_add(global.savedPlayerData, string(i)+".is_alive",playerId.is_alive);
-            }
-            //Store weapon equipped
-            if ( ds_map_exists(global.savedPlayerData, string(i)+".inventory_weapon_1") )
-            {
-                ds_map_replace(global.savedPlayerData, string(i)+".inventory_weapon_1",playerId.inventorySlotWeapon);
-            }
-            else
-            {
-                ds_map_add(global.savedPlayerData, string(i)+".inventory_weapon_1",playerId.inventorySlotWeapon);
-            }
-            //Store armour equipped
-            if ( ds_map_exists(global.savedPlayerData, string(i)+".inventory_armour_1") )
-            {
-                ds_map_replace(global.savedPlayerData, string(i)+".inventory_armour_1",playerId.inventorySlotArmour);
-            }
-            else
-            {
-                ds_map_add(global.savedPlayerData, string(i)+".inventory_armour_1",playerId.inventorySlotArmour);
-            }
+            
+            script_save_char_api(i, ".playerId", playerId);
+            script_save_char_api(i, ".name", playerId.name);
+            script_save_char_api(i, ".characterName", playerId.characterName);
+            script_save_char_api(i, ".attack", playerId.attack);
+            script_save_char_api(i, ".dicePool", playerId.dicePool);
+            script_save_char_api(i, ".defense", playerId.defense);
+            script_save_char_api(i, ".totalHitPoints", playerId.totalHitPoints);
+            script_save_char_api(i, ".hitPoints", playerId.hitPoints);
+            script_save_char_api(i, ".totalActionPoints", playerId.totalActionPoints);
+            script_save_char_api(i, ".damage", playerId.damage);
+            script_save_char_api(i, ".totalNumberOfAttacks", playerId.totalNumberOfAttacks);
+            script_save_char_api(i, ".moveSpeed", playerId.moveSpeed);
+            script_save_char_api(i, ".is_alive", playerId.is_alive);
+            script_save_char_api(i, ".inventorySlotWeapon", playerId.inventorySlotWeapon);
+            script_save_char_api(i, ".inventorySlotArmour", playerId.inventorySlotArmour);
         }
     }
 

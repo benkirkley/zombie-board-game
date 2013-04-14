@@ -65,31 +65,48 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/* Initalise stats */
+            <string>characterName="blue_player";
+is_alive = true;
+image_speed=0;
 
-if (characterName == "blue_player_zac_brown")
-{
-    //DEFAULT VALUES
-    attack = 10;
-    dicePool=2;
-    defense=5;
-    totalHitPoints=5;
-    totalActionPoints=5;
-    damage = 2;
-    totalNumberOfAttacks = 1;
-    moveSpeed = 8;
-    
-    //INI file -- read existing or create using defaults
-    ini_open("config.ini");
-        attack = script_ini_read_key("Blue_Player_Stats","attack", attack,"real");
-        dicePool = script_ini_read_key("Blue_Player_Stats","dice_pool", dicePool,"real");
-        defense = script_ini_read_key("Blue_Player_Stats","defense", defense,"real");
-        totalHitPoints = script_ini_read_key("Blue_Player_Stats","max_hit_points", totalHitPoints,"real");
-        totalActionPoints = script_ini_read_key("Blue_Player_Stats","move_points", totalActionPoints,"real");
-        damage = script_ini_read_key("Blue_Player_Stats","damage", damage,"real");
-        totalNumberOfAttacks = script_ini_read_key("Blue_Player_Stats","number_of_attacks", totalNumberOfAttacks,"real");
-    ini_close();
-}
+//DEFAULT VALUES
+name = "Blue Player";
+attack = 16;
+dicePool=2;
+defense=5;
+totalHitPoints=5;
+totalActionPoints=9;
+damage = 2;
+totalNumberOfAttacks = 1;
+moveSpeed = 8;
+
+script_create_player_blue(characterName);
+
+
+/*
+characterName = argument0
+
+//DEFAULT VALUES
+name = "Joe Smith";
+attack = 10;
+dicePool=2;
+defense=5;
+totalHitPoints=5;
+totalActionPoints=5;
+damage = 2;
+totalNumberOfAttacks = 1;
+moveSpeed = 8;
+
+//INI file -- read existing or create using defaults
+ini_open("config.ini");
+    attack = script_ini_read_key(characterName,"attack", attack,"real");
+    dicePool = script_ini_read_key(characterName,"dice_pool", dicePool,"real");
+    defense = script_ini_read_key(characterName,"defense", defense,"real");
+    totalHitPoints = script_ini_read_key(characterName,"max_hit_points", totalHitPoints,"real");
+    totalActionPoints = script_ini_read_key(characterName,"move_points", totalActionPoints,"real");
+    damage = script_ini_read_key(characterName,"damage", damage,"real");
+    totalNumberOfAttacks = script_ini_read_key(characterName,"number_of_attacks", totalNumberOfAttacks,"real");
+ini_close();
 
 hitPoints=totalHitPoints;
 actionPoints=totalActionPoints;
@@ -134,6 +151,7 @@ equippedWeapon = 0;
 equippedArmour = 0;
 
 alarm[0]=1;
+*/
 </string>
           </argument>
         </arguments>

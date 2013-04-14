@@ -84,6 +84,7 @@
       <script>scripts\script_create_spawn_team.gml</script>
       <script>scripts\script_create_new_zone_exit_instance.gml</script>
       <script>scripts\script_create_team_spawn_points.gml</script>
+      <script>scripts\script_create_player_blue.gml</script>
     </scripts>
     <scripts name="global">
       <script>scripts\script_global_vars.gml</script>
@@ -129,6 +130,7 @@
       <script>scripts\script_turn_next_team.gml</script>
       <script>scripts\script_instance_exists.gml</script>
       <script>scripts\script_save_chars.gml</script>
+      <script>scripts\script_save_char_api.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

@@ -93,29 +93,29 @@ if (teamId == 0 && global.turnCounter == 1)
         for (i=0; i < ds_list_size(stackOfBluePlayersInHere); i+=1)
         {
             wasIAlreadyInHere = ds_list_find_value(stackOfBluePlayersInHere,i);
-        }
-        if (wasIAlreadyInHere==id)
-        {
-            playerDataMap = ds_grid_get(global.teamGrids, 6, teamId);
-            numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
-            objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
-            thisTeamsSpawnGrid =  ds_grid_get(global.teamGrids, 5, teamId);
-            
-            global.totalPlayers += 1;
-            
-            numberOfPlayersOnTeam = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
-            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".playerId",id);
-            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".name",name);
-            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".is_alive",is_alive);
-            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".has_spawned",true);
-            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_weapon_1",false);
-            ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_armour_1",false);
-            ds_map_replace(playerDataMap,".numberOfPlayersOnTeam",numberOfPlayersOnTeam+1);
-            ds_grid_set(global.teamGrids, 3, teamId, numberOfPlayersOnThisTeam+1);
-            
-            global.numberOfBluePlayers += 1;
-            temp = ds_grid_get(global.teamGrids, 3, teamId);
-            //show_message("Adding map player, teamGrids player count: " + string(temp));
+            if (wasIAlreadyInHere==id)
+            {
+                playerDataMap = ds_grid_get(global.teamGrids, 6, teamId);
+                numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
+                objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
+                thisTeamsSpawnGrid =  ds_grid_get(global.teamGrids, 5, teamId);
+                
+                global.totalPlayers += 1;
+                
+                numberOfPlayersOnTeam = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
+                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".playerId",id);
+                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".name",name);
+                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".is_alive",is_alive);
+                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".has_spawned",true);
+                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_weapon_1",false);
+                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_armour_1",false);
+                ds_map_replace(playerDataMap,".numberOfPlayersOnTeam",numberOfPlayersOnTeam+1);
+                ds_grid_set(global.teamGrids, 3, teamId, numberOfPlayersOnThisTeam+1);
+                
+                global.numberOfBluePlayers += 1;
+                temp = ds_grid_get(global.teamGrids, 3, teamId);
+                //show_message("Adding map player, teamGrids player count: " + string(temp));
+            }
         }
     }
     ds_list_destroy(stackOfBluePlayersInHere);
