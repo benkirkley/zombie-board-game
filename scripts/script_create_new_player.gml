@@ -70,8 +70,8 @@ if (is_alive)
     if (damageSaved) playerId.damage = damageSaved;
     if (totalNumberOfAttacksSaved) playerId.totalNumberOfAttacks = totalNumberOfAttacksSaved;
     if (moveSpeedSaved) playerId.moveSpeed = moveSpeedSaved;
-    if (inventorySlotWeaponSaved) playerId.inventorySlotWeapon = inventorySlotWeaponSaved;
-    if (inventorySlotArmourSaved) playerId.inventorySlotArmour = inventorySlotArmourSaved;
+    playerId.inventorySlotWeapon = inventorySlotWeaponSaved;
+    playerId.inventorySlotArmour = inventorySlotArmourSaved;
     
     if (playerId.name=="") playerId.name = string(nameOfTeam) + " Player " + string(counter+1);
     playerId.is_alive = true;
@@ -86,6 +86,7 @@ if (is_alive)
     ds_map_add(playerDataMap,string(counter)+".characterName",playerId.characterName); 
     ds_map_add(playerDataMap,string(counter)+".is_alive",true);
     ds_map_add(playerDataMap,string(counter)+".has_spawned",true);
-    ds_map_add(playerDataMap,string(counter)+".inventory_weapon_1",inventorySlotWeaponSaved);
-    ds_map_add(playerDataMap,string(counter)+".inventory_armour_1",inventorySlotArmourSaved);
+    ds_map_add(playerDataMap,string(counter)+".inventory_weapon_1",playerId.inventorySlotWeapon);
+    ds_map_add(playerDataMap,string(counter)+".inventory_armour_1",playerId.inventorySlotArmour);
+    
 }

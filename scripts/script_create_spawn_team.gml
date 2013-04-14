@@ -107,14 +107,12 @@ if (teamId == 0 && global.turnCounter == 1)
                 ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".name",name);
                 ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".is_alive",is_alive);
                 ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".has_spawned",true);
-                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_weapon_1",false);
-                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_armour_1",false);
+                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_weapon_1",inventorySlotWeapon);
+                ds_map_add(playerDataMap,string(numberOfPlayersOnTeam)+".inventory_armour_1",inventorySlotArmour);
                 ds_map_replace(playerDataMap,".numberOfPlayersOnTeam",numberOfPlayersOnTeam+1);
                 ds_grid_set(global.teamGrids, 3, teamId, numberOfPlayersOnThisTeam+1);
                 
                 global.numberOfBluePlayers += 1;
-                temp = ds_grid_get(global.teamGrids, 3, teamId);
-                //show_message("Adding map player, teamGrids player count: " + string(temp));
             }
         }
     }

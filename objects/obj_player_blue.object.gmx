@@ -81,7 +81,7 @@ totalNumberOfAttacks = 1;
 moveSpeed = 8;
 
 script_create_player_blue(characterName);
-
+alarm[0]=1;
 
 /*
 characterName = argument0
@@ -174,35 +174,28 @@ alarm[0]=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>storedHitPoints = ds_map_find_value(global.savedPlayerData, string(thisPlayerId)+".hitPoints");
-if (storedHitPoints) hitPoints = storedHitPoints;
+            <string>//storedHitPoints = ds_map_find_value(global.savedPlayerData, string(thisPlayerId)+".hitPoints");
+//if (storedHitPoints) hitPoints = storedHitPoints;
 
-
-var storedInventoryWeapon1 = ds_map_find_value(global.savedPlayerData, string(thisPlayerId)+".inventory_weapon_1");
-var storedObject = ds_map_find_value(global.mapItemWeaponStats,storedInventoryWeapon1);
+//var storedInventoryWeapon1 = ds_map_find_value(global.savedPlayerData, string(thisPlayerId)+".inventory_weapon_1");
+var storedObject = ds_map_find_value(global.mapItemWeaponStats,inventorySlotWeapon);
 var storedItemString = ds_map_find_value(global.mapItemWeaponStats,storedObject);
-
-//oldWeapon = id.inventorySlotWeapon;
-id.equippedWeapon = storedItemString;
-id.inventorySlotWeapon = string(storedItemString) + "_inventory";
+equippedWeapon = storedItemString;
+inventorySlotWeapon = string(storedItemString) + "_inventory";
 script_inventory_destroy_items();
 script_inventory_create_items();
-//show_message(thisPlayerId);
 script_items_equip("weapon",storedItemString,id);
 
 
-var storedInventoryArmour1 = ds_map_find_value(global.savedPlayerData, string(thisPlayerId)+".inventory_armour_1");
-
-var storedObject = ds_map_find_value(global.mapItemArmourStats,storedInventoryArmour1);
+//var storedInventoryArmour1 = ds_map_find_value(global.savedPlayerData, string(thisPlayerId)+".inventory_armour_1");
+var storedObject = ds_map_find_value(global.mapItemArmourStats,inventorySlotArmour);
 var storedItemString = ds_map_find_value(global.mapItemArmourStats,storedObject);
-
-//oldArmour = id.inventorySlotArmour;
-id.equippedArmour = storedItemString;
-id.inventorySlotArmour = string(storedItemString) + "_inventory";
+equippedArmour = storedItemString;
+inventorySlotArmour = string(storedItemString) + "_inventory";
 script_inventory_destroy_items();
 script_inventory_create_items();
-
 script_items_equip("armour",storedItemString,id);
+
 </string>
           </argument>
         </arguments>
