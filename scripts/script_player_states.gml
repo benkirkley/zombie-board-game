@@ -8,7 +8,10 @@ if (resolveCombat == true )
 // I died. Is any one else alive on my team?
 if ( hitPoints <= 0 )
 {
-    //show_message(string(thisPlayerId) + " Died");
+   // show_message(string(thisPlayerId) + " Died");
+    show_message("thisPlayerId: " + string(thisPlayerId)
+                +"#id: " + string(id)
+    );
     totalNumberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, thisTeamId)
     playerDataMap = ds_grid_get(global.teamGrids, 6, thisTeamId);
     ds_map_replace(playerDataMap,string(thisPlayerId) + ".is_alive",false);
@@ -33,7 +36,6 @@ if ( hitPoints <= 0 )
     
     with (id) instance_destroy();
     
-    //If all enemies are dead, win game
     if (!teamStillHasPlayers && (loopLimit >= totalNumberOfPlayersOnThisTeam) && global.currentTeam == 1)
     {
         teamName = ds_grid_get( global.teamGrids, 2, global.currentTeam );
@@ -43,13 +45,3 @@ if ( hitPoints <= 0 )
     
     if (thisTeamId > 0) script_drop_random_item(false,false);
 }
-
-/*
-if (global.debug_auto_end_turn )
-{
-    if ( actionPoints == 0 && numberOfAttacks == 0 )
-    {
-        global.endTurn = true;
-    }
-}
-*/

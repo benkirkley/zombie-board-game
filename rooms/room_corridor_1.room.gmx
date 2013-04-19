@@ -11,7 +11,7 @@
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>global.roomTile = "corridor_1";
-global.currentTeam = 1;
+global.currentTeam = 0;
 global.spawnRedOnLoad = true;
 
 global.numberOfRedPlayers = 12;

@@ -28,7 +28,6 @@ if (global.numberOfRedPlayersToCarryOver)
 }
 //Put all player grids into container grid
 //GRID: |table_id|teams_grid|team_name|team_player_count|
-//global.teamGrids = ds_grid_create(7,global.numberOfTeams);
 ds_grid_set(global.teamGrids, 0, 0, 0);
 ds_grid_set(global.teamGrids, 1, 0, 0); //DEFUNCT -- delete me soon
 ds_grid_set(global.teamGrids, 2, 0, "Blue");
@@ -51,27 +50,7 @@ if (global.spawnRedOnLoad == true) script_create_spawn_team(1);
 //Highlight the starting player
 gridCurrentTeam = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 currentPlayerId = ds_map_find_value(playerBlueDataMap,string(global.currentPlayer)+".playerId");
-//show_message(global.currentTeam);
 playerHighlightId = instance_create(currentPlayerId.x,currentPlayerId.y,obj_player_highlight);
 
 script_inventory_create_items();
-if (global.currentTeam ==0 ) global.turnCounter = 1;
-/*
-//Debug
-if (global.debug_all_items_on_map)
-{
-    var item_x=608;
-    var item_y=160
-    for (var j=0; j < ds_list_size(global.dslist_AllItemObjects); j +=1 )
-    {
-        var tempObj = ds_list_find_value(global.dslist_AllItemObjects, j);
-        instance_create(item_x,item_y,tempObj);
-        item_x -= 64;
-        if (item_x <= 352) 
-        {
-            item_x = 608;
-            item_y = 224;
-        }
-    }
-}
-*/
+if (global.currentTeam == 0 ) global.turnCounter = 1;

@@ -8,6 +8,7 @@ if (teamId == 0 && global.turnCounter == 1)
     {
         ds_list_add(stackOfBluePlayersInHere,id);
     }
+    //show_message("stackOfBluePlayersInHere Size: " + string(ds_list_size(stackOfBluePlayersInHere)));
 }
 
 playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
@@ -16,6 +17,8 @@ playerNumberToSpawn = 0;
 var numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
 var spawnZones = ds_grid_get(global.teamGrids, 5, teamId);
 var numberOfSpawnZones = ds_grid_height(spawnZones);
+
+//show_message("global.numberOfBluePlayers: " + string(global.numberOfBluePlayers));
 
 //Loop through spawn zones
 for (h=0; h < numberOfSpawnZones; h+=1)
@@ -99,7 +102,7 @@ if (teamId == 0 && global.turnCounter == 1)
                 numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
                 objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
                 thisTeamsSpawnGrid =  ds_grid_get(global.teamGrids, 5, teamId);
-                
+                id.thisPlayerId = numberOfPlayersOnThisTeam;
                 global.totalPlayers += 1;
                 
                 numberOfPlayersOnTeam = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
