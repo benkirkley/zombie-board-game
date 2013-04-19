@@ -23,6 +23,7 @@
     <sprite>sprites\spr_loading_screen</sprite>
     <sprite>sprites\spr_player_blue_64</sprite>
     <sprite>sprites\spr_player_blue_64_anim</sprite>
+    <sprite>sprites\sprite_player_blue_bob_smith_64_anim</sprite>
     <sprite>sprites\spr_player_red_64</sprite>
     <sprite>sprites\spr_red</sprite>
     <sprite>sprites\spr_red_64</sprite>
@@ -43,7 +44,7 @@
     <sprite>sprites\spr_zone_spawn_4x1</sprite>
     <sprite>sprites\spr_zone_spawn_5x1</sprite>
     <sprite>sprites\spr_zone_start_2x1</sprite>
-    <sprite>sprites\sprite_player_red_64_anim</sprite>
+    <sprite>sprites\spr_player_red_64_anim</sprite>
     <sprite>sprites\sprite_zone_exit_4x4</sprite>
   </sprites>
   <backgrounds name="background">
@@ -185,9 +186,12 @@
       <object>objects\obj_loading_screen</object>
     </objects>
     <objects name="players">
-      <object>objects\obj_player_blue</object>
+      <object>objects\obj_player_blue_default</object>
+      <object>objects\obj_player_blue_1</object>
+      <object>objects\obj_player_blue_2</object>
       <object>objects\obj_player_highlight</object>
       <object>objects\obj_player_red</object>
+      <object>objects\obj_player_blue</object>
     </objects>
     <objects name="zones">
       <object>objects\obj_wall_hidden</object>

@@ -32,7 +32,7 @@ ds_grid_set(global.teamGrids, 0, 0, 0);
 ds_grid_set(global.teamGrids, 1, 0, 0); //DEFUNCT -- delete me soon
 ds_grid_set(global.teamGrids, 2, 0, "Blue");
 ds_grid_set(global.teamGrids, 3, 0, global.numberOfBluePlayers);
-ds_grid_set(global.teamGrids, 4, 0, obj_player_blue);
+ds_grid_set(global.teamGrids, 4, 0, obj_player_blue_default);
 ds_grid_set(global.teamGrids, 5, 0, global.blueSpawnZones);
 ds_grid_set(global.teamGrids, 6, 0, playerBlueDataMap);
 ds_grid_set(global.teamGrids, 0, 1, 1);

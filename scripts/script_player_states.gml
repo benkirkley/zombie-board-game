@@ -9,9 +9,6 @@ if (resolveCombat == true )
 if ( hitPoints <= 0 )
 {
    // show_message(string(thisPlayerId) + " Died");
-    show_message("thisPlayerId: " + string(thisPlayerId)
-                +"#id: " + string(id)
-    );
     totalNumberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, thisTeamId)
     playerDataMap = ds_grid_get(global.teamGrids, 6, thisTeamId);
     ds_map_replace(playerDataMap,string(thisPlayerId) + ".is_alive",false);

@@ -22,7 +22,7 @@ ini_open("config.ini");
     global.debug_show_roll_for_chance_of_item_drop = script_ini_read_key("Debug","debug_show_roll_for_chance_of_item_drop", global.debug_show_roll_for_chance_of_item_drop,"real");
     global.debug_all_items_on_map = script_ini_read_key("Debug","debug_all_items_on_map", global.debug_all_items_on_map,"real");
     global.debug_show_ai_path = script_ini_read_key("Debug","debug_show_ai_path", global.debug_show_ai_path,"real");
-    //global.numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", global.numberOfBluePlayers,"real");
+    global.numberOfBluePlayers = script_ini_read_key("Start","number_of_blue_players", global.numberOfBluePlayers,"real");
 ini_close();
 
 global.collidableObjects = ds_list_create();
