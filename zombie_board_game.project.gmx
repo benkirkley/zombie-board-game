@@ -191,6 +191,7 @@
       <object>objects\obj_player_blue_2</object>
       <object>objects\obj_player_highlight</object>
       <object>objects\obj_player_red_default</object>
+      <object>objects\obj_player_red_1</object>
       <object>objects\obj_player_blue</object>
       <object>objects\obj_player_red</object>
     </objects>
