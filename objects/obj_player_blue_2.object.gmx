@@ -109,10 +109,10 @@ image_speed=0;
 //DEFAULT VALUES
 name = "Bob Smith";
 attack = 9;
-dicePool=3;
-defense=8;
-totalHitPoints=8;
-totalActionPoints=3;
+dicePool = 3;
+defense = 8;
+totalHitPoints = 8;
+totalActionPoints = 3;
 damage = 2;
 totalNumberOfAttacks = 1;
 moveSpeed = 8;

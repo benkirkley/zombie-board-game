@@ -71,11 +71,11 @@ image_speed=0;
 
 //DEFAULT VALUES
 name = "Blue Player";
-attack = 16;
+attack = 8;
 dicePool=2;
 defense=5;
-totalHitPoints=5;
-totalActionPoints=9;
+totalHitPoints=4;
+totalActionPoints=4;
 damage = 2;
 totalNumberOfAttacks = 1;
 moveSpeed = 8;
