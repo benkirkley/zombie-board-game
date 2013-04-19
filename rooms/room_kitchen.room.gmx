@@ -14,7 +14,7 @@
 global.currentTeam = 1;
 global.spawnRedOnLoad = true;
 
-global.numberOfRedPlayers = 10;
+global.numberOfRedPlayers = 20;
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
     global.numberOfRedPlayers = script_ini_read_key("Rooms","kitchen_enemy_count", global.numberOfRedPlayers,"real");

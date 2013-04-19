@@ -14,7 +14,7 @@
 global.currentTeam = 0;
 global.spawnRedOnLoad = false;
 
-global.numberOfRedPlayers = 16;
+global.numberOfRedPlayers = 35;
 //INI file -- read existing or create using defaults
 ini_open("config.ini");
     global.numberOfRedPlayers = script_ini_read_key("Rooms","garage_enemy_count", global.numberOfRedPlayers,"real");
