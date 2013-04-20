@@ -1,6 +1,7 @@
 /* This script uses a team's spawn point data to spawn players on the board */
 teamId=argument0;
 
+
 if (teamId == 0 && global.turnCounter == 1)
 {
     var stackOfBluePlayersInHere = ds_list_create();
@@ -10,6 +11,16 @@ if (teamId == 0 && global.turnCounter == 1)
     }
     //show_message("stackOfBluePlayersInHere Size: " + string(ds_list_size(stackOfBluePlayersInHere)));
 }
+
+if (teamId == 1 && global.turnCounter == 1 && global.redPlacedAddedToList == false)
+{
+    var stackOfRedPlayersInHere = ds_list_create();
+    with(obj_player_red)
+    {
+        ds_list_add(stackOfRedPlayersInHere,id);
+    }
+}
+
 
 playerDataMap = ds_grid_get(global.teamGrids, 6, global.currentTeam);
 playerNumberToSpawn = 0;
@@ -88,6 +99,8 @@ for (h=0; h < numberOfSpawnZones; h+=1)
         }
     }
 }
+
+
 if (teamId == 0 && global.turnCounter == 1)
 {
     with(obj_player_blue)
@@ -120,4 +133,48 @@ if (teamId == 0 && global.turnCounter == 1)
         }
     }
     ds_list_destroy(stackOfBluePlayersInHere);
+}
+
+if (teamId == 1 && global.turnCounter == 1 && global.redPlacedAddedToList == false)
+{
+    global.redPlacedAddedToList = true;
+    with(obj_player_red)
+    {
+        teamId=argument0;
+        for (i=0; i < ds_list_size(stackOfRedPlayersInHere); i+=1)
+        {
+            wasIAlreadyInHere = ds_list_find_value(stackOfRedPlayersInHere,i);
+            if (wasIAlreadyInHere == id)
+            {
+                playerDataMap = ds_grid_get(global.teamGrids, 6, teamId);
+                numberOfPlayersOnThisTeam = ds_grid_get(global.teamGrids, 3, teamId);
+                objectForThisInstance = ds_grid_get(global.teamGrids, 4, teamId);
+                thisTeamsSpawnGrid =  ds_grid_get(global.teamGrids, 5, teamId);
+                var numberOfSpawnedPlayers = 0;
+                for (i=0; i < numberOfPlayersOnThisTeam; i++)
+                {
+                    if (ds_map_find_value(playerDataMap,string(i)+".has_spawned"))
+                    {
+                        numberOfSpawnedPlayers += 1;
+                    }
+                }
+                id.thisTeamId = teamId;
+                id.thisPlayerId = numberOfSpawnedPlayers;
+                global.totalPlayers += 1;
+                
+                numberOfPlayersOnTeam = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
+                ds_map_add(playerDataMap,string(numberOfSpawnedPlayers)+".playerId",id);
+                ds_map_add(playerDataMap,string(numberOfSpawnedPlayers)+".name",name);
+                ds_map_add(playerDataMap,string(numberOfSpawnedPlayers)+".is_alive",is_alive);
+                ds_map_add(playerDataMap,string(numberOfSpawnedPlayers)+".has_spawned",true);
+                ds_map_add(playerDataMap,string(numberOfSpawnedPlayers)+".inventory_weapon_1",inventorySlotWeapon);
+                ds_map_add(playerDataMap,string(numberOfSpawnedPlayers)+".inventory_armour_1",inventorySlotArmour);
+                ds_map_replace(playerDataMap,".numberOfPlayersOnTeam",numberOfPlayersOnTeam+1);
+                ds_grid_set(global.teamGrids, 3, teamId, numberOfPlayersOnThisTeam+1);
+                
+                global.numberOfRedPlayers += 1;
+            }
+        }
+    }
+    ds_list_destroy(stackOfRedPlayersInHere);
 }

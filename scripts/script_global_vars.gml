@@ -42,3 +42,4 @@ global.newRoom = false;
 global.previousRoom = room_0;
 global.blueSpawnZoneId = 0;
 global.turnCounter = 1;
+global.redPlacedAddedToList = false;

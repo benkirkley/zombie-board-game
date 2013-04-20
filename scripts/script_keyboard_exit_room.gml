@@ -27,6 +27,7 @@ with (obj_player_blue)
                         nextRoom = argument1;
                         script_save_chars();
                         global.previousRoom = room;
+                        global.redPlacedAddedToList = false;
                         global.turnCounter = 1;
                         room_goto(nextRoom);
                     }
