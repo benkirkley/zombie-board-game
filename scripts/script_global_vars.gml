@@ -43,3 +43,6 @@ global.previousRoom = room_0;
 global.blueSpawnZoneId = 0;
 global.turnCounter = 1;
 global.redPlacedAddedToList = false;
+
+global.specialPlayersMap = ds_map_create();
+global.specialPlayersList = ds_list_create();

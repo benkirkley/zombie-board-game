@@ -190,7 +190,7 @@
     <objects name="players">
       <object>objects\obj_player_blue_default</object>
       <object>objects\obj_player_blue_1</object>
-      <object>objects\obj_player_blue_2</object>
+      <object>objects\obj_player_blue_bob_smith</object>
       <object>objects\obj_player_highlight</object>
       <object>objects\obj_player_red_default</object>
       <object>objects\obj_player_red_1</object>
