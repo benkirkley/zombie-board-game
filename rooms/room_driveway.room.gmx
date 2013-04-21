@@ -64,7 +64,7 @@ instance_create(0,0,obj_master);</code>
     <instance objName="obj_zone_spawn_5x1" x="224" y="672" name="inst_D0F54449" locked="0" code="" scaleX="1" scaleY="1" colour="603979775" rotation="180"/>
     <instance objName="obj_zone_spawn_5x1" x="288" y="96" name="inst_A1081B74" locked="0" code="" scaleX="1" scaleY="1" colour="603979775" rotation="180"/>
     <instance objName="obj_zone_spawn_4x1" x="576" y="96" name="inst_11E0EE06" locked="0" code="" scaleX="1" scaleY="1" colour="603979775" rotation="180"/>
-    <instance objName="obj_zone_exit_4x1" x="672" y="512" name="inst_84CF8050" locked="0" code="nextRoom = room_dining;&#xA;script_create_new_zone_exit_instance();" scaleX="1" scaleY="1" colour="1526726655" rotation="270"/>
+    <instance objName="obj_zone_exit_4x1" x="672" y="512" name="inst_84CF8050" locked="0" code="nextRoom = room_garage;&#xA;script_create_new_zone_exit_instance();" scaleX="1" scaleY="1" colour="1526726655" rotation="270"/>
     <instance objName="obj_zone_spawn_3x1" x="672" y="224" name="inst_324886E9" locked="0" code="" scaleX="1" scaleY="1" colour="771751935" rotation="270"/>
     <instance objName="obj_zone_spawn_5x1" x="96" y="480" name="inst_AAB4E926" locked="0" code="" scaleX="1" scaleY="1" colour="771751935" rotation="90"/>
     <instance objName="obj_zone_exit_1x1" x="288" y="480" name="inst_2B69965D" locked="0" code="nextRoom = room_tbc;&#xA;script_create_new_zone_exit_instance();" scaleX="1" scaleY="1" colour="1526726655" rotation="0"/>
