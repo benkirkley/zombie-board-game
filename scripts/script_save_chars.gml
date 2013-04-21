@@ -27,6 +27,7 @@ for (i=0; i < totalPlayers; i+=1)
             script_save_char_api(i, ".is_alive", playerId.is_alive);
             script_save_char_api(i, ".inventorySlotWeapon", playerId.inventorySlotWeapon);
             script_save_char_api(i, ".inventorySlotArmour", playerId.inventorySlotArmour);
+            script_save_char_api(i, ".objectIndex", playerId.object_index);
         }
     }
 

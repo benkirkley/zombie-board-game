@@ -55,7 +55,7 @@ ini_close();
             <string>checkboxState = script_checkbox("Fast Zombies","fast_zombies");
 if (checkboxState)
 {
-    obj_player_red.currentSpeed = 8; 
+    obj_player_red.currentSpeed = 16; 
 }
 else
 {

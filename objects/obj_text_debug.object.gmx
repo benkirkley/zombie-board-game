@@ -55,7 +55,7 @@
             <kind>1</kind>
             <string>totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
 
-text = "Zombies Splatted: " + string(global.numberOfRedPlayersKilled) + "/" + string(totalRedPlayers);
+text = "Zombies Killed: " + string(global.numberOfRedPlayersKilled) + "/" + string(totalRedPlayers);
 draw_set_halign(fa_right);
 draw_set_font(font1);
 text_width = string_width(text);

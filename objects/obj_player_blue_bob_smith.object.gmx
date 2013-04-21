@@ -65,25 +65,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-characterName="blue_player";
+            <string>characterName="blue_player_bob_smith";
 is_alive = true;
 image_speed=0;
 
 //DEFAULT VALUES
-name = "Blue Player";
-attack = 16;
-dicePool=2;
-defense=5;
-totalHitPoints=5;
-totalActionPoints=9;
+name = "Bob Smith";
+attack = 9;
+dicePool = 3;
+defense = 8;
+totalHitPoints = 8;
+totalActionPoints = 3;
 damage = 2;
 totalNumberOfAttacks = 1;
 moveSpeed = 8;
+//isUnique = true;
+
 
 script_create_player_blue(characterName);
 alarm[0]=1;
-*/
 </string>
           </argument>
         </arguments>
@@ -104,24 +104,25 @@ alarm[0]=1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>characterName="blue_player_bob_smith";
+            <string>/*
+characterName="blue_player";
 is_alive = true;
 image_speed=0;
 
 //DEFAULT VALUES
-name = "Bob Smith";
-attack = 9;
-dicePool = 3;
-defense = 8;
-totalHitPoints = 8;
-totalActionPoints = 3;
+name = "Blue Player";
+attack = 16;
+dicePool=2;
+defense=5;
+totalHitPoints=5;
+totalActionPoints=9;
 damage = 2;
 totalNumberOfAttacks = 1;
 moveSpeed = 8;
-isUnique = true;
 
 script_create_player_blue(characterName);
 alarm[0]=1;
+*/
 </string>
           </argument>
         </arguments>

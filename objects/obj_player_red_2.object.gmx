@@ -70,12 +70,12 @@ is_alive = true;
 image_speed=0;
 
 //DEFAULT VALUES
-name = "Boss 2";
+name = "Papa Smith";
 characterBonus = 0;
 attack = 10;
 dicePool = 2;
 defense = 10;
-totalHitPoints = 6;
+totalHitPoints = 8;
 totalActionPoints = 0;
 damage = 1;
 totalNumberOfAttacks = 1;

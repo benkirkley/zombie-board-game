@@ -46,6 +46,7 @@ if (teamId == 0)
         moveSpeedSaved = ds_map_find_value(global.savedPlayerData, string(counter) + ".moveSpeed");
         inventorySlotWeaponSaved = ds_map_find_value(global.savedPlayerData, string(counter) + ".inventorySlotWeapon");
         inventorySlotArmourSaved = ds_map_find_value(global.savedPlayerData, string(counter) + ".inventorySlotArmour");
+        objectForThisInstance = ds_map_find_value(global.savedPlayerData, string(counter) + ".objectIndex");
     }
 }     
 if (is_alive)
@@ -88,5 +89,6 @@ if (is_alive)
     ds_map_add(playerDataMap,string(counter)+".has_spawned",true);
     ds_map_add(playerDataMap,string(counter)+".inventory_weapon_1",playerId.inventorySlotWeapon);
     ds_map_add(playerDataMap,string(counter)+".inventory_armour_1",playerId.inventorySlotArmour);
+    ds_map_add(playerDataMap,string(counter)+".objectIndex",playerId.object_index);
     
 }

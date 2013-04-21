@@ -70,7 +70,7 @@ is_alive = true;
 image_speed=0;
 
 //DEFAULT VALUES
-name = "Boss 1";
+name = "Mama Smith";
 characterBonus = 0;
 attack = 12;
 dicePool = 1;
