@@ -68,6 +68,7 @@
             <string>characterName="blue_player_bob_smith";
 is_alive = true;
 image_speed=0;
+isUnique = true;
 
 //DEFAULT VALUES
 name = "Bob Smith";
@@ -84,45 +85,6 @@ moveSpeed = 8;
 
 script_create_player_blue(characterName);
 alarm[0]=1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*
-characterName="blue_player";
-is_alive = true;
-image_speed=0;
-
-//DEFAULT VALUES
-name = "Blue Player";
-attack = 16;
-dicePool=2;
-defense=5;
-totalHitPoints=5;
-totalActionPoints=9;
-damage = 2;
-totalNumberOfAttacks = 1;
-moveSpeed = 8;
-
-script_create_player_blue(characterName);
-alarm[0]=1;
-*/
 </string>
           </argument>
         </arguments>

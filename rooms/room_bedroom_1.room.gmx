@@ -91,12 +91,8 @@ instance_create(0,0,obj_master);</code>
     <instance objName="obj_wall_hidden" x="0" y="384" name="inst_2C31960B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="0" y="448" name="inst_EDCD9240" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="0" y="512" name="inst_4F3EE691" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player_blue_1" x="480" y="352" name="inst_339E519F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_player_blue_1" x="480" y="352" name="inst_339E519F" locked="0" code="if (ds_list_find_index(global.specialPlayersList,object_index) &gt; -1)&#xA;    {&#xA;        instance_destroy();&#xA;    }&#xA;    else&#xA;    {&#xA;        ds_list_add(global.specialPlayersList,object_index);&#xA;    }" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_item_armour_helmet_riot" x="160" y="288" name="inst_A19894E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_hidden_red" x="352" y="352" name="inst_B34568D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_hidden_red" x="352" y="416" name="inst_79DFCB3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_hidden_red" x="416" y="352" name="inst_DCBF6401" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_hidden_red" x="416" y="416" name="inst_8A6CDEDD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

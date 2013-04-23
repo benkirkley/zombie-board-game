@@ -1,15 +1,17 @@
+/*
 if (isUnique)
 {
     if (ds_list_find_index(global.specialPlayersList,object_index) > -1)
     {
         instance_destroy();
+        //exit;
     }
     else
     {
         ds_list_add(global.specialPlayersList,object_index);
     }
 }
-
+*/
 
 /* Initalise stats */
 characterName = argument0
