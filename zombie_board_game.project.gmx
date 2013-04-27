@@ -163,6 +163,7 @@
       <object>objects\obj_inventory_equipped</object>
       <object>objects\obj_stats</object>
       <object>objects\obj_text_debug</object>
+      <object>objects\obj_text_debug_2</object>
       <object>objects\obj_text_info</object>
       <object>objects\obj_tips</object>
     </objects>
@@ -217,7 +218,6 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room_menu_main</room>
     <room>rooms\room_0</room>
     <room>rooms\room_hud</room>
     <room>rooms\room_bedroom_1</room>
@@ -230,6 +230,7 @@
     <room>rooms\room_garage</room>
     <room>rooms\room_kitchen</room>
     <room>rooms\room_dead</room>
+    <room>rooms\room_menu_main</room>
     <room>rooms\room_tbc</room>
   </rooms>
   <help>

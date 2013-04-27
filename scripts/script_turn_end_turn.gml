@@ -30,12 +30,11 @@ if (global.endTurn == true )
     
     if ( global.currentPlayer < numberOfPlayersOnTeam-1 )
     {
-        //show_message("Go to next player on this team");
         global.currentPlayer += 1;
-        
         isNextPlayerAlive = ds_map_find_value(gridCurrentTeamDataMap, string(global.currentPlayer) + ".is_alive");
         nextPlayerName = ds_map_find_value(gridCurrentTeamDataMap, string(global.currentPlayer) + ".name");
-        
+        //show_message("Go to next player on this team");
+
         while (!isNextPlayerAlive) {
             //show_message("Next player is dead, skip him.");
             global.currentPlayer += 1;
@@ -62,8 +61,7 @@ if (global.endTurn == true )
     }
     else
     {
-        //show_message("All players on this team have moved");
-        
+        //show_message("All players on this team have moved");  
         script_turn_next_team();
         if (global.currentTeam ==0 )
         {
