@@ -46,6 +46,7 @@
     <sprite>sprites\spr_zone_start_2x1</sprite>
     <sprite>sprites\spr_player_red_64_anim</sprite>
     <sprite>sprites\spr_player_red_1_64_anim</sprite>
+    <sprite>sprites\spr_player_red_3_64_anim</sprite>
     <sprite>sprites\spr_player_red_2_64_anim</sprite>
     <sprite>sprites\sprite_zone_exit_4x4</sprite>
   </sprites>
@@ -195,6 +196,7 @@
       <object>objects\obj_player_highlight</object>
       <object>objects\obj_player_red_default</object>
       <object>objects\obj_player_red_1</object>
+      <object>objects\obj_player_red_3</object>
       <object>objects\obj_player_red_2</object>
       <object>objects\obj_player_blue</object>
       <object>objects\obj_player_red</object>

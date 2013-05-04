@@ -96,7 +96,7 @@ instance_create(0,0,obj_master);</code>
     <instance objName="obj_wall_hidden" x="128" y="192" name="inst_22E0DF33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="128" y="384" name="inst_6669CB4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="128" y="448" name="inst_5A6C62FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player_red_1" x="288" y="544" name="inst_F17F8B70" locked="0" code="name = &quot;Mr Harris&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player_red_3" x="256" y="512" name="inst_87C0CB0D" locked="0" code="name = &quot;Mr Harris&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_item" x="480" y="544" name="inst_1A7AB0E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
