@@ -30,7 +30,6 @@ for (i=0; i < totalPlayers; i+=1)
             script_save_char_api(i, ".objectIndex", playerId.object_index);
         }
     }
-
 }
 totalRedPlayers = ds_grid_get(global.teamGrids, 3, 1);
 global.numberOfRedPlayersToCarryOver = totalRedPlayers - global.numberOfRedPlayersKilled;
