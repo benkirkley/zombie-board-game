@@ -42,7 +42,7 @@ if (id.thisTeamId == 0)
                 else if(itemTypeMap == 2)
                 {
                     //HEALTH
-                    script_items_consume("consumable", itemString,id);
+                    script_items_consume("consumable", itemString, id, collisionObjectId);
                     itemTypeMap = loopLimit //break loop
                 }
                 itemTypeMap = ds_map_size(global.mapItemTypeAndStatsMap) //break loop

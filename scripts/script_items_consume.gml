@@ -1,6 +1,7 @@
 itemType  = argument0;
 itemString = argument1;
 currentPlayerId = argument2;
+collisionObjectId = argument3
 
 if (itemType == "consumable")
 {
@@ -15,6 +16,11 @@ if (itemType == "consumable")
     combatResultFeedback.thisText = "+" + string(healPoints) + "HP";
     combatResultFeedback.thisFillColor = c_lime;
     combatResultFeedback.thisOutlineColor = c_black;
-    
+   
+    if (collisionObjectId.isUnique)
+    {
+        //show_message("TEST");
+        ds_map_add(global.specialItemsMap, collisionObjectId, true);
+    }
 }
 

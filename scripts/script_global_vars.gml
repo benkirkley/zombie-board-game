@@ -46,3 +46,4 @@ global.redPlacedAddedToList = false;
 
 global.specialPlayersMap = ds_map_create();
 global.specialPlayersList = ds_list_create();
+global.specialItemsMap = ds_map_create();
