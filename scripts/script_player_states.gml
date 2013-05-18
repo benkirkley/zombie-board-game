@@ -16,6 +16,16 @@ if ( hitPoints <= 0 )
     
     global.numberOfRedPlayersKilled += 1;
     
+    if ( ds_map_exists(global.specialPlayersMap, id ))
+    {
+         var thisPlayersDataMap = ds_map_find_value(global.specialPlayersMap, id );
+         ds_map_replace(thisPlayersDataMap, "x", x);
+         ds_map_replace(thisPlayersDataMap, "y", y);
+         ds_map_replace(thisPlayersDataMap, "hit_points", hitPoints);
+         ds_map_replace(thisPlayersDataMap, "is_alive", false);
+         ds_map_replace(global.specialPlayersMap, id, thisPlayersDataMap);
+    }
+    
     var teamStillHasPlayers = false;
     loopLimit = ds_map_find_value(playerDataMap,".numberOfPlayersOnTeam");
     for (i=0; i < loopLimit; i +=1 )
