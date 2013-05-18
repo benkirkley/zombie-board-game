@@ -84,11 +84,12 @@
       <script>scripts\script_create_all_teams_and_players.gml</script>
       <script>scripts\script_create_mp_grid.gml</script>
       <script>scripts\script_create_new_player.gml</script>
+      <script>scripts\script_create_new_zone_exit_instance.gml</script>
+      <script>scripts\script_create_player_blue.gml</script>
       <script>scripts\script_create_player_common_local_vars.gml</script>
       <script>scripts\script_create_spawn_team.gml</script>
-      <script>scripts\script_create_new_zone_exit_instance.gml</script>
       <script>scripts\script_create_team_spawn_points.gml</script>
-      <script>scripts\script_create_player_blue.gml</script>
+      <script>scripts\script_create_unique_player_respawn.gml</script>
     </scripts>
     <scripts name="global">
       <script>scripts\script_global_vars.gml</script>
@@ -135,6 +136,7 @@
       <script>scripts\script_instance_exists.gml</script>
       <script>scripts\script_save_chars.gml</script>
       <script>scripts\script_save_char_api.gml</script>
+      <script>scripts\script_save_unique_player.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

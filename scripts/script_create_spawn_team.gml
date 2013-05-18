@@ -17,7 +17,7 @@ if (teamId == 1 && global.turnCounter == 1 && global.redPlacedAddedToList == fal
     var stackOfRedPlayersInHere = ds_list_create();
     with(obj_player_red)
     {
-        ds_list_add(stackOfRedPlayersInHere,id);
+       ds_list_add(stackOfRedPlayersInHere,id);
     }
 }
 

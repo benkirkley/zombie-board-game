@@ -167,36 +167,50 @@ listFriendlyBlock = ds_list_create();
 image_speed=0;
 image_index=0;
 
-if ( ds_map_exists(global.specialPlayersMap, id ))
-{
-    var thisPlayersDataMap = ds_map_find_value(global.specialPlayersMap, id );
-    if ( ds_map_find_value(thisPlayersDataMap, "is_alive") == false)
-    {
-        instance_destroy();
-    }
-    else
-    {
-        x = ds_map_find_value(thisPlayersDataMap, "x" );
-        y = ds_map_find_value(thisPlayersDataMap, "y" );
-        hitPoints = ds_map_find_value(thisPlayersDataMap, "hit_points" );
-    }
-}
-else
-{
-    //if (isUnique)
-    //{
-        var thisPlayersDataMap = ds_map_create();
-        ds_map_add(thisPlayersDataMap, "x", x);
-        ds_map_add(thisPlayersDataMap, "y", x);
-        ds_map_add(thisPlayersDataMap, "hit_points", hitPoints);
-        ds_map_add(thisPlayersDataMap, "is_alive", true);
-        
-        ds_map_add(global.specialPlayersMap, id, thisPlayersDataMap);
-    //}
-}
+
     
 
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>script_create_unique_player_respawn</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>

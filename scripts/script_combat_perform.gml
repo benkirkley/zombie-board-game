@@ -143,6 +143,8 @@ else
     triggeredObjectId.hitPoints -= totalDamage;
 }
 
+script_save_unique_player(triggeredObjectId);
+/*
 if ( ds_map_exists(global.specialPlayersMap, triggeredObjectId ))
 {
      var thisPlayersDataMap = ds_map_find_value(global.specialPlayersMap, triggeredObjectId );
@@ -151,6 +153,7 @@ if ( ds_map_exists(global.specialPlayersMap, triggeredObjectId ))
      ds_map_replace(thisPlayersDataMap, "hit_points", triggeredObjectId.hitPoints);
      ds_map_replace(global.specialPlayersMap, triggeredObjectId, thisPlayersDataMap);
 }
+*/
 
 displayResults += "##" + string(triggeredObjectName) + " HP: " + string(triggeredObjectId.hitPoints) + "/" + string(triggeredObjectId.totalHitPoints); 
 

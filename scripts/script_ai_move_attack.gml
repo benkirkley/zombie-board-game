@@ -58,6 +58,7 @@ if (amICurrentPlayer)
             }
             else
             {
+                script_save_unique_player(id);
                 global.endTurn = true;
             }
         }
@@ -76,6 +77,7 @@ if (amICurrentPlayer)
             }
             else
             {
+                script_save_unique_player(id);
                 global.endTurn = true;
             }
         }
