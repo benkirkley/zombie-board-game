@@ -16,6 +16,7 @@ if ( hitPoints <= 0 )
     
     global.numberOfRedPlayersKilled += 1;
     
+    
     if ( ds_map_exists(global.specialPlayersMap, id ))
     {
          var thisPlayersDataMap = ds_map_find_value(global.specialPlayersMap, id );
