@@ -13,6 +13,7 @@ if ( hitPoints <= 0 )
     ds_map_replace(playerDataMap,string(thisPlayerId) + ".is_alive",false);
     ds_map_replace(global.savedPlayerData, string(thisPlayerId) + ".is_alive",false);
     is_alive = false;
+    show_message( thisPlayerId  );
     
     global.numberOfRedPlayersKilled += 1;
     

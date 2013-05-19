@@ -33,7 +33,7 @@ if (global.endTurn == true )
         global.currentPlayer += 1;
         isNextPlayerAlive = ds_map_find_value(gridCurrentTeamDataMap, string(global.currentPlayer) + ".is_alive");
         nextPlayerName = ds_map_find_value(gridCurrentTeamDataMap, string(global.currentPlayer) + ".name");
-        //show_message("Go to next player on this team");
+        //show_message("Go to next player on this team: " + string(nextPlayerName) );
 
         while (!isNextPlayerAlive) {
             //show_message("Next player is dead, skip him.");
