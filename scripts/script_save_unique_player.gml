@@ -7,3 +7,4 @@ if ( ds_map_exists(global.specialPlayersMap, playerId ))
      ds_map_replace(thisPlayersDataMap, "hit_points", playerId.hitPoints);
      ds_map_replace(global.specialPlayersMap, playerId, thisPlayersDataMap);
 }
+show_message("Save unique player data");
