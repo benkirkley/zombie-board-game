@@ -19,7 +19,6 @@ if (itemType == "consumable")
    
     if (collisionObjectId.isUnique)
     {
-        //show_message("TEST");
         ds_map_add(global.specialItemsMap, collisionObjectId, true);
     }
 }

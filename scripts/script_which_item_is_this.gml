@@ -26,7 +26,7 @@ if (id.thisTeamId == 0)
                     id.inventorySlotWeapon = string(itemString) + "_inventory";  
                     script_inventory_destroy_items();
                     script_inventory_create_items();
-                    script_items_equip("weapon",itemString,id);
+                    script_items_equip("weapon",itemString,id, collisionObjectId);
                     itemTypeMap = loopLimit //break loop
                 }
                 else if(itemTypeMap == 1)
@@ -36,7 +36,7 @@ if (id.thisTeamId == 0)
                     id.inventorySlotArmour = string(itemString) + "_inventory";
                     script_inventory_destroy_items();
                     script_inventory_create_items();
-                    script_items_equip("armour",itemString,id);
+                    script_items_equip("armour",itemString,id, collisionObjectId);
                     itemTypeMap = loopLimit //break loop
                 }
                 else if(itemTypeMap == 2)

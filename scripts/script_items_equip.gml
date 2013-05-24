@@ -1,6 +1,7 @@
 itemType = argument0
 itemString = argument1;
 currentPlayerId = argument2;
+collisionObjectId = argument3;
 
 if (itemType == "weapon")
 {
@@ -36,4 +37,12 @@ else if (itemType == "armour")
     currentPlayerId.equippedArmourString = itemString;    
 
     currentPlayerId.inventorySlotArmour = string(currentPlayerId.equippedArmourString) + "_inventory";
+}
+
+if (collisionObjectId)
+{
+    if (collisionObjectId.isUnique)
+    {
+        ds_map_add(global.specialItemsMap, collisionObjectId, true);
+    }
 }

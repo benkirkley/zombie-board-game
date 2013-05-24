@@ -103,7 +103,7 @@ instance_create(0,0,obj_master);</code>
     <instance objName="obj_wall_hidden" x="640" y="384" name="inst_D9A0868A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_hidden" x="640" y="448" name="inst_FA5A87DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_item" x="608" y="352" name="inst_1A7AB0E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_item_consumable_medkit" x="416" y="544" name="inst_D5CE45B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_item_consumable_medkit" x="416" y="544" name="inst_D5CE45B4" locked="0" code="isUnique = true;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
